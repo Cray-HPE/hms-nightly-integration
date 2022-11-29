@@ -362,15 +362,24 @@ if __name__ == '__main__':
                             yaml.dump(chart_value_overrides, f)
 
                         # TODO thought about inlining this script, but using shell=True can be dangerous.
-                        result = subprocess.run(["./extract_chart_images.sh", chart_dir, values_override_path], capture_output=True, text=True)
+                        result = subprocess.run(["helm", "template", chart_dir, "-f", values_override_path], capture_output=True, text=True)
                         if result.returncode != 0:
-                            logging.error("Failed to extract images from chart. Exit code {}".format(result.returncode))
+                            logging.error("Failed to template helm chart. Exit code {}".format(result.returncode))
                             logging.error("stderr: {}".format(result.stderr))
                             logging.error("stdout: {}".format(result.stdout))
                             exit(1)
 
+                        extracted_images = []
+                        for line in result.stdout.splitlines():
+                            m = re.match(' .+image: "?([a-zA-Z0-9:/\-.]+)"?', line)
+                            if m is None:
+                                continue
+
+                            extracted_images.append(m.group(1))
+                            image = m.group(1)
+
                         logging.info("\t\tImages in use:")
-                        for image in result.stdout.splitlines():
+                        for image in extracted_images:
                             image_repo, image_tag = image.split(":", 2)
 
                             if image_repo not in images_repos_of_interest:
@@ -399,7 +408,6 @@ if __name__ == '__main__':
     all_images = {}
     for github_repo in images_to_rebuild.values():
         for image in github_repo:
-            print(image["full-image"])
             image_repo, image_tag = image["full-image"].split(":", 2)
 
             if image_repo not in all_images:
@@ -407,9 +415,24 @@ if __name__ == '__main__':
 
             all_images[image_repo][image_tag] = image["csm-releases"]
 
+    images_by_csm_release = {}
+    for github_repo in images_to_rebuild.values():
+        for image in github_repo:
+            image_repo, image_tag = image["full-image"].split(":", 2)
 
-    with open('extractor-output.json', 'w') as f:
-        json.dump(all_images, f)
-    with open('extractor-output-2.json', 'w') as f:
-        json.dump(all_charts, f)
+            for csm_release in image["csm-releases"]:
+                if csm_release not in images_by_csm_release:
+                    images_by_csm_release[csm_release] = {}
 
+                if image_repo not in images_by_csm_release[csm_release]:
+                    images_by_csm_release[csm_release][image_repo] = []
+
+                images_by_csm_release[csm_release][image_repo].append(image_tag)
+
+    # with open('extractor-output-all-images.json', 'w') as f:
+    #     json.dump(all_images, f)
+    # with open('extractor-output-all-charts.json', 'w') as f:
+    #     json.dump(all_charts, f)
+
+    with open('extractor-output-images_by_csm_release.json', 'w') as f:
+        json.dump(images_by_csm_release, f)

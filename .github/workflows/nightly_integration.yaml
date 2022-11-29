@@ -1,0 +1,62 @@
+name: Nightly Integration
+on:
+  workflow_dispatch:
+  pull_request:
+  schedule:
+  - cron: '0 8 * * *' # 8am every day UTC. 3 AM Central. This will trigger the action to run after the hms-build-workflow-dispatcher has rebuilt HMS images
+jobs:
+  determine-service-versions:
+    name: Determine service versions
+    runs-on: ubuntu-latest
+    outputs:
+      csm-releases: ${{ steps.extract-container-images.outputs.csm-releases }}
+      images-by-csm-release: ${{ steps.extract-container-images.outputs.images-by-csm-release }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+    
+    - name: Install python dependencies
+      shell: bash
+      run: pip3 install -r requirements.txt
+
+    - name: Auth token for launching workflows
+      uses: navikt/github-app-token-generator@v1
+      id: get-token
+      with:
+        private-key: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_KEY }}
+        app-id: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_ID }}
+
+    - name: Extract container images from CSM manifests
+      shell: bash
+      id: extract-container-images
+      env: 
+        GITHUB_TOKEN: ${{ steps.get-token.outputs.token }}
+      run: |
+        set -eux
+        ./extract_chart_images.sh
+        echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json)" >> $GITHUB_OUTPUT
+        echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys')" >> $GITHUB_OUTPUT
+  
+
+  integration-test:
+    name: Integration test
+    needs: determine-service-versions
+    strategy:
+      matrix:
+        csm-release: ${{ fromJSON(needs.determine-service-versions.outputs.csm-releases) }}
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello world
+      shell: bash
+      run: |
+        echo "CSM Branch: ${{ matrix.image }}"
+        echo "Images by csm release:"
+        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" | jq
