@@ -57,6 +57,6 @@ jobs:
     - name: Hello world
       shell: bash
       run: |
-        echo "CSM Branch: ${{ matrix.image }}"
+        echo "CSM Branch: ${{ matrix.csm-release }}"
         echo "Images by csm release:"
         echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" | jq
