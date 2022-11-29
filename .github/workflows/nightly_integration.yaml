@@ -41,7 +41,7 @@ jobs:
       run: |
         set -eux
         ./csm_manifest_extractor.py
-        echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json)" >> $GITHUB_OUTPUT
+        echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json | jq -c)" >> $GITHUB_OUTPUT
         echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys' -c)" >> $GITHUB_OUTPUT
   
 
@@ -59,4 +59,4 @@ jobs:
       run: |
         echo "CSM Branch: ${{ matrix.csm-release }}"
         echo "Images by csm release:"
-        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" | jq
+        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" 
