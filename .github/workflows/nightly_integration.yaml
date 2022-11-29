@@ -40,7 +40,7 @@ jobs:
         GITHUB_TOKEN: ${{ steps.get-token.outputs.token }}
       run: |
         set -eux
-        ./extract_chart_images.sh
+        ./csm_manifest_extractor.py
         echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json)" >> $GITHUB_OUTPUT
         echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys')" >> $GITHUB_OUTPUT
   
