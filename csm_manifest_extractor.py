@@ -429,10 +429,11 @@ if __name__ == '__main__':
 
                 images_by_csm_release[csm_release][image_repo].append(image_tag)
 
-    # with open('extractor-output-all-images.json', 'w') as f:
-    #     json.dump(all_images, f)
-    # with open('extractor-output-all-charts.json', 'w') as f:
-    #     json.dump(all_charts, f)
-
+    with open('extractor-output-all-images.json', 'w') as f:
+        json.dump(all_images, f)
+    with open('extractor-output-all-charts.json', 'w') as f:
+        json.dump(all_charts, f)
+    with open('extractor-output-images_to_rebuild.json', 'w') as f:
+        json.dump(images_to_rebuild, f)
     with open('extractor-output-images_by_csm_release.json', 'w') as f:
         json.dump(images_by_csm_release, f)
