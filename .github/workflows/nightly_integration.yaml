@@ -4,6 +4,9 @@ on:
   pull_request:
   schedule:
   - cron: '0 8 * * *' # 8am every day UTC. 3 AM Central. This will trigger the action to run after the hms-build-workflow-dispatcher has rebuilt HMS images
+
+permissions: read-all
+
 jobs:
   determine-service-versions:
     name: Determine service versions
@@ -26,18 +29,13 @@ jobs:
       shell: bash
       run: pip3 install -r requirements.txt
 
-    - name: Auth token for launching workflows
-      uses: navikt/github-app-token-generator@v1
-      id: get-token
-      with:
-        private-key: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_KEY }}
-        app-id: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_ID }}
-
     - name: Extract container images from CSM manifests
       shell: bash
       id: extract-container-images
       env: 
-        GITHUB_TOKEN: ${{ steps.get-token.outputs.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ARTIFACTORY_ALGOL60_READONLY_USERNAME: ${{ secrets.ARTIFACTORY_ALGOL60_READONLY_USERNAME }}
+        ARTIFACTORY_ALGOL60_READONLY_TOKEN: ${{ secrets.ARTIFACTORY_ALGOL60_READONLY_TOKEN }}
       run: |
         set -eux
         ./csm_manifest_extractor.py
@@ -59,4 +57,10 @@ jobs:
       run: |
         echo "CSM Branch: ${{ matrix.csm-release }}"
         echo "Images by csm release:"
-        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" 
+        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}"
+
+    # Update container images in docker-compose.yaml
+    # TODO
+
+    # Stand up hms-simulation environment
+    # TODO
