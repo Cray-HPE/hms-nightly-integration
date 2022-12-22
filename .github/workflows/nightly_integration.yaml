@@ -70,9 +70,12 @@ jobs:
         ref: v1
         fetch-depth: 0
 
-
     # Update container images in docker-compose.yaml
-    # TODO
+    - name: Update container images in docker-compose.yaml
+      shell: bash
+      env:
+        CSM_RELEASE: "${{ matrix.csm-release }}"
+      run: ./update_docker_compose.py images-by-csm-release.json "${CSM_RELEASE}" ./hms-simulation-environment/docker-compose.yaml
 
     # Stand up hms-simulation environment
     - name: Standup simulation environment
@@ -89,3 +92,4 @@ jobs:
         ./run.py configs/sls/small_mountain.json
 
     # Run tests
+    # TODO
