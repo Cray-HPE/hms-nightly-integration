@@ -52,15 +52,40 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
-    - name: Hello world
+    - name: Store test data
       shell: bash
+      env:
+        IMAGES_BY_CSM_RELEASE: ${{ needs.determine-service-versions.outputs.images-by-csm-release }}
       run: |
         echo "CSM Branch: ${{ matrix.csm-release }}"
         echo "Images by csm release:"
-        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}"
+        printenv IMAGES_BY_CSM_RELEASE > images-by-csm-release.json
+        jq . images-by-csm-release.json
+
+    - name: Checkout hms-simulation-environment
+      uses: actions/checkout@v2
+      with:
+        path: hms-simulation-environment
+        repository: Cray-HPE/hms-simulation-environment
+        ref: v1
+        fetch-depth: 0
+
 
     # Update container images in docker-compose.yaml
     # TODO
 
     # Stand up hms-simulation environment
-    # TODO
+    - name: Standup simulation environment
+      shell: bash
+      run: |
+        set -ex
+        cd hms-simulation-environment
+        # For debugging output the modified docker-compose compose file
+        echo "Updated docker-compose.yaml"
+        cat docker-compose.yaml
+        # Setup python virtual environment
+        ./setup_venv.sh
+        . ./venv/bin/activate
+        ./run.py configs/sls/small_mountain.json
+
+    # Run tests
