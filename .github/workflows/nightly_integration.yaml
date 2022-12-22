@@ -52,16 +52,6 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
-    - name: Store test data
-      shell: bash
-      env:
-        IMAGES_BY_CSM_RELEASE: ${{ needs.determine-service-versions.outputs.images-by-csm-release }}
-      run: |
-        echo "CSM Branch: ${{ matrix.csm-release }}"
-        echo "Images by csm release:"
-        printenv IMAGES_BY_CSM_RELEASE > images-by-csm-release.json
-        jq . images-by-csm-release.json
-
     - name: Checkout
       uses: actions/checkout@v2
       with:
@@ -74,6 +64,16 @@ jobs:
         repository: Cray-HPE/hms-simulation-environment
         ref: v1
         fetch-depth: 0
+
+    - name: Store test data
+      shell: bash
+      env:
+        IMAGES_BY_CSM_RELEASE: ${{ needs.determine-service-versions.outputs.images-by-csm-release }}
+      run: |
+        echo "CSM Branch: ${{ matrix.csm-release }}"
+        echo "Images by csm release:"
+        printenv IMAGES_BY_CSM_RELEASE > images-by-csm-release.json
+        jq . images-by-csm-release.json
 
     # Update container images in docker-compose.yaml
     - name: Update container images in docker-compose.yaml
