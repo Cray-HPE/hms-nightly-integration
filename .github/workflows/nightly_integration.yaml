@@ -62,6 +62,11 @@ jobs:
         printenv IMAGES_BY_CSM_RELEASE > images-by-csm-release.json
         jq . images-by-csm-release.json
 
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
     - name: Checkout hms-simulation-environment
       uses: actions/checkout@v2
       with:
