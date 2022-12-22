@@ -16,12 +16,12 @@ jobs:
       images-by-csm-release: ${{ steps.extract-container-images.outputs.images-by-csm-release }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
     
@@ -76,6 +76,15 @@ jobs:
         jq . images-by-csm-release.json
 
     # Update container images in docker-compose.yaml
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install python dependencies
+      shell: bash
+      run: pip3 install -r requirements.txt
+
     - name: Update container images in docker-compose.yaml
       shell: bash
       env:
