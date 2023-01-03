@@ -106,4 +106,9 @@ jobs:
         ./run.py configs/sls/small_mountain.json
 
     # Run tests
-    # TODO
+    - name: Standup simulation environment
+      shell: bash
+      env:
+        CSM_RELEASE: "${{ matrix.csm-release }}"
+      run: |
+        ./run_tests.py images-by-csm-release.json "${CSM_RELEASE}"
