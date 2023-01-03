@@ -158,3 +158,28 @@ for test_type, test_class in test_order:
 
     for image in tests[test_type][test_class]:
         print(f'Running {image}')
+
+        cmd = "ls"
+
+        if test_type == "legacy_ct" and test_class == "smoke":
+            pass
+        elif test_type == "legacy_ct" and test_class == "functional":
+            pass
+        elif test_type == "hmth" and test_class == "smoke":
+            # docker run --rm -it --network hms-simulation-environment_simulation hse-test:local smoke -f smoke-api-gateway-services.json
+            cmd = f'docker run --rm -it --network hms-simulation-environment_simulation {image} smoke -f smoke.json'
+            pass
+        elif test_type == "hmth":
+            cmd = f'docker run --rm -it --network hms-simulation-environment_simulation {image} tavern -c /src/app/tavern_global_config_ct_test.yaml -p /src/app/{test_class}'
+            pass
+        else:
+            print(f'Unknown test type {test_type}:{test_class}')
+
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            # TODO better message
+            print("Tests failed. Exit code {}".format(result.returncode))
+            print("stderr: {}".format(result.stderr))
+            print("stdout: {}".format(result.stdout))
+
+        print(result.stdout)
