@@ -127,8 +127,9 @@ jobs:
     - name: Collapse test results
       shell: bash
       run: |
+        set -e
         mkdir -p allure-agg
-        for file in $(find . -type f); do
+        for file in $(find ./allure -type f); do
           mv -v "$file" ./allure-agg
         done
 
