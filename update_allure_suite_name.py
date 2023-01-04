@@ -6,7 +6,7 @@ import json
 
 
 def update_allure_suite_name(allure_report_dir):
-    for test_result_path in pathlib.Path(allure_report_dir).glob("**/*.json"):
+    for test_result_path in pathlib.Path(allure_report_dir).glob("**/*result.json"):
         test_source = test_result_path.parent.parent.name
         test_class = test_result_path.parent.name
         print(test_source, test_class, test_result_path.name) 
@@ -47,9 +47,11 @@ def generate_allure_report(allure_report_dir):
             report_dirs.append(str(test_result_path))
 
     cmd = ["allure", "generate", "-o", "allure_report"] + report_dirs
+    print()
     print(' '.join(cmd))
 
     cmd = ["allure", "serve", "--host", "localhost"] + report_dirs
+    print()
     print(' '.join(cmd))
 
 if __name__ == "__main__":

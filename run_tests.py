@@ -32,7 +32,7 @@ import re
 import pathlib
 import shutil
 
-from update_allure_suite_name import update_allure_suite_name
+from update_allure_suite_name import update_allure_suite_name, generate_allure_report
 
 # TODO switch to arg parse
 images_by_csm_release = sys.argv[1]
@@ -131,6 +131,7 @@ test_order = [
     # ("hmth", "4-build-pipeline-only"),
 ]
 
+# TODO if running tavern tests locally, then need to detect tests on the files that were extracted
 detect_tests(legacy_ct_images, "legacy_ct", wanted_tests = {
     "src/app/smoke_test.py": "smoke",
     "src/app/functional_test.py": "functional"
@@ -246,6 +247,7 @@ def extract_tavern_tests():
     global legacy_ct_images
     global hmth_images
 
+    # TODO change this directory to extracted_tests, and make it global
     tavern_path = pathlib.Path("./tavern")
     if tavern_path.exists():
         shutil.rmtree(tavern_path)
@@ -276,7 +278,47 @@ def run_tavern_tests():
     global hmth_images
     global test_order
     global tests
-    
+
+    # TODO somehow link to the tavern config?
+    smoke_host_override = {
+        # SLS
+        "artifactory.algol60.net/csm-docker/stable/cray-sls-test":      "http://localhost:8080/apis/sls",
+        "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "http://localhost:8080/apis/sls",
+
+        # HSM
+        "artifactory.algol60.net/csm-docker/stable/cray-smd-test":      "http://localhost:8080/apis/smd",
+        "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "http://localhost:8080/apis/smd",
+
+        # CAPMC
+        "artifactory.algol60.net/csm-docker/stable/cray-capmc-test":      "http://localhost:8080/apis/capmc",
+        "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "http://localhost:8080/apis/capmc",
+
+        # PCS
+        "artifactory.algol60.net/csm-docker/stable/cray-power-control-test":      "http://localhost:8080/apis/power-control",
+        "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": " http://localhost:8080/apis/power-control",
+
+        # REDS
+        "artifactory.algol60.net/csm-docker/stable/cray-reds-test":      "http://localhost:8080/apis/reds",
+        "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "http://localhost:8080/apis/reds",
+
+        # BSS
+        "artifactory.algol60.net/csm-docker/stable/cray-bss-test":      "http://localhost:8080/apis/bss",
+        "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "http://localhost:8080/apis/bss",
+
+        # FAS
+        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-test":      "http://localhost:8080/apis/fas/v1",
+        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "http://localhost:8080/apis/fas/v1",
+
+        # HBTD
+        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-test":      "http://localhost:8080/apis/hbtd",
+        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "http://localhost:8080/apis/hbtd",
+
+        # HMNFD
+        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-test":      "http://localhost:8080/apis/hmnfd",
+        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "http://localhost:8080/apis/hmnfd"
+    }
+
+
     tavern_path = pathlib.Path("./allure")
     if tavern_path.exists():
         shutil.rmtree(tavern_path)
@@ -304,8 +346,11 @@ def run_tavern_tests():
             cmd = None
 
             if test_type in ["hmth", "legacy_ct"] and test_class == "smoke":
-                # TODO our smoke test stuff doesn't hook into pytest
-                pass
+                cmd = ['pytest', 'smoke', '-vvvv', '--smoke-json', str(test_path.joinpath("smoke.json")), f'--alluredir=./allure/{short_name}/smoke']
+                
+                image_repo, image_tag = image.split(":", 2)
+                if image_repo in smoke_host_override:
+                    cmd = cmd + ['--smoke-url', smoke_host_override[image_repo]]
             elif test_type == "legacy_ct" and test_class == "functional":
                 # pytest --tavern-global-cfg=tavern_global_config.yaml ./tavern/cray-bss-test --alluredir=./allure/bss
                 cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path), f'--alluredir=./allure/{short_name}/{test_class}']
@@ -328,18 +373,6 @@ def run_tavern_tests():
                 continue
 
             print(result.stdout)
-
-def generate_allure_report(allure_report_dir):
-    report_dirs = []
-    for test_result_path in pathlib.Path(allure_report_dir).glob("*/*/"):
-        if test_result_path.is_dir():
-            report_dirs.append(str(test_result_path))
-
-    cmd = ["allure", "generate", "-o", "allure_report"] + report_dirs
-    print(' '.join(cmd))
-
-    cmd = ["allure", "serve", "--host", "localhost"] + report_dirs
-    print(' '.join(cmd))
 
 extract_tavern_tests()
 run_tavern_tests()
