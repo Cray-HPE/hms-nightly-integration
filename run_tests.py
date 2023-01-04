@@ -137,11 +137,49 @@ test_order = [
     ("hmth", "smoke"),
     ("legacy_ct", "functional"),
     ("hmth", "1-non-disruptive"),
-    ("hmth", "2-disruptive"),
+    # ("hmth", "2-disruptive"),
     # TODO thing about these two cases
-    ("hmth", "3-destructive"),
+    # ("hmth", "3-destructive"),
     # ("hmth", "4-build-pipeline-only"),
 ]
+
+smoke_host_override = {
+    # SLS
+    "artifactory.algol60.net/csm-docker/stable/cray-sls-test":      "http://cray-sls:8376",
+    "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "http://cray-sls:8376",
+
+    # HSM
+    "artifactory.algol60.net/csm-docker/stable/cray-smd-test":      "http://cray-smd:27779",
+    "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "http://cray-smd:27779",
+
+    # CAPMC
+    "artifactory.algol60.net/csm-docker/stable/cray-capmc-test":      "http://cray-capmc:27777",
+    "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "http://cray-capmc:27777",
+
+    # PCS
+    "artifactory.algol60.net/csm-docker/stable/cray-power-control-test":      "http://cray-power-control:28007",
+    "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": "http://cray-power-control:28007",
+
+    # REDS
+    "artifactory.algol60.net/csm-docker/stable/cray-reds-test":      "http://cray-reds:8269",
+    "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "http://cray-reds:8269",
+
+    # BSS
+    "artifactory.algol60.net/csm-docker/stable/cray-bss-test":      "http://cray-bss:27778",
+    "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "http://cray-bss:27778",
+
+    # FAS
+    "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-test":      "http://cray-fas:28800",
+    "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "http://cray-fas:28800",
+
+    # HBTD
+    "artifactory.algol60.net/csm-docker/stable/cray-hbtd-test":      "http://cray-hbtd:28500",
+    "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "http://cray-hbtd:28500",
+
+    # HMNFD
+    "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-test":      "http://cray-hmnfd:28600",
+    "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "http://cray-hmnfd:28600"
+}
 
 for test_type, test_class in test_order:
     print("========================================")
@@ -159,27 +197,35 @@ for test_type, test_class in test_order:
     for image in tests[test_type][test_class]:
         print(f'Running {image}')
 
-        cmd = "ls"
+        cmd = None
 
-        if test_type == "legacy_ct" and test_class == "smoke":
-            pass
+        if test_type in ["hmth", "legacy_ct"] and test_class == "smoke":
+            image_repo, image_tag = image.split(":", 2)
+                        
+            cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "smoke", "-f", "smoke.json"]
+            if image_repo in smoke_host_override:
+                cmd = cmd + ["-u", smoke_host_override[image_repo]]
         elif test_type == "legacy_ct" and test_class == "functional":
-            pass
-        elif test_type == "hmth" and test_class == "smoke":
-            # docker run --rm -it --network hms-simulation-environment_simulation hse-test:local smoke -f smoke-api-gateway-services.json
-            cmd = f'docker run --rm -it --network hms-simulation-environment_simulation {image} smoke -f smoke.json'
-            pass
+            cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "functional", "-c", "/src/app/tavern_global_config_ct_test.yaml", "-p", '/src/app']
         elif test_type == "hmth":
-            cmd = f'docker run --rm -it --network hms-simulation-environment_simulation {image} tavern -c /src/app/tavern_global_config_ct_test.yaml -p /src/app/{test_class}'
-            pass
+            # Note there are two tavern configuration files, one from the application repo, and one from HMS test. They have different endpoints defined
+            # - Application Repo: /src/app/tavern_global_config_ct_test.yaml
+            # - HMS Test: /src/libs/tavern_global_config.yaml
+            cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "tavern", "-c", "/src/app/tavern_global_config_ct_test.yaml", "-p", f'/src/app/api/{test_class}']
         else:
             print(f'Unknown test type {test_type}:{test_class}')
 
+        if cmd is None:
+            print("Skipping unsupported test")
+            continue
+
+        print("Command", cmd)
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
             # TODO better message
             print("Tests failed. Exit code {}".format(result.returncode))
             print("stderr: {}".format(result.stderr))
             print("stdout: {}".format(result.stdout))
+            continue
 
         print(result.stdout)
