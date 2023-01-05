@@ -133,7 +133,7 @@ def run_tests(test_global_test_config: dict, tests: dict, allure_report_dir: pat
                 print("Skipping unsupported test")
                 continue
 
-            cmd = ["docker", "run", "--rm", "-it", 
+            cmd = ["docker", "run", "--rm", "-t", 
                 "--network", "hms-simulation-environment_simulation",   # Connect to the simulation network 
                 "-e", f'PYTHONPATH={str(test_path.joinpath("libs"))}',   # Add additional python lib directories. Some repos have extra python files used by tavern tests
                 "-v", f'{str(allure_dir.absolute())}:/allure-results/', # Location to output the allure results
