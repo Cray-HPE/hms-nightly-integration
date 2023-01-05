@@ -1,0 +1,162 @@
+Format variables:
+  hsm_base_url = 'http://localhost:8080/apis/smd'
+  ID = 'None'
+  verify = 'False'
+
+Source test stage (line 109):
+  - name: Ensure that we can conduct a query for a specific ID from the state change notifications collection
+    request:
+      url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{ID}"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            mapping:
+              Enabled:
+                type: bool
+                required: False
+              ID:
+                type: int
+                required: True
+              Roles:
+                type: seq
+                required: False
+                matching: all
+                sequence:
+                  - type: str
+              SoftwareStatus:
+                type: seq
+                required: False
+                matching: all
+                sequence:
+                  - type: str
+              States:
+                type: seq
+                required: True
+                matching: all
+                sequence:
+                  - type: str
+                    enum:
+                      - "Empty"
+                      - "empty"
+                      - "Unknown"
+                      - "unknown"
+                      - "Populated"
+                      - "populated"
+                      - "Off"
+                      - "off"
+                      - "On"
+                      - "on"
+                      - "Standby"
+                      - "standby"
+                      - "Halt"
+                      - "halt"
+                      - "Ready"
+                      - "ready"
+              Subscriber:
+                type: str
+                required: True
+              Url:
+                type: str
+                required: True
+
+Formatted stage:
+  name: Ensure that we can conduct a query for a specific ID from the state change notifications
+    collection
+  request:
+    method: GET
+    url: 'http://localhost:8080/apis/smd/hsm/v2/Subscriptions/SCN/None'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            Enabled:
+              required: false
+              type: bool
+            ID:
+              required: true
+              type: int
+            Roles:
+              matching: all
+              required: false
+              sequence:
+              - type: str
+              type: seq
+            SoftwareStatus:
+              matching: all
+              required: false
+              sequence:
+              - type: str
+              type: seq
+            States:
+              matching: all
+              required: true
+              sequence:
+              - enum:
+                - Empty
+                - empty
+                - Unknown
+                - unknown
+                - Populated
+                - populated
+                - 'Off'
+                - 'off'
+                - 'On'
+                - 'on'
+                - Standby
+                - standby
+                - Halt
+                - halt
+                - Ready
+                - ready
+                type: str
+              type: seq
+            Subscriber:
+              required: true
+              type: str
+            Url:
+              required: true
+              type: str
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Ensure that we can conduct a query for a specific ID from the state change notifications collection' failed:
+    - Status code was 400, expected 200:
+        {"type": "about:blank", "title": "Bad Request", "detail": "Invalid id - None", "status": 400}
+    - Error calling validate function '<function validate_pykwalify at 0x7f2a241c96c0>':
+        Traceback (most recent call last):
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Cannot find required key 'ID'. Path: ''.
+         - Cannot find required key 'States'. Path: ''.
+         - Cannot find required key 'Subscriber'. Path: ''.
+         - Cannot find required key 'Url'. Path: ''.
+         - Key 'type' was not defined. Path: ''.
+         - Key 'title' was not defined. Path: ''.
+         - Key 'detail' was not defined. Path: ''.
+         - Key 'status' was not defined. Path: ''.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError
