@@ -129,13 +129,13 @@ jobs:
     - name: Create test results tarball
       shell: bash
       run: |
-        tar -cvf allure-results.tar ./allure
+        tar -cvf "allure-results-${{ github.run_id }}-${{ matrix.csm-release }}.tar" ./allure
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
       with:
         name: allure # TODO need unique name for each matrix job
-        path: allure-results.tar
+        path: allure-results-${{ github.run_id }}-${{ matrix.csm-release }}.tar
         retention-days: 1
 
     # - name: Allure Report action from marketplace
