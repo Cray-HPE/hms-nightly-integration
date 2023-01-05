@@ -120,7 +120,8 @@ jobs:
       run: |
         ./run_tests.py \
           --images-by-csm-release-json images-by-csm-release.json \
-          --csm-release "${CSM_RELEASE}"
+          --csm-release "${CSM_RELEASE}" \
+          --fix-allure-dir-perms
 
     - name: Create test results tarball
       shell: bash
