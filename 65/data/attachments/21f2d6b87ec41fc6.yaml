@@ -1,0 +1,25 @@
+- name: capmcAPIxnameOffPOSTonChassisPrep - Power the target chassis on to prepare it for the test case
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+    json: {"reason":"CT test case: capmcAPIxnameOffPOSTonChassisPrep","xnames":["{chassis_xname}"],"force":false,"recursive":false}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""

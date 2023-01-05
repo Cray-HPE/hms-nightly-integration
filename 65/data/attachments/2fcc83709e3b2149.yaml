@@ -1,0 +1,71 @@
+body:
+  Components:
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b0n0
+    MAC:
+    - 00:40:a6:4c:ff:cf
+    - 00:40:a6:4c:ff:cf
+    NID: 1000
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b0n1
+    MAC:
+    - 00:40:a6:11:aa:11
+    - 00:40:a6:11:aa:11
+    NID: 1001
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b1n0
+    MAC:
+    - 00:40:a6:6a:54:8f
+    - 00:40:a6:6a:54:8f
+    NID: 1002
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b1n1
+    MAC:
+    - 00:40:a6:46:7e:94
+    - 00:40:a6:46:7e:94
+    NID: 1003
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  Params: null
+headers:
+  Connection: keep-alive
+  Content-Length: '975'
+  Content-Type: application/json; charset=UTF-8
+  Date: Thu, 05 Jan 2023 16:32:00 GMT
+  Server: nginx/1.23.3
+redirect_query_params: {}
+status_code: 200

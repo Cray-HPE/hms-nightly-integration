@@ -1,0 +1,69 @@
+body:
+  actionID: fa3ed00b-f903-430d-aa6d-a28141aa8c74
+  blockedBy: []
+  command:
+    description: test_actions CT test description
+    overrideDryrun: false
+    overwriteSameImage: false
+    restoreNotPossibleOverride: false
+    tag: default
+    timeLimit: 120
+    version: latest
+  endTime: 2023-01-05 16:32:17.473626403 +0000 UTC
+  errors:
+  - No Viable Targets
+  operationDetails:
+    aborted:
+      operationKeys: []
+    blocked:
+      operationKeys: []
+    configured:
+      operationKeys: []
+    failed:
+      operationKeys: []
+    inProgress:
+      operationKeys: []
+    initial:
+      operationKeys: []
+    needsVerified:
+      operationKeys: []
+    noOperation:
+      operationKeys: []
+    noSolution:
+      operationKeys: []
+    succeeded:
+      operationKeys: []
+    unknown:
+      operationKeys: []
+    verifying:
+      operationKeys: []
+  parameters:
+    command:
+      description: test_actions CT test description
+      overrideDryrun: false
+      overwriteSameImage: false
+      restoreNotPossibleOverride: false
+      tag: default
+      timeLimit: 120
+      version: latest
+    imageFilter:
+      imageID: 00000000-0000-0000-0000-000000000000
+      overrideImage: false
+    inventoryHardwareFilter: {}
+    stateComponentFilter:
+      xnames:
+      - x1000c0s0b0
+    targetFilter:
+      targets:
+      - BMC
+  snapshotID: 00000000-0000-0000-0000-000000000000
+  startTime: 2023-01-05 16:32:17.432837119 +0000 UTC
+  state: completed
+headers:
+  Connection: keep-alive
+  Content-Length: '1300'
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:32:17 GMT
+  Server: nginx/1.23.3
+redirect_query_params: {}
+status_code: 200

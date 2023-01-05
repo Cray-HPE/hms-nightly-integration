@@ -1,0 +1,11 @@
+- name: capmcAPIxnameOffPATCH - Verify xname_off fails with PATCH method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+    json: {"reason":"CT test case: capmcAPIxnameOffPATCH","xnames":["FAKE"]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    json:
+      e: 405
+      err_msg: "(PATCH) Not Allowed"

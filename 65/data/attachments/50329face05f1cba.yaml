@@ -1,0 +1,10 @@
+allow_redirects: false
+headers: {}
+json:
+  source: hsm
+  xnames:
+  - x1000c0s0b0n0
+method: POST
+stream: false
+url: http://localhost:8080/apis/capmc/capmc/v1/get_xname_status
+verify: false

@@ -1,0 +1,110 @@
+body:
+- Children:
+  - x1000c0
+  Class: Mountain
+  ExtraProperties:
+    Networks:
+      cn:
+        HMN:
+          CIDR: 10.104.0.0/22
+          Gateway: 10.104.0.1
+          VLan: 3001
+        NMN:
+          CIDR: 10.100.0.0/22
+          Gateway: 10.100.0.1
+          VLan: 2001
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: s0
+  Type: comptype_cabinet
+  TypeString: Cabinet
+  Xname: x1000
+- Children:
+  - x1000c0b0
+  - x1000c0s0
+  Class: Mountain
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000
+  Type: comptype_chassis
+  TypeString: Chassis
+  Xname: x1000c0
+- Class: Mountain
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0
+  Type: comptype_chassis_bmc
+  TypeString: ChassisBMC
+  Xname: x1000c0b0
+- Class: Mountain
+  ExtraProperties:
+    '@rie.mockup': EX425
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0
+  Type: comptype_compmod
+  TypeString: ComputeModule
+  Xname: x1000c0s0
+- Class: Mountain
+  ExtraProperties:
+    Aliases:
+    - nid001000
+    NID: 1000
+    Role: Compute
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0s0b0
+  Type: comptype_node
+  TypeString: Node
+  Xname: x1000c0s0b0n0
+- Class: Mountain
+  ExtraProperties:
+    Aliases:
+    - nid001001
+    NID: 1001
+    Role: Compute
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0s0b0
+  Type: comptype_node
+  TypeString: Node
+  Xname: x1000c0s0b0n1
+- Class: Mountain
+  ExtraProperties:
+    Aliases:
+    - nid001002
+    NID: 1002
+    Role: Compute
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0s0b1
+  Type: comptype_node
+  TypeString: Node
+  Xname: x1000c0s0b1n0
+- Class: Mountain
+  ExtraProperties:
+    Aliases:
+    - nid001003
+    NID: 1003
+    Role: Compute
+  LastUpdated: 1672936157
+  LastUpdatedTime: 2023-01-05 16:29:17.173905 +0000 UTC
+  Parent: x1000c0s0b1
+  Type: comptype_node
+  TypeString: Node
+  Xname: x1000c0s0b1n1
+- Class: Mountain
+  LastUpdated: 1672936863
+  LastUpdatedTime: 2023-01-05 16:41:03.289474 +0000 UTC
+  Parent: x9999c7s9
+  Type: comptype_ncard
+  TypeString: NodeBMC
+  Xname: x9999c7s9b8
+headers:
+  Connection: keep-alive
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:41:04 GMT
+  Server: nginx/1.23.3
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

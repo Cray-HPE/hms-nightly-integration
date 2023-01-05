@@ -1,0 +1,26 @@
+ERROR    tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7f88a3c567a0>':
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/schemas/files.py", line 99, in verify_generic
+        verifier = core.Core(
+      File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pykwalify/core.py", line 142, in __init__
+        raise CoreError(u"No source file/data was loaded")
+    pykwalify.errors.CoreError: <CoreError: error code 3: No source file/data was loaded: Path: '/'>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/schemas/files.py", line 99, in verify_generic
+    verifier = core.Core(
+  File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pykwalify/core.py", line 142, in __init__
+    raise CoreError(u"No source file/data was loaded")
+pykwalify.errors.CoreError: <CoreError: error code 3: No source file/data was loaded: Path: '/'>
+ERROR    tavern.response.base:base.py:43 No json in response (wanted to save {'network': '[0].Name'})

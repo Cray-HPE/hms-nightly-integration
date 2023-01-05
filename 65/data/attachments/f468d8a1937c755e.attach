@@ -1,0 +1,93 @@
+Format variables:
+  capmc_base_url = 'http://localhost:8080/apis/capmc'
+  chassis_xname = 'x1000c0'
+  verify = 'False'
+
+Source test stage (line 505):
+  - name: capmcAPIxnameOffPOSTonChassisPrep - Power the target chassis on to prepare it for the test case
+    request:
+      url: "{capmc_base_url}/capmc/v1/xname_on"
+      json: {"reason":"CT test case: capmcAPIxnameOffPOSTonChassisPrep","xnames":["{chassis_xname}"],"force":false,"recursive":false}
+      method: POST
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              "e":
+                type: int
+                required: True
+                enum:
+                  - 0
+              "err_msg":
+                required: True
+                type: str
+                enum:
+                  - ""
+
+
+Formatted stage:
+  name: capmcAPIxnameOffPOSTonChassisPrep - Power the target chassis on to prepare it
+    for the test case
+  request:
+    json:
+      force: false
+      reason: 'CT test case: capmcAPIxnameOffPOSTonChassisPrep'
+      recursive: false
+      xnames:
+      - 'x1000c0'
+    method: POST
+    url: 'http://localhost:8080/apis/capmc/capmc/v1/xname_on'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            e:
+              enum:
+              - 0
+              required: true
+              type: int
+            err_msg:
+              enum:
+              - ''
+              required: true
+              type: str
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'capmcAPIxnameOffPOSTonChassisPrep - Power the target chassis on to prepare it for the test case' failed:
+    - Status code was 504, expected 200
+    - Error calling validate function '<function validate_pykwalify at 0x7f1312727910>':
+        Traceback (most recent call last):
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/requests/models.py", line 971, in json
+            return complexjson.loads(self.text, **kwargs)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/json/__init__.py", line 346, in loads
+            return _default_decoder.decode(s)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/json/decoder.py", line 337, in decode
+            obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/json/decoder.py", line 355, in raw_decode
+            raise JSONDecodeError("Expecting value", s, err.value) from None
+        json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+    
+        During handling of the above exception, another exception occurred:
+    
+        Traceback (most recent call last):
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/testutils/helpers.py", line 96, in validate_pykwalify
+            to_verify = response.json()
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/requests/models.py", line 975, in json
+            raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+        requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

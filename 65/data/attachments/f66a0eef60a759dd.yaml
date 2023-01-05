@@ -1,0 +1,34 @@
+body:
+  ComponentEndpoints:
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s0e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s0b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s0e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s0b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+headers:
+  Connection: keep-alive
+  Content-Length: '771'
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:31:55 GMT
+  Server: nginx/1.23.3
+redirect_query_params: {}
+status_code: 200
