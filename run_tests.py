@@ -212,6 +212,7 @@ if __name__ == "__main__":
     parser.add_argument("--test-config-global", type=str, default="test_config_global.yaml",  help="Global test configuration file")
 
     parser.add_argument("--allure-dir", type=str, default="./allure",  help="Allure output director")
+    parser.add_argument("--fix-allure-dir-perms", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Correct file permissions of allure test report files when running in github actions")
     parser.add_argument("--tests-output-dir", type=str, default="./tests",  help="Directory to store tests")
     
     parser.add_argument("--skip-pull", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping pulling of images. For local dev only")
@@ -327,6 +328,17 @@ if __name__ == "__main__":
     #
     if not args.skip_tests:
         run_tests(test_config_global, tests, allure_dir)
+
+        if args.fix_allure_dir_perms:
+            print("Correcting allure report file perms.")
+            # This is a hack, but the files created by the docker pytest are own by root in the github action runner
+            # for right now just 777 them. 
+            subprocess.run(["sudo", "chmod", "-R", "777", str(allure_dir)])
+            if result.returncode != 0:
+                print("Failed to correct allure report files perms. Exit code {}".format(result.returncode))
+                print("stderr: {}".format(result.stderr))
+                print("stdout: {}".format(result.stdout))
+                exit(1)
 
     #
     # Process test results
