@@ -1,90 +1,31 @@
 #! /usr/bin/env python3
 
-# MIT License
-#
-# (C) Copyright [2023] Hewlett Packard Enterprise Development LP
-#
-# Permission is hereby granted, free of charge, to any person obtaining a
-# copy of this software and associated documentation files (the "Software"),
-# to deal in the Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute, sublicense,
-# and/or sell copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-# OTHER DEALINGS IN THE SOFTWARE.
-import os
-import sys
+import argparse
+import docker
 import json
+import shutil
+import pathlib
+import os
 import subprocess
 import yaml
-import docker
-import tarfile
-import re
-import pathlib
-import shutil
+import multiprocessing as mp
 
-from update_allure_suite_name import update_allure_suite_name, generate_allure_report
+def mp_extract_tests_from_image(image: str, destination_base: str):
+    extract_tests_from_image(docker.from_env(), image, pathlib.Path(destination_base))
 
-# TODO switch to arg parse
-images_by_csm_release = sys.argv[1]
-csm_release = sys.argv[2]
+def extract_tests_from_image(docker_client: docker.DockerClient, image: str, destination_base: pathlib.Path):
+    image_repo, image_tag = image.split(":", 2)
 
-docker_client = docker.from_env()
+    test_path = destination_base.joinpath(f'{os.path.basename(image_repo)}')
+    print(f'Extracting tavern tests from {image} into directory {test_path}')
+    test_path.mkdir(exist_ok=True, parents=True)
 
-
-#
-# Detect tests
-#
-
-# Read in the json file created by the csm_manifest_extractor.py
-images_by_csm_release = None
-with open(sys.argv[1], 'r') as f:
-    images_by_csm_release = json.load(f)
-
-if csm_release not in images_by_csm_release:
-    print(f'Error provided CSM release does not exist in {sys.argv[1]}')
-    exit(1)
-
-images = images_by_csm_release[csm_release]
-
-legacy_ct_images = []
-hmth_images = []
-for image_repo in images:
-    image = f'{image_repo}:{images[image_repo][0]}'
-    if image_repo.endswith("hmth-test"):
-        # This is a HMTH test
-        print(f'Found HMTH test image: {image}')
-        hmth_images.append(image)
-    elif image_repo.endswith("test"):
-        # This is a legacy HMS CT test
-        print(f'Found Legacy CT test image: {image}')
-        legacy_ct_images.append(image)
-
-
-tests_to_run = []
-
-# Pull required images
-for image in legacy_ct_images + hmth_images:
-    print("Pulling", image)
-    docker_client.images.pull(image)
-
-# Inspect each container image to learn what tests it supports
-def list_image_files(docker_client: docker.DockerClient, image: str) -> list[str]:
     # Inspect the container image, without actually running it to determine if this this is a valid image
     container = docker_client.containers.create(image)
     # print(container.id)
     # print(container.name)
 
-    result = subprocess.run(f'docker export {container.name} | tar -t', shell=True, capture_output=True, text=True)
+    result = subprocess.run(f'docker export {container.name} | tar -C {test_path} --strip-components=1 -xvf - src/', shell=True, capture_output=True, text=True)
     if result.returncode != 0:
         print("Failed to extract files from container. Exit code {}".format(result.returncode))
         print("stderr: {}".format(result.stderr))
@@ -93,106 +34,67 @@ def list_image_files(docker_client: docker.DockerClient, image: str) -> list[str
 
     container.remove()
 
-    return result.stdout.splitlines()
+def extract_tests_from_images(docker_client: docker.DockerClient, images: list[str], destination_base: pathlib.Path):
+    if destination_base.exists():
+        shutil.rmtree(destination_base)
 
-tests = {}
+    print("Starting test extraction")
 
+    use_mp = True
+    if use_mp:
+        worker_pool = mp.Pool(mp.cpu_count())
+        for image in images:            
+            worker_pool.apply_async(mp_extract_tests_from_image, args=(image, str(destination_base)), error_callback=lambda x: print(x))
+        
+        worker_pool.close()
+        worker_pool.join() 
+    else:
+        for image in images:
+            extract_tests_from_image(docker_client, image, destination_base)
 
-def detect_tests(images, test_type, wanted_tests):
-    global tests
+    print("Test extraction done")
 
-
-    if test_type not in tests:
-        tests[test_type] = {}
+def detect_test_classes(images: list[str], tests_dir: pathlib.Path, wanted_tests: dict):
+    results = {}
 
     for image in images:
-        print(f'Detecting {test_type} tests in {image}')
+        print(f"Detecting tests in {image}")
+        image_repo, image_tag = image.split(":", 2)
 
-        for file in list_image_files(docker_client, image):
-            if file in wanted_tests:
-                test_class = wanted_tests[file]
-                if test_class not in tests[test_type]:
-                    tests[test_type][test_class] = []
+        for wanted_test in wanted_tests:
+            file = tests_dir.joinpath(os.path.basename(image_repo), wanted_test)
+            if file.exists():
+                print(f"  Found test file: {str(file)}")
+                # We have a match!
+                test_class = wanted_tests[wanted_test]
 
-                tests[test_type][test_class].append(image)
+                if test_class not in results:
+                    results[test_class] = []
+                results[test_class].append(image)
+            else:
+                print(f"  Test file not found: {str(file)}")
 
+    return results
 
-#
-# Run tests from least to most destructive
-#
-test_order = [
-    ("legacy_ct", "smoke"),
-    ("hmth", "smoke"),
-    ("legacy_ct", "functional"),
-    ("hmth", "1-non-disruptive"),
-    ("hmth", "2-disruptive"),
-    # TODO thing about these two cases
-    ("hmth", "3-destructive"),
-    # ("hmth", "4-build-pipeline-only"),
-]
+def run_tests(test_global_test_config: dict, tests: dict, allure_report_dir: pathlib.Path):
+    # Remove existing reports
+    if allure_report_dir.exists():
+        shutil.rmtree(allure_report_dir)
 
-# TODO if running tavern tests locally, then need to detect tests on the files that were extracted
-detect_tests(legacy_ct_images, "legacy_ct", wanted_tests = {
-    "src/app/smoke_test.py": "smoke",
-    "src/app/functional_test.py": "functional"
-})
+    # Build up smoke test lookup map
+    # TODO some stream lining could occur if a better structure was used for information reguarding a test
+    smoke_host_override = {}
+    for service in test_global_test_config["services"]:
+        for image_repo in test_global_test_config["services"][service]["image_repos"]:
+            smoke_host_override[image_repo] = test_global_test_config["services"][service]["url"]["container"]
 
-detect_tests(hmth_images, "hmth", wanted_tests = {
-    "src/app/smoke.json": "smoke",
-    "src/app/api/1-non-disruptive/": "1-non-disruptive",
-    "src/app/api/2-disruptive/": "2-disruptive",
-    "src/app/api/3-destructive/": "3-destructive",
-    "src/app/api/4-build-pipeline-only/": "4-build-pipeline-only"
-})
+    print("Smoke test host overrides")
+    print(json.dumps(smoke_host_override, indent=2))
 
-with open('image_tests.json', 'w') as f:
-    json.dump(tests, f, indent=2)
+    for test in test_global_test_config["test_order"]:
+        test_type = test["test_type"]
+        test_class = test["test_class"]
 
-def run_tests_using_docker():
-    global legacy_ct_images
-    global hmth_images
-    global test_order
-    global tests
-
-    smoke_host_override = {
-        # SLS
-        "artifactory.algol60.net/csm-docker/stable/cray-sls-test":      "http://cray-sls:8376",
-        "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "http://cray-sls:8376",
-
-        # HSM
-        "artifactory.algol60.net/csm-docker/stable/cray-smd-test":      "http://cray-smd:27779",
-        "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "http://cray-smd:27779",
-
-        # CAPMC
-        "artifactory.algol60.net/csm-docker/stable/cray-capmc-test":      "http://cray-capmc:27777",
-        "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "http://cray-capmc:27777",
-
-        # PCS
-        "artifactory.algol60.net/csm-docker/stable/cray-power-control-test":      "http://cray-power-control:28007",
-        "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": "http://cray-power-control:28007",
-
-        # REDS
-        "artifactory.algol60.net/csm-docker/stable/cray-reds-test":      "http://cray-reds:8269",
-        "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "http://cray-reds:8269",
-
-        # BSS
-        "artifactory.algol60.net/csm-docker/stable/cray-bss-test":      "http://cray-bss:27778",
-        "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "http://cray-bss:27778",
-
-        # FAS
-        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-test":      "http://cray-fas:28800",
-        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "http://cray-fas:28800",
-
-        # HBTD
-        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-test":      "http://cray-hbtd:28500",
-        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "http://cray-hbtd:28500",
-
-        # HMNFD
-        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-test":      "http://cray-hmnfd:28600",
-        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "http://cray-hmnfd:28600"
-    }
-
-    for test_type, test_class in test_order:
         print("========================================")
         print(f'Running {test_type}:{test_class} tests')
         print("========================================")
@@ -204,33 +106,43 @@ def run_tests_using_docker():
         if test_class not in tests[test_type]:
             print(f'Skipping! No tests with class "{test_class}" detected')
             continue
-
+        
         for image in tests[test_type][test_class]:
             print(f'Running {image}')
+            image_repo, image_tag = image.split(":", 2)
+            short_name = os.path.basename(image_repo)
+            test_path = pathlib.Path("./tests").joinpath(short_name)
 
-            cmd = None
+            pytest_args = []
 
             if test_type in ["hmth", "legacy_ct"] and test_class == "smoke":
+                pytest_args = ['./smoke', '--smoke-json', str(test_path.joinpath("app", "smoke.json"))]
+                
                 image_repo, image_tag = image.split(":", 2)
-                            
-                cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "smoke", "-f", "smoke.json"]
                 if image_repo in smoke_host_override:
-                    cmd = cmd + ["-u", smoke_host_override[image_repo]]
+                    pytest_args = pytest_args + ['--smoke-url', smoke_host_override[image_repo]]
             elif test_type == "legacy_ct" and test_class == "functional":
-                cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "functional", "-c", "/src/app/tavern_global_config_ct_test.yaml", "-p", '/src/app']
+                # pytest --tavern-global-cfg=tavern_global_config.yaml ./tavern/cray-bss-test --alluredir=./allure/bss
+                pytest_args = ['--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app'))]
             elif test_type == "hmth":
-                # Note there are two tavern configuration files, one from the application repo, and one from HMS test. They have different endpoints defined
-                # - Application Repo: /src/app/tavern_global_config_ct_test.yaml
-                # - HMS Test: /src/libs/tavern_global_config.yaml
-                cmd = ["docker", "run", "--rm", "-it", "--network", "hms-simulation-environment_simulation", image, "tavern", "-c", "/src/app/tavern_global_config_ct_test.yaml", "-p", f'/src/app/api/{test_class}']
+                pytest_args = ['--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app', "api", test_class))]
             else:
                 print(f'Unknown test type {test_type}:{test_class}')
 
-            if cmd is None:
+            if pytest_args is None:
                 print("Skipping unsupported test")
                 continue
 
-            print("Command", cmd)
+            cmd = ["docker", "run", "--rm", "-it", 
+                "--network", "hms-simulation-environment_simulation",   # Connect to the simulation network 
+                "-e", f'PYTHONPATH={str(test_path.joinpath("libs"))}',   # Add additional python lib directories. Some repos have extra python files used by tavern tests
+                "-v", f'{str(allure_dir.absolute())}:/allure-results/', # Location to output the allure results
+                "hms-nightly-integration-test-runner:local",
+                "pytest", "-vvvv", f'--alluredir=/allure-results/{short_name}/{test_class}'
+            ] + pytest_args
+
+            print("Command:", ' '.join(cmd))
+
             result = subprocess.run(cmd, capture_output=True, text=True)
             if result.returncode != 0:
                 # TODO better message
@@ -241,146 +153,192 @@ def run_tests_using_docker():
 
             print(result.stdout)
 
-# run_tests_using_docker()
+def process_allure_reports(allure_report_dir: pathlib.Path):
+    for test_result_path in allure_report_dir.glob("**/*result.json"):
+        test_source = test_result_path.parent.parent.name
+        test_class = test_result_path.parent.name
+        print(f'Processing test result: {str(test_result_path)}') 
+        
+        # Read in test result file
+        test_result = None
+        with open(test_result_path, 'r') as f:
+            test_result = json.load(f)
 
-def extract_tavern_tests():
-    global legacy_ct_images
-    global hmth_images
+        # Fix the suite name, and also add a parent suite. 
+        # This will create an heiarchy of:
+        # service_name:
+        # -> smoke
+        # -> 1-non-disruptive
+        # -> 2-disruptive
+        # etc...
+        parent_suite_exists = False;
+        for label in test_result["labels"]:
+            if label["name"] == "suite":
+                label["value"] = test_class
+            elif label["name"] == "parentSuite":
+                label["value"] = test_source
+                parent_suite_exists = True
 
-    # TODO change this directory to extracted_tests, and make it global
-    tavern_path = pathlib.Path("./tavern")
-    if tavern_path.exists():
-        shutil.rmtree(tavern_path)
+        if not parent_suite_exists:
+            test_result["labels"].append({
+                "name": "parentSuite",
+                "value": test_source
+            })
 
-    for image in legacy_ct_images + hmth_images:
-        image_repo, image_tag = image.split(":", 2)
+        # Hack: Change broken to failed.
+        # Due to how tavern produced exceptions they show up as broken in allure
+        if test_result["status"] == "broken":
+            test_result["status"] = "failed"
 
-        test_path = tavern_path.joinpath(f'{os.path.basename(image_repo)}')
-        print(f'Extracting tavern tests from {image} into directory {test_path}')
-        test_path.mkdir(exist_ok=True, parents=True)
+        # Write the data back out
+        with open(test_result_path, 'w') as f:
+            json.dump(test_result, f, indent=2)
 
-        # Inspect the container image, without actually running it to determine if this this is a valid image
-        container = docker_client.containers.create(image)
-        # print(container.id)
-        # print(container.name)
-
-        result = subprocess.run(f'docker export {container.name} | tar -C {test_path} --strip-components=1 -xvf - src/', shell=True, capture_output=True, text=True)
-        if result.returncode != 0:
-            print("Failed to extract files from container. Exit code {}".format(result.returncode))
-            print("stderr: {}".format(result.stderr))
-            print("stdout: {}".format(result.stdout))
-            exit(1)
-
-        container.remove()
-
-def run_tavern_tests():
-    global legacy_ct_images
-    global hmth_images
-    global test_order
-    global tests
-
-    # TODO somehow link to the tavern config?
-    smoke_host_override = {
-        # SLS
-        "artifactory.algol60.net/csm-docker/stable/cray-sls-test":      "http://localhost:8080/apis/sls",
-        "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "http://localhost:8080/apis/sls",
-
-        # HSM
-        "artifactory.algol60.net/csm-docker/stable/cray-smd-test":      "http://localhost:8080/apis/smd",
-        "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "http://localhost:8080/apis/smd",
-
-        # CAPMC
-        "artifactory.algol60.net/csm-docker/stable/cray-capmc-test":      "http://localhost:8080/apis/capmc",
-        "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "http://localhost:8080/apis/capmc",
-
-        # PCS
-        "artifactory.algol60.net/csm-docker/stable/cray-power-control-test":      "http://localhost:8080/apis/power-control",
-        "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": " http://localhost:8080/apis/power-control",
-
-        # REDS
-        "artifactory.algol60.net/csm-docker/stable/cray-reds-test":      "http://localhost:8080/apis/reds",
-        "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "http://localhost:8080/apis/reds",
-
-        # BSS
-        "artifactory.algol60.net/csm-docker/stable/cray-bss-test":      "http://localhost:8080/apis/bss",
-        "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "http://localhost:8080/apis/bss",
-
-        # FAS
-        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-test":      "http://localhost:8080/apis/fas/v1",
-        "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "http://localhost:8080/apis/fas/v1",
-
-        # HBTD
-        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-test":      "http://localhost:8080/apis/hbtd",
-        "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "http://localhost:8080/apis/hbtd",
-
-        # HMNFD
-        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-test":      "http://localhost:8080/apis/hmnfd",
-        "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "http://localhost:8080/apis/hmnfd"
-    }
-
-
-    tavern_path = pathlib.Path("./allure")
-    if tavern_path.exists():
-        shutil.rmtree(tavern_path)
-
-    for test_type, test_class in test_order:
-        print("========================================")
-        print(f'Running {test_type}:{test_class} tests')
-        print("========================================")
-
-        if test_type not in tests:
-            print(f'Skipping! No tests with type "{test_type}" detected')
+    # Move test reports into toplevel directory
+    for file in allure_report_dir.glob("**/*"):
+        if not file.is_file(): 
             continue
+        destination = allure_report_dir / file.name
+        print(f'Moving {str(file)} -> {str(destination)}')
+        file.rename(destination)
 
-        if test_class not in tests[test_type]:
-            print(f'Skipping! No tests with class "{test_class}" detected')
-            continue
+if __name__ == "__main__":
+    #
+    # Parse CLI flags
+    #
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--images-by-csm-release-json", type=str, default="extractor-output-images_by_csm_release.json", help="Read in the json file created by the csm_manifest_extractor.py")
+    parser.add_argument("--csm-release", type=str, default="main", help="CSM release branch to target")
+    parser.add_argument("--test-config-global", type=str, default="test_config_global.yaml",  help="Global test configuration file")
 
-        for image in tests[test_type][test_class]:
-            print(f'Running {image}')
-            image_repo, image_tag = image.split(":", 2)
-            short_name = os.path.basename(image_repo)
-            test_path = pathlib.Path("./tavern").joinpath(short_name)
+    parser.add_argument("--allure-dir", type=str, default="./allure",  help="Allure output director")
+    parser.add_argument("--tests-output-dir", type=str, default="./tests",  help="Directory to store tests")
+    
+    parser.add_argument("--skip-pull", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping pulling of images. For local dev only")
+    parser.add_argument("--skip-extract", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping extraction of tests. For local dev only")
+    parser.add_argument("--skip-tests", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping running of tests. For local dev only")
 
 
-            cmd = None
-            cmd_env = os.environ.copy()
-            existing_python_path = ""
-            if "PYTHONPATH" in cmd_env:
-                existing_python_path = cmd_env["PYTHONPATH"]
+    args = parser.parse_args()
 
-            cmd_env["PYTHONPATH"] = f'{str(test_path.joinpath("lib"))}:{existing_python_path}'
+    #
+    # Load configuration
+    #
 
-            if test_type in ["hmth", "legacy_ct"] and test_class == "smoke":
-                cmd = ['pytest', 'smoke', '-vvvv', '--smoke-json', str(test_path.joinpath("app", "smoke.json")), f'--alluredir=./allure/{short_name}/smoke']
-                
-                image_repo, image_tag = image.split(":", 2)
-                if image_repo in smoke_host_override:
-                    cmd = cmd + ['--smoke-url', smoke_host_override[image_repo]]
-            elif test_type == "legacy_ct" and test_class == "functional":
-                # pytest --tavern-global-cfg=tavern_global_config.yaml ./tavern/cray-bss-test --alluredir=./allure/bss
-                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app')), f'--alluredir=./allure/{short_name}/{test_class}']
-            elif test_type == "hmth":
-                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app', "api", test_class)), f'--alluredir=./allure/{short_name}/{test_class}']
-            else:
-                print(f'Unknown test type {test_type}:{test_class}')
+    # Read in the json file created by the csm_manifest_extractor.py
+    images_by_csm_release = None
+    with open(args.images_by_csm_release_json, 'r') as f:
+        images_by_csm_release = json.load(f)
 
-            if cmd is None:
-                print("Skipping unsupported test")
-                continue
+    if args.csm_release not in images_by_csm_release:
+        print(f'Error provided CSM release does not exist in {args.images_by_csm_release_json}')
+        exit(1)
 
-            print("Command", cmd)
-            result = subprocess.run(cmd, env=cmd_env, capture_output=True, text=True)
-            if result.returncode != 0:
-                # TODO better message
-                print("Tests failed. Exit code {}".format(result.returncode))
-                print("stderr: {}".format(result.stderr))
-                print("stdout: {}".format(result.stdout))
-                continue
+    images = images_by_csm_release[args.csm_release]
 
-            print(result.stdout)
+    # Global test config
+    test_config_global = None
+    with open(args.test_config_global, 'r') as f:
+        test_config_global = yaml.safe_load(f)
 
-extract_tavern_tests()
-run_tavern_tests()
-update_allure_suite_name("./allure")
-generate_allure_report("./allure")
+    # Docker client
+    docker_client = docker.from_env()
+
+    # Directories
+    allure_dir = pathlib.Path(args.allure_dir)
+    tests_output_dir = pathlib.Path(args.tests_output_dir)
+
+    #
+    # Identify test images
+    #
+    legacy_ct_images = []
+    hmth_images = []
+    for image_repo in images:
+        image = f'{image_repo}:{images[image_repo][0]}'
+        if image_repo.endswith("hmth-test"):
+            # This is a HMTH test
+            print(f'Found HMTH test image: {image}')
+            hmth_images.append(image)
+        elif image_repo.endswith("test"):
+            # This is a legacy HMS CT test
+            print(f'Found Legacy CT test image: {image}')
+            legacy_ct_images.append(image)
+
+    #
+    # Pull required images
+    #
+    if not args.skip_pull:
+        for image in legacy_ct_images + hmth_images:
+            print("Pulling", image)
+            docker_client.images.pull(image)
+
+    #
+    # Extract tests
+    #
+    if not args.skip_extract:
+        extract_tests_from_images(docker_client, legacy_ct_images + hmth_images, tests_output_dir)
+
+    #
+    # Detect tests from test images
+    #
+    tests = {}
+    tests["legacy_ct"] = detect_test_classes(legacy_ct_images, tests_output_dir, wanted_tests = {
+        "app/smoke_test.py":      "smoke",
+        "app/functional_test.py": "functional"
+    })
+
+    tests["hmth"] = detect_test_classes(hmth_images, tests_output_dir, wanted_tests = {
+        "app/smoke.json":                 "smoke",
+        "app/api/1-non-disruptive/":      "1-non-disruptive",
+        "app/api/2-disruptive/":          "2-disruptive",
+        "app/api/3-destructive/":         "3-destructive",
+        "app/api/4-build-pipeline-only/": "4-build-pipeline-only"
+    })
+    
+    with open('image_tests.json', 'w') as f:
+        json.dump(tests, f, indent=2)
+
+    #
+    # Generate tavern config
+    #
+    tavern_config = test_config_global["tavern"].copy()
+    for service in test_config_global["services"]:
+        url = test_config_global["services"][service]["url"]["container"]
+
+        tavern_config["variables"][f'{service.lower()}_base_url'] = url
+
+    with open('tavern_global_config.yaml', 'w') as f:
+        yaml.dump(tavern_config, f)
+
+    #
+    # Build test image
+    #
+    print("Building test image")
+    result = subprocess.run(["docker", "build", ".", "-t", "hms-nightly-integration-test-runner:local"])
+    if result.returncode != 0:
+        print("Failed to build files from container. Exit code {}".format(result.returncode))
+        print("stderr: {}".format(result.stderr))
+        print("stdout: {}".format(result.stdout))
+        exit(1)
+    print("Test image built")
+
+    #
+    # Run tests
+    #
+    if not args.skip_tests:
+        run_tests(test_config_global, tests, allure_dir)
+
+    #
+    # Process test results
+    #
+    process_allure_reports(allure_dir)
+
+    print()
+    print('View allure report locally')
+    print(f'allure serve --host localhost {str(allure_dir)}')
+
+    #
+    # Display summary
+    #
+
+    # TODO look at the allure files and output a simple pass/fail count based on image

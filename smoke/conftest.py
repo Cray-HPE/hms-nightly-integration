@@ -41,6 +41,7 @@ def pytest_generate_tests(metafunc):
                 testdata.append(test_case)
 
                 # Override the string that is shown by pytest to be more informational in log output, instead of 'smoke_test_data0'.
-                ids.append(json.dumps(test_case))
+                ids.append(f'Verify {test_case["method"]} {test_case["path"]}')
+                # ids.append(json.dumps(test_case))
 
         metafunc.parametrize('smoke_test_data', testdata, ids=ids, indirect=False,)

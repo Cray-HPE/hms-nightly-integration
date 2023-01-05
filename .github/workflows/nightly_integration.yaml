@@ -56,12 +56,12 @@ jobs:
       contents: write
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Checkout hms-simulation-environment
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         path: hms-simulation-environment
         repository: Cray-HPE/hms-simulation-environment
@@ -69,7 +69,7 @@ jobs:
         fetch-depth: 0
 
     - name: Get Allure history
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       if: always()
       continue-on-error: true
       with:
@@ -122,16 +122,9 @@ jobs:
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
       run: |
-        ./run_tests.py images-by-csm-release.json "${CSM_RELEASE}"
-
-    - name: Collapse test results
-      shell: bash
-      run: |
-        set -e
-        mkdir -p allure-agg
-        for file in $(find ./allure -type f); do
-          mv -v "$file" ./allure-agg
-        done
+        ./run_tests.py \
+          --images-by-csm-release-json images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}"
 
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
