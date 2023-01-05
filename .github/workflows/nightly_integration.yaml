@@ -126,24 +126,36 @@ jobs:
           --images-by-csm-release-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}"
 
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      id: allure-report
-      with:
-        # TODO does this encode branch info?
-        allure_results: ./allure-agg
-        gh_pages: gh-pages
-        allure_report: allure-report
-        allure_history: allure-history
+    - name: Create test results tarball
+      shell: bash
+      run: |
+        tar -cvf allure-results.tar ./allure
 
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure # TODO need unique name for each matrix job
+        path: allure-results.tar
+        retention-days: 1
+
+    # - name: Allure Report action from marketplace
+    #   uses: simple-elf/allure-report-action@master
+    #   if: always()
+    #   id: allure-report
+    #   with:
+    #     # TODO does this encode branch info?
+    #     allure_results: ./allure-agg
+    #     gh_pages: gh-pages
+    #     allure_report: allure-report
+    #     allure_history: allure-history
+
+    # - name: Deploy report to Github Pages
+    #   if: always()
+    #   uses: peaceiris/actions-gh-pages@v2
+    #   env:
+    #     PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     PUBLISH_BRANCH: gh-pages
+    #     PUBLISH_DIR: allure-history
 
     # Deploy into separate directories with timestamp/branch
     # Prune old directories

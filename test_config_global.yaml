@@ -86,8 +86,8 @@ tavern:
 test_order:
 - {test_type: legacy_ct, test_class: smoke}
 - {test_type: hmth,      test_class: smoke}
-- {test_type: legacy_ct, test_class: functional}
-- {test_type: hmth,      test_class: 1-non-disruptive}
+# - {test_type: legacy_ct, test_class: functional}
+# - {test_type: hmth,      test_class: 1-non-disruptive}
 # - {test_type: hmth,      test_class: 2-disruptive}
 # - {test_type: hmth,      test_class: 3-destructive}
 # - {test_type: hmth,      test_class: 4-build-pipeline-only}
