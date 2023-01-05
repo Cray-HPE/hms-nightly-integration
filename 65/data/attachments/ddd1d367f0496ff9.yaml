@@ -1,0 +1,32 @@
+body:
+  HWInventoryByLocationType: HWInvByLocNodeEnclosure
+  ID: x1000c0s0e0
+  NodeEnclosureLocationInfo:
+    Description: WNC
+    HostName: ''
+    Id: Enclosure
+    Name: Enclosure
+  Ordinal: 0
+  PopulatedFRU:
+    FRUID: NodeEnclosure.HPE.101920703D.LKY1872036820
+    HWInventoryByFRUType: HWInvByFRUNodeEnclosure
+    NodeEnclosureFRUInfo:
+      AssetTag: ''
+      ChassisType: Enclosure
+      Manufacturer: HPE
+      Model: WNC
+      PartNumber: 101920703.D
+      SKU: ''
+      SerialNumber: LKY1872036820
+    Subtype: ''
+    Type: NodeEnclosure
+  Status: Populated
+  Type: NodeEnclosure
+headers:
+  Connection: keep-alive
+  Content-Length: '553'
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:31:54 GMT
+  Server: nginx/1.23.3
+redirect_query_params: {}
+status_code: 200

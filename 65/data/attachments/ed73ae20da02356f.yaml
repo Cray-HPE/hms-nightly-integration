@@ -1,0 +1,103 @@
+body:
+  ServiceEndpoints:
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: EventService
+    RedfishURL: x1000c0b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s0b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s0b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+headers:
+  Connection: keep-alive
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:31:55 GMT
+  Server: nginx/1.23.3
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

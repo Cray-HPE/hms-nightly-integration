@@ -1,0 +1,280 @@
+Format variables:
+  sls_base_url = 'http://localhost:8080/apis/sls'
+  verify = 'False'
+
+Source test stage (line 37):
+  - name: Ensure that the SLS networks can be retrieved
+    request:
+      url: "{sls_base_url}/v1/networks"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: seq
+            matching: all
+            sequence:
+              - type: map
+                mapping:
+                  Name:
+                    type: str
+                  FullName:
+                    type: str
+                  IPRanges:
+                    type: seq
+                    matching: all
+                    sequence:
+                      - type: str
+                        pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+"
+                  Type:
+                    type: str
+                  LastUpdated:
+                    type: int
+                  LastUpdatedTime:
+                    type: str
+                    required: True
+                    pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ \\+[0-9]{{4}} \\+[0-9]{{4}}|[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ \\+[0-9]{{4}} UTC"
+                  ExtraProperties:
+                    type: map
+                    required: False
+                    allowempty: True
+                    mapping:
+                      CIDR:
+                        type: str
+                        required: False
+                        pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+"
+                      MTU:
+                        type: int
+                        required: False
+                      MyASN:
+                        type: int
+                        required: False
+                      PeerASN:
+                        type: int
+                        required: False
+                      Subnets:
+                        type: seq
+                        required: False
+                        matching: all
+                        sequence:
+                          - type: map
+                            allowempty: True
+                            mapping:
+                              CIDR:
+                                type: str
+                                required: False
+                                pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+"
+                              DHCPEnd:
+                                type: str
+                                required: False
+                                pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+                              DHCPStart:
+                                type: str
+                                required: False
+                                pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+                              FullName:
+                                type: str
+                                required: False
+                              Gateway:
+                                type: str
+                                required: False
+                                pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+                              IPReservations:
+                                type: seq
+                                required: False
+                                matching: all
+                                sequence:
+                                  - type: map
+                                    mapping:
+                                      Aliases:
+                                        type: seq
+                                        matching: all
+                                        sequence:
+                                          - type: str
+                                      Comment:
+                                        type: str
+                                      IPAddress:
+                                        type: str
+                                        pattern: "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+                                      Name:
+                                        type: str
+                              MetalLBPoolName:
+                                type: str
+                                required: False
+                              Name:
+                                type: str
+                                required: False
+                              ReservationEnd:
+                                type: str
+                                required: False
+                              ReservationStart:
+                                type: str
+                                required: False
+                              VlanID:
+                                type: int
+                                required: False
+                      SystemDefaultRoute:
+                        type: str
+                        required: False
+                      VlanRange:
+                        type: seq
+                        required: False
+                        matching: all
+                        sequence:
+                          - type: int
+      save:
+        json:
+          network: "[0].Name"
+
+
+
+
+Formatted stage:
+  name: Ensure that the SLS networks can be retrieved
+  request:
+    method: GET
+    url: 'http://localhost:8080/apis/sls/v1/networks'
+    verify: !bool 'False'
+  response:
+    save:
+      json:
+        network: '[0].Name'
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          matching: all
+          sequence:
+          - mapping:
+              ExtraProperties:
+                allowempty: true
+                mapping:
+                  CIDR:
+                    pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+'
+                    required: false
+                    type: str
+                  MTU:
+                    required: false
+                    type: int
+                  MyASN:
+                    required: false
+                    type: int
+                  PeerASN:
+                    required: false
+                    type: int
+                  Subnets:
+                    matching: all
+                    required: false
+                    sequence:
+                    - allowempty: true
+                      mapping:
+                        CIDR:
+                          pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+'
+                          required: false
+                          type: str
+                        DHCPEnd:
+                          pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+'
+                          required: false
+                          type: str
+                        DHCPStart:
+                          pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+'
+                          required: false
+                          type: str
+                        FullName:
+                          required: false
+                          type: str
+                        Gateway:
+                          pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+'
+                          required: false
+                          type: str
+                        IPReservations:
+                          matching: all
+                          required: false
+                          sequence:
+                          - mapping:
+                              Aliases:
+                                matching: all
+                                sequence:
+                                - type: str
+                                type: seq
+                              Comment:
+                                type: str
+                              IPAddress:
+                                pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+'
+                                type: str
+                              Name:
+                                type: str
+                            type: map
+                          type: seq
+                        MetalLBPoolName:
+                          required: false
+                          type: str
+                        Name:
+                          required: false
+                          type: str
+                        ReservationEnd:
+                          required: false
+                          type: str
+                        ReservationStart:
+                          required: false
+                          type: str
+                        VlanID:
+                          required: false
+                          type: int
+                      type: map
+                    type: seq
+                  SystemDefaultRoute:
+                    required: false
+                    type: str
+                  VlanRange:
+                    matching: all
+                    required: false
+                    sequence:
+                    - type: int
+                    type: seq
+                required: false
+                type: map
+              FullName:
+                type: str
+              IPRanges:
+                matching: all
+                sequence:
+                - pattern: '[0-9]+.[0-9]+.[0-9]+.[0-9]+/[0-9]+'
+                  type: str
+                type: seq
+              LastUpdated:
+                type: int
+              LastUpdatedTime:
+                pattern: '[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]+
+                  \+[0-9]{4} \+[0-9]{4}|[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]+
+                  \+[0-9]{4} UTC'
+                required: true
+                type: str
+              Name:
+                type: str
+              Type:
+                type: str
+            type: map
+          type: seq
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Ensure that the SLS networks can be retrieved' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7efeee994430>':
+        Traceback (most recent call last):
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/tavern/schemas/files.py", line 99, in verify_generic
+            verifier = core.Core(
+          File "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pykwalify/core.py", line 142, in __init__
+            raise CoreError(u"No source file/data was loaded")
+        pykwalify.errors.CoreError: <CoreError: error code 3: No source file/data was loaded: Path: '/'>
+    
+    - No json in response (wanted to save {'network': '[0].Name'})
