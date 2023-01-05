@@ -1,0 +1,7 @@
+- name: slsAPILivenessPOST - Ensure that the SLS liveness cannot be posted to
+  request:
+    url: "{sls_base_url}/v1/liveness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

@@ -1,0 +1,18 @@
+body:
+  description: Test group 1 for HSM API testing in CT framework (UPDATED).
+  label: hsmtestgroup1
+  members:
+    ids:
+    - x1000c0s0b0n0
+    - x1000c0s0b0n1
+  tags:
+  - hsmtestgroup1_tag3
+  - hsmtestgroup1_tag4
+headers:
+  Connection: keep-alive
+  Content-Length: '205'
+  Content-Type: application/json
+  Date: Thu, 05 Jan 2023 16:30:11 GMT
+  Server: nginx/1.23.3
+redirect_query_params: {}
+status_code: 200

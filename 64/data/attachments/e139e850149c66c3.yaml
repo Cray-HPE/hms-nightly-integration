@@ -1,0 +1,7 @@
+- name: capmcAPIxnameOnHEAD - Verify xname_on fails with HEAD method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+    method: HEAD
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

@@ -1,0 +1,50 @@
+- name: Verify /groups/label GET method
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroup1"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            label:
+              type: str
+              required: True
+              enum:
+                - "hsmtestgroup1"
+            description:
+              type: str
+              required: True
+              enum:
+                - "Test group 1 for HSM API testing in CT framework."
+            tags:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  enum:
+                    - "hsmtestgroup1_tag1"
+                    - "hsmtestgroup1_tag2"
+            members:
+              type: map
+              required: True
+              mapping:
+                ids:
+                  type: seq
+                  required: True
+                  matching: all
+                  sequence:
+                    - type: str
+                      required: True
+                      enum:
+                        - "{xname1}"
+                        - "{xname2}"
+
+

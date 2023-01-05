@@ -1,0 +1,19 @@
+allow_redirects: false
+headers: {}
+json:
+  command:
+    description: test_actions CT test description
+    overrideDryrun: false
+    tag: default
+    timeLimit: 120
+    version: latest
+  stateComponentFilter:
+    xnames:
+    - x1000c0s0b0
+  targetFilter:
+    targets:
+    - BMC
+method: POST
+stream: false
+url: http://localhost:8080/apis/fas/v1/actions
+verify: false

@@ -1,0 +1,12 @@
+- name: Ensure the boot script service can retrieve a bootscript for a particular nid with the number of retries set to 7
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript?nid=1&retry=7"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_regex
+      extra_kwargs:
+          expression: "retry=8"
+          expression: "ipxe"

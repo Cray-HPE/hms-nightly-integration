@@ -1,0 +1,71 @@
+- name: Ensure that we can conduct a query on the state change notifications collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            SubscriptionList:
+              type: seq
+              matching: all
+              sequence:
+                - type: map
+                  mapping:
+                    Enabled:
+                      type: bool
+                      required: False
+                    ID:
+                      type: int
+                      required: True
+                    Roles:
+                      type: seq
+                      required: False
+                      matching: all
+                      sequence:
+                        - type: str
+                    SoftwareStatus:
+                      type: seq
+                      required: False
+                      matching: all
+                      sequence:
+                        - type: str
+                    States:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: str
+                          enum:
+                            - "Empty"
+                            - "empty"
+                            - "Unknown"
+                            - "unknown"
+                            - "Populated"
+                            - "populated"
+                            - "Off"
+                            - "off"
+                            - "On"
+                            - "on"
+                            - "Standby"
+                            - "standby"
+                            - "Halt"
+                            - "halt"
+                            - "Ready"
+                            - "ready"
+                    Subscriber:
+                      type: str
+                      required: True
+                    Url:
+                      type: str
+                      required: True
+    save:
+      json:
+        ID: SubscriptionList[0].ID
+
+
