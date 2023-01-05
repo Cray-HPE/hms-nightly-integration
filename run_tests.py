@@ -125,9 +125,9 @@ test_order = [
     ("hmth", "smoke"),
     ("legacy_ct", "functional"),
     ("hmth", "1-non-disruptive"),
-    # ("hmth", "2-disruptive"),
+    ("hmth", "2-disruptive"),
     # TODO thing about these two cases
-    # ("hmth", "3-destructive"),
+    ("hmth", "3-destructive"),
     # ("hmth", "4-build-pipeline-only"),
 ]
 
@@ -264,7 +264,7 @@ def extract_tavern_tests():
         # print(container.id)
         # print(container.name)
 
-        result = subprocess.run(f'docker export {container.name} | tar -C {test_path} --strip-components=2 -xvf - src/app', shell=True, capture_output=True, text=True)
+        result = subprocess.run(f'docker export {container.name} | tar -C {test_path} --strip-components=1 -xvf - src/', shell=True, capture_output=True, text=True)
         if result.returncode != 0:
             print("Failed to extract files from container. Exit code {}".format(result.returncode))
             print("stderr: {}".format(result.stderr))
@@ -344,18 +344,24 @@ def run_tavern_tests():
 
 
             cmd = None
+            cmd_env = os.environ.copy()
+            existing_python_path = ""
+            if "PYTHONPATH" in cmd_env:
+                existing_python_path = cmd_env["PYTHONPATH"]
+
+            cmd_env["PYTHONPATH"] = f'{str(test_path.joinpath("lib"))}:{existing_python_path}'
 
             if test_type in ["hmth", "legacy_ct"] and test_class == "smoke":
-                cmd = ['pytest', 'smoke', '-vvvv', '--smoke-json', str(test_path.joinpath("smoke.json")), f'--alluredir=./allure/{short_name}/smoke']
+                cmd = ['pytest', 'smoke', '-vvvv', '--smoke-json', str(test_path.joinpath("app", "smoke.json")), f'--alluredir=./allure/{short_name}/smoke']
                 
                 image_repo, image_tag = image.split(":", 2)
                 if image_repo in smoke_host_override:
                     cmd = cmd + ['--smoke-url', smoke_host_override[image_repo]]
             elif test_type == "legacy_ct" and test_class == "functional":
                 # pytest --tavern-global-cfg=tavern_global_config.yaml ./tavern/cray-bss-test --alluredir=./allure/bss
-                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path), f'--alluredir=./allure/{short_name}/{test_class}']
+                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app')), f'--alluredir=./allure/{short_name}/{test_class}']
             elif test_type == "hmth":
-                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath("api", test_class)), f'--alluredir=./allure/{short_name}/{test_class}']
+                cmd = ['pytest', '-vvvv', '--tavern-global-cfg=tavern_global_config.yaml', str(test_path.joinpath('app', "api", test_class)), f'--alluredir=./allure/{short_name}/{test_class}']
             else:
                 print(f'Unknown test type {test_type}:{test_class}')
 
@@ -364,7 +370,7 @@ def run_tavern_tests():
                 continue
 
             print("Command", cmd)
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            result = subprocess.run(cmd, env=cmd_env, capture_output=True, text=True)
             if result.returncode != 0:
                 # TODO better message
                 print("Tests failed. Exit code {}".format(result.returncode))
