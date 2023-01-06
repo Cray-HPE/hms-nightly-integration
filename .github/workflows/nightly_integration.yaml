@@ -124,14 +124,25 @@ jobs:
           --fix-allure-dir-perms
 
     - name: Create test results tarball
+      id: tarball 
       shell: bash
       run: |
+        tar -cvf "allure-results.tar" ./allure  
+
+    - name: Determine artifact name
+      id: artifact 
+      shell: bash
+      env: 
+        CSM_RELEASE: ${{ matrix.csm-release }}
+      run: |
         tar -cvf "allure-results.tar" ./allure
+
+        echo "name=$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
       with:
-        name: allure-results-${{ github.run_id }}-${{ matrix.csm-release }} # TODO need unique name for each matrix job
+        name: ${{ steps.artifact.outputs.name }}
         path: allure-results.tar
         retention-days: 1
 
