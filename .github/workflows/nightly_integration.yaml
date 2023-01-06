@@ -134,10 +134,11 @@ jobs:
       shell: bash
       env: 
         CSM_RELEASE: ${{ matrix.csm-release }}
+        GITHUB_RUN_ID: ${{ github.run_id } }}
       run: |
         tar -cvf "allure-results.tar" ./allure
 
-        echo "name=$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
+        echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
@@ -149,6 +150,7 @@ jobs:
   generate-reports:
     name: Generate reports
     needs: integration-test
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
@@ -186,3 +188,8 @@ jobs:
     # Perhaps collect results from the matrix-jobs and then update github pages at the same time
     # Also do an amend commit to keep the repo small. 
     # Job summary link to github pages
+    # If no artifact for job run, then report that an issue occured in the job
+    # Root webpage should show the following
+    # - Table of links to the last runers sorted by release branch. Date on the right, and columns for each CSM release
+    #   Each cell should have a count of passed/failed tests. 
+    # - Top of the page should show the status of the last test runs.
