@@ -126,13 +126,13 @@ jobs:
     - name: Create test results tarball
       shell: bash
       run: |
-        tar -cvf "allure-results-${{ github.run_id }}-${{ matrix.csm-release }}.tar" ./allure
+        tar -cvf "allure-results.tar" ./allure
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
       with:
-        name: allure # TODO need unique name for each matrix job
-        path: allure-results-${{ github.run_id }}-${{ matrix.csm-release }}.tar
+        name: allure-results-${{ github.run_id }}-${{ matrix.csm-release }} # TODO need unique name for each matrix job
+        path: allure-results.tar
         retention-days: 1
 
   generate-reports:
@@ -147,6 +147,10 @@ jobs:
     - name: Hello
       shell: bash
       run: echo World
+
+    - uses: actions/download-artifact@v3
+      with:
+        path: artifacts
     # - name: Allure Report action from marketplace
     #   uses: simple-elf/allure-report-action@master
     #   if: always()
@@ -170,3 +174,4 @@ jobs:
     # Prune old directories
     # Perhaps collect results from the matrix-jobs and then update github pages at the same time
     # Also do an amend commit to keep the repo small. 
+    # Job summary link to github pages
