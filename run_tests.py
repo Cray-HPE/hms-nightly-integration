@@ -101,10 +101,8 @@ def run_tests(test_global_test_config: dict, tests: list[dict], allure_report_di
                 "--network", "hms-simulation-environment_simulation",   # Connect to the simulation network 
                 "-v", f'{str(allure_dir.absolute())}:/allure-results/', # Location to output the allure results
                 "-v", f'{str(tavern_global_config_path.absolute())}:/tavern_global_config.yaml', # Tavern configuration
-                image,
-            ] + test_args + [
-                f'--allure-dir=/allure-results/{short_name}/{test_class}'
-            ]
+                "--user", "root"
+            ] + [image] + test_args + [f'--allure-dir=/allure-results/{short_name}/{test_class}']
 
             print("Command:", ' '.join(cmd))
 

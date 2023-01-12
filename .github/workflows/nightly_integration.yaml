@@ -202,7 +202,7 @@ jobs:
         ALLURE_VERSION: 2.20.1
       run: |
         set -ex
-        wget "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-{ALLURE_VERSION}.tgz"
+        wget "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-${ALLURE_VERSION}.tgz"
         tar -xvf "allure-commandline-${ALLURE_VERSION}.tgz"
         mv allure-${ALLURE_VERSION} allure-commandline
 
