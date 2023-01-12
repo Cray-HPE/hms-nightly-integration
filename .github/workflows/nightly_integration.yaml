@@ -64,7 +64,7 @@ jobs:
         EOF
 
         # Merge images
-        jq -s '.[0] * .[1]' extractor-output-images_by_csm_release.json test_test_images.json > images_temp.json
+        jq -s '.[0] * .[1]' extractor-output-images_by_csm_release.json unstable_images.json > images_temp.json
         mv images_temp.json extractor-output-images_by_csm_release.json
         
 
