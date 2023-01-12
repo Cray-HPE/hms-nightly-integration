@@ -122,7 +122,7 @@ jobs:
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
       run: |
-        ./update_docker_compose.py \ 
+        ./update_docker_compose.py \
           --images-by-csm-release images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
           --docker-compose-file ./hms-simulation-environment/docker-compose.yaml
