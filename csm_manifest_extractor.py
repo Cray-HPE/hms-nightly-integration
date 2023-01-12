@@ -85,7 +85,7 @@ if __name__ == '__main__':
             exit(1)
 
 
-    with open("configuration.yaml") as stream:
+    with open("extractor_configuration.yaml") as stream:
         try:
             config = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -94,18 +94,10 @@ if __name__ == '__main__':
 
     g = Github(github_token)
 
-    sleep_duration = os.getenv('SLEEP_DURATION_SECONDS', config["configuration"]["sleep-duration-seconds"])
-    expiration_minutes = os.getenv('TIME_LIMIT_MINUTES', config["configuration"]["time-limit-minutes"])
-    webhook_sleep_seconds = os.getenv('WEBHOOK_SLEEP_SECONDS', config["configuration"]["webhook-sleep-seconds"])
     log_level = os.getenv('LOG_LEVEL', config["configuration"]["log-level"])
 
     logging.basicConfig(level=log_level)
     logging.info("load configuration")
-
-    dry_run = False
-    if os.getenv("DRYRUN", "false").lower() == "true":
-        logging.info("Performing a dry run!")
-        dry_run = True
 
     ####################
     # Download the CSM repo

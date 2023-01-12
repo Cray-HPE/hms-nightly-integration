@@ -31,7 +31,6 @@ jobs:
 
     - name: Extract container images from CSM manifests
       shell: bash
-      id: extract-container-images
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ARTIFACTORY_ALGOL60_READONLY_USERNAME: ${{ secrets.ARTIFACTORY_ALGOL60_READONLY_USERNAME }}
@@ -39,6 +38,40 @@ jobs:
       run: |
         set -eux
         ./csm_manifest_extractor.py
+
+    - name: Add bleeding-edge release
+      shell: bash
+      # TODO the idea of this would be to gather the latest of all HMS charts regardless if they are in a manifest or not
+      # Also this logic can be used for testing to specify images that are not present in a CSM manifest  
+      run: |
+        cat <<EOF > unstable_images.json
+        {
+          "unstable": {
+              "artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test": [
+                "2.7.0-20230112162833.6112bb4"
+              ],
+              "artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test": [
+                "1.22.0-20230112162618.c1b4798"
+              ],
+              "artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test": [
+                "2.0.0-20230112162714.aaeddf6"
+              ],
+              "artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test": [
+                "2.2.0-20230112162745.ca65b47"
+              ]
+          }
+        }
+        EOF
+
+        # Merge images
+        jq -s '.[0] * .[1]' extractor-output-images_by_csm_release.json test_test_images.json > images_temp.json
+        mv images_temp.json extractor-output-images_by_csm_release.json
+        
+
+    - name: Save outputs
+      shell: bash
+      id: extract-container-images # TODO use a better name
+      run: |
         echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json | jq -c)" >> $GITHUB_OUTPUT
         echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys' -c)" >> $GITHUB_OUTPUT
   
@@ -64,14 +97,6 @@ jobs:
         ref: v1
         fetch-depth: 0
 
-    - name: Get Allure history
-      uses: actions/checkout@v3
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
-        
     - name: Store test data
       shell: bash
       env:
@@ -136,7 +161,11 @@ jobs:
         CSM_RELEASE: ${{ matrix.csm-release }}
         GITHUB_RUN_ID: ${{ github.run_id }}
       run: |
-        tar -cvf "allure-results.tar" ./allure
+        set -x
+        REPORT_NAME=$(gdate "+%Y-%m-%d_%H-%M-%S") 
+        mv allure "${REPORT_NAME}"
+
+        tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
 
         echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
@@ -157,13 +186,32 @@ jobs:
       contents: write
 
     steps:
-    - name: Hello
+    - name: Get Github pages site
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Download Allure
       shell: bash
-      run: echo World
+      env:
+        ALLURE_VERSION: 2.20.1
+      run: |
+        set -ex
+        wget "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-{ALLURE_VERSION}.tgz"
+        tar -xvf "allure-commandline-${ALLURE_VERSION}.tgz"
+        mv allure-${ALLURE_VERSION} allure-commandline
 
     - uses: actions/download-artifact@v3
       with:
         path: artifacts
+
+
+    - name: Extract artifacts
+      shell: bash
+      run: | 
+        ls artifacts
+
     # - name: Allure Report action from marketplace
     #   uses: simple-elf/allure-report-action@master
     #   if: always()
