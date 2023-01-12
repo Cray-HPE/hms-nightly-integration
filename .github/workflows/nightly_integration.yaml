@@ -121,7 +121,11 @@ jobs:
       shell: bash
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
-      run: ./update_docker_compose.py images-by-csm-release.json "${CSM_RELEASE}" ./hms-simulation-environment/docker-compose.yaml
+      run: |
+        ./update_docker_compose.py \ 
+          --images-by-csm-release images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}" \
+          --docker-compose-file ./hms-simulation-environment/docker-compose.yaml
 
     # Stand up hms-simulation environment
     - name: Standup simulation environment
