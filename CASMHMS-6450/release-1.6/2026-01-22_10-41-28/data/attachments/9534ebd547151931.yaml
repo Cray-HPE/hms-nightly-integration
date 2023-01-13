@@ -1,0 +1,26 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETnonExistentNode - Attempt to query for Node Hardware Inventory entries with an xname that doesn't exist using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9n9?children=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "NestNodesOnly"
+
+

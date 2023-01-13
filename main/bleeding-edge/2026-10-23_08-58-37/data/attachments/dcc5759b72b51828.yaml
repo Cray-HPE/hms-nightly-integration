@@ -1,0 +1,12 @@
+- name: Attempt to delete a ComponentEndpoint with an invalid ID
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ComponentEndpoints/FAKE"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    json:
+      type: "about:blank"
+      title: "Bad Request"
+      detail: "Argument was not a valid xname ID"
+      status: 400

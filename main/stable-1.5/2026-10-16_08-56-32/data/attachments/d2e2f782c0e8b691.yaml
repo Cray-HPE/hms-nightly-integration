@@ -1,0 +1,14 @@
+- name: Attempt to retrieve all State Change Notification subscriptions when none are present
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            SubscriptionList: null

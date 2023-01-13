@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2026-10-19T08:43:36.863469531Z'
+  createTime: '2026-10-18T08:43:36.863469481Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 2
+    succeeded: 0
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: new
+    taskStatusDescription: Gathering data
+    xname: x1000c0s2b1n1
+  - taskStatus: new
+    taskStatusDescription: Gathering data
+    xname: x1000c0s0b0n0
+  transitionID: 9980cf00-03bd-4c27-b7bf-52fa6be9ca01
+  transitionStatus: in-progress
+headers:
+  Content-Length: '490'
+  Content-Type: application/json
+  Date: Sun, 18 Oct 2026 08:43:36 GMT
+redirect_query_params: {}
+status_code: 200

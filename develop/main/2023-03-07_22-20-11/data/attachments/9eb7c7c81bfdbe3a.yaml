@@ -1,0 +1,44 @@
+body:
+  Format: NestNodesOnly
+  Processors:
+  - HWInventoryByLocationType: HWInvByLocProcessor
+    ID: x9999c7s9b9n9p3
+    Ordinal: 3
+    PopulatedFRU:
+      FRUID: Processor.AdvancedMicroDevicesInc.EWN8203534712
+      HWInventoryByFRUType: HWInvByFRUProcessor
+      ProcessorFRUInfo:
+        InstructionSet: ''
+        Manufacturer: AdvancedMicroDevices,Inc.
+        MaxSpeedMHz: 3525
+        Model: AMDEPYC776364-CoreProcessor
+        Oem: null
+        PartNumber: ''
+        ProcessorArchitecture: ''
+        ProcessorId:
+          EffectiveFamily: '0x19'
+          EffectiveModel: '0x01'
+          IdentificationRegisters: ''
+          MicrocodeInfo: ''
+          Step: '0x1'
+          VendorID: AuthenticAMD
+        ProcessorType: CPU
+        SerialNumber: EWN8203534712
+        TotalCores: 64
+        TotalThreads: 128
+      Subtype: ''
+      Type: Processor
+    ProcessorLocationInfo:
+      Description: ''
+      Id: CPU3
+      Name: Processor
+      Socket: CPU3
+    Status: Populated
+    Type: Processor
+  XName: x9999c7s9b9n9p3
+headers:
+  Content-Length: '872'
+  Content-Type: application/json
+  Date: Tue, 07 Mar 2023 22:12:38 GMT
+redirect_query_params: {}
+status_code: 200

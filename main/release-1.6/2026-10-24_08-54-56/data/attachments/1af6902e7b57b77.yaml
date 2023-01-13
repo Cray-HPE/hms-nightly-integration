@@ -1,0 +1,8 @@
+- name: slsAPIHardwarePUTNewVirtualNode - Create a new entry VirtualNode with put
+  request:
+    url: "{sls_base_url}/v1/hardware/x9999c7s9b8n0v42"
+    method: PUT
+    verify: !bool "{verify}"
+    json: { "Class": "Mountain" }
+  response:
+    status_code: 201

@@ -1,0 +1,64 @@
+- name: Unlock the target Node
+  request:
+    url: "{hsm_base_url}/hsm/v2/locks/unlock"
+    json: {"ComponentIDs":["{node_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Counts:
+              type: map
+              required: True
+              mapping:
+                Total:
+                  type: int
+                  required: True
+                  enum:
+                    - 1
+                Success:
+                  type: int
+                  required: True
+                  enum:
+                    - 1
+                Failure:
+                  type: int
+                  required: True
+                  enum:
+                    - 0
+            Success:
+              type: map
+              required: True
+              mapping:
+                ComponentIDs:
+                  type: seq
+                  required: True
+                  sequence:
+                    - type: str
+                      required: True
+                      enum:
+                        - "{node_xname}"
+            Failure:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  required: False
+                  mapping:
+                    ID:
+                      type: str
+                      required: False
+                    Reason:
+                      type: str
+                      required: False
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(@.Success.ComponentIDs)"
+            operator: "eq"

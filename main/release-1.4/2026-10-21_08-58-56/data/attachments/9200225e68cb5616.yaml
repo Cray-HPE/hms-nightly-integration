@@ -1,0 +1,29 @@
+body:
+  automaticExpirationTime: '2026-10-22T08:58:33.551975105Z'
+  components:
+  - limits:
+      hostLimitMax: 925
+      hostLimitMin: 350
+    powerCapLimits:
+    - currentValue: 350
+      maximumValue: 925
+      minimumValue: 350
+      name: Node Power Limit
+    xname: x1000c0s0b1n1
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 1
+    total: 1
+    un-supported: 0
+  taskCreateTime: '2026-10-21T08:58:33.551975035Z'
+  taskID: 7afe2275-c305-4f08-af39-e830a424a162
+  taskStatus: completed
+  type: snapshot
+headers:
+  Content-Length: '486'
+  Content-Type: application/json
+  Date: Wed, 21 Oct 2026 08:58:33 GMT
+redirect_query_params: {}
+status_code: 200

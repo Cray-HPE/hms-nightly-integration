@@ -1,0 +1,25 @@
+- name: capmcAPIxnameOnPOSTnodeXnameRecursiveAndPrereqActual - Verify xname_on fails with recursive and prereq options
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+    json: {"reason":"CT test case: capmcAPIxnameOnPOSTnodeXnameRecursiveAndPrereqActual","xnames":["{node_xname}"],"force":false,"recursive":true,"prereq":true}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 400
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - "Bad Request: recursive and prereq options are mutually exclusive"

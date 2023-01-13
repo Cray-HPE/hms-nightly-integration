@@ -1,0 +1,7 @@
+- name: Ensure that power-status correctly handles unsupported PUT operations
+  request:
+    url: "{pcs_base_url}/power-status"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

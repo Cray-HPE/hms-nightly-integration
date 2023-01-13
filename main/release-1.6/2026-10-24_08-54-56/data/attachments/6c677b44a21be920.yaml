@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2026-10-25T08:38:12.285738453Z'
+  createTime: '2026-10-24T08:38:12.285738393Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Unable to reserve component
+    taskStatus: failed
+    taskStatusDescription: Failed to achieve transition
+    xname: x1000c0s0b0n0
+  transitionID: 55f3db7c-8c77-4b78-bc62-95e594056e85
+  transitionStatus: in-progress
+headers:
+  Content-Length: '459'
+  Content-Type: application/json
+  Date: Sat, 24 Oct 2026 08:38:12 GMT
+redirect_query_params: {}
+status_code: 200

@@ -1,0 +1,36 @@
+- name: Get all nodes in the 'on' or 'off' states
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"filter": "show_on|show_off", "source": "hsm"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(keys(@))"
+            operator: "lt"
+            expected: 5
+          - jmespath: "length(keys(@))"
+            operator: "gt"
+            expected: 1
+          - jmespath: "contains(keys(@), 'halt')"
+            operator: "eq"
+            expected: False
+          - jmespath: "contains(keys(@), 'standby')"
+            operator: "eq"
+            expected: False
+          - jmespath: "contains(keys(@), 'ready')"
+            operator: "eq"
+            expected: False
+          - jmespath: "contains(keys(@), 'disabled')"
+            operator: "eq"
+            expected: False
+          - jmespath: "contains(keys(@), 'e')"
+            operator: "eq"
+            expected: True
+          - jmespath: "contains(keys(@), 'err_msg')"
+            operator: "eq"
+            expected: True

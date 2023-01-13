@@ -1,0 +1,15 @@
+allow_redirects: false
+headers: {}
+json:
+  description: Test partition 2 for HSM API testing in CT framework.
+  members:
+    ids:
+    - x1000c0s7b0n0
+  name: p99
+  tags:
+  - p99_tag1
+  - p99_tag2
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/partitions
+verify: false

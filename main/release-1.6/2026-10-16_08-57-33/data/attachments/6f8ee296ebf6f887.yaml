@@ -1,0 +1,10 @@
+allow_redirects: false
+headers: {}
+json:
+  reason: 'CT test case: capmcAPIxnameOnPUT'
+  xnames:
+  - FAKE
+method: PUT
+stream: false
+url: http://cray-capmc:27777/capmc/v1/xname_on
+verify: false

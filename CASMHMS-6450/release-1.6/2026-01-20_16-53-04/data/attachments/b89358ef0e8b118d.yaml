@@ -1,0 +1,19 @@
+- name: Create {type} component using POST with system role information
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      Components:
+      - ID: "{xname}"
+        State: Populated
+        Role: Management
+        SubRole: Worker
+        NID: 9999999977
+        Class: River
+        Arch: X86
+        NetType: "Sling"
+
+  response:
+    status_code: 204
+

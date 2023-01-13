@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTnodeBMC - Create a NodeBMC Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7s9b9","Type":"NodeBMC","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocNodeBMC","NodeBMCLocationInfo":{"DateTime":"2022-10-17T16:22:13+00:00","DateTimeLocalOffset":"+00:00","Description":"ShastaManager","FirmwareVersion":"","Id":"BMC","Name":"BMC"},"PopulatedFRU":{"FRUID":"FRUIDforx9999c7s9b9","Type":"NodeBMC","Subtype":"","HWInventoryByFRUType":"HWInvByFRUNodeBMC","NodeBMCFRUInfo":{"ManagerType":"EnclosureManager","Model":"","Manufacturer":"","PartNumber":"","SerialNumber":""}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

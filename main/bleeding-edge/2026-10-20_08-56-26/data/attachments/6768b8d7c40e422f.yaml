@@ -1,0 +1,8 @@
+- name: Ensure that all ComponentEndpoints can be deleted
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ComponentEndpoints"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+

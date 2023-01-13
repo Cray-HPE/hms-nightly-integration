@@ -1,0 +1,82 @@
+- name: hsmAPIstateComponentsGETroleParamStorage - Retrieve Storage Components using GET and the role query parameter.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?role=Storage"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n4"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"
+                    State:
+                      type: str
+                      required: True
+                      enum:
+                        - "On"
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "Alert"
+                    Enabled:
+                      type: bool
+                      required: True
+                    SoftwareStatus:
+                      type: str
+                      required: True
+                      enum:
+                        - "TestStatus4"
+                    Role:
+                      type: str
+                      required: True
+                      enum:
+                        - "Storage"
+                    SubRole:
+                      type: str
+                      required: True
+                      enum:
+                        - "Worker"
+                    NID:
+                      type: int
+                      required: True
+                      enum:
+                        - 9999999994
+                    NetType:
+                      type: str
+                      required: True
+                      enum:
+                        - "None"
+                    Arch:
+                      type: str
+                      required: True
+                      enum:
+                        - "Other"
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "Mountain"
+
+

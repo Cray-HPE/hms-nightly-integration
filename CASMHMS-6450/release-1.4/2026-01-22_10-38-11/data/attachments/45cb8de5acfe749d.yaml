@@ -1,0 +1,26 @@
+- name: Ensure that we can conduct a query on the memberships collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/memberships"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+            - type: map
+              matching: all
+              mapping:
+                groupLabels:
+                  type: seq
+                  matching: all
+                  sequence:
+                    - type: str
+                id:
+                  type: str
+                partitionName:
+                  type: str

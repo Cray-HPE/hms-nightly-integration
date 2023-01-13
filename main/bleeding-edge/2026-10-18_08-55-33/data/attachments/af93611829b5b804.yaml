@@ -1,0 +1,10 @@
+- name: hsmAPIserviceValuesPUT - Attempt an unsupported PUT operation on the service values endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 404
+
+

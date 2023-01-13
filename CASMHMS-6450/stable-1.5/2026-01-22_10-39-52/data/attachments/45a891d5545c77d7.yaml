@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  hosts:
+  - x1000c0s5b0n0
+  initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+  kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+  params: console=tty0
+method: PUT
+stream: false
+url: http://cray-bss:27778/boot/v1/bootparameters
+verify: false

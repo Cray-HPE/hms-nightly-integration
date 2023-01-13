@@ -1,0 +1,25 @@
+- name: hsmAPIserviceReadyGET - Retrieve the HSM readiness status using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/ready"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "HSM is healthy"
+
+

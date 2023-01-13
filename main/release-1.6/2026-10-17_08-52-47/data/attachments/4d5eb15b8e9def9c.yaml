@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTchassis - Create a Chassis Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7","Type":"Chassis","Ordinal":7,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocChassis","ChassisLocationInfo":{"Id":"Enclosure","Name":"Enclosure","Description":"CMM","HostName":""},"PopulatedFRU":{"FRUID":"Chassis.HPE.101426404D.IMZ2409069079","Type":"Chassis","Subtype":"","HWInventoryByFRUType":"HWInvByFRUChassis","ChassisFRUInfo":{"AssetTag":"","ChassisType":"Enclosure","Model":"CMM","Manufacturer":"HPE","PartNumber":"101426404.D","SerialNumber":"IMZ2409069079","SKU":""}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

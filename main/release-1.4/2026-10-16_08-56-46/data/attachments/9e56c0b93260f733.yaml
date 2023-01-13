@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2026-10-17T08:37:13.485145701Z'
+  createTime: '2026-10-16T08:37:13.485145621Z'
+  operation: Hard-Restart
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: context deadline exceeded
+    taskStatus: failed
+    taskStatusDescription: Failed to confirm transition
+    xname: x1000c0s5b0n1
+  transitionID: d82a4a3b-f0e4-402a-aa6f-51f30e0e6faf
+  transitionStatus: completed
+headers:
+  Content-Length: '458'
+  Content-Type: application/json
+  Date: Fri, 16 Oct 2026 08:38:21 GMT
+redirect_query_params: {}
+status_code: 200

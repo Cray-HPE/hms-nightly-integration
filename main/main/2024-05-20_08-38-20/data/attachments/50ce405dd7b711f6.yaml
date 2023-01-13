@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSThsnBoard - Create an HSNBoard Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7r9e9","Type":"HSNBoard","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocHSNBoard","HSNBoardLocationInfo":{"Id":"Enclosure","Name":"Enclosure","Description":"HPE_Slingshot_1_Switch_Blade","HostName":""},"PopulatedFRU":{"FRUID":"HSNBoard.HPE.102000002A.HER1920112770","Type":"HSNBoard","Subtype":"","HWInventoryByFRUType":"HWInvByFRUHSNBoard","HSNBoardFRUInfo":{"AssetTag":"","ChassisType":"Enclosure","Model":"HPE_Slingshot_1_Switch_Blade","Manufacturer":"HPE","PartNumber":"102000002.A","SerialNumber":"HER1920112770","SKU":""}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

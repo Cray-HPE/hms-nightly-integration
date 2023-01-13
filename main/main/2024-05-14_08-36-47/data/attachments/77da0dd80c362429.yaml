@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  components:
+  - controls:
+    - name: Node Power Limit
+      value: 925
+    xname: x1000c0s6b0n1
+method: PATCH
+stream: false
+url: http://cray-power-control:28007/power-cap
+verify: false

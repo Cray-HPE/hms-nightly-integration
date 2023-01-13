@@ -1,0 +1,7 @@
+- name: slsAPISearchNetworksNotFound - Search the networks for a unfound params
+  request:
+    url: "{sls_base_url}/v1/search/networks?type=invalid"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 500
