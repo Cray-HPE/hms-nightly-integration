@@ -1,0 +1,9 @@
+- name: hsmAPIserviceLivenessDELETE - Attempt an unsupported DELETE operation on the service liveness endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/liveness"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+
+

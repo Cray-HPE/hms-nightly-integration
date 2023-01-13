@@ -1,0 +1,8 @@
+- name: Ensure that /scn rejects unsupported PUT operations
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/scn"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

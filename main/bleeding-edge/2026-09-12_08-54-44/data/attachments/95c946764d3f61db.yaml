@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - X86
+  - ARM
+  - UNKNOWN
+  - Other
+  Class:
+  - River
+  - Mountain
+  - Hill
+  Flag:
+  - OK
+  - Warning
+  - Warning
+  - Alert
+  - Locked
+  - Unknown
+  NetType:
+  - OEM
+  - None
+  - Sling
+  - Infiniband
+  - Ethernet
+  Role:
+  - Service
+  - System
+  - Application
+  - Storage
+  - Management
+  - Compute
+  State:
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  - Unknown
+  - Empty
+  - Populated
+  - 'Off'
+  SubRole:
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Master
+  - Worker
+  - Storage
+  - UAN
+  - Gateway
+  Type:
+  - INVALID
+  - All
+  - AllComp
+  - CabinetPDUOutlet
+  - CabinetPDUPowerConnector
+  - ComputeModule
+  - StorageGroup
+  - NodePowerConnector
+  - System
+  - CDU
+  - RouterFpga
+  - HSNConnectorPort
+  - MgmtSwitch
+  - CabinetPDUController
+  - CabinetPDU
+  - Cabinet
+  - Chassis
+  - ChassisBMC
+  - Drive
+  - NodeAccel
+  - RouterModule
+  - CEC
+  - ChassisBMCNic
+  - NodeEnclosure
+  - Node
+  - Processor
+  - RouterBMC
+  - RouterPowerConnector
+  - MgmtSwitchConnector
+  - CabinetCDU
+  - CabinetPDUNic
+  - CMMRectifier
+  - NodeFpga
+  - HSNBoard
+  - VirtualNode
+  - RouterBMCNic
+  - HSNLink
+  - CabinetBMC
+  - CMMFpga
+  - NodeBMC
+  - NodeBMCNic
+  - NodeEnclosurePowerSupply
+  - NodeAccelRiser
+  - Memory
+  - HSNAsic
+  - AllSvc
+  - Partition
+  - CDUMgmtSwitch
+  - NodeHsnNic
+  - RouterTOR
+  - HSNConnector
+  - MgmtHLSwitchEnclosure
+  - SMSBox
+  - NodeNic
+  - RouterTORFpga
+  - MgmtHLSwitch
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Sat, 12 Sep 2026 08:26:07 GMT
+redirect_query_params: {}
+status_code: 200

@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  ReservationDuration: 16
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/service/reservations
+verify: false

@@ -1,0 +1,11 @@
+- name: hsmAPIstateComponentsGET - Retrieve all Components using GET after a Node Component has been created.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Components: !anything
+
+

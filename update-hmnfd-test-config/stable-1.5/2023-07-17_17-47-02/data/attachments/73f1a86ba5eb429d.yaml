@@ -1,0 +1,33 @@
+body:
+  ComputeModules:
+  - ComputeModuleLocationInfo:
+      Description: ''
+      HostName: ''
+      Id: Blade9
+      Name: Blade9
+    HWInventoryByLocationType: HWInvByLocComputeModule
+    ID: x9999c7s9
+    Ordinal: 9
+    PopulatedFRU:
+      ComputeModuleFRUInfo:
+        AssetTag: ''
+        ChassisType: Blade
+        Manufacturer: HPE
+        Model: Blade9
+        PartNumber: ''
+        SKU: ''
+        SerialNumber: ''
+      FRUID: FRUIDforx9999c7s9
+      HWInventoryByFRUType: HWInvByFRUComputeModule
+      Subtype: ''
+      Type: ComputeModule
+    Status: Populated
+    Type: ComputeModule
+  Format: NestNodesOnly
+  XName: x9999c7s9
+headers:
+  Content-Length: '558'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 17:20:42 GMT
+redirect_query_params: {}
+status_code: 200

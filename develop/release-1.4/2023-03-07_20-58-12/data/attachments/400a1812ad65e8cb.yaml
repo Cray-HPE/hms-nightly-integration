@@ -1,0 +1,36 @@
+- name: Retrieve the hardware information for a given node enclosure xname from the Hardware collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/{node_enclosure_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      HWInventoryByLocationType: "HWInvByLocNodeEnclosure"
+      ID: "{node_enclosure_xname}"
+      NodeEnclosureLocationInfo:
+        Description: !anystr
+        HostName: !anystr
+        Id: !anystr
+        Name: !anystr
+      Ordinal: !anyint
+      PopulatedFRU:
+        FRUID: !anystr
+        HWInventoryByFRUType: "HWInvByFRUNodeEnclosure"
+        NodeEnclosureFRUInfo:
+          AssetTag: !anystr
+          ChassisType: !anystr
+          Manufacturer: !anystr
+          Model: !anystr
+          PartNumber: !anystr
+          SKU: !anystr
+          SerialNumber: !anystr
+        Subtype: !anything
+        Type: "NodeEnclosure"
+      Status: !anystr
+      Type: "NodeEnclosure"
+    save:
+      json:
+        FRUID: PopulatedFRU.FRUID
+
+

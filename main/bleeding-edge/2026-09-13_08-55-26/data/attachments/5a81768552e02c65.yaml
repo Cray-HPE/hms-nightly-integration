@@ -1,0 +1,10 @@
+- name: hsmAPIserviceReadyPATCH - Attempt an unsupported PATCH operation on the service readiness endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/ready"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 404
+
+

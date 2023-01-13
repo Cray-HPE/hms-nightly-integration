@@ -1,0 +1,10 @@
+- name: Retrieve a NodeBMC in the Ready state from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=NodeBMC&state=Ready"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        bmc_xname: Components[0].ID

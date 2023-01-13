@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSTnodeEnclosure - Create a NodeEnclosure Component using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9e9","Type":"NodeEnclosure","State":"On","Flag":"OK","Enabled":false,"NetType":"Sling","Arch":"X86","Class":"Mountain"}],"Force":false}
+  response:
+    status_code: 204
+
+

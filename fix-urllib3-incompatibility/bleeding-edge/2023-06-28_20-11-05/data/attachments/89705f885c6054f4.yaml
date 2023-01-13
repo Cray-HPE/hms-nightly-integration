@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  source: hsm
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/get_xname_status
+verify: false

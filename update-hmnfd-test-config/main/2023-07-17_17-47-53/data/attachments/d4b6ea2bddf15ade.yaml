@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2023-07-18T17:24:23.59233516Z'
+  createTime: '2023-07-17T17:24:23.59233506Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 0
+    in-progress: 2
+    new: 0
+    succeeded: 0
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, forceoff
+    xname: x1000c0s5b1n1
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, forceoff
+    xname: x1000c0s5b1n0
+  transitionID: cfbc9889-9530-499b-8e82-8478512f067a
+  transitionStatus: in-progress
+headers:
+  Content-Length: '560'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 17:24:28 GMT
+redirect_query_params: {}
+status_code: 200

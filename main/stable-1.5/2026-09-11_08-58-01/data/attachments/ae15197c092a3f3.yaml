@@ -1,0 +1,28 @@
+- name: capmcAPIxnameReinitPOSTmultipleOnComputeNodesActual - Restart the target nodes using xname_reinit
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_reinit"
+
+    json: {"reason":"CT test case: capmcAPIxnameReinitPOSTmultipleOnComputeNodesActual","xnames":["{node_1_xname}","{node_2_xname}"],"force":false}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""
+
+

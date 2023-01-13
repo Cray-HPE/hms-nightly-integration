@@ -1,0 +1,69 @@
+- name: Verify that we can query for a specific Node xname using the Component Query API
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/Query/{xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Components:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  mapping:
+                    Arch:
+                      type: str
+                      required: True
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "River"
+                        - "Mountain"
+                        - "Hill"
+                    Enabled:
+                      type: bool
+                      required: True
+                    Flag:
+                      type: str
+                      required: True
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "{xname}"
+                    Locked:
+                      type: bool
+                      required: False
+                    NID:
+                      type: int
+                      required: True
+                    NetType:
+                      type: str
+                      required: True
+                    Role:
+                      type: str
+                      required: True
+                    SoftwareStatus:
+                      type: str
+                      required: False
+                    State:
+                      type: str
+                      required: True
+                    SubRole:
+                      type: str
+                      required: False
+                    Subtype:
+                      type: str
+                      required: False
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"

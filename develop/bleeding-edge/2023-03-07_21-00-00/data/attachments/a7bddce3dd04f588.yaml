@@ -1,0 +1,25 @@
+- name: capmcAPIxnameReinitPOSTlockedNodeActual - Verify xname_reinit fails for Node that is already locked
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_reinit"
+    json: {"reason":"CT test case: capmcAPIxnameReinitPOSTlockedNodeActual","xnames":["{node_xname}"],"force":true}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 37
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - "Error: Failed to reserve components while performing a ForceRestart."

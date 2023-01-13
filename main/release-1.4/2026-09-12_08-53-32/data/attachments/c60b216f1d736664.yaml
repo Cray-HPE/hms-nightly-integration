@@ -1,0 +1,115 @@
+- name: capmcAPIGetXnameStatusPOSTnode - Validate response has proper number of json fields and valid fields (HSM)
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"source": "hsm", "xnames":["{node_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          allowempty: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""
+            "on":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "off":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "undefined":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "halt":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "standby":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "ready":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "disabled":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "empty":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "populated":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "flags":
+              type: map
+              required: False
+              allowempty: True
+              mapping:
+                key:
+                  type: seq
+                  matching: all
+                  required: False
+                  sequence:
+                    - type: str
+                      unique: True
+                warning:
+                  type: seq
+                  matching: all
+                  required: False
+                  sequence:
+                    - type: str
+                      unique: True
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+
+          - jmespath: "length(keys(@))"
+            operator: "gt"
+            expected: 2

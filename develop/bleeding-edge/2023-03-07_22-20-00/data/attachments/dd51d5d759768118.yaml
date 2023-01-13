@@ -1,0 +1,11 @@
+- name: Delete Service Endpoints for xname
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints/{service}/RedfishEndpoints/{xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      code: 0
+      message: deleted 1 entry
+

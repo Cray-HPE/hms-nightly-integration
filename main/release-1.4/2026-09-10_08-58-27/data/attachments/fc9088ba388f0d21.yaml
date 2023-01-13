@@ -1,0 +1,66 @@
+- name: hsmAPILocksServiceReservationsCheckPOST - Check 2 reservations
+  request:
+    url: "{hsm_base_url}/hsm/v2/locks/service/reservations/check"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"DeputyKeys":[{"ID":"{service_key_data_0.ID}","Key":"{service_key_data_0.DeputyKey}"},{"ID":"{service_key_data_1.ID}","Key":"{service_key_data_1.DeputyKey}"}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Success:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "{service_key_data_0.ID}"
+                        - "{service_key_data_1.ID}"
+                    DeputyKey:
+                      type: str
+                      required: True
+                      enum:
+                        - "{service_key_data_0.DeputyKey}"
+                        - "{service_key_data_1.DeputyKey}"
+                    CreationTime:
+                      type: str
+                      required: True
+                    ExpirationTime:
+                      type: str
+                      required: True
+            Failure:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  required: False
+                  mapping:
+                    ID:
+                      type: str
+                      required: False
+                    Reason:
+                      type: str
+                      required: False
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(@.Success)"
+            operator: "eq"
+            expected: 2
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(@.Failure)"
+            operator: "eq"
+            expected: 0
+

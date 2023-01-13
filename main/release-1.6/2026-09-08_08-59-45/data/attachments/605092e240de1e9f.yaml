@@ -1,0 +1,8 @@
+- name: Ensure that /params rejects unsupported PUT operations
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/params"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

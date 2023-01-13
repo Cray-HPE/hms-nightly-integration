@@ -1,0 +1,11 @@
+- name: capmcAPIxnameOnPOSTmultipleOffComputeNodesTargets - Retrieve two compute nodes from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute&locked=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_1_xname: Components[0].ID
+        node_2_xname: Components[1].ID

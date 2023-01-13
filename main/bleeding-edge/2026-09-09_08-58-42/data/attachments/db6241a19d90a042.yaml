@@ -1,0 +1,17 @@
+- name: capmcAPISetPowerCap - setup2 - get_power_cap_capabilities
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_power_cap_capabilities"
+    json:
+      nids:
+        - !int "{nid0:d}"
+        - !int "{nid1:d}"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        min0: groups[0].host_limit_min
+        max0: groups[0].host_limit_max
+        min1: groups[0].host_limit_min
+        max1: groups[0].host_limit_max

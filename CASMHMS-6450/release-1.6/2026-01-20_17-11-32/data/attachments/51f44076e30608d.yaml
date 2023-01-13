@@ -1,0 +1,23 @@
+- name: bad upload to loadstate
+  request:
+    url: "{sls_base_url}/v1/loadstate"
+    method: POST
+    files:
+      name: "/src/app/api/2-disruptive/dumpstate.bad.json"
+  response:
+    status_code: 400
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+Format variables:
+  transition_hard-restart_num_attempts = '62'
+  transition_hard-restart_poll_interval = '1'
+  pcs_base_url = 'http://cray-power-control:28007'
+  transition_id_actual = '01f1d01e-30c5-4cf0-9e74-832fd5df0860'
+  verify = 'False'
+
+Source test stage (line 259):
+  - name: Poll until the hard-restart transition operation has completed
+    max_retries: !int "{transition_hard-restart_num_attempts}"
+    delay_after: !float "{transition_hard-restart_poll_interval}"
+    request:
+      url: "{pcs_base_url}/transitions/{transition_id_actual}"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+
+            allowempty: True
+            mapping:
+              transitionStatus:
+                type: str
+                required: True
+                enum:
+                  - "completed"
+
+
+Formatted stage:
+  delay_after: !float '1'
+  max_retries: !int '62'
+  name: Poll until the hard-restart transition operation has completed
+  request:
+    method: GET
+    url: 'http://cray-power-control:28007/transitions/01f1d01e-30c5-4cf0-9e74-832fd5df0860'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          allowempty: true
+          mapping:
+            transitionStatus:
+              enum:
+              - completed
+              required: true
+              type: str
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Poll until the hard-restart transition operation has completed' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7fc859a52a60>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Enum 'in-progress' does not exist. Path: '/transitionStatus' Enum: ['completed'].: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError
