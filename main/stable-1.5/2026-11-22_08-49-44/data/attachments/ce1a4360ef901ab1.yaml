@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2026-11-23T08:23:00.946900814Z'
+  createTime: '2026-11-22T08:23:00.946900659Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 2
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: succeeded
+    taskStatusDescription: Transition confirmed, forceoff
+    xname: x1000c0s7b0n0
+  - taskStatus: succeeded
+    taskStatusDescription: Transition confirmed, forceoff
+    xname: x1000c0s7b0n1
+  transitionID: 2dc8ad9e-8d09-496c-9293-463b666e20f0
+  transitionStatus: completed
+headers:
+  Content-Length: '532'
+  Content-Type: application/json
+  Date: Sun, 22 Nov 2026 08:23:16 GMT
+redirect_query_params: {}
+status_code: 200

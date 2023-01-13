@@ -1,0 +1,58 @@
+- name: capmcAPIGetPowerCapCapabilities - test3 - POST get_power_cap_capabilities - nonexistent nid - failure test
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_power_cap_capabilities"
+    json:
+      nids:
+        - 1300200100
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+
+
+
+
+
+
+
+
+
+
+
+
+        schema:
+          type: map
+          mapping:
+            e:
+              type: int
+              required: True
+              enum:
+                - 22
+            err_msg:
+              type: str
+              required: True
+              pattern: "Invalid argument"
+            nids:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                -  type: map
+                   mapping:
+                     nid:
+                       type: int
+                       required: true
+                       enum:
+                         - 1300200100
+                     e:
+                       type: int
+                       required: True
+                       enum:
+                         - 22
+                     err_msg:
+                       type: str
+                       required: True
+                       pattern: "Undefined NID"

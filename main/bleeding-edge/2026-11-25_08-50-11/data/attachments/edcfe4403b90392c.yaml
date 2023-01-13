@@ -1,0 +1,58 @@
+- name: Verify {type} component was successfully created using POST with no system role information
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            ID:
+              type: str
+              enum:
+              - "{xname}"
+            Type:
+              type: str
+              enum:
+              - "{type}"
+            State:
+              type: str
+              enum:
+              - Populated
+            Flag:
+              type: str
+              enum:
+              - OK
+            Enabled:
+              type: bool
+              enum:
+              - True
+            Role:
+              type: str
+              enum:
+              - "Application"
+            SubRole:
+              type: str
+              enum:
+              - "Storage"
+            NID:
+              type: int
+              enum:
+              - 9999999967
+            Class:
+              type: str
+              enum:
+              - "River"
+            Arch:
+              type: str
+              enum:
+              - "X86"
+            NetType:
+              type: str
+              enum:
+              - "Sling"
+

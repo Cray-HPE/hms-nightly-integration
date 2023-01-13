@@ -1,0 +1,28 @@
+- name: hsmAPIserviceValuesArchGET - Retrieve the valid HSM service arch values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values/arch"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Arch:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "ARM"
+                    - "Other"
+                    - "UNKNOWN"
+                    - "X86"
+
+

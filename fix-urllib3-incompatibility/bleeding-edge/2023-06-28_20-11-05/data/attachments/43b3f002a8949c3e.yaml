@@ -1,0 +1,24 @@
+body:
+  Enabled: true
+  ID: 3
+  Roles:
+  - compute
+  - service
+  SoftwareStatus:
+  - SCN subscription for CT testing.
+  States:
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  Subscriber: test-hmnfd-9z9z999zzz-9zz9z_9
+  Url: http://test-hmnfd/hmi/v1/scn
+headers:
+  Content-Length: '257'
+  Content-Type: application/json
+  Date: Wed, 28 Jun 2023 19:44:25 GMT
+redirect_query_params: {}
+status_code: 200

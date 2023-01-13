@@ -1,0 +1,31 @@
+allow_redirects: false
+headers: {}
+json:
+  Hardware:
+  - HWInventoryByLocationType: HWInvByLocNodeBMC
+    ID: x9999c7s9b9
+    NodeBMCLocationInfo:
+      DateTime: '2022-10-17T16:22:13+00:00'
+      DateTimeLocalOffset: +00:00
+      Description: ShastaManager
+      FirmwareVersion: ''
+      Id: BMC
+      Name: BMC
+    Ordinal: 9
+    PopulatedFRU:
+      FRUID: FRUIDforx9999c7s9b9
+      HWInventoryByFRUType: HWInvByFRUNodeBMC
+      NodeBMCFRUInfo:
+        ManagerType: EnclosureManager
+        Manufacturer: ''
+        Model: ''
+        PartNumber: ''
+        SerialNumber: ''
+      Subtype: ''
+      Type: NodeBMC
+    Status: Populated
+    Type: NodeBMC
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/Hardware
+verify: false

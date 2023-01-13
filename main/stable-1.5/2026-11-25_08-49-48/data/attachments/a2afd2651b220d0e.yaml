@@ -1,0 +1,8 @@
+- name: Ensure that /params rejects unsupported POST operations
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/params"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

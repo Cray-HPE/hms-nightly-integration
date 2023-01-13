@@ -1,0 +1,50 @@
+- name: hsmAPIinventoryHardwareHistoryGET - Retrieve all Hardware Inventory History entries using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/History"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                    History:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: True
+                          mapping:
+                            ID:
+                              type: str
+                              required: True
+                            FRUID:
+                              type: str
+                              required: True
+                            Timestamp:
+                              type: timestamp
+                              required: True
+                            EventType:
+                              type: str
+                              required: True
+    save:
+      json:
+        xname: "Components[0].ID"
+
+

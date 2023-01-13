@@ -1,0 +1,141 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETcmmRectifier - Query for CMMRectifier Hardware Inventory entries by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7t9?children=True"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7t9"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "NestNodesOnly"
+            CMMRectifiers:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7t9"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "CMMRectifier"
+                    Ordinal:
+                      type: int
+                      required: True
+                      enum:
+                        - 9
+                    Status:
+                      type: str
+                      required: True
+                      enum:
+                        - "Populated"
+                    HWInventoryByLocationType:
+                      type: str
+                      required: True
+                      enum:
+                        - "HWInvByLocCMMRectifier"
+                    CMMRectifierLocationInfo:
+                      type: map
+                      required: True
+                      mapping:
+                        Name:
+                          type: str
+                          required: True
+                          enum:
+                            - "Rectifier9"
+                        FirmwareVersion:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                    PopulatedFRU:
+                      type: map
+                      required: True
+                      mapping:
+                        FRUID:
+                          type: str
+                          required: True
+                          enum:
+                            - "CMMRectifier.ABB.LBGEPE20KZ46051725"
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "CMMRectifier"
+                        Subtype:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HWInventoryByFRUType:
+                          type: str
+                          required: True
+                          enum:
+                            - "HWInvByFRUCMMRectifier"
+                        CMMRectifierFRUInfo:
+                          type: map
+                          required: True
+                          mapping:
+                            Manufacturer:
+                              type: str
+                              required: True
+                              enum:
+                                - "ABB"
+                            SerialNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - "LBGEPE20KZ46051725"
+                            Model:
+                              type: str
+                              required: True
+                              enum:
+                                - "CC15000H3C380T"
+                            PartNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            PowerCapacityWatts:
+                              type: int
+                              required: True
+                              enum:
+                                - 0
+                            PowerInputWatts:
+                              type: int
+                              required: True
+                              enum:
+                                - 0
+                            PowerOutputWatts:
+                              type: int
+                              required: True
+                              enum:
+                                - 0
+                            PowerSupplyType:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+
+

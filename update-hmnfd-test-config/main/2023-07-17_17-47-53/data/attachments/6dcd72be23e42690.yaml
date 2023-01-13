@@ -1,0 +1,7 @@
+- name: Ensure that /liveness rejects POST requests
+  request:
+    url: "{pcs_base_url}/liveness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

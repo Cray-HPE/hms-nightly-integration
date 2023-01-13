@@ -1,0 +1,21 @@
+- name: Create a power-cap snapshot for the target node
+  request:
+    url: "{pcs_base_url}/power-cap/snapshot"
+    json: {"xnames":["{node_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            taskID:
+              type: str
+              required: True
+    save:
+      json:
+        snapshot_task_id: taskID

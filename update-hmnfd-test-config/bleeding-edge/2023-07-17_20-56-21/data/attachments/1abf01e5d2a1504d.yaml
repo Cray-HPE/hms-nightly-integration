@@ -1,0 +1,15 @@
+- name: Replace Bootparameters with xname specified as identifier
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s1b0n0
+      params: console=tty0 console=ttyS0,115200
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000001/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000001/initrd
+  response:
+    status_code: 200
+    headers:
+      BSS-Referral-Token: !anystr

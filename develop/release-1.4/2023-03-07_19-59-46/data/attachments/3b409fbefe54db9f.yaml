@@ -1,0 +1,16 @@
+- name: Query /meta-data for non-existent key
+  request:
+    url: "{bss_base_url}/meta-data"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      key: not-a-valid-metadata-key
+  response:
+    status_code: 404
+    json:
+      type: about:blank
+      title: Not Found
+      status: 404
+      detail: Not Found
+
+

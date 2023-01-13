@@ -1,0 +1,12 @@
+- name: Make sure that the Component is returned
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?id={ID}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Components: !anything
+    save:
+      json:
+        ID: Components[0].ID

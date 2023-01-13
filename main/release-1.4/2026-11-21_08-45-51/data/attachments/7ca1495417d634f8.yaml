@@ -1,0 +1,7 @@
+- name: slsAPINetworksDELETEntry - Delete a known good entry
+  request:
+    url: "{sls_base_url}/v1/networks/dummy"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

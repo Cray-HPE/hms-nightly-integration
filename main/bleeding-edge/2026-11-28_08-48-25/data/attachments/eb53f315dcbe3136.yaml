@@ -1,0 +1,9 @@
+- name: Verify /groups/label/members POST method exclusive group Red now succeeds
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroupRed/members"
+    json: {"id":"{xname1}"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+

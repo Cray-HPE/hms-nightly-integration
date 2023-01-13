@@ -1,0 +1,13 @@
+allow_redirects: false
+headers: {}
+json:
+  force: false
+  prereq: true
+  reason: 'CT test case: capmcAPIxnameReinitPOSTnodeXnameRecursiveAndPrereqActual'
+  recursive: true
+  xnames:
+  - x1000c0s6b0n1
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/xname_reinit
+verify: false

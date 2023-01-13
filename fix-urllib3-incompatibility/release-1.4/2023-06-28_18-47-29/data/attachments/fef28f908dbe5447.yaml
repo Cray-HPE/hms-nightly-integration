@@ -1,0 +1,8 @@
+- name: slsAPIHardwarePOSTEntry - create a new entry with good data
+  request:
+    url: "{sls_base_url}/v1/hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {   "Xname": "x9999c7s9b9","Class": "Mountain"}
+  response:
+    status_code: 201

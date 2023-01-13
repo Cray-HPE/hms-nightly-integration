@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSTnodeBMC - Create a NodeBMC Component using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9b9","Type":"NodeBMC","State":"Ready","Flag":"OK","Enabled":true,"Role":"Management","NetType":"Sling","Arch":"X86","Class":"River","Locked":false}],"Force":false}
+  response:
+    status_code: 204
+
+

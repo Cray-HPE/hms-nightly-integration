@@ -1,0 +1,25 @@
+body:
+  automaticExpirationTime: '2026-11-29T08:40:29.223408735Z'
+  createTime: '2026-11-28T08:40:29.223408665Z'
+  operation: 'On'
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 1
+  tasks:
+  - error: Unsupported for transition operation
+    taskStatus: unsupported
+    taskStatusDescription: Component does not support the specified transition operation,
+      On
+    xname: x3000c0s5b0
+  transitionID: 2ebfffe1-3571-4e01-9875-3485fe0d7ba9
+  transitionStatus: completed
+headers:
+  Content-Length: '499'
+  Content-Type: application/json
+  Date: Sat, 28 Nov 2026 08:40:30 GMT
+redirect_query_params: {}
+status_code: 200

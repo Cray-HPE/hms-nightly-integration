@@ -1,0 +1,85 @@
+- name: Verify that the HMNFD service parameters can be updated
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/params"
+    json: {"Debug":1,"KV_url":"http://cray-hmnfd-ct-test:9999","Nosm":1,"Scn_max_cache":999,"Scn_cache_delay":9,"Scn_retries":9,"Scn_backoff":9,"SM_retries":9,"SM_timeout":99,"SM_url":"http://cray-smd-ct-test:99999/hsm/v2","Telemetry_host":"kafka:9999:cray-hmsstatechange-notifications-ct-test","Use_telemetry":1}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Debug:
+              type: int
+              required: True
+              enum:
+                - 1
+            KV_url:
+              type: str
+              required: True
+              enum:
+                - "http://cray-hmnfd-ct-test:9999"
+            Nosm:
+              type: int
+              required: True
+              enum:
+                - 1
+            Port:
+              type: int
+              required: True
+              enum:
+                - !int "{port_orig}"
+            Scn_in_url:
+              type: str
+              required: True
+              enum:
+                - "{scn_in_url_orig}"
+            Scn_max_cache:
+              type: int
+              required: True
+              enum:
+                - 999
+            Scn_cache_delay:
+              type: int
+              required: True
+              enum:
+                - 9
+            Scn_retries:
+              type: int
+              required: True
+              enum:
+                - 9
+            Scn_backoff:
+              type: int
+              required: True
+              enum:
+                - 9
+            SM_retries:
+              type: int
+              required: True
+              enum:
+                - 9
+            SM_timeout:
+              type: int
+              required: True
+              enum:
+                - 99
+            SM_url:
+              type: str
+              required: True
+              enum:
+                - "http://cray-smd-ct-test:99999/hsm/v2"
+            Telemetry_host:
+              type: str
+              required: True
+              enum:
+                - "kafka:9999:cray-hmsstatechange-notifications-ct-test"
+            Use_telemetry:
+              type: int
+              required: True
+              enum:
+                - 1
+

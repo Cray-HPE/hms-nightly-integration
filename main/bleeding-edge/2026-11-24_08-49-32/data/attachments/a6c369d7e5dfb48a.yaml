@@ -1,0 +1,11 @@
+- name: bssAPIServicePOST - Perform POST against the BSS service endpoint
+  request:
+    url: "{bss_base_url}/boot/v1/{service_endpoint}"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+
+
+
+

@@ -1,0 +1,54 @@
+- name: hsmAPIinventoryHardwareGETtypeParam - Retrieve Hardware Inventory entries using GET and the type query parameter.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware?type=Chassis"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          required: True
+          matching: all
+          sequence:
+            - type: map
+              required: True
+
+              allowempty: True
+              mapping:
+                ID:
+                  type: str
+                  required: True
+                Type:
+                  type: str
+                  required: True
+                  enum:
+                    - "Chassis"
+                Ordinal:
+                  type: int
+                  required: True
+                Status:
+                  type: str
+                  required: True
+                HWInventoryByLocationType:
+                  type: str
+                  required: True
+                PopulatedFRU:
+                  type: map
+                  required: True
+
+                  allowempty: True
+                  mapping:
+                    FRUID:
+                      type: str
+                      required: True
+                    Type:
+                      type: str
+                      required: True
+                    Subtype:
+                      type: str
+                      required: True
+
+

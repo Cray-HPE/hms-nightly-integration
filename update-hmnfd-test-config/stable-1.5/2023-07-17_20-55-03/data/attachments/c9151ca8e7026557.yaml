@@ -1,0 +1,14 @@
+allow_redirects: false
+headers: {}
+json:
+  Op: replace
+  Roles:
+  - service
+  States:
+  - Ready
+  - 'On'
+  - Standby
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/Subscriptions/SCN/3
+verify: false

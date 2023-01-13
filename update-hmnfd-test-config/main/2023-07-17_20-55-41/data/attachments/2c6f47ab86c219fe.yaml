@@ -1,0 +1,7 @@
+- name: capmcAPIReadinessGET - Ensure that /readiness can be retrieved
+  request:
+    url: "{capmc_base_url}/capmc/v1/readiness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

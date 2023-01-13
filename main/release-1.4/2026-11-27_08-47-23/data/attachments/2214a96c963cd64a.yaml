@@ -1,0 +1,64 @@
+- name: Get Service Endpoints
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ServiceEndpoints:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    RedfishEndpointID:
+                      type: str
+                      required: True
+                    RedfishType:
+                      type: str
+                      required: True
+                    UUID:
+                      type: str
+                      required: True
+                    OdataID:
+                      type: str
+                      required: True
+                    RedfishEndpointFQDN:
+                      type: str
+                      required: True
+                    RedfishURL:
+                      type: str
+                      required: True
+                    ServiceEnabled:
+                      type: bool
+                      required: False
+                    Actions:
+                      type: map
+                      required: False
+                      mapping:
+                        "
+                          type: map
+                          required: False
+                          mapping:
+                            target:
+                              type: str
+                              required: True
+                            title:
+                              type: str
+                              required: True
+                    ServiceInfo:
+                      type: map
+                      required: True
+                      allowempty: True
+    save:
+      json:
+        service: ServiceEndpoints[0].RedfishType
+

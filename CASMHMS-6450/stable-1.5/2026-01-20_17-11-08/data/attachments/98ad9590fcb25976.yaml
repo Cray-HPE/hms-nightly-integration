@@ -1,0 +1,5 @@
+- name: slsAPINetworksDELETEntry - Delete the entry if it exists
+  request:
+    url: "{sls_base_url}/v1/networks/dummy"
+    method: DELETE
+    verify: !bool "{verify}"

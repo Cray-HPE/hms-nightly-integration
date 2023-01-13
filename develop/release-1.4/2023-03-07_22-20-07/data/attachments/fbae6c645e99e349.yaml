@@ -1,0 +1,27 @@
+- name: Verify /partitions/names GET method
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/names"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          required: True
+          matching: all
+          sequence:
+            - type: str
+              enum:
+                - "p98"
+                - "p99"
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(@)"
+            operator: "gt"
+            expected: 1
+
+
