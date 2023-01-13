@@ -1,0 +1,9 @@
+- name: hsmAPIdefaultsNodeMapsGETnoNodeMaps - Retrieve an empty set of NodeMaps using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      NodeMaps: !anything

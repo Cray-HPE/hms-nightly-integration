@@ -1,0 +1,12 @@
+- name: Call the RedfishEndpoints Query API with a NodeBMC xname
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/Query/{xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    json:
+      detail: "not yet implemented"
+      status: 400
+      title: "Bad Request"
+      type: "about:blank"

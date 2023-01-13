@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTnodeHsnNic - Create a NodeHsnNic Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7s9b9n9h3","Type":"NodeHsnNic","Ordinal":3,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocNodeHsnNic","NodeHsnNicLocationInfo":{"Id":"HPCNet0","Name":"","Description":"SS11200Gb2PNICMezzREV02(HSN)"},"PopulatedFRU":{"FRUID":"NodeHsnNic.HPEPRM.P43012001.OTI6996696413","Type":"NodeHsnNic","Subtype":"","HWInventoryByFRUType":"HWInvByFRUNodeHsnNic","NodeHsnNicFRUInfo":{"Manufacturer":"HPE-PRM","Model":"R4K44A","PartNumber":"P43012-001","SerialNumber":"OTI6996696413"}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

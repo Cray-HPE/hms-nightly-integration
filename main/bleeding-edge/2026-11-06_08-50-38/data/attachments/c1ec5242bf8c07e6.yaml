@@ -1,0 +1,7 @@
+- name: Retrieve the hardware information from the Hardware collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

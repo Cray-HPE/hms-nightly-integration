@@ -1,0 +1,8 @@
+- name: Query for cloud-init user-data for the node
+  request:
+    url: "{bss_base_url}/user-data"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+

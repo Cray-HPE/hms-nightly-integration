@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2026-11-08T08:20:05.162560472Z'
+  createTime: '2026-11-07T08:20:05.162560412Z'
+  operation: 'On'
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Missing xname
+    taskStatus: failed
+    taskStatusDescription: Failed to achieve transition
+    xname: x9999c7s9b9n9
+  transitionID: da8a8970-e278-41f8-a757-244d80431119
+  transitionStatus: completed
+headers:
+  Content-Length: '436'
+  Content-Type: application/json
+  Date: Sat, 07 Nov 2026 08:20:06 GMT
+redirect_query_params: {}
+status_code: 200

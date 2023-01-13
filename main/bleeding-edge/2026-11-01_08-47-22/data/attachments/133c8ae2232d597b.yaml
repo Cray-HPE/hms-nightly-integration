@@ -1,0 +1,12 @@
+- name: Update Bootparameters with NID specified as identifier
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PATCH
+    verify: !bool "{verify}"
+    json:
+      nids:
+      - !int "{node_nid}"
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000002/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000002/initrd
+  response:
+    status_code: 200

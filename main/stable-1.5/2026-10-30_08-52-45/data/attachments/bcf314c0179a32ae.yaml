@@ -1,0 +1,10 @@
+- name: Delete existing test bootparameters if it exists
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s6b0n0
+      - x9999c0s6b0n1
+      - x9999c0s6b0n2

@@ -1,0 +1,39 @@
+- name: Ensure that we can conduct a discovery status query
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/DiscoveryStatus"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+            - type: map
+              matching: all
+              mapping:
+                ID:
+                  type: int
+                LastUpdateTime:
+                  type: timestamp
+                Status:
+                  type: str
+                  enum:
+                    - "Complete"
+                    - "InProgress"
+                    - "NotStarted"
+                    - "Pending"
+                Details:
+                  type: map
+                  required: False
+                  mapping:
+                    description:
+                      type: str
+                      required: False
+    save:
+      json:
+        id: "[0].ID"
+

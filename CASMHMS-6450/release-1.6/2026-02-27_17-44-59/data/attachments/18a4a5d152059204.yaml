@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - ID: x9999c7s9b8n7
+    NID: 9999999977
+  - ID: x9999c7s9b8n6
+    NID: ''
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/BulkNID
+verify: false

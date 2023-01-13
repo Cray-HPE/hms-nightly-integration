@@ -1,0 +1,60 @@
+- name: capmcAPISetPowerCap - test1 - POST set_power_cap for powered off node - failure test
+  request:
+    url: "{capmc_base_url}/capmc/v1/set_power_cap"
+    json:
+      nids:
+        - nid: !int "{nid0:d}"
+          controls:
+            - name: Node Power Limit
+              val: 410
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+
+
+
+
+
+
+
+
+
+
+
+
+        schema:
+          type: map
+          mapping:
+            e:
+              type: int
+              required: True
+              enum:
+                - 22
+            err_msg:
+              type: str
+              required: True
+            nids:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                -  type: map
+                   mapping:
+                     nid:
+                       type: int
+                       required: true
+                       enum:
+                         - !int "{nid0:d}"
+                     e:
+                       type: int
+                       required: True
+                       enum:
+                         - 22
+                     err_msg:
+                       type: str
+                       required: True
+                       pattern: "Invalid state, NID is not 'ready'"

@@ -1,0 +1,69 @@
+- name: hsmAPIstateComponentsQueryPOSTnidStartNidEndExistingComponent - Query for existing Components with specific ComponentIDs as well as NIDs starting and ending at a specific value using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/Query"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["x9999c7s9b9n8","x9999c7s9b9n7","x9999c7s9b9n6"],"nid_start":["9999999996"],"nid_end":["9999999997"]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n7"
+                        - "x9999c7s9b9n6"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"
+                    State:
+                      type: str
+                      required: True
+                    Flag:
+                      type: str
+                      required: True
+                    Enabled:
+                      type: bool
+                      required: True
+                    SoftwareStatus:
+                      type: str
+                      required: True
+                    Role:
+                      type: str
+                      required: True
+                    SubRole:
+                      type: str
+                      required: True
+                    NID:
+                      type: int
+                      required: True
+                      enum:
+                        - 9999999997
+                        - 9999999996
+                    NetType:
+                      type: str
+                      required: True
+                    Arch:
+                      type: str
+                      required: True
+                    Class:
+                      type: str
+                      required: True
+
+

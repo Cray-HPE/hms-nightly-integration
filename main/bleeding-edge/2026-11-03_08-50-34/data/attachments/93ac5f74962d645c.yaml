@@ -1,0 +1,23 @@
+- name: hsmAPIinventoryHardwareGETnoHardware - Retrieve an empty set of Hardware using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          required: True
+          matching: all
+          sequence:
+            - type: map
+              required: False
+              mapping:
+                ID:
+                  type: str
+                  required: True
+
+

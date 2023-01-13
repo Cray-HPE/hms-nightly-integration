@@ -1,0 +1,9 @@
+allow_redirects: false
+headers: {}
+method: GET
+params:
+  arch: x86_64
+  mac: 0e:ff:ff:ff:ff:ff
+stream: false
+url: http://cray-bss:27778/boot/v1/bootscript
+verify: false

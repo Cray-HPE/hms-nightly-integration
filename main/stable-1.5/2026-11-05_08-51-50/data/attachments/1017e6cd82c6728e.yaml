@@ -1,0 +1,35 @@
+- name: Attempt a power-cap patch operation with an invalid cap
+  request:
+    url: "{pcs_base_url}/power-cap"
+    json: {"components":[{"xname":"x9999c7s9b9n9","controls":[{"name":"Node Power Limit","value":"FAKE"}]}]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "json: cannot unmarshal string into Go struct field PowerCapControlParameter.components.controls.value of type int"
+            status:
+              type: int
+              required: True
+              enum:
+                - 400
+            title:
+              type: str
+              required: True
+              enum:
+                - "Bad Request"

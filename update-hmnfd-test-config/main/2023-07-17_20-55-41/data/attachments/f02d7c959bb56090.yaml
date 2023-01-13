@@ -1,0 +1,9 @@
+- name: Verify that a new HMNFD state change notification subscription can be created
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/subscriptions/{node_xname}/agents/{test_agent}"
+    json: {"Components":["{node_xname}"],"Enabled":true,"Roles":["Compute","Service","System","Management"],"SubRoles":["Master","Worker","Storage"],"SoftwareStatus":["AdminDown","Unknown","Other"],"States":["Ready","On","Off","Standby","Populated","Empty"],"Url":"http://{test_agent_host}/boot/v1/scn"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+

@@ -1,0 +1,52 @@
+- name: Get Ethernet Interfaces Inventory
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          required: True
+          sequence:
+            - type: map
+              required: True
+              mapping:
+                ID:
+                  type: str
+                  required: True
+                Description:
+                  type: str
+                  required: True
+                LastUpdate:
+                  type: str
+                  required: True
+                ComponentID:
+                  type: str
+                  required: True
+                Type:
+                  type: str
+                  required: True
+                MACAddress:
+                  type: str
+                  required: True
+                IPAddresses:
+                  type: seq
+                  required: True
+                  sequence:
+                    - type: map
+                      required: False
+                      mapping:
+                        IPAddress:
+                          type: str
+                          required: False
+                        Network:
+                          type: str
+                          required: False
+    save:
+      json:
+        id: "[0].ComponentID"
+

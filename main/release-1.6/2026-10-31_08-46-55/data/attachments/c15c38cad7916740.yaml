@@ -1,0 +1,12 @@
+- name: Create Node component using PUT with no system role information
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname}"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      Component:
+        ID: "{xname}"
+        State: Populated
+  response:
+    status_code: 204
+

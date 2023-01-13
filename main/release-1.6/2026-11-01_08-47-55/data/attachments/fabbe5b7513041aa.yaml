@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSTnodeBMCexistsForce - Create a different NodeBMC Component using POST with an existing ID and the force option.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9b9","Type":"NodeBMC","State":"Off","Flag":"Warning","Enabled":false,"Role":"Management","NetType":"Infiniband","Arch":"ARM","Class":"Mountain","Locked":true}],"Force":true}
+  response:
+    status_code: 204
+
+

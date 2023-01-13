@@ -1,0 +1,76 @@
+- name: hsmAPIstateComponentsGETxnameUpdatedBulkNIDNodeB - Retrieve Node Component using GET that was bulk updated.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n6"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b8n6"
+            Type:
+              type: str
+              required: True
+              enum:
+                - "Node"
+            State:
+              type: str
+              required: True
+              enum:
+                - "Ready"
+            Flag:
+              type: str
+              required: True
+              enum:
+                - "Warning"
+            Enabled:
+              type: bool
+              required: True
+              enum:
+                - false
+            SoftwareStatus:
+              type: str
+              required: True
+              enum:
+                - "UpdatedBulkSoftwareStatus"
+            Role:
+              type: str
+              required: True
+              enum:
+                - "System"
+            SubRole:
+              type: str
+              required: True
+              enum:
+                - "Storage"
+            NID:
+              type: int
+              required: True
+              enum:
+                - 9999999976
+            NetType:
+              type: str
+              required: True
+              enum:
+                - "Ethernet"
+            Arch:
+              type: str
+              required: True
+              enum:
+                - "ARM"
+            Class:
+              type: str
+              required: True
+              enum:
+                - "Hill"
+
+

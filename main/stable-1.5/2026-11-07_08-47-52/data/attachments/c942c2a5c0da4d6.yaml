@@ -1,0 +1,25 @@
+- name: hsmAPIRedfishEndpointsDELETE - Delete x9999c7s99b93
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b93"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "deleted 1 entry"
+

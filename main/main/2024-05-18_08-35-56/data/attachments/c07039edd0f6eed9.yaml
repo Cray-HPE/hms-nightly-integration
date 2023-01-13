@@ -1,0 +1,21 @@
+- name: Attempt to create a power-cap snapshot for an invalid component
+  request:
+    url: "{pcs_base_url}/power-cap/snapshot"
+    json: {"xnames":["FAKE"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            taskID:
+              type: str
+              required: True
+    save:
+      json:
+        snapshot_task_id_3: taskID

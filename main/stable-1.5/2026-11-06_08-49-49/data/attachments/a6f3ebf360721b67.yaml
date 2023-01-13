@@ -1,0 +1,6 @@
+- name: slsAPISearchNetworksNotFound - Search the networks for an infiniband network
+  request:
+    url: "{sls_base_url}/v1/search/networks?ip_address=10.0.0.2&type=infiniband"
+    method: GET
+    verify: !bool "{verify}"
+  response:

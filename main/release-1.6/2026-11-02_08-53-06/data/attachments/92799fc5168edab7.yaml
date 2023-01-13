@@ -1,0 +1,9 @@
+- name: hsmAPIinventoryHardwareByFRUhistoryFruidDELETEinvalidFruid - Attempt to remove HardwareByFRU Inventory History entries for an invalid fruid using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/HardwareByFRU/History/
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 301
+
+

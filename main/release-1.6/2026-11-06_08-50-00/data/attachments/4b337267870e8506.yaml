@@ -1,0 +1,37 @@
+- name: hsmAPIinventoryHardwarePOSTnodeHsnNicInvalidXname - Attempt to create a NodeHsnNic Hardware Inventory entry with an invalid xname using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"FAKE","Type":"NodeHsnNic","Ordinal":3,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocNodeHsnNic","NodeHsnNicLocationInfo":{"Id":"HPCNet0","Name":"","Description":"SS11200Gb2PNICMezzREV02(HSN)"},"PopulatedFRU":{"FRUID":"NodeHsnNic.HPEPRM.P43012001.OTI6996696413","Type":"NodeHsnNic","Subtype":"","HWInventoryByFRUType":"HWInvByFRUNodeHsnNic","NodeHsnNicFRUInfo":{"Manufacturer":"HPE-PRM","Model":"R4K44A","PartNumber":"P43012-001","SerialNumber":"OTI6996696413"}}}]}
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Bad Request"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "ID is empty or not a valid xname"
+            status:
+              type: int
+              required: True
+              enum:
+                - 400
+
+

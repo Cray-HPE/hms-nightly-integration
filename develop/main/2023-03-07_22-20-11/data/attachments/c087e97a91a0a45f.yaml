@@ -1,0 +1,17 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: false
+    Flag: Warning
+    ID: x9999c7r9e9
+    NetType: FAKE
+    State: 'On'
+    Type: HSNBoard
+  Force: false
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components
+verify: false

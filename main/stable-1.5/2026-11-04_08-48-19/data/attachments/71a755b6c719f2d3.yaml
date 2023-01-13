@@ -1,0 +1,5 @@
+- name: Delete first test subscription to prevent conflicts (if present)
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{subscriber_url_id}"
+    method: DELETE
+    verify: !bool "{verify}"

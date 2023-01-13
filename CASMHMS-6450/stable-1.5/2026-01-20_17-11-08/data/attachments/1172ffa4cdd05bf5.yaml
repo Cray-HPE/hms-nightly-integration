@@ -1,0 +1,27 @@
+- name: Get membership data for a given Node using arch query parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/memberships?arch={arch}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+            - type: map
+              mapping:
+                id:
+                  type: str
+                groupLabels:
+                  type: seq
+                  matching: all
+                  sequence:
+                    - type: str
+                partitionName:
+                  type: str
+
+

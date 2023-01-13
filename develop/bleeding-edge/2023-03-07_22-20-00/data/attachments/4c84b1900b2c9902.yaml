@@ -1,0 +1,57 @@
+- name: Attempt to retrieve the power-status for a component that is not present
+  request:
+    url: "{pcs_base_url}/power-status?xname=x9999c7s9b9n9"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            status:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    xname:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n9"
+                    powerState:
+                      type: str
+                      required: True
+                      enum:
+                        - ""
+                    managementState:
+                      type: str
+                      required: True
+                      enum:
+                        - ""
+                    error:
+                      type: str
+                      required: True
+                      enum:
+                        - "Component not found in component map."
+                    supportedPowerTransitions:
+                      type: seq
+                      matching: all
+
+                      required: False
+                      sequence:
+                        - type: str
+                          required: True
+
+
+                    lastUpdated:
+                      type: str
+                      required: True
+                      enum:
+                        - ""

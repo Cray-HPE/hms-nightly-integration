@@ -1,0 +1,9 @@
+- name: Set second target node state to Off
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_2_xname}/StateData"
+    json: {"State":"Off"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+

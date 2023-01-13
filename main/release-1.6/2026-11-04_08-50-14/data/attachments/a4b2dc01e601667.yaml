@@ -1,0 +1,10 @@
+allow_redirects: false
+headers: {}
+json:
+  IPAddresses:
+  - IPAddress: 99.9.9.9
+    Network: HSMTavernTestPatch
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/EthernetInterfaces/9a9999999999
+verify: false

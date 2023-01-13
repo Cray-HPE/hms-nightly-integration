@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  NIDRanges:
+  - 9999999996-9999999998
+  nid_start:
+  - '9999999996'
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/ByNID/Query
+verify: false

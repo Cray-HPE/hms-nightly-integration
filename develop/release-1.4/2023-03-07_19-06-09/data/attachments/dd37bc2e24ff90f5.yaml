@@ -1,0 +1,33 @@
+- name: Conduct a query on the Components collection using the StateOnly query parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?stateonly=True"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Components:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  mapping:
+                    Flag:
+                      type: str
+                      required: True
+                    ID:
+                      type: str
+                      required: True
+                    State:
+                      type: str
+                      required: True
+                    Type:
+                      type: str
+                      required: True
+
+

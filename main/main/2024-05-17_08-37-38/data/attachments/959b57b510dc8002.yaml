@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  State: Ready
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/x1000c0s5b1n0/StateData
+verify: false

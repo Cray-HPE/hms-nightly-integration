@@ -1,0 +1,13 @@
+- name: Attempt to delete ethernet interfaces with none present
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    json:
+      type: "about:blank"
+      title: "Not Found"
+      detail: "no entries to delete"
+      status: 404
+

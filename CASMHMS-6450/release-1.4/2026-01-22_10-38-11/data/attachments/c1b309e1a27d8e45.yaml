@@ -1,0 +1,42 @@
+- name: Query for cloud-init meta-data for node
+  request:
+    url: "{bss_base_url}/meta-data"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Global:
+              type: map
+              allowempty: true
+            instance-id:
+              type: str
+              pattern: "^x9999c0s1b0n0"
+            local-hostname:
+              type: str
+              enum:
+              - x9999c0s1b0n0
+            meta-data-key:
+              type: str
+              enum:
+              - foo
+            shasta-type:
+              type: str
+              enum:
+              - Management
+            shasta-role:
+              type: str
+              enum:
+              - Worker
+            nested-data:
+              type: map
+              mapping:
+                foo:
+                  type: str
+                  enum:
+                  - bar

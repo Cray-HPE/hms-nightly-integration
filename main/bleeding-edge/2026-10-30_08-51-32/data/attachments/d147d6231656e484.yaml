@@ -1,0 +1,29 @@
+body:
+  automaticExpirationTime: '2026-10-31T08:50:57.036130185Z'
+  components:
+  - error: 'POST https://x3000c0s6b0/redfish/v1/Chassis/1/Power/AccPowerService/PowerLimit/Actions/HpeServerAccPowerLimit.ConfigurePowerLimit
+      giving up after 4 attempt(s): retries exhausted: last attempt received status
+      500 (Internal Server Error)'
+    powerCapLimits:
+    - currentValue: 5036
+      maximumValue: 11221
+      minimumValue: 5036
+      name: Node Power Limit
+    xname: x3000c0s6b0n0
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  taskCreateTime: '2026-10-30T08:50:57.036130105Z'
+  taskID: d1b27482-54b1-4afa-a827-ec3b15e6b182
+  taskStatus: completed
+  type: patch
+headers:
+  Content-Length: '684'
+  Content-Type: application/json
+  Date: Fri, 30 Oct 2026 08:51:04 GMT
+redirect_query_params: {}
+status_code: 200

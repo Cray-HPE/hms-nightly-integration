@@ -1,0 +1,27 @@
+- name: hsmAPIdefaultsNodeMapsPOSTnonExistingNodes - Create a NodeMap for nodes that doesn't yet exist using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"NodeMaps":[{"ID":"x9999c7s9b9n9","NID":9999999999,"Role":"Compute","SubRole":"Worker"},{"ID":"x9999c7s9b9n8","NID":9999999998,"Role":"Compute","SubRole":"Worker"},{"ID":"x9999c7s9b9n7","NID":9999999997,"Role":"Compute","SubRole":"Worker"}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created or modified 3 entries"
+
+

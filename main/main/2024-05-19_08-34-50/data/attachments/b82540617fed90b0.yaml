@@ -1,0 +1,13 @@
+- name: Create or update Bootparameter for compute node
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - "{node_xname}"
+      params: console=tty0
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+  response:
+    status_code: 200

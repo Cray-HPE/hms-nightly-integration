@@ -1,0 +1,10 @@
+allow_redirects: false
+headers: {}
+json:
+  Flag: OK
+  Force: true
+  State: FAKE
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/x9999c7s9b8n7/StateData
+verify: false

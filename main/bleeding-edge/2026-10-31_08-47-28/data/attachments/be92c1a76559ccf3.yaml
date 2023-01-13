@@ -1,0 +1,23 @@
+allow_redirects: false
+headers: {}
+json:
+  Enabled: true
+  Roles:
+  - compute
+  - service
+  SoftwareStatus:
+  - SCN subscription for CT testing.
+  States:
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  Subscriber: test-FAKE
+  Url: http://test-FAKE
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/Subscriptions/SCN
+verify: false

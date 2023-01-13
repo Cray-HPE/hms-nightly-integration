@@ -1,0 +1,59 @@
+- name: Retrieve the state of a Node in the Components collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Arch:
+              type: str
+            Class:
+              type: str
+              required: True
+              enum:
+                - "River"
+                - "Mountain"
+                - "Hill"
+            Enabled:
+              type: bool
+            Flag:
+              type: str
+            ID:
+              type: str
+            Locked:
+              type: bool
+              required: False
+            NID:
+              type: int
+            NetType:
+              type: str
+            Role:
+              type: str
+            SoftwareStatus:
+              type: str
+              required: False
+            State:
+              type: str
+              enum:
+                - "Standby"
+                - "Ready"
+                - "Halt"
+                - "On"
+                - "Off"
+            SubRole:
+              type: str
+              required: False
+            Subtype:
+              type: str
+              required: False
+            Type:
+              type: str
+
+

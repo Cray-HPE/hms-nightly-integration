@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsXnameRolePATCHnode - Update role data for specific Node Component using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n8/Role"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Role":"Service","SubRole":"Worker"}
+  response:
+    status_code: 204
+
+

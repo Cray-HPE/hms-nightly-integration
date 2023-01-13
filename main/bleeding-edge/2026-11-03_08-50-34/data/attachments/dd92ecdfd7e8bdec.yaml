@@ -1,0 +1,23 @@
+- name: Poll until the initial force-off transition operation has completed
+  max_retries: !int "{transition_force-off_num_attempts}"
+  delay_after: !float "{transition_force-off_poll_interval}"
+  request:
+    url: "{pcs_base_url}/transitions/{transition_id_prep}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+
+          allowempty: True
+          mapping:
+            transitionStatus:
+              type: str
+              required: True
+              enum:
+                - "completed"
