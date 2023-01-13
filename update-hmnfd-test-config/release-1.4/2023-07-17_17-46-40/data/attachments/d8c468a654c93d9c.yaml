@@ -1,0 +1,9 @@
+- name: Ensure that the new FAS snapshot can be deleted
+  request:
+    url: "{fas_base_url}/snapshots/fasTestSnapshot"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

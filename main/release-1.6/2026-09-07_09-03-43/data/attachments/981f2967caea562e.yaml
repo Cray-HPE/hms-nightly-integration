@@ -1,0 +1,37 @@
+- name: Ensure that the BSS bootparameters can be retrieved
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+          - type: map
+            mapping:
+              hosts:
+                type: seq
+                sequence:
+                - type: str
+              macs:
+                type: seq
+                sequence:
+                - type: str
+              nids:
+                type: seq
+                sequence:
+                - type: int
+              params:
+                type: str
+              kernel:
+                type: str
+              initrd:
+                type: str
+              cloud-init:
+                type: map
+                allowempty: true

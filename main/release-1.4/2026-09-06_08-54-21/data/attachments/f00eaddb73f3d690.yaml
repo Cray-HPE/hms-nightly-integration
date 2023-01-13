@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2026-09-07T08:47:03.846065254Z'
+  createTime: '2026-09-06T08:47:03.846065084Z'
+  operation: Hard-Restart
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Component is in the wrong power state
+    taskStatus: failed
+    taskStatusDescription: Component must be in the On state for Hard-Restart
+    xname: x1000c0s6b0n0
+  transitionID: 3e548330-287c-4541-85ed-cd2a065b3293
+  transitionStatus: completed
+headers:
+  Content-Length: '492'
+  Content-Type: application/json
+  Date: Sun, 06 Sep 2026 08:47:04 GMT
+redirect_query_params: {}
+status_code: 200

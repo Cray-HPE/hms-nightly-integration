@@ -1,0 +1,48 @@
+- name: Verify /partitions/partition GET method
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/p98"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            name:
+              type: str
+              required: True
+              enum:
+                - "p98"
+            description:
+              type: str
+              required: True
+              enum:
+                - "Test partition 1 for HSM API testing in CT framework (UPDATED)."
+            tags:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  enum:
+                    - "p98_tag3"
+                    - "p98_tag4"
+            members:
+              type: map
+              required: True
+              mapping:
+                ids:
+                  type: seq
+                  required: True
+                  matching: all
+                  sequence:
+                    - type: str
+                      required: True
+                      enum:
+                        - "{xname1}"
+                        - "{xname2}"

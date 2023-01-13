@@ -1,0 +1,25 @@
+- name: capmcAPIxnameOnPOSTmissingXnames - Verify xname_on fails with missing xnames list
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+    json: {"reason":"CT test case: capmcAPIxnameOnPOSTmissingXnames","force":false}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 400
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - "Bad Request: Missing required xnames parameter"

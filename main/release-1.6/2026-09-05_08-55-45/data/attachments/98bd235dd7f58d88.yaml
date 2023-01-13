@@ -1,0 +1,12 @@
+- name: Get a FAS actionID to use in the next stage
+  request:
+    url: "{fas_base_url}/actions"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        actionID: actions[0].actionID
+
+

@@ -1,0 +1,10 @@
+- name: Remove any test HSM State Components if they exist
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c0s1b0n0"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code:
+    - 200
+    - 400
+    - 404

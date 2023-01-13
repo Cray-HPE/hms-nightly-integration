@@ -1,0 +1,14 @@
+- name: Create test Component in HSM State Components
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      Components:
+      - ID: x9999c0s1b0n0
+        Class: River
+        State: "Off"
+        Role: "Management"
+        SubRole: "Worker"
+  response:
+    status_code: 204

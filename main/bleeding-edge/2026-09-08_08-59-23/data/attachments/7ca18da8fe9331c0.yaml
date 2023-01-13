@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  ProcessingModel: fail
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/reservations/remove
+verify: false

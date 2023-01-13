@@ -1,0 +1,38 @@
+- name: hsmAPIstateComponentsBulkNidPATCHnoNid - Attempt to bulk update Components with new NID data and no NID using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkNID"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9b8n7","NID":9999999977},{"ID":"x9999c7s9b8n6","NID":""}]}
+  response:
+
+    status_code: 500
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Internal Server Error"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "error decoding JSON json: invalid number literal, trying to unmarshal \"\\\"\\\"\" into Number"
+            status:
+              type: int
+              required: True
+              enum:
+                - 500
+
+

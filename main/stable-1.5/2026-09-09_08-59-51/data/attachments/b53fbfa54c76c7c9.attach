@@ -1,0 +1,171 @@
+Format variables:
+  hsm_base_url = 'http://cray-smd:27779'
+  verify = 'False'
+
+Source test stage (line 160):
+  - name: Retrieve all State Change Notification subscriptions
+    request:
+      url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              SubscriptionList:
+                type: seq
+                required: True
+                matching: all
+                sequence:
+                  - type: map
+                    required: True
+                    mapping:
+                      ID:
+                        type: int
+                        required: True
+                      Subscriber:
+                        type: str
+                        required: True
+                      Enabled:
+                        type: bool
+                        required: False
+                      Roles:
+                        type: seq
+                        required: False
+                        matching: all
+                        sequence:
+                          - type: str
+                      SoftwareStatus:
+                        type: seq
+                        required: False
+                        matching: all
+                        sequence:
+                          - type: str
+                      States:
+                        type: seq
+                        required: True
+                        matching: all
+                        sequence:
+                          - type: str
+                            enum:
+                              - "Empty"
+                              - "empty"
+                              - "Unknown"
+                              - "unknown"
+                              - "Populated"
+                              - "populated"
+                              - "Off"
+                              - "off"
+                              - "On"
+                              - "on"
+                              - "Standby"
+                              - "standby"
+                              - "Halt"
+                              - "halt"
+                              - "Ready"
+                              - "ready"
+                      Url:
+                        type: str
+                        required: True
+
+
+
+Formatted stage:
+  name: Retrieve all State Change Notification subscriptions
+  request:
+    method: GET
+    url: 'http://cray-smd:27779/hsm/v2/Subscriptions/SCN'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            SubscriptionList:
+              matching: all
+              required: true
+              sequence:
+              - mapping:
+                  Enabled:
+                    required: false
+                    type: bool
+                  ID:
+                    required: true
+                    type: int
+                  Roles:
+                    matching: all
+                    required: false
+                    sequence:
+                    - type: str
+                    type: seq
+                  SoftwareStatus:
+                    matching: all
+                    required: false
+                    sequence:
+                    - type: str
+                    type: seq
+                  States:
+                    matching: all
+                    required: true
+                    sequence:
+                    - enum:
+                      - Empty
+                      - empty
+                      - Unknown
+                      - unknown
+                      - Populated
+                      - populated
+                      - 'Off'
+                      - 'off'
+                      - 'On'
+                      - 'on'
+                      - Standby
+                      - standby
+                      - Halt
+                      - halt
+                      - Ready
+                      - ready
+                      type: str
+                    type: seq
+                  Subscriber:
+                    required: true
+                    type: str
+                  Url:
+                    required: true
+                    type: str
+                required: true
+                type: map
+              type: seq
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Retrieve all State Change Notification subscriptions' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7f7d53272ee0>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Key 'SubRoles' was not defined. Path: '/SubscriptionList/2'.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

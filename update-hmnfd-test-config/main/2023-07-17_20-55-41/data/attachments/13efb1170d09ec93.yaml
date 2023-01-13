@@ -1,0 +1,372 @@
+body:
+  Format: NestNodesOnly
+  Nodes:
+  - HWInventoryByLocationType: HWInvByLocNode
+    ID: x3000c0s5b0n0
+    Memory:
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d5
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm6
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 2
+          Slot: 6
+          Socket: 1
+        Name: proc1dimm6
+      Ordinal: 5
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d7
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm8
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 1
+          Slot: 8
+          Socket: 1
+        Name: proc1dimm8
+      Ordinal: 7
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d12
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm13
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 6
+          Slot: 13
+          Socket: 1
+        Name: proc1dimm13
+      Ordinal: 12
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d15
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm16
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 5
+          Slot: 16
+          Socket: 1
+        Name: proc1dimm16
+      Ordinal: 15
+      PopulatedFRU:
+        FRUID: Memory.Hynix.HMA82GR7CJR4NXN.NEE1493451263
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Hynix
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: HMA82GR7CJR4N-XN
+          RankCount: 1
+          SerialNumber: NEE1493451263
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d0
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm1
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 3
+          Slot: 1
+          Socket: 1
+        Name: proc1dimm1
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: Memory.Hynix.HMA82GR7CJR4NXN.EWY5963680765
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Hynix
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: HMA82GR7CJR4N-XN
+          RankCount: 1
+          SerialNumber: EWY5963680765
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d1
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm2
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 3
+          Slot: 2
+          Socket: 1
+        Name: proc1dimm2
+      Ordinal: 1
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d8
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm9
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 7
+          Slot: 9
+          Socket: 1
+        Name: proc1dimm9
+      Ordinal: 8
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d9
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm10
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 7
+          Slot: 10
+          Socket: 1
+        Name: proc1dimm10
+      Ordinal: 9
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d10
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm11
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 8
+          Slot: 11
+          Socket: 1
+        Name: proc1dimm11
+      Ordinal: 10
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d2
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm3
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 4
+          Slot: 3
+          Socket: 1
+        Name: proc1dimm3
+      Ordinal: 2
+      PopulatedFRU:
+        FRUID: Memory.Hynix.HMA82GR7CJR4NXN.USK0312124122
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Hynix
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: HMA82GR7CJR4N-XN
+          RankCount: 1
+          SerialNumber: USK0312124122
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d3
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm4
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 4
+          Slot: 4
+          Socket: 1
+        Name: proc1dimm4
+      Ordinal: 3
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d6
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm7
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 1
+          Slot: 7
+          Socket: 1
+        Name: proc1dimm7
+      Ordinal: 6
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d14
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm15
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 5
+          Slot: 15
+          Socket: 1
+        Name: proc1dimm15
+      Ordinal: 14
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d4
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm5
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 2
+          Slot: 5
+          Socket: 1
+        Name: proc1dimm5
+      Ordinal: 4
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d11
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm12
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 8
+          Slot: 12
+          Socket: 1
+        Name: proc1dimm12
+      Ordinal: 11
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s5b0n0d13
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm14
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 6
+          Slot: 14
+          Socket: 1
+        Name: proc1dimm14
+      Ordinal: 13
+      PopulatedFRU:
+        FRUID: Memory.Hynix.HMA82GR7CJR4NXN.LDR2531782051
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Hynix
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: HMA82GR7CJR4N-XN
+          RankCount: 1
+          SerialNumber: LDR2531782051
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    NodeLocationInfo:
+      Description: ''
+      HostName: ncn-m003
+      Id: '1'
+      MemorySummary:
+        TotalSystemMemoryGiB: 64
+      Name: Computer System
+      ProcessorSummary:
+        Count: 1
+        Model: 'AMD EPYC 7302P 16-Core Processor               '
+    Ordinal: 0
+    PopulatedFRU:
+      FRUID: Node.HPE.YOO5669262052
+      HWInventoryByFRUType: HWInvByFRUNode
+      NodeFRUInfo:
+        AssetTag: ''
+        BiosVersion: A43 v2.52 (10/29/2021)
+        Manufacturer: HPE
+        Model: ProLiant DL325 Gen10 Plus
+        PartNumber: ''
+        SKU: P18606-B21
+        SerialNumber: YOO5669262052
+        SystemType: Physical
+        UUID: 36383150-3630-584D-5130-313930323042
+      Subtype: ''
+      Type: Node
+    Processors:
+    - HWInventoryByLocationType: HWInvByLocProcessor
+      ID: x3000c0s5b0n0p0
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: Processor.AdvancedMicroDevicesInc.JJH2800523038
+        HWInventoryByFRUType: HWInvByFRUProcessor
+        ProcessorFRUInfo:
+          InstructionSet: x86-64
+          Manufacturer: Advanced Micro Devices, Inc.
+          MaxSpeedMHz: 4100
+          Model: 'AMD EPYC 7302P 16-Core Processor               '
+          Oem: {}
+          PartNumber: ''
+          ProcessorArchitecture: x86
+          ProcessorId:
+            EffectiveFamily: '107'
+            EffectiveModel: '1'
+            IdentificationRegisters: '0x0f100083fbff178b'
+            MicrocodeInfo: ''
+            Step: '0'
+            VendorID: Advanced Micro Devices, Inc.
+          ProcessorType: CPU
+          SerialNumber: JJH2800523038
+          TotalCores: 16
+          TotalThreads: 32
+        Subtype: ''
+        Type: Processor
+      ProcessorLocationInfo:
+        Description: ''
+        Id: '1'
+        Name: Processors
+        Socket: Proc 1
+      Status: Populated
+      Type: Processor
+    Status: Populated
+    Type: Node
+  XName: x3000c0s5b0n0
+headers:
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 20:27:18 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

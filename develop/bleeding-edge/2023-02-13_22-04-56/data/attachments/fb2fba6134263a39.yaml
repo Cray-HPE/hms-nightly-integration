@@ -1,0 +1,7 @@
+- name: Ensure the boot script service can provide the bootscript for a given node name
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript?name={node_name}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

@@ -1,0 +1,20 @@
+allow_redirects: false
+headers: {}
+json:
+  Enabled: false
+  Roles:
+  - compute
+  SoftwareStatus:
+  - SCN subscription for CT testing.
+  States:
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Halt
+  Subscriber: test-hmnfd-9z9z999zzz-9zz9z_8
+  Url: http://test-hmnfd/hmi/v1/scn
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/Subscriptions/SCN/3
+verify: false

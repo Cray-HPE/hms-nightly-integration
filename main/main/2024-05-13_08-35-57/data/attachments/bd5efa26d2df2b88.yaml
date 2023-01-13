@@ -1,0 +1,13 @@
+- name: Retrieve three NodeBMC RedfishEndpoints from HSM to use in upcoming stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints?type=NodeBMC"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        redfishEndpoint1: RedfishEndpoints[0].ID
+        redfishEndpoint2: RedfishEndpoints[1].ID
+        redfishEndpoint3: RedfishEndpoints[2].ID
+

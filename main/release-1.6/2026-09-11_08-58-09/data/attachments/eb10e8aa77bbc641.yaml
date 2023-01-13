@@ -1,0 +1,29 @@
+- name: Verify that the HMNFD health status can be retrieved
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/health"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            KvStore:
+              type: str
+              required: True
+            MsgBus:
+              type: str
+              required: True
+            HsmSubscriptions:
+              type: str
+              required: True
+            PruneMap:
+              type: str
+              required: True
+            WorkerPool:
+              type: str
+              required: True
+

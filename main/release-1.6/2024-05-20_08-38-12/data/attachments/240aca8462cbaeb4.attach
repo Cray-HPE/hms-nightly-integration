@@ -1,0 +1,52 @@
+Format variables:
+  type = 'VirtualNode'
+  sls_base_url = 'http://cray-sls:8376'
+  xname = 'x9999c5s17b0n0v1'
+  verify = 'False'
+  xname = 'x9999c5s17b0n0v1'
+
+Source test stage (line 9494):
+  - name: Create using PUT the test {type} into SLS
+    request:
+      url: "{sls_base_url}/v1/hardware/{xname}"
+      method: PUT
+      verify: !bool "{verify}"
+      json:
+        ID: "{xname}"
+        Class: River
+        ExtraProperties:
+          Role: Application
+          SubRole: Storage
+          NID: 9999999967
+          Aliases:
+          - uan999
+    response:
+      status_code:
+      - 201
+
+
+
+
+Formatted stage:
+  name: Create using PUT the test VirtualNode into SLS
+  request:
+    json:
+      Class: River
+      ExtraProperties:
+        Aliases:
+        - uan999
+        NID: 9999999967
+        Role: Application
+        SubRole: Storage
+      ID: 'x9999c5s17b0n0v1'
+    method: PUT
+    url: 'http://cray-sls:8376/v1/hardware/x9999c5s17b0n0v1'
+    verify: !bool 'False'
+  response:
+    status_code:
+    - 201
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Create using PUT the test {type} into SLS' failed:
+    - Status code was 400, expected [201]:
+        {"type": "about:blank", "title": "Bad Request", "detail": "invalid xname", "status": 400}

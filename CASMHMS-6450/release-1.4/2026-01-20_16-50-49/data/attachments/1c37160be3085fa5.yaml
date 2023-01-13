@@ -1,0 +1,60 @@
+- name: Retrieve the power-status for the target Node using a managementStateFilter
+  request:
+    url: "{pcs_base_url}/power-status?xname={node_xname}&managementStateFilter={node_management_state}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            status:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    xname:
+                      type: str
+                      required: True
+                      enum:
+                        - "{node_xname}"
+                    powerState:
+                      type: str
+                      required: True
+                      enum:
+                        - "on"
+                        - "off"
+                        - "undefined"
+                    managementState:
+                      type: str
+                      required: True
+                      enum:
+                        - "{node_management_state}"
+                    error:
+                      type: str
+                      required: True
+                    supportedPowerTransitions:
+                      type: seq
+                      matching: all
+                      required: True
+                      sequence:
+                        - type: str
+                          required: True
+
+
+                    lastUpdated:
+                      type: str
+                      required: True
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(@.status)"
+            operator: "eq"
+            expected: 1

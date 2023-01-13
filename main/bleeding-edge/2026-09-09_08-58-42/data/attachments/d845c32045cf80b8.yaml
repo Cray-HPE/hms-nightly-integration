@@ -1,0 +1,9 @@
+- name: Set first target node state to Ready
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_1_xname}/StateData"
+    json: {"State":"Ready"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+

@@ -1,0 +1,15 @@
+allow_redirects: false
+headers: {}
+json:
+  Hardware:
+  - HWInventoryByLocationType: HWInvByLocNodeEnclosure
+    ID: x9999c7s9e9
+    NodeEnclosureLocationInfo: {}
+    Ordinal: 9
+    PopulatedFRU: {}
+    Status: Populated
+    Type: NodeEnclosure
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/Hardware
+verify: false

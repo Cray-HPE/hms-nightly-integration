@@ -1,0 +1,126 @@
+- name: Ensure that the status information for an existing FAS action can be retrieved
+  request:
+    url: "{fas_base_url}/actions/{actionID}/status"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            actionID:
+              type: str
+              required: True
+              enum:
+                - "{actionID}"
+            snapshotID:
+              type: str
+              required: True
+            command:
+              type: map
+              required: True
+              mapping:
+                overrideDryrun:
+                  type: bool
+                  required: True
+                restoreNotPossibleOverride:
+                  type: bool
+                  required: True
+                overwriteSameImage:
+                  type: bool
+                  required: True
+                timeLimit:
+                  type: int
+                  required: False
+                version:
+                  type: str
+                  required: True
+                tag:
+                  type: str
+                  required: True
+                description:
+                  type: str
+                  required: True
+            startTime:
+              type: str
+              required: True
+              pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ .*[0-9]{{4}} UTC"
+            endTime:
+              type: str
+              required: False
+              pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ .*[0-9]{{4}} UTC"
+            state:
+              type: str
+              required: True
+              enum:
+                - "new"
+                - "configure"
+                - "configured"
+                - "blocked"
+                - "running"
+                - "completed"
+                - "abortSignaled"
+                - "aborted"
+            operationCounts:
+              type: map
+              required: True
+              mapping:
+                total:
+                  type: int
+                  required: True
+                initial:
+                  type: int
+                  required: True
+                configured:
+                  type: int
+                  required: True
+                blocked:
+                  type: int
+                  required: True
+                needsVerified:
+                  type: int
+                  required: True
+                verifying:
+                  type: int
+                  required: True
+                inProgress:
+                  type: int
+                  required: True
+                failed:
+                  type: int
+                  required: True
+                succeeded:
+                  type: int
+                  required: True
+                noOperation:
+                  type: int
+                  required: True
+                noSolution:
+                  type: int
+                  required: True
+                aborted:
+                  type: int
+                  required: True
+                unknown:
+                  type: int
+                  required: True
+            blockedBy:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: False
+            errors:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: False
+
+

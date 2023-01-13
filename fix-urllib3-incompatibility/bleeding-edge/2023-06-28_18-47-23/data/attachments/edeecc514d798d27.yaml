@@ -1,0 +1,10 @@
+- name: Verify /groups POST method group2
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups"
+    json: {"label":"hsmtestgroup2","description":"Test group 2 for HSM API testing in CT framework.","tags":["hsmtestgroup2_tag1","hsmtestgroup2_tag2"],"members":{"ids":["{xname2}","{xname3}"]}}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+
+

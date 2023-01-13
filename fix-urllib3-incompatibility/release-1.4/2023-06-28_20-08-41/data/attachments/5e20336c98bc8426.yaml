@@ -1,0 +1,7 @@
+- name: Perform POST against /endpoint-history
+  request:
+    url: "{bss_base_url}/boot/v1/endpoint-history"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

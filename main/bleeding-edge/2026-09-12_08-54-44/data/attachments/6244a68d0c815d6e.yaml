@@ -1,0 +1,8 @@
+- name: Perform PUT against /phone-home
+  request:
+    url: "{bss_base_url}/phone-home"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

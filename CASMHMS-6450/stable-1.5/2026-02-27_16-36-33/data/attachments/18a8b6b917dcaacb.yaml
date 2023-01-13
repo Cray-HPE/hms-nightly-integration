@@ -1,0 +1,10 @@
+- name: Delete Bootparameters with xname as host
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s1b0n0
+  response:
+    status_code: 200

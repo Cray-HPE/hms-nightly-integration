@@ -1,0 +1,24 @@
+- name: hsmAPIinventoryRedfishEndpointsDeleteAll - Delete all RFEndpoints
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              pattern: "deleted [0-9]+ entr.*"
+

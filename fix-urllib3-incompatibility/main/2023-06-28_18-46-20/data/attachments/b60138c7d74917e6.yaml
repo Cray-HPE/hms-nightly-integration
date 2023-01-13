@@ -1,0 +1,43 @@
+- name: Ensure that we can conduct a query on the ComponentEndpoints collection for a particular BMC
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ComponentEndpoints?type=NodeBMC"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ComponentEndpoints:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+
+
+                  allowempty: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      pattern: "x[0-9]+c[0-9]+s[0-9]+b[0-9]+"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "NodeBMC"
+                    RedfishEndpointID:
+                      type: str
+                      required: True
+                      pattern: "x[0-9]+c[0-9]+s[0-9]+b[0-9]+"
+    save:
+      json:
+        id: ComponentEndpoints[0].RedfishEndpointID
+
+

@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  Op: add
+  Roles:
+  - compute
+  States:
+  - Populated
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/Subscriptions/SCN/3
+verify: false

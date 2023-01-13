@@ -1,0 +1,62 @@
+- name: Retrieve all power-cap tasks
+  request:
+    url: "{pcs_base_url}/power-cap"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            tasks:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    taskID:
+                      type: str
+                      required: True
+                    type:
+                      type: str
+                      required: True
+                      enum:
+                        - "snapshot"
+                        - "patch"
+                    taskCreateTime:
+                      type: timestamp
+                      required: True
+                    automaticExpirationTime:
+                      type: timestamp
+                      required: True
+                    taskStatus:
+                      type: str
+                      required: True
+                    taskCounts:
+                      type: map
+                      required: True
+                      mapping:
+                        total:
+                          type: int
+                          required: True
+                        new:
+                          type: int
+                          required: True
+                        in-progress:
+                          type: int
+                          required: True
+                        failed:
+                          type: int
+                          required: True
+                        succeeded:
+                          type: int
+                          required: True
+                        un-supported:
+                          type: int
+                          required: True

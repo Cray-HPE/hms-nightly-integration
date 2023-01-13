@@ -1,0 +1,7 @@
+- name: slsAPIVersionPOST - Ensure that the SLS version cannot be posted to
+  request:
+    url: "{sls_base_url}/v1/version"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

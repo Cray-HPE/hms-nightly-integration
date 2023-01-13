@@ -1,0 +1,19 @@
+allow_redirects: false
+headers: {}
+json:
+  Debug: 1
+  KV_url: http://cray-hmnfd-ct-test:9999
+  Nosm: 1
+  SM_retries: 9
+  SM_timeout: 99
+  SM_url: http://cray-smd-ct-test:99999/hsm/v2
+  Scn_backoff: 9
+  Scn_cache_delay: 9
+  Scn_max_cache: 999
+  Scn_retries: 9
+  Telemetry_host: kafka:9999:cray-hmsstatechange-notifications-ct-test
+  Use_telemetry: 1
+method: PATCH
+stream: false
+url: http://cray-hmnfd:28600/hmi/v2/params
+verify: false

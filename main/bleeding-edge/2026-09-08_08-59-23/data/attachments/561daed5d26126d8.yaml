@@ -1,0 +1,17 @@
+allow_redirects: false
+headers: {}
+json:
+  Component:
+    Arch: X86
+    Class: Mountain
+    Flag: OK
+    ID: x9999c0s4b0n0v0
+    NID: 101003
+    NetType: Sling
+    Role: Management
+    State: 'On'
+  Force: true
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/x9999c0s4b0n0v0
+verify: false

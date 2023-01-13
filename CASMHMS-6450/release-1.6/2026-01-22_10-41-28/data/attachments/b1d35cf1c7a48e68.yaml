@@ -1,0 +1,10 @@
+- name: capmcAPIxnameOffPOSTnodeEnclosureXnamePrep - Get NodeEnclosure xname from HSM Components to use in upcoming stage
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=NodeEnclosure"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        enclosure_xname: Components[0].ID

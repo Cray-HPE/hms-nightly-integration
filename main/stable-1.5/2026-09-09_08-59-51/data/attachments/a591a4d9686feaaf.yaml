@@ -1,0 +1,45 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b8n8
+    NID: 9999999988
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus8
+    State: Ready
+    SubRole: Master
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: true
+    Flag: Alert
+    ID: x9999c7s9b8n7
+    NID: 9999999987
+    NetType: Infiniband
+    Role: Service
+    SoftwareStatus: TestStatus7
+    State: 'On'
+    SubRole: Worker
+    Type: Node
+  - Arch: ARM
+    Class: Hill
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b8n6
+    NID: 9999999986
+    NetType: Ethernet
+    Role: System
+    SoftwareStatus: TestStatus6
+    State: 'Off'
+    SubRole: Storage
+    Type: Node
+  Force: false
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components
+verify: false

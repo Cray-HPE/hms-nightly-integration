@@ -1,0 +1,8 @@
+allow_redirects: false
+files:
+  name: /src/app/api/2-disruptive/dumpstate.bad.json
+headers: {}
+method: POST
+stream: false
+url: http://cray-sls:8376/v1/loadstate
+verify: true

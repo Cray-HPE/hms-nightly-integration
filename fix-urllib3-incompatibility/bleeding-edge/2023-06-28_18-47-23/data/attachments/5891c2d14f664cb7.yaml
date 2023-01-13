@@ -1,0 +1,82 @@
+- name: Retrieve the completed on transition data
+  request:
+    url: "{pcs_base_url}/transitions/{transition_id_prep}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            transitionID:
+              type: str
+              required: True
+              enum:
+                - "{transition_id_prep}"
+            operation:
+              type: str
+              required: True
+              enum:
+                - "On"
+            createTime:
+              type: timestamp
+              required: True
+            automaticExpirationTime:
+              type: timestamp
+              required: True
+            transitionStatus:
+              type: str
+              required: True
+              enum:
+                - "completed"
+            taskCounts:
+              type: map
+              required: True
+              mapping:
+                total:
+                  type: int
+                  required: True
+                new:
+                  type: int
+                  required: True
+                in-progress:
+                  type: int
+                  required: True
+                failed:
+                  type: int
+                  required: True
+                succeeded:
+                  type: int
+                  required: True
+                un-supported:
+                  type: int
+                  required: True
+            tasks:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    xname:
+                      type: str
+                      required: True
+                      enum:
+                        - "{node_1_xname}"
+                        - "{node_2_xname}"
+                    taskStatus:
+                      type: str
+                      required: True
+                      enum:
+                        - "succeeded"
+                    taskStatusDescription:
+                      type: str
+                      required: True
+                      enum:
+                        - "Component already in desired state"
+                        - "Transition confirmed, on"

@@ -1,0 +1,32 @@
+- name: hsmAPIRedfishEndpointsPOST - Create 3 RFEndpoints
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"RedfishEndpoints":[{"ID":"x9999c7s99b92","Enabled":true,"RediscoverOnUpdate":true},{"ID":"x9999c7s99b93","Enabled":false,"RediscoverOnUpdate":false},{"ID":"x9999c7s99b94","Enabled":false,"RediscoverOnUpdate":false}]}
+  response:
+    status_code: 201
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: seq
+            required: True
+            sequence:
+              - type: map
+                required: True
+                mapping:
+                  URI:
+                    type: str
+                    required: True
+                    enum:
+                      - "/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b92"
+                      - "/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b93"
+                      - "/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b94"
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+            - jmespath: "length(@)"
+              operator: "eq"
+              expected: 3
+

@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSTnode - Create a Node Component using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9b9n9","Type":"Node","State":"On","Flag":"OK","Enabled":true,"SoftwareStatus":"AdminStatus","Role":"Compute","NID":9999999999,"NetType":"Sling","Arch":"X86","Class":"River"}],"Force":false}
+  response:
+    status_code: 204
+
+

@@ -1,0 +1,9 @@
+- name: Update a State Change Notification subscription with an add operation
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{subID}"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Op":"add","Roles":["compute"],"States":["Populated"]}
+  response:
+    status_code: 204
+

@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  Scn_in_url: http://cray-hmnfd-fake/hmi/v1/scn
+method: PATCH
+stream: false
+url: http://cray-hmnfd:28600/hmi/v2/params
+verify: false

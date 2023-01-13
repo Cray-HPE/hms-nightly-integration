@@ -1,0 +1,27 @@
+body:
+  captureTime: 2023-03-07 21:52:06.476942834 +0000 UTC
+  devices: []
+  errors: []
+  name: fasTestSnapshot
+  parameters:
+    inventoryHardwareFilter: {}
+    name: fasTestSnapshot
+    stateComponentFilter:
+      deviceTypes:
+      - chassisBMC
+      - nodeBMC
+      - routerBMC
+    targetFilter:
+      targets:
+      - BMC
+      - BIOS
+      - iLO 5
+      - System ROM
+  ready: false
+  relatedActions: []
+headers:
+  Content-Length: '349'
+  Content-Type: application/json
+  Date: Tue, 07 Mar 2023 21:52:06 GMT
+redirect_query_params: {}
+status_code: 200

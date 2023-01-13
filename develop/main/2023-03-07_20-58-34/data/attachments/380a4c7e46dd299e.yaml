@@ -1,0 +1,16 @@
+allow_redirects: false
+headers: {}
+json:
+  nids:
+  - controls:
+    - name: Node Power Limit
+      val: 350
+    nid: 1031
+  - controls:
+    - name: Node Power Limit
+      val: 350
+    nid: 1001
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/set_power_cap
+verify: false

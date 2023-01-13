@@ -1,0 +1,9 @@
+allow_redirects: false
+headers: {}
+json:
+  NIDRanges:
+  - FAKE
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/ByNID/Query
+verify: false

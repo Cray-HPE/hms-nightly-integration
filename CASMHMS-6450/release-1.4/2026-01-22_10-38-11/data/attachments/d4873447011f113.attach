@@ -1,0 +1,110 @@
+Format variables:
+  bss_base_url = 'http://cray-bss:27778'
+  verify = 'False'
+  node_mac_address = '00:40:a6:26:a7:e1'
+  node_xname = 'x1000c0s2b0n1'
+  node_nid = '1009'
+
+Source test stage (line 243):
+- name: Query bootscript with MAC address
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      mac: "{node_mac_address}"
+  response:
+    status_code: 200
+    headers:
+      content-type: text/plain; charset=UTF-8
+    verify_response_with:
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "kernel --name .+compute_node"
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+xname={node_xname}'
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+nid={node_nid}'
+
+Formatted stage:
+  name: Query bootscript with MAC address
+  request:
+    method: GET
+    params:
+      mac: '00:40:a6:26:a7:e1'
+    url: 'http://cray-bss:27778/boot/v1/bootscript'
+    verify: !bool 'False'
+  response:
+    headers:
+      content-type: text/plain; charset=UTF-8
+    status_code: 200
+    verify_response_with:
+    - extra_kwargs:
+        expression: '#!ipxe'
+      function: bss_test_utils:better_validate_regex
+    - extra_kwargs:
+        expression: kernel --name .+compute_node
+      function: bss_test_utils:better_validate_regex
+    - extra_kwargs:
+        expression: kernel --name .+xname=x1000c0s2b0n1
+      function: bss_test_utils:better_validate_regex
+    - extra_kwargs:
+        expression: kernel --name .+nid=1009
+      function: bss_test_utils:better_validate_regex
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Query bootscript with MAC address' failed:
+    - Error calling validate function '<function better_validate_regex at 0x7f7a9e395310>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+            raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+        tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+compute_node' in response:
+        #!ipxe
+        sleep 10
+        chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:26:a7:e1&retry=1
+    
+    
+    
+    - Error calling validate function '<function better_validate_regex at 0x7f7a9e395310>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+            raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+        tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+xname=x1000c0s2b0n1' in response:
+        #!ipxe
+        sleep 10
+        chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:26:a7:e1&retry=1
+    
+    
+    
+    - Error calling validate function '<function better_validate_regex at 0x7f7a9e395310>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+            raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+        tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+nid=1009' in response:
+        #!ipxe
+        sleep 10
+        chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:26:a7:e1&retry=1

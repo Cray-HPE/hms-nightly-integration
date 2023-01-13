@@ -1,0 +1,8 @@
+- name: Verify that /liveness rejects DELETE requests
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/liveness"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

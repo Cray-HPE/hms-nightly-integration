@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2023-07-18T20:35:08.46293126Z'
+  createTime: '2023-07-17T20:35:08.46293116Z'
+  operation: 'On'
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Transition aborted
+    taskStatus: failed
+    taskStatusDescription: Aborted. Last status - Gathering data
+    xname: x1000c0s6b0n0
+  transitionID: 146233f2-8784-4695-9dc1-2e533666b047
+  transitionStatus: aborted
+headers:
+  Content-Length: '446'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 20:35:08 GMT
+redirect_query_params: {}
+status_code: 200

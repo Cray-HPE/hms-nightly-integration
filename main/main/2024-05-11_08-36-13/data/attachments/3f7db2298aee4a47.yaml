@@ -1,0 +1,78 @@
+- name: hsmAPIRedfishEndpointsGET - Check discovery status xname1
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b91"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            DiscoveryInfo:
+              type: map
+              mapping:
+                LastDiscoveryAttempt:
+                  type: timestamp
+                  required: True
+                LastDiscoveryStatus:
+                  type: str
+                  required: True
+                  enum:
+
+
+                    - "HTTPsGetFailed"
+                    - "DiscoveryStarted"
+                RedfishVersion:
+                  type: str
+                  required: False
+            Domain:
+              type: str
+              required: True
+            Enabled:
+              type: bool
+              required: True
+              enum:
+                - True
+            FQDN:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s99b91"
+            Hostname:
+              type: str
+              required: True
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s99b91"
+            MACAddr:
+              type: str
+              required: False
+            Password:
+              type: str
+              required: True
+              enum:
+                - ""
+            IPAddress:
+              type: str
+              required: False
+            RediscoverOnUpdate:
+              type: bool
+              required: True
+            Type:
+              type: str
+              required: True
+              enum:
+                - "NodeBMC"
+            UUID:
+              type: str
+              required: False
+            User:
+              type: str
+              required: True
+

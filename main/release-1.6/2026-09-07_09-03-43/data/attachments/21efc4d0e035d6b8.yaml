@@ -1,0 +1,11 @@
+- name: bssAPIServicePATCH - Perform PATCH against the BSS service endpoint
+  request:
+    url: "{bss_base_url}/boot/v1/service/status"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+
+
+
+

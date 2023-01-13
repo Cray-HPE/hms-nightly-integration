@@ -1,0 +1,14 @@
+- name: Verify successfully querying for NodeBMCs and get an xname for a particular NodeBMC from the response
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=NodeBMC"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Components: !anything
+    save:
+      json:
+        xname: Components[0].ID
+
+

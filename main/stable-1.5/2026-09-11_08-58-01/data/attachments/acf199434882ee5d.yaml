@@ -1,0 +1,190 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETmemory - Query for Memory Hardware Inventory entries by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9n9d9?format=FullyFlat"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9d9"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "FullyFlat"
+            Memory:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n9d9"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Memory"
+                    Ordinal:
+                      type: int
+                      required: True
+                      enum:
+                        - 9
+                    Status:
+                      type: str
+                      required: True
+                      enum:
+                        - "Populated"
+                    HWInventoryByLocationType:
+                      type: str
+                      required: True
+                      enum:
+                        - "HWInvByLocMemory"
+                    MemoryLocationInfo:
+                      type: map
+                      required: True
+                      mapping:
+                        Id:
+                          type: str
+                          required: True
+                          enum:
+                            - "DIMM9"
+                        Name:
+                          type: str
+                          required: True
+                          enum:
+                            - "DIMM9"
+                        Description:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        MemoryLocation:
+                          type: map
+                          required: True
+                          mapping:
+                            Socket:
+                              type: int
+                              required: True
+                              enum:
+                                - 9
+                            MemoryController:
+                              type: int
+                              required: True
+                              enum:
+                                - 9
+                            Channel:
+                              type: int
+                              required: True
+                              enum:
+                                - 9
+                            Slot:
+                              type: int
+                              required: True
+                              enum:
+                                - 9
+                    PopulatedFRU:
+                      type: map
+                      required: True
+                      mapping:
+                        FRUID:
+                          type: str
+                          required: True
+                          enum:
+                            - "Memory.SKHynix.HMA82GR7CJR8NXN.YBZ0215997182"
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "Memory"
+                        Subtype:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HWInventoryByFRUType:
+                          type: str
+                          required: True
+                          enum:
+                            - "HWInvByFRUMemory"
+                        MemoryFRUInfo:
+                          type: map
+                          required: True
+                          mapping:
+                            BaseModuleType:
+                              type: str
+                              required: True
+                              enum:
+                                - "RDIMM"
+                            BusWidthBits:
+                              type: int
+                              required: True
+                              enum:
+                                - 72
+                            CapacityMiB:
+                              type: int
+                              required: True
+                              enum:
+                                - 16384
+                            DataWidthBits:
+                              type: int
+                              required: True
+                              enum:
+                                - 64
+                            ErrorCorrection:
+                              type: str
+                              required: True
+                              enum:
+                                - "Multi-bitECC"
+                            Manufacturer:
+                              type: str
+                              required: True
+                              enum:
+                                - "SKHynix"
+                            MemoryType:
+                              type: str
+                              required: True
+                              enum:
+                                - "DRAM"
+                            MemoryDeviceType:
+                              type: str
+                              required: True
+                              enum:
+                                - "DDR4"
+                            OperatingSpeedMhz:
+                              type: int
+                              required: True
+                              enum:
+                                - 3200
+                            PartNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - "HMA82GR7CJR8N-XN"
+                            RankCount:
+                              type: int
+                              required: True
+                              enum:
+                                - 2
+                            SerialNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - "YBZ0215997182"
+
+

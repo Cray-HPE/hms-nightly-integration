@@ -1,0 +1,26 @@
+- name: capmcAPIxnameOnPOSToffComputeModuleRecursiveActual - Power the target compute module and its children on using xname_on
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+
+    json: {"reason":"CT test case: capmcAPIxnameOnPOSToffComputeModuleRecursiveActual","xnames":["{compute_module_xname}"],"force":false,"recursive":true}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""

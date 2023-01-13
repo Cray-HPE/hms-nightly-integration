@@ -1,0 +1,48 @@
+- name: capmcAPIxnameOffPOSTnodeBMCxnameActual - Verify xname_off fails with NodeBMC xname
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+    json: {"reason":"CT test case: capmcAPIxnameOffPOSTnodeBMCxnameActual","xnames":["{bmc_xname}"],"force":false}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - -1
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - "Errors encountered with 1 components for Off"
+            "xnames":
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    "xname":
+                      type: str
+                      required: True
+                      enum:
+                        - "{bmc_xname}"
+                    "e":
+                      type: int
+                      required: True
+                      enum:
+                        - -1
+                    "err_msg":
+                      type: str
+                      required: True
+                      enum:
+                        - "Skipping {bmc_xname}: Type, 'NodeBMC', not defined in power sequence for 'Off'"

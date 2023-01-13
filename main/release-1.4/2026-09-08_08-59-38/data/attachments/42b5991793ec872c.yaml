@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTnodeUpdate - Update a Node Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7s9b9n9","Type":"Node","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocNode","NodeLocationInfo":{"Id":"Node9","Name":"Node9","Description":"WNC-Updated","HostName":"","ProcessorSummary":{"Count":2,"Model":"AMDEPYC776364-CoreProcessor"},"MemorySummary":{"TotalSystemMemoryGiB":512}},"PopulatedFRU":{"FRUID":"Node.HPE.101920703D.XJJ7679069386_9","Type":"Node","Subtype":"","HWInventoryByFRUType":"HWInvByFRUNode","NodeFRUInfo":{"AssetTag":"","BiosVersion":"ex425.bios-1.6.3-updated","Model":"HPECRAYEX425(MILAN)","Manufacturer":"HPE","PartNumber":"101920703.D","SerialNumber":"XJJ7679069386","SKU":"Updated-SKU","SystemType":"Physical","UUID":"Updated-UUID"}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

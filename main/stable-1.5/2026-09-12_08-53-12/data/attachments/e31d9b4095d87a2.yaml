@@ -1,0 +1,8 @@
+- name: Verify that /health rejects PATCH requests
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/health"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

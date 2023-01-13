@@ -1,0 +1,11 @@
+- name: hsmAPIinventoryHardwareDELETE - Remove all Hardware using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code:
+      - 200
+      - 404
+
+

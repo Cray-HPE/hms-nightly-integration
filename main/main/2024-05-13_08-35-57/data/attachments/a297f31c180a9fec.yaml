@@ -1,0 +1,21 @@
+- name: Set a power-cap of the maximum value on the target node
+  request:
+    url: "{pcs_base_url}/power-cap"
+    json: {"components":[{"xname":"{node_xname}","controls":[{"name":"{node_power_cap_name}","value": !int "{node_power_cap_max}"}]}]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            taskID:
+              type: str
+              required: True
+    save:
+      json:
+        patch_task_id_2: taskID

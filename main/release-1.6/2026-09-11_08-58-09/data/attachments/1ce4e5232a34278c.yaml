@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2026-09-12T08:49:16.519862896Z'
+  createTime: '2026-09-11T08:49:16.519862748Z'
+  operation: 'On'
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 1
+    succeeded: 1
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: succeeded
+    taskStatusDescription: Component already in desired state
+    xname: x1000c0s2b0n0
+  - taskStatus: new
+    taskStatusDescription: Gathering data
+    xname: x1000c0s6b1n0
+  transitionID: dcfcc4ee-cd91-402f-9581-970b559bc9d2
+  transitionStatus: in-progress
+headers:
+  Content-Length: '509'
+  Content-Type: application/json
+  Date: Fri, 11 Sep 2026 08:49:16 GMT
+redirect_query_params: {}
+status_code: 200

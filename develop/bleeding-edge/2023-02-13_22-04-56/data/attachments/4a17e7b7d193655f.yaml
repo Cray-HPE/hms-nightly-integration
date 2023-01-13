@@ -1,0 +1,21 @@
+body:
+  ExtraProperties:
+    CIDR: 0.0.0.0/0
+    MTU: 9000
+    Subnets: []
+    SystemDefaultRoute: CAN
+    VlanRange:
+    - 0
+  FullName: SystemDefaultRoute points the network name of the default route
+  IPRanges:
+  - 0.0.0.0/0
+  LastUpdated: 1676324169
+  LastUpdatedTime: 2023-02-13 21:36:09.852163 +0000 UTC
+  Name: BICAN
+  Type: ethernet
+headers:
+  Content-Length: '324'
+  Content-Type: application/json
+  Date: Mon, 13 Feb 2023 21:37:29 GMT
+redirect_query_params: {}
+status_code: 200

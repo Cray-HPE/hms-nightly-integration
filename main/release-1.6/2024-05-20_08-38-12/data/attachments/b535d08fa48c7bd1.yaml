@@ -1,0 +1,12 @@
+- name: Ensure that we can conduct a query on the ServiceEndpoints collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      ServiceEndpoints: !anything
+    save:
+      json:
+        ID: ServiceEndpoints[0].RedfishEndpointID

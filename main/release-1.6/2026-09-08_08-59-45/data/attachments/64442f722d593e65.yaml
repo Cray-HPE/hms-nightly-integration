@@ -1,0 +1,9 @@
+- name: Perform PUT against /meta-data
+  request:
+    url: "{bss_base_url}/meta-data"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+
+

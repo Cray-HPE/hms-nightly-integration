@@ -1,0 +1,116 @@
+body:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: Unknown
+    ID: x9999c7s9b9n8
+    NID: 9999999998
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus8
+    State: Unknown
+    SubRole: Master
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b9n7
+    NID: 9999999997
+    NetType: Infiniband
+    Role: Service
+    SoftwareStatus: TestStatus7
+    State: Empty
+    SubRole: Worker
+    Type: Node
+  - Arch: ARM
+    Class: River
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9n6
+    NID: 9999999996
+    NetType: Ethernet
+    Role: System
+    SoftwareStatus: TestStatus6
+    State: Populated
+    SubRole: Storage
+    Type: Node
+  - Arch: ARM
+    Class: Mountain
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9n5
+    NID: 9999999995
+    NetType: OEM
+    Role: Application
+    SoftwareStatus: TestStatus5
+    State: 'Off'
+    SubRole: Master
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Alert
+    ID: x9999c7s9b9n4
+    NID: 9999999994
+    NetType: None
+    Role: Storage
+    SoftwareStatus: TestStatus4
+    State: 'On'
+    SubRole: Worker
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Locked
+    ID: x9999c7s9b9n3
+    NID: 9999999993
+    NetType: Sling
+    Role: Management
+    SoftwareStatus: TestStatus3
+    State: Standby
+    SubRole: Storage
+    Type: Node
+  - Arch: UNKNOWN
+    Class: Hill
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9b9n2
+    NID: 9999999992
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus2
+    State: Halt
+    SubRole: Master
+    Type: Node
+  - Arch: UNKNOWN
+    Class: Hill
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9b9n1
+    NID: 9999999991
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus1
+    State: Ready
+    SubRole: Worker
+    Type: Node
+  - Arch: X86
+    Class: Hill
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b9n0
+    NID: 9999999990
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus0
+    State: Ready
+    SubRole: Storage
+    Type: Node
+headers:
+  Content-Length: '1976'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 20:54:41 GMT
+redirect_query_params: {}
+status_code: 200

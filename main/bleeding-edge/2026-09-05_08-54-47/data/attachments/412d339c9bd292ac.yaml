@@ -1,0 +1,13 @@
+- name: Get four Node xnames from the HSM Components collection to use in upcoming stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        xname1: Components[0].ID
+        xname2: Components[1].ID
+        xname3: Components[2].ID
+        xname4: Components[3].ID

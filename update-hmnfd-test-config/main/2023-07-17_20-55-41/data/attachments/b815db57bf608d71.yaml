@@ -1,0 +1,8 @@
+- name: Verify that /liveness rejects PUT requests
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/liveness"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

@@ -1,0 +1,17 @@
+allow_redirects: false
+headers: {}
+json:
+  RedfishEndpoints:
+  - Enabled: true
+    ID: x9999c7s99b92
+    RediscoverOnUpdate: true
+  - Enabled: false
+    ID: x9999c7s99b93
+    RediscoverOnUpdate: false
+  - Enabled: false
+    ID: x9999c7s99b94
+    RediscoverOnUpdate: false
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/RedfishEndpoints
+verify: false

@@ -1,0 +1,19 @@
+body:
+  Counts:
+    Failure: 1
+    Success: 3
+    Total: 4
+  Failure:
+  - ID: p9999.9998
+    Reason: NotFound
+  Success:
+    ComponentIDs:
+    - p9999.9999
+    - p9999.9996
+    - p9999.9997
+headers:
+  Content-Length: '167'
+  Content-Type: application/json
+  Date: Tue, 07 Mar 2023 21:30:27 GMT
+redirect_query_params: {}
+status_code: 200

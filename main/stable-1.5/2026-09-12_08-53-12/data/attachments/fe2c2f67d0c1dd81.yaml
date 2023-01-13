@@ -1,0 +1,167 @@
+- name: hsmAPIserviceValuesGET - Retrieve the valid HSM service values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Arch:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "ARM"
+                    - "Other"
+                    - "UNKNOWN"
+                    - "X86"
+            Class:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "Hill"
+                    - "Mountain"
+                    - "River"
+            Flag:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+
+
+                  unique: False
+                  enum:
+                    - "Alert"
+                    - "Locked"
+                    - "OK"
+                    - "Unknown"
+                    - "Warning"
+            NetType:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "Ethernet"
+                    - "Infiniband"
+                    - "None"
+                    - "OEM"
+                    - "Sling"
+            Role:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+
+            SubRole:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+
+            State:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "Empty"
+                    - "Halt"
+                    - "Off"
+                    - "On"
+                    - "Populated"
+                    - "Ready"
+                    - "Standby"
+                    - "Unknown"
+            Type:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "All"
+                    - "AllComp"
+                    - "AllSvc"
+                    - "CDU"
+                    - "CDUMgmtSwitch"
+                    - "CEC"
+                    - "CMMFpga"
+                    - "CMMRectifier"
+                    - "Cabinet"
+                    - "CabinetBMC"
+                    - "CabinetCDU"
+                    - "CabinetPDU"
+                    - "CabinetPDUController"
+                    - "CabinetPDUNic"
+                    - "CabinetPDUOutlet"
+                    - "CabinetPDUPowerConnector"
+                    - "Chassis"
+                    - "ChassisBMC"
+                    - "ChassisBMCNic"
+                    - "ComputeModule"
+                    - "Drive"
+                    - "HSNAsic"
+                    - "HSNBoard"
+                    - "HSNConnector"
+                    - "HSNConnectorPort"
+                    - "HSNLink"
+                    - "INVALID"
+                    - "Memory"
+                    - "MgmtHLSwitch"
+                    - "MgmtSwitch"
+                    - "MgmtSwitchConnector"
+                    - "Node"
+                    - "NodeAccel"
+                    - "NodeAccelRiser"
+                    - "NodeBMC"
+                    - "NodeBMCNic"
+                    - "NodeEnclosure"
+                    - "NodeEnclosurePowerSupply"
+                    - "NodeFpga"
+                    - "NodeHsnNic"
+                    - "NodeNic"
+                    - "NodePowerConnector"
+                    - "Partition"
+                    - "Processor"
+                    - "RouterBMC"
+                    - "RouterBMCNic"
+                    - "RouterFpga"
+                    - "RouterModule"
+                    - "RouterPowerConnector"
+                    - "RouterTORFpga"
+                    - "SMSBox"
+                    - "StorageGroup"
+                    - "System"
+
+

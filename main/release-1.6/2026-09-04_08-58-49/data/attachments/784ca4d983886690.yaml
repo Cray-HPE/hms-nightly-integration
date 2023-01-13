@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  Use_telemetry: fake
+method: PATCH
+stream: false
+url: http://cray-hmnfd:28600/hmi/v2/params
+verify: false
