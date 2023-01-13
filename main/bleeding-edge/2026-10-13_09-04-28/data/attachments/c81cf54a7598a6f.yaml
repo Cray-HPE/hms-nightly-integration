@@ -1,0 +1,12 @@
+- name: Create test {type} in NodeMaps
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/{xname}"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      Role: Application
+      SubRole: Storage
+      NID: 9999999967
+  response:
+    status_code: 200
+

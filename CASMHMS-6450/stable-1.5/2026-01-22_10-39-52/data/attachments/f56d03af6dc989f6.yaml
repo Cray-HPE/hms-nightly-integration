@@ -1,0 +1,20 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - Arch: FAKE
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b9n9
+    NID: 9999999999
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: AdminStatus
+    State: 'On'
+    Type: Node
+  Force: false
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components
+verify: false

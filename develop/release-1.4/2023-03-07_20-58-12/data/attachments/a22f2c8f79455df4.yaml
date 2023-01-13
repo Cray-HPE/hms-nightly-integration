@@ -1,0 +1,57 @@
+- name: hsmAPIstateComponentsGETtypeParamCabinetPDUController - Retrieve the CabinetPDUController Component using GET and the type query parameter.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=CabinetPDUController"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999m3"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "CabinetPDUController"
+                    State:
+                      type: str
+                      required: True
+                      enum:
+                        - "Ready"
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "OK"
+                    Enabled:
+                      type: bool
+                      required: True
+                    NetType:
+                      type: str
+                      required: True
+                      enum:
+                        - "Infiniband"
+                    Arch:
+                      type: str
+                      required: True
+                      enum:
+                        - "X86"
+
+

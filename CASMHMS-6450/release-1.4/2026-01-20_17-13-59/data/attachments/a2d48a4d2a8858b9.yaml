@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  description: Test partition 1 for HSM API testing in CT framework (UPDATED).
+  tags:
+  - p98_tag3
+  - p98_tag4
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/partitions/p98
+verify: false

@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - X86
+  - ARM
+  - UNKNOWN
+  - Other
+  Class:
+  - River
+  - Mountain
+  - Hill
+  Flag:
+  - Alert
+  - Locked
+  - Unknown
+  - OK
+  - Warning
+  - Warning
+  NetType:
+  - Sling
+  - Infiniband
+  - Ethernet
+  - OEM
+  - None
+  Role:
+  - Management
+  - Compute
+  - Service
+  - System
+  - Application
+  - Storage
+  State:
+  - Halt
+  - Ready
+  - Unknown
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  SubRole:
+  - UAN
+  - Gateway
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Master
+  - Worker
+  - Storage
+  Type:
+  - StorageGroup
+  - NodeBMC
+  - RouterBMC
+  - All
+  - ChassisBMC
+  - ChassisBMCNic
+  - NodeHsnNic
+  - INVALID
+  - Chassis
+  - NodePowerConnector
+  - AllSvc
+  - CabinetPDU
+  - HSNConnectorPort
+  - SMSBox
+  - CMMFpga
+  - CabinetPDUController
+  - RouterModule
+  - CMMRectifier
+  - HSNBoard
+  - Partition
+  - CabinetPDUOutlet
+  - CabinetBMC
+  - System
+  - ComputeModule
+  - HSNLink
+  - NodeEnclosure
+  - NodeNic
+  - NodeAccel
+  - HSNAsic
+  - MgmtSwitchConnector
+  - AllComp
+  - CDUMgmtSwitch
+  - Drive
+  - MgmtHLSwitch
+  - CabinetCDU
+  - NodeBMCNic
+  - RouterPowerConnector
+  - Node
+  - RouterBMCNic
+  - RouterTOR
+  - RouterFpga
+  - NodeEnclosurePowerSupply
+  - NodeAccelRiser
+  - Memory
+  - CabinetPDUNic
+  - CEC
+  - RouterTORFpga
+  - MgmtHLSwitchEnclosure
+  - Cabinet
+  - NodeFpga
+  - Processor
+  - HSNConnector
+  - MgmtSwitch
+  - CDU
+  - CabinetPDUPowerConnector
+  - VirtualNode
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Thu, 15 Oct 2026 08:32:08 GMT
+redirect_query_params: {}
+status_code: 200

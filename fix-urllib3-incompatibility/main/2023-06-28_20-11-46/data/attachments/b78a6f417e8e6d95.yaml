@@ -1,0 +1,7 @@
+- name: Ensure that /readiness can be retrieved
+  request:
+    url: "{pcs_base_url}/readiness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

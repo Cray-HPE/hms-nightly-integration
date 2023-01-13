@@ -1,0 +1,22 @@
+body:
+- cloud-init:
+    meta-data: null
+    phone-home:
+      fqdn: ''
+      hostname: ''
+      instance_id: ''
+      pub_key_dsa: ''
+      pub_key_ecdsa: ''
+      pub_key_rsa: ''
+    user-data: null
+  hosts:
+  - x9999c0s6b0n2
+  initrd: s3://boot-images/00000000-0000-0000-0000-000000000003/initrd
+  kernel: s3://boot-images/00000000-0000-0000-0000-000000000003/kernel
+  params: console=tty0 create_replaced
+headers:
+  Content-Length: '372'
+  Content-Type: application/json; charset=UTF-8
+  Date: Tue, 07 Mar 2023 21:30:14 GMT
+redirect_query_params: {}
+status_code: 200

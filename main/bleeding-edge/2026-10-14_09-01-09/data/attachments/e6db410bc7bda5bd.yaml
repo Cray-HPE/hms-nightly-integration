@@ -1,0 +1,70 @@
+- name: Query using the type parameter to look for hardware of the Node type
+  request:
+
+
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              sequence:
+                - type: map
+                  matching: all
+                  mapping:
+                    Arch:
+                      type: str
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "River"
+                        - "Mountain"
+                        - "Hill"
+                    Enabled:
+                      type: bool
+                    Flag:
+                      type: str
+                    ID:
+                      type: str
+                    Locked:
+                      type: bool
+                      required: False
+                    NID:
+                      type: int
+                    NetType:
+                      type: str
+                    Role:
+                      type: str
+                    SoftwareStatus:
+                      type: str
+                      required: False
+                    State:
+                      type: str
+                      enum:
+                        - "Standby"
+                        - "Ready"
+                        - "Halt"
+                        - "On"
+                        - "Off"
+                    SubRole:
+                      type: str
+                      required: False
+                    Subtype:
+                      type: str
+                      required: False
+                    Type:
+                      type: str
+                      enum:
+                        - "Node"
+
+

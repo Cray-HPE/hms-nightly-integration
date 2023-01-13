@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPUTdoesntExistNoForce - Create a Component using PUT for a Node that doesn't already exist.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b9n9"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"Component":{"ID":"x9999c7s9b9n9","Type":"Node","State":"Ready","Flag":"OK","Enabled":true,"SoftwareStatus":"AdminStatus","Role":"Compute","NID":9999999999,"NetType":"Ethernet","Arch":"Other","Class":"River"},"Force":false}
+  response:
+    status_code: 204
+
+

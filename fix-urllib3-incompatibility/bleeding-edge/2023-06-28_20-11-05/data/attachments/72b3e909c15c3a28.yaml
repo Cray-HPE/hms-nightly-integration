@@ -1,0 +1,5 @@
+- name: hsmAPIRedfishEndpointsDELETE - Clean up test RFEndpoint x9999c7s99b92
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b92"
+    method: DELETE
+

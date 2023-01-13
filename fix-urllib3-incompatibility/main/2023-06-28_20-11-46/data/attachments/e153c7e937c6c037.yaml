@@ -1,0 +1,76 @@
+- name: Get Redfish endpoint data for a given NodeBMC xname
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/{xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            DiscoveryInfo:
+              type: map
+              mapping:
+                LastDiscoveryAttempt:
+                  type: timestamp
+                  required: True
+                LastDiscoveryStatus:
+                  type: str
+                  required: True
+                  enum:
+                    - "DiscoverOK"
+
+                    - "HTTPsGetFailed"
+                RedfishVersion:
+                  type: str
+                  required: False
+            Domain:
+              type: str
+              required: True
+            Enabled:
+              type: bool
+              required: True
+            FQDN:
+              type: str
+              required: True
+            Hostname:
+              type: str
+              required: True
+            ID:
+              type: str
+              required: True
+              enum:
+                - "{xname}"
+            MACAddr:
+              type: str
+
+
+              required: False
+            Password:
+              type: str
+              required: True
+            IPAddress:
+              type: str
+              required: False
+            RediscoverOnUpdate:
+              type: bool
+              required: True
+            Type:
+              type: str
+              required: True
+              enum:
+                - "NodeBMC"
+            UUID:
+              type: str
+              required: False
+            User:
+              type: str
+              required: True
+    save:
+      json:
+        fqdn: FQDN
+
+

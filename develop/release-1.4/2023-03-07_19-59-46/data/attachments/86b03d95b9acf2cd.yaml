@@ -1,0 +1,85 @@
+- name: Perform GET against /endpoint-history with name
+  request:
+    url: "{bss_base_url}/boot/v1/endpoint-history"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      name: x9999c0s1b0n0
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+          - type: map
+            mapping:
+              name:
+                type: str
+              endpoint:
+                type: str
+                enum:
+                - bootscript
+                - user-data
+              last_epoch:
+                type: int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

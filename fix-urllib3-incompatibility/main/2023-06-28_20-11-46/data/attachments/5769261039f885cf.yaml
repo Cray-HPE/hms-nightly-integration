@@ -1,0 +1,10 @@
+- name: Verify /partitions/partition/members POST method
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/p98/members"
+    json: {"id":"{xname4}"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+
+

@@ -1,0 +1,20 @@
+- name: Verify that we can query for a specific compute Node in the Components collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Arch: !anything
+      Class: "{Class:s}"
+      Enabled: !anybool
+      Flag: !anything
+      ID: "{node_xname:s}"
+      NID: !int "{NID:d}"
+      NetType: !anything
+      Role: !anything
+      State: !anything
+      Type: !anything
+
+

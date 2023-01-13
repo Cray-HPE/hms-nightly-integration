@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+method: GET
+params:
+  mac: 1notAMac
+stream: false
+url: http://cray-bss:27778/boot/v1/bootparameters
+verify: false

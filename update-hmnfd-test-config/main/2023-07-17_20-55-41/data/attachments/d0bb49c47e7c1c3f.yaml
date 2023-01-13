@@ -1,0 +1,7 @@
+- name: Ensure that power-status correctly handles unsupported POST operations
+  request:
+    url: "{pcs_base_url}/power-status"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

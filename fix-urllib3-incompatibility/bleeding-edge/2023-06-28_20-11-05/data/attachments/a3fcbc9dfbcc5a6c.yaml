@@ -1,0 +1,8 @@
+- name: Perform PATCH against /user-data
+  request:
+    url: "{bss_base_url}/user-data"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

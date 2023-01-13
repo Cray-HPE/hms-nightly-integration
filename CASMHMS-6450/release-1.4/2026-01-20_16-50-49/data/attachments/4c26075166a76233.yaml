@@ -1,0 +1,8 @@
+- name: Perform DELETE against /phone-home
+  request:
+    url: "{bss_base_url}/phone-home"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

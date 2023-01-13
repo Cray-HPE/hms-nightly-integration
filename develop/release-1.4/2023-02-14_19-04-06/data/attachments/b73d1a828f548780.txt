@@ -1,0 +1,52 @@
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Key 'Nodes' was not defined. Path: ''"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'XName': 'x9999c7s9b9n9', 'Format': 'NestNodesOnly', 'Nodes': [{'ID': 'x9999c7s9b9n9', 'Type': 'Node', 'Ordinal': 9, 'Status': 'Populated', 'HWInventoryByLocationType': 'HWInvByLocNode', 'NodeLocationInfo': {'Id': 'Node9', 'Name': 'Node9', 'Description': 'WNC-Updated', 'HostName': '', 'ProcessorSummary': {'Count': 2, 'Model': 'AMDEPYC776364-CoreProcessor'}, 'MemorySummary': {'TotalSystemMemoryGiB': 512}}, 'PopulatedFRU': {'FRUID': 'Node.HPE.101920703D.XJJ7679069386', 'Type': 'Node', 'Subtype': '', 'HWInventoryByFRUType': 'HWInvByFRUNode', 'NodeFRUInfo': {'AssetTag': '', 'BiosVersion': 'ex425.bios-1.6.3-updated', 'Model': 'HPECRAYEX425(MILAN)', 'Manufacturer': 'HPE', 'PartNumber': '101920703.D', 'SerialNumber': 'XJJ7679069386', 'SKU': 'Updated-SKU', 'SystemType': 'Physical', 'UUID': 'Updated-UUID'}}}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Key 'Nodes' was not defined. Path: ''.: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7f9a6d52f670>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Key 'Nodes' was not defined. Path: ''.: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Key 'Nodes' was not defined. Path: ''.: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError

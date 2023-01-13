@@ -1,0 +1,39 @@
+body:
+  HWInventoryByLocationType: HWInvByLocMemory
+  ID: x9999c7s9b9n9d9
+  MemoryLocationInfo:
+    Description: ''
+    Id: DIMM9
+    MemoryLocation:
+      Channel: 9
+      MemoryController: 9
+      Slot: 9
+      Socket: 9
+    Name: DIMM9
+  Ordinal: 9
+  PopulatedFRU:
+    FRUID: Memory.SKHynix.HMA82GR7CJR8NXN.YBZ0215997182
+    HWInventoryByFRUType: HWInvByFRUMemory
+    MemoryFRUInfo:
+      BaseModuleType: RDIMM
+      BusWidthBits: 72
+      CapacityMiB: 16384
+      DataWidthBits: 64
+      ErrorCorrection: Multi-bitECC
+      Manufacturer: SKHynix
+      MemoryDeviceType: DDR4
+      MemoryType: DRAM
+      OperatingSpeedMhz: 3200
+      PartNumber: HMA82GR7CJR8N-XN
+      RankCount: 2
+      SerialNumber: YBZ0215997182
+    Subtype: ''
+    Type: Memory
+  Status: Populated
+  Type: Memory
+headers:
+  Content-Length: '710'
+  Content-Type: application/json
+  Date: Tue, 07 Mar 2023 21:30:22 GMT
+redirect_query_params: {}
+status_code: 200

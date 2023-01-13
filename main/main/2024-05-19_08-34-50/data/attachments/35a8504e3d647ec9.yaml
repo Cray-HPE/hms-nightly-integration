@@ -1,0 +1,9 @@
+- name: Verify that we can send state change notifications with state to HMNFD for fanout
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/scn"
+    json: {"Components":["{node_xname}"],"Enabled":true,"State":"{node_state}"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+

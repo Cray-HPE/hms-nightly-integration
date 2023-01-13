@@ -1,0 +1,26 @@
+- name: Power the target node off with a force-off transition
+  request:
+    url: "{pcs_base_url}/transitions"
+    json: {"operation":"force-off","taskDeadlineMinutes": !int "{transition_force-off_task_deadline_minutes}","location":[{"xname":"{node_xname}"}]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            transitionID:
+              type: str
+              required: True
+            operation:
+              required: True
+              type: str
+              enum:
+                - "Force-Off"
+    save:
+      json:
+        transition_id_actual: transitionID

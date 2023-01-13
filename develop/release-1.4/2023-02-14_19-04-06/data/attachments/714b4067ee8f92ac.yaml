@@ -1,0 +1,37 @@
+- name: hsmAPIstateComponentsXnameFlagOnlyPATCHinvalidFlag - Attempt to update a Component with new flag data and an invalid flag using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n8/FlagOnly"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Flag":"FAKE"}
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Bad Request"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "a required argument did not match any valid input"
+            status:
+              type: int
+              required: True
+              enum:
+                - 400
+
+

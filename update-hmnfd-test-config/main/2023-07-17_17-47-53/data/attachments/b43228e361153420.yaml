@@ -1,0 +1,27 @@
+- name: capmcAPIxnameOffPOSTonComputeNodePrereqPrep - Power the target compute node and its parents on to prepare them for the test case
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_on"
+
+
+    json: {"reason":"CT test case: capmcAPIxnameOffPOSTonComputeNodePrereqPrep","xnames":["{compute_module_xname}b0n0"],"force":false,"prereq":true}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""

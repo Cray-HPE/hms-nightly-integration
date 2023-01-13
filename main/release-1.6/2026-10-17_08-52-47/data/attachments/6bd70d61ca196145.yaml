@@ -1,0 +1,10 @@
+- name: capmcAPIxnameReinitDELETE - Verify xname_reinit fails with DELETE method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_reinit"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    json:
+      e: 405
+      err_msg: "(DELETE) Not Allowed"

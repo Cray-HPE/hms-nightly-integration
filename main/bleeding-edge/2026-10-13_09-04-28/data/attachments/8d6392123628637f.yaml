@@ -1,0 +1,10 @@
+- name: hsmAPIserviceValuesPOST - Attempt an unsupported POST operation on the service values endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 404
+
+

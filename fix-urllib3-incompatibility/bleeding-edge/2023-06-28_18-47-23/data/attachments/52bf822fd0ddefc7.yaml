@@ -1,0 +1,37 @@
+body:
+  HWInventoryByLocationType: HWInvByLocNode
+  ID: x9999c7s9b9n9
+  NodeLocationInfo:
+    Description: WNC
+    HostName: ''
+    Id: Node9
+    MemorySummary:
+      TotalSystemMemoryGiB: 256
+    Name: Node9
+    ProcessorSummary:
+      Count: 2
+      Model: AMDEPYC776364-CoreProcessor
+  Ordinal: 9
+  PopulatedFRU:
+    FRUID: Node.HPE.101920703D.XJJ7679069386
+    HWInventoryByFRUType: HWInvByFRUNode
+    NodeFRUInfo:
+      AssetTag: ''
+      BiosVersion: ex425.bios-1.6.3
+      Manufacturer: HPE
+      Model: HPECRAYEX425(MILAN)
+      PartNumber: 101920703.D
+      SKU: ''
+      SerialNumber: XJJ7679069386
+      SystemType: Physical
+      UUID: ''
+    Subtype: ''
+    Type: Node
+  Status: Populated
+  Type: Node
+headers:
+  Content-Length: '655'
+  Content-Type: application/json
+  Date: Wed, 28 Jun 2023 18:19:43 GMT
+redirect_query_params: {}
+status_code: 200

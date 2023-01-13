@@ -1,0 +1,12 @@
+- name: Get info about a NodeBMC from the Components collection to use in upcoming stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=NodeBMC"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        bmc_id: Components[0].ID
+
+
