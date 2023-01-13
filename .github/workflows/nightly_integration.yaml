@@ -220,6 +220,10 @@ jobs:
         # Add it to the path
         echo "$(realpath allure-${ALLURE_VERSION}/bin)" >> $GITHUB_PATH
 
+    - name: Install python dependencies
+      shell: bash
+      run: pip3 install -r requirements.txt
+
     - uses: actions/download-artifact@v3
       with:
         path: artifacts
@@ -247,7 +251,7 @@ jobs:
         mkdir -p "${BRANCH_NAME}"
         
         # Generate test reports 
-        ./generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
+        ./reporting/generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
         
         # Commit changes
         git add .
