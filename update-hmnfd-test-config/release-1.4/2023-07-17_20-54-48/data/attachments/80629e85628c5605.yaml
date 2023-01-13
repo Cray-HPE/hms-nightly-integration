@@ -1,0 +1,11 @@
+- name: Create test HSM EthernetInterfaces for the CT Test container
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      MACAddress: "0e:ff:ff:ff:ff:fe"
+      ComponentID: "{node_xname}"
+      Description: "Created by BSS CT Tavern Tests"
+      IPAddresses:
+        - IPAddress: "{test_container_ip_address}"

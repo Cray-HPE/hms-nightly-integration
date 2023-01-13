@@ -1,0 +1,36 @@
+- name: hsmAPIdefaultsNodeMapsXnameGETnodeC - Retrieve the data for NodeC from an existing NodeMap using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/x9999c7s9b9n7"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n7"
+            NID:
+              type: int
+              required: True
+              enum:
+                - 9999999997
+            Role:
+              type: str
+              required: True
+              enum:
+                - "Compute"
+            SubRole:
+              type: str
+              required: True
+              enum:
+                - "Worker"
+
+

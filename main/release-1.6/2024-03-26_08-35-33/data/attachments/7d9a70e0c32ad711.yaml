@@ -1,0 +1,36 @@
+body:
+  Components:
+  - Arch: X86
+    Class: Mountain
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9e9
+    NetType: Sling
+    State: 'On'
+    Type: NodeEnclosure
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Alert
+    ID: x9999c7s9b9n4
+    NID: 9999999994
+    NetType: None
+    Role: Storage
+    SoftwareStatus: TestStatus4
+    State: 'On'
+    SubRole: Worker
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: false
+    Flag: Warning
+    ID: x9999c7r9e9
+    NetType: Sling
+    State: 'On'
+    Type: HSNBoard
+headers:
+  Content-Length: '500'
+  Content-Type: application/json
+  Date: Tue, 26 Mar 2024 08:35:23 GMT
+redirect_query_params: {}
+status_code: 200

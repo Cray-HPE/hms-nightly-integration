@@ -1,0 +1,554 @@
+- name: Ensure that the detailed information for the new FAS action can be retrieved
+  request:
+    url: "{fas_base_url}/actions/{newActionID}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            actionID:
+              type: str
+              required: True
+              enum:
+                - "{newActionID}"
+            snapshotID:
+              type: str
+              required: True
+            command:
+              type: map
+              required: True
+              mapping:
+                overrideDryrun:
+                  type: bool
+                  required: True
+                  enum:
+                    - false
+                restoreNotPossibleOverride:
+                  type: bool
+                  required: True
+                  enum:
+                    - false
+                overwriteSameImage:
+                  type: bool
+                  required: True
+                  enum:
+                    - false
+                timeLimit:
+                  type: int
+                  required: True
+                  enum:
+                    - 120
+                version:
+                  type: str
+                  required: True
+                  enum:
+                    - "latest"
+                tag:
+                  type: str
+                  required: True
+                  enum:
+                    - "default"
+                description:
+                  type: str
+                  required: True
+                  enum:
+                    - "test_actions CT test description"
+            startTime:
+              type: str
+              required: True
+              pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ .*[0-9]{{4}} UTC"
+            endTime:
+              type: str
+              required: False
+              pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ .*[0-9]{{4}} UTC"
+            state:
+              type: str
+              required: True
+              enum:
+                - "new"
+                - "configure"
+                - "configured"
+                - "blocked"
+                - "running"
+                - "completed"
+            parameters:
+              type: map
+              required: True
+              mapping:
+                stateComponentFilter:
+                  type: map
+                  required: True
+                  mapping:
+                    xnames:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: str
+                          required: True
+                          enum:
+                            - "{xname}"
+                inventoryHardwareFilter:
+                  type: map
+                  required: True
+                  mapping:
+                    manufacturer:
+                      type: str
+                      required: False
+                    model:
+                      type: str
+                      required: False
+                imageFilter:
+                  type: map
+                  required: True
+                  mapping:
+                    imageID:
+                      type: str
+                      required: True
+                    overrideImage:
+                      type: bool
+                      required: True
+                      enum:
+                        - false
+                targetFilter:
+                  type: map
+                  required: True
+                  mapping:
+                    targets:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: str
+                          required: True
+                          enum:
+                            - "BMC"
+                command:
+                  type: map
+                  required: True
+                  mapping:
+                    overrideDryrun:
+                      type: bool
+                      required: True
+                      enum:
+                        - false
+                    restoreNotPossibleOverride:
+                      type: bool
+                      required: True
+                      enum:
+                        - false
+                    overwriteSameImage:
+                      type: bool
+                      required: True
+                      enum:
+                        - false
+                    timeLimit:
+                      type: int
+                      required: True
+                      enum:
+                        - 120
+                    version:
+                      type: str
+                      required: True
+                      enum:
+                        - "latest"
+                    tag:
+                      type: str
+                      required: True
+                      enum:
+                        - "default"
+                    description:
+                      type: str
+                      required: True
+                      enum:
+                        - "test_actions CT test description"
+            operationSummary:
+              type: map
+              required: True
+              mapping:
+                initial:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                configured:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                blocked:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                inProgress:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                needsVerified:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                verifying:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                failed:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                succeeded:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                noOperation:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: True
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                              enum:
+                                - "{xname}"
+                            target:
+                              type: str
+                              required: True
+                              enum:
+                                - "BMC"
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                noSolution:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                aborted:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+                unknown:
+                  type: map
+                  required: True
+                  mapping:
+                    operationKeys:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: map
+                          required: False
+                          mapping:
+                            operationID:
+                              type: str
+                              required: True
+                            xname:
+                              type: str
+                              required: True
+                            target:
+                              type: str
+                              required: True
+                            targetName:
+                              type: str
+                              required: True
+                            fromFirmwareVersion:
+                              type: str
+                              required: True
+                            stateHelper:
+                              type: str
+                              required: True
+            blockedBy:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: False
+            errors:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: False
+
+

@@ -1,0 +1,24 @@
+- name: Retrieve the power-cap patch for the target node and minimum power cap value
+
+  max_retries: !int "{power-cap_patch_num_attempts}"
+  delay_after: !float "{power-cap_patch_poll_interval}"
+  request:
+    url: "{pcs_base_url}/power-cap/{patch_task_id_1}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+
+          allowempty: True
+          mapping:
+            taskStatus:
+              type: str
+              required: True
+              enum:
+                - "completed"

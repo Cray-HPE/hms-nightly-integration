@@ -1,0 +1,85 @@
+- name: Verify that a /params PATCH operation with an empty payload does not modify the service parameters
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/params"
+    json: {}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Debug:
+              type: int
+              required: True
+              enum:
+                - !int "{debug_orig}"
+            KV_url:
+              type: str
+              required: True
+              enum:
+                - "{kv_url_orig}"
+            Nosm:
+              type: int
+              required: True
+              enum:
+                - !int "{nosm_orig}"
+            Port:
+              type: int
+              required: True
+              enum:
+                - !int "{port_orig}"
+            Scn_in_url:
+              type: str
+              required: True
+              enum:
+                - "{scn_in_url_orig}"
+            Scn_max_cache:
+              type: int
+              required: True
+              enum:
+                - !int "{scn_max_cache_orig}"
+            Scn_cache_delay:
+              type: int
+              required: True
+              enum:
+                - !int "{scn_cache_delay_orig}"
+            Scn_retries:
+              type: int
+              required: True
+              enum:
+                - !int "{scn_retries_orig}"
+            Scn_backoff:
+              type: int
+              required: True
+              enum:
+                - !int "{scn_backoff_orig}"
+            SM_retries:
+              type: int
+              required: True
+              enum:
+                - !int "{sm_retries_orig}"
+            SM_timeout:
+              type: int
+              required: True
+              enum:
+                - !int "{sm_timeout_orig}"
+            SM_url:
+              type: str
+              required: True
+              enum:
+                - "{sm_url_orig}"
+            Telemetry_host:
+              type: str
+              required: True
+              enum:
+                - "{telemetry_host_orig}"
+            Use_telemetry:
+              type: int
+              required: True
+              enum:
+                - !int "{use_telemetry_orig}"
+

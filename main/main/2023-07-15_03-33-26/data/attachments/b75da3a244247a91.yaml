@@ -1,0 +1,13 @@
+- name: Create or update Bootparameter for unknown hosts
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - Unknown-x86_64
+      params: console=tty0 unknown_hardware
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+  response:
+    status_code: 200

@@ -1,0 +1,24 @@
+Format variables:
+  hmnfd_base_url = 'http://cray-hmnfd:28600'
+  node_xname = 'x3000c0s5b0n0'
+  test_agent = '???'
+  node_xname = 'x3000c0s5b0n0'
+  test_agent_host = '???'
+  verify = 'False'
+
+Source test stage (line 50):
+  - name: Verify that a new HMNFD state change notification subscription can be created
+    request:
+      url: "{hmnfd_base_url}/hmi/v2/subscriptions/{node_xname}/agents/{test_agent}"
+      json: {"Components":["{node_xname}"],"Enabled":true,"Roles":["Compute","Service","System","Management"],"SubRoles":["Master","Worker","Storage"],"SoftwareStatus":["AdminDown","Unknown","Other"],"States":["Ready","On","Off","Standby","Populated","Empty"],"Url":"http://{test_agent_host}/boot/v1/scn"}
+      method: POST
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+
+
+
+Missing format vars for stage
+
+Errors:
+E   tavern.util.exceptions.MissingFormatError: test_agent

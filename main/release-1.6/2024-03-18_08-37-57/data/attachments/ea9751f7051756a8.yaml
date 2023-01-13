@@ -1,0 +1,38 @@
+body:
+  actions:
+  - actionID: 2306bcf7-68f4-44a5-8ca9-52f92eea4628
+    blockedBy: []
+    command:
+      description: test_actions CT test description
+      overrideDryrun: false
+      overwriteSameImage: false
+      restoreNotPossibleOverride: false
+      tag: default
+      timeLimit: 120
+      version: latest
+    endTime: 2024-03-18 08:08:16.387072978 +0000 UTC
+    errors:
+    - No Viable Targets
+    operationCounts:
+      aborted: 0
+      blocked: 0
+      configured: 0
+      failed: 0
+      inProgress: 0
+      initial: 0
+      needsVerified: 0
+      noOperation: 0
+      noSolution: 0
+      succeeded: 0
+      total: 0
+      unknown: 0
+      verifying: 0
+    snapshotID: 00000000-0000-0000-0000-000000000000
+    startTime: 2024-03-18 08:08:16.357942342 +0000 UTC
+    state: completed
+headers:
+  Content-Length: '682'
+  Content-Type: application/json
+  Date: Mon, 18 Mar 2024 08:08:16 GMT
+redirect_query_params: {}
+status_code: 200

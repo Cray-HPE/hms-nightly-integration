@@ -1,0 +1,128 @@
+body:
+  Format: NestNodesOnly
+  Nodes:
+  - HWInventoryByLocationType: HWInvByLocNode
+    ID: x9999c7s9b9n9
+    Memory:
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x9999c7s9b9n9d9
+      MemoryLocationInfo:
+        Description: ''
+        Id: DIMM9
+        MemoryLocation:
+          Channel: 9
+          MemoryController: 9
+          Slot: 9
+          Socket: 9
+        Name: DIMM9
+      Ordinal: 9
+      PopulatedFRU:
+        FRUID: Memory.SKHynix.HMA82GR7CJR8NXN.YBZ0215997182
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: Multi-bitECC
+          Manufacturer: SKHynix
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: HMA82GR7CJR8N-XN
+          RankCount: 2
+          SerialNumber: YBZ0215997182
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    NodeHsnNics:
+    - HWInventoryByLocationType: HWInvByLocNodeHsnNic
+      ID: x9999c7s9b9n9h3
+      NodeHsnNicLocationInfo:
+        Description: SS11200Gb2PNICMezzREV02(HSN)
+        Id: HPCNet0
+        Name: ''
+      Ordinal: 3
+      PopulatedFRU:
+        FRUID: NodeHsnNic.HPEPRM.P43012001.OTI6996696413
+        HWInventoryByFRUType: HWInvByFRUNodeHsnNic
+        NodeHsnNicFRUInfo:
+          Manufacturer: HPE-PRM
+          Model: R4K44A
+          PartNumber: P43012-001
+          SerialNumber: OTI6996696413
+        Subtype: ''
+        Type: NodeHsnNic
+      Status: Populated
+      Type: NodeHsnNic
+    NodeLocationInfo:
+      Description: WNC-Updated
+      HostName: ''
+      Id: Node9
+      MemorySummary:
+        TotalSystemMemoryGiB: 512
+      Name: Node9
+      ProcessorSummary:
+        Count: 2
+        Model: AMDEPYC776364-CoreProcessor
+    Ordinal: 9
+    PopulatedFRU:
+      FRUID: Node.HPE.101920703D.XJJ7679069386
+      HWInventoryByFRUType: HWInvByFRUNode
+      NodeFRUInfo:
+        AssetTag: ''
+        BiosVersion: ex425.bios-1.6.3-updated
+        Manufacturer: HPE
+        Model: HPECRAYEX425(MILAN)
+        PartNumber: 101920703.D
+        SKU: Updated-SKU
+        SerialNumber: XJJ7679069386
+        SystemType: Physical
+        UUID: Updated-UUID
+      Subtype: ''
+      Type: Node
+    Processors:
+    - HWInventoryByLocationType: HWInvByLocProcessor
+      ID: x9999c7s9b9n9p3
+      Ordinal: 3
+      PopulatedFRU:
+        FRUID: Processor.AdvancedMicroDevicesInc.EWN8203534712
+        HWInventoryByFRUType: HWInvByFRUProcessor
+        ProcessorFRUInfo:
+          InstructionSet: ''
+          Manufacturer: AdvancedMicroDevices,Inc.
+          MaxSpeedMHz: 3525
+          Model: AMDEPYC776364-CoreProcessor
+          Oem: null
+          PartNumber: ''
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: '0x19'
+            EffectiveModel: '0x01'
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: '0x1'
+            VendorID: AuthenticAMD
+          ProcessorType: CPU
+          SerialNumber: EWN8203534712
+          TotalCores: 64
+          TotalThreads: 128
+        Subtype: ''
+        Type: Processor
+      ProcessorLocationInfo:
+        Description: ''
+        Id: CPU3
+        Name: Processor
+        Socket: CPU3
+      Status: Populated
+      Type: Processor
+    Status: Populated
+    Type: Node
+  XName: x9999c7s9b9n9
+headers:
+  Content-Type: application/json
+  Date: Sun, 24 Mar 2024 08:19:13 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

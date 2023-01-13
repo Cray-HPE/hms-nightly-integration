@@ -1,0 +1,37 @@
+body:
+  HWInventoryByLocationType: HWInvByLocNode
+  ID: x1000c0s2b1n1
+  NodeLocationInfo:
+    Description: WNC
+    HostName: ''
+    Id: Node1
+    MemorySummary:
+      TotalSystemMemoryGiB: 256
+    Name: Node1
+    ProcessorSummary:
+      Count: 2
+      Model: AMD EPYC 7763 64-Core Processor
+  Ordinal: 1
+  PopulatedFRU:
+    FRUID: Node.HPE.101920703D.DGF5236652326_1
+    HWInventoryByFRUType: HWInvByFRUNode
+    NodeFRUInfo:
+      AssetTag: ''
+      BiosVersion: ex425.bios-1.6.3
+      Manufacturer: HPE
+      Model: HPE CRAY EX425 (MILAN)
+      PartNumber: 101920703.D
+      SKU: ''
+      SerialNumber: DGF5236652326
+      SystemType: Physical
+      UUID: ''
+    Subtype: ''
+    Type: Node
+  Status: Populated
+  Type: Node
+headers:
+  Content-Length: '664'
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:07:54 GMT
+redirect_query_params: {}
+status_code: 200

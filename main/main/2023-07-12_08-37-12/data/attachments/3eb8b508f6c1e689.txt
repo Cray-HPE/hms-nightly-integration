@@ -1,0 +1,160 @@
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'kernel http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/kernel' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'kernel http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/kernel' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'initrd http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/initrd' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'initrd http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/initrd' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+console.tty0' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+console.tty0' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+xname=x1000c0s2b0n0' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+xname=x1000c0s2b0n0' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+nid=1008' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+nid=1008' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function better_validate_regex at 0x7f3c5ac26d30>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+        raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+    tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+bss_referral_token=' in response:
+    #!ipxe
+    sleep 10
+    chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1
+
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/src/libs/bss_test_utils.py", line 65, in better_validate_regex
+    raise exceptions.RegexAccessError(f"No match for regex '{expression}' in response:\n{response.text}")
+tavern.util.exceptions.RegexAccessError: No match for regex 'kernel --name .+bss_referral_token=' in response:
+#!ipxe
+sleep 10
+chain https://api-gw-service-nmn.local/apis/bss/boot/v1/bootscript?mac=00:40:a6:23:e2:59&retry=1

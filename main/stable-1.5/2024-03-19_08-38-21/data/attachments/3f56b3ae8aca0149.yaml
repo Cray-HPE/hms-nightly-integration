@@ -1,0 +1,1158 @@
+body:
+  Format: NestNodesOnly
+  Nodes:
+  - HWInventoryByLocationType: HWInvByLocNode
+    ID: x3000c0s6b0n0
+    Memory:
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d8
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm5
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 8
+          Slot: 5
+          Socket: 1
+        Name: proc1dimm5
+      Ordinal: 8
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.OXP6601088772
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: OXP6601088772
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d18
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm10
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 9
+          Slot: 10
+          Socket: 2
+        Name: proc2dimm10
+      Ordinal: 18
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.GRI1981411398
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: GRI1981411398
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d9
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm5
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 16
+          Slot: 5
+          Socket: 2
+        Name: proc2dimm5
+      Ordinal: 9
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.ZUS9675429600
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: ZUS9675429600
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d26
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm14
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 4
+          Slot: 14
+          Socket: 1
+        Name: proc1dimm14
+      Ordinal: 26
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.RAB7546454103
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: RAB7546454103
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d22
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm12
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 10
+          Slot: 12
+          Socket: 2
+        Name: proc2dimm12
+      Ordinal: 22
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.HEL9141937133
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: HEL9141937133
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d23
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm12
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 2
+          Slot: 12
+          Socket: 1
+        Name: proc1dimm12
+      Ordinal: 23
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.IRZ0216809685
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: IRZ0216809685
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d27
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm14
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 12
+          Slot: 14
+          Socket: 2
+        Name: proc2dimm14
+      Ordinal: 27
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.FVQ0257057331
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: FVQ0257057331
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d0
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm1
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 13
+          Slot: 1
+          Socket: 2
+        Name: proc2dimm1
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.PBL1359052471
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: PBL1359052471
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d4
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm3
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 14
+          Slot: 3
+          Socket: 2
+        Name: proc2dimm3
+      Ordinal: 4
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.IQT3035564968
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: IQT3035564968
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d30
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm16
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 3
+          Slot: 16
+          Socket: 1
+        Name: proc1dimm16
+      Ordinal: 30
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.WSG9205745552
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: WSG9205745552
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d13
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm7
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 7
+          Slot: 7
+          Socket: 1
+        Name: proc1dimm7
+      Ordinal: 13
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.HLX3318851671
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: HLX3318851671
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d12
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm7
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 15
+          Slot: 7
+          Socket: 2
+        Name: proc2dimm7
+      Ordinal: 12
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.RAZ7495362717
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: RAZ7495362717
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d19
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm10
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 1
+          Slot: 10
+          Socket: 1
+        Name: proc1dimm10
+      Ordinal: 19
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.FKU5687321955
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: FKU5687321955
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d1
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm1
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 5
+          Slot: 1
+          Socket: 1
+        Name: proc1dimm1
+      Ordinal: 1
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.HPV5430648092
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: HPV5430648092
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d5
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm3
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 6
+          Slot: 3
+          Socket: 1
+        Name: proc1dimm3
+      Ordinal: 5
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.MRM1359004314
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: MRM1359004314
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d31
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm16
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 11
+          Slot: 16
+          Socket: 2
+        Name: proc2dimm16
+      Ordinal: 31
+      PopulatedFRU:
+        FRUID: Memory.Micron.18ASF2G72PZ3G2E2.TTE6059428020
+        HWInventoryByFRUType: HWInvByFRUMemory
+        MemoryFRUInfo:
+          BaseModuleType: RDIMM
+          BusWidthBits: 72
+          CapacityMiB: 16384
+          DataWidthBits: 64
+          ErrorCorrection: MultiBitECC
+          Manufacturer: Micron
+          MemoryDeviceType: DDR4
+          MemoryType: DRAM
+          OperatingSpeedMhz: 3200
+          PartNumber: 18ASF2G72PZ-3G2E2
+          RankCount: 1
+          SerialNumber: TTE6059428020
+        Subtype: ''
+        Type: Memory
+      Status: Populated
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d17
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm9
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 9
+          Slot: 9
+          Socket: 2
+        Name: proc2dimm9
+      Ordinal: 17
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d25
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm13
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 12
+          Slot: 13
+          Socket: 2
+        Name: proc2dimm13
+      Ordinal: 25
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d15
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm8
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 15
+          Slot: 8
+          Socket: 2
+        Name: proc2dimm8
+      Ordinal: 15
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d11
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm6
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 8
+          Slot: 6
+          Socket: 1
+        Name: proc1dimm6
+      Ordinal: 11
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d28
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm15
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 3
+          Slot: 15
+          Socket: 1
+        Name: proc1dimm15
+      Ordinal: 28
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d16
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm9
+        MemoryLocation:
+          Channel: 1
+          MemoryController: 1
+          Slot: 9
+          Socket: 1
+        Name: proc1dimm9
+      Ordinal: 16
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d7
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm4
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 6
+          Slot: 4
+          Socket: 1
+        Name: proc1dimm4
+      Ordinal: 7
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d20
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm11
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 2
+          Slot: 11
+          Socket: 1
+        Name: proc1dimm11
+      Ordinal: 20
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d14
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm8
+        MemoryLocation:
+          Channel: 7
+          MemoryController: 7
+          Slot: 8
+          Socket: 1
+        Name: proc1dimm8
+      Ordinal: 14
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d6
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm4
+        MemoryLocation:
+          Channel: 6
+          MemoryController: 14
+          Slot: 4
+          Socket: 2
+        Name: proc2dimm4
+      Ordinal: 6
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d29
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm15
+        MemoryLocation:
+          Channel: 3
+          MemoryController: 11
+          Slot: 15
+          Socket: 2
+        Name: proc2dimm15
+      Ordinal: 29
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d10
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm6
+        MemoryLocation:
+          Channel: 8
+          MemoryController: 16
+          Slot: 6
+          Socket: 2
+        Name: proc2dimm6
+      Ordinal: 10
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d2
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm2
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 5
+          Slot: 2
+          Socket: 1
+        Name: proc1dimm2
+      Ordinal: 2
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d21
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm11
+        MemoryLocation:
+          Channel: 2
+          MemoryController: 10
+          Slot: 11
+          Socket: 2
+        Name: proc2dimm11
+      Ordinal: 21
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d3
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc2dimm2
+        MemoryLocation:
+          Channel: 5
+          MemoryController: 13
+          Slot: 2
+          Socket: 2
+        Name: proc2dimm2
+      Ordinal: 3
+      Status: Empty
+      Type: Memory
+    - HWInventoryByLocationType: HWInvByLocMemory
+      ID: x3000c0s6b0n0d24
+      MemoryLocationInfo:
+        Description: ''
+        Id: proc1dimm13
+        MemoryLocation:
+          Channel: 4
+          MemoryController: 4
+          Slot: 13
+          Socket: 1
+        Name: proc1dimm13
+      Ordinal: 24
+      Status: Empty
+      Type: Memory
+    NodeAccels:
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a7
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 3
+        Id: '9'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 7
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060273
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060273'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a0
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 5
+        Id: '11'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.9002G1330000000.1325120036836
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 900-2G133-0000-000
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1325120036836'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a3
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 11
+        Id: '17'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 3
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060358
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060358'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a5
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 1
+        Id: '7'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 5
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060094
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060094'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a6
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 2
+        Id: '8'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 6
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060099
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060099'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a1
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 7
+        Id: '13'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 1
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.9002G1330000000.1325120036457
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 900-2G133-0000-000
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1325120036457'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a2
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 9
+        Id: '15'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 2
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060138
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060138'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    - HWInventoryByLocationType: HWInvByLocNodeAccel
+      ID: x3000c0s6b0n0a4
+      NodeAccelLocationInfo:
+        Description: PCI-E Slot 13
+        Id: '19'
+        Name: NVIDIA A40
+        Socket: ''
+      Ordinal: 4
+      PopulatedFRU:
+        FRUID: NodeAccel.NVIDIA.6992G1330200QS1.1334520060098
+        HWInventoryByFRUType: HWInvByFRUNodeAccel
+        NodeAccelFRUInfo:
+          InstructionSet: ''
+          Manufacturer: NVIDIA
+          MaxSpeedMHz: 0
+          Model: NVIDIA A40
+          Oem: null
+          PartNumber: 699-2G133-0200-QS1
+          ProcessorArchitecture: ''
+          ProcessorId:
+            EffectiveFamily: ''
+            EffectiveModel: ''
+            IdentificationRegisters: ''
+            MicrocodeInfo: ''
+            Step: ''
+            VendorID: ''
+          ProcessorType: GPU
+          SerialNumber: '1334520060098'
+          TotalCores: 0
+          TotalThreads: 0
+        Subtype: ''
+        Type: NodeAccel
+      Status: Populated
+      Type: NodeAccel
+    NodeHsnNics:
+    - HWInventoryByLocationType: HWInvByLocNodeHsnNic
+      ID: x3000c0s6b0n0h0
+      NodeHsnNicLocationInfo:
+        Description: PCI-E Slot 18
+        Id: '2'
+        Name: SS11 200Gb 1P NIC PCIE
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: NodeHsnNic.HPE.P41345001.EJ21490084
+        HWInventoryByFRUType: HWInvByFRUNodeHsnNic
+        NodeHsnNicFRUInfo:
+          Manufacturer: HPE
+          Model: SS11 200Gb 1P NIC PCIE
+          PartNumber: P41345-001
+          SerialNumber: EJ21490084
+        Subtype: ''
+        Type: NodeHsnNic
+      Status: Populated
+      Type: NodeHsnNic
+    - HWInventoryByLocationType: HWInvByLocNodeHsnNic
+      ID: x3000c0s6b0n0h2
+      NodeHsnNicLocationInfo:
+        Description: PCI-E Slot 21
+        Id: '5'
+        Name: SS11 200Gb 1P NIC PCIE
+      Ordinal: 2
+      PopulatedFRU:
+        FRUID: NodeHsnNic.HPE.P41345001.EJ21490065
+        HWInventoryByFRUType: HWInvByFRUNodeHsnNic
+        NodeHsnNicFRUInfo:
+          Manufacturer: HPE
+          Model: SS11 200Gb 1P NIC PCIE
+          PartNumber: P41345-001
+          SerialNumber: EJ21490065
+        Subtype: ''
+        Type: NodeHsnNic
+      Status: Populated
+      Type: NodeHsnNic
+    NodeLocationInfo:
+      Description: ''
+      HostName: ''
+      Id: '1'
+      MemorySummary:
+        TotalSystemMemoryGiB: 256
+      Name: Computer System
+      ProcessorSummary:
+        Count: 2
+        Model: 'AMD EPYC 7742 64-Core Processor                '
+    Ordinal: 0
+    PopulatedFRU:
+      FRUID: Node.HPE.ZGF3101644830
+      HWInventoryByFRUType: HWInvByFRUNode
+      NodeFRUInfo:
+        AssetTag: ''
+        BiosVersion: A47 v2.52 (10/29/2021)
+        Manufacturer: HPE
+        Model: ProLiant XL675d Gen10 Plus
+        PartNumber: ''
+        SKU: DL385G10+
+        SerialNumber: ZGF3101644830
+        SystemType: Physical
+        UUID: 38334C44-4735-534A-3035-4E5031303732
+      Subtype: ''
+      Type: Node
+    Processors:
+    - HWInventoryByLocationType: HWInvByLocProcessor
+      ID: x3000c0s6b0n0p0
+      Ordinal: 0
+      PopulatedFRU:
+        FRUID: Processor.AdvancedMicroDevicesInc.DVB1057809671
+        HWInventoryByFRUType: HWInvByFRUProcessor
+        ProcessorFRUInfo:
+          InstructionSet: x86-64
+          Manufacturer: Advanced Micro Devices, Inc.
+          MaxSpeedMHz: 4100
+          Model: 'AMD EPYC 7742 64-Core Processor                '
+          Oem: {}
+          PartNumber: ''
+          ProcessorArchitecture: x86
+          ProcessorId:
+            EffectiveFamily: '107'
+            EffectiveModel: '1'
+            IdentificationRegisters: '0x0f100083fbff178b'
+            MicrocodeInfo: ''
+            Step: '0'
+            VendorID: Advanced Micro Devices, Inc.
+          ProcessorType: CPU
+          SerialNumber: DVB1057809671
+          TotalCores: 64
+          TotalThreads: 128
+        Subtype: ''
+        Type: Processor
+      ProcessorLocationInfo:
+        Description: ''
+        Id: '1'
+        Name: Processors
+        Socket: Proc 1
+      Status: Populated
+      Type: Processor
+    - HWInventoryByLocationType: HWInvByLocProcessor
+      ID: x3000c0s6b0n0p1
+      Ordinal: 1
+      PopulatedFRU:
+        FRUID: Processor.AdvancedMicroDevicesInc.HVZ6653747233
+        HWInventoryByFRUType: HWInvByFRUProcessor
+        ProcessorFRUInfo:
+          InstructionSet: x86-64
+          Manufacturer: Advanced Micro Devices, Inc.
+          MaxSpeedMHz: 4100
+          Model: 'AMD EPYC 7742 64-Core Processor                '
+          Oem: {}
+          PartNumber: ''
+          ProcessorArchitecture: x86
+          ProcessorId:
+            EffectiveFamily: '107'
+            EffectiveModel: '1'
+            IdentificationRegisters: '0x0f100083fbff178b'
+            MicrocodeInfo: ''
+            Step: '0'
+            VendorID: Advanced Micro Devices, Inc.
+          ProcessorType: CPU
+          SerialNumber: HVZ6653747233
+          TotalCores: 64
+          TotalThreads: 128
+        Subtype: ''
+        Type: Processor
+      ProcessorLocationInfo:
+        Description: ''
+        Id: '2'
+        Name: Processors
+        Socket: Proc 2
+      Status: Populated
+      Type: Processor
+    Status: Populated
+    Type: Node
+  XName: x3000c0s6b0n0
+headers:
+  Content-Type: application/json
+  Date: Tue, 19 Mar 2024 08:08:59 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

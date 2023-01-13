@@ -1,0 +1,10 @@
+- name: capmcAPIxnameOffGET - Verify xname_off fails with GET method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    json:
+      e: 405
+      err_msg: "(GET) Not Allowed"

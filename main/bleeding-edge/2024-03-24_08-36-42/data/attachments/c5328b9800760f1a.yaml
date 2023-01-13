@@ -1,0 +1,25 @@
+body:
+  SubscriptionList:
+  - Components:
+    - x3000c0s5b0n0
+    Roles:
+    - system
+    - management
+    SoftwareStatus:
+    - unknown
+    - other
+    States:
+    - populated
+    - empty
+    SubRoles:
+    - storage
+    Subscriber: cray-test-service-999z9z9999-zz9zz@x3000c0s5b0n0
+    SubscriberAgent: cray-test-service-999z9z9999-zz9zz
+    SubscriberComponent: x3000c0s5b0n0
+    Url: http://cray-test-service/boot/v1/scn
+headers:
+  Content-Length: '380'
+  Content-Type: application/json
+  Date: Sun, 24 Mar 2024 08:29:50 GMT
+redirect_query_params: {}
+status_code: 200

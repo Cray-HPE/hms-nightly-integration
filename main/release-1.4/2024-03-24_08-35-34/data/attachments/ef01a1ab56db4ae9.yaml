@@ -1,0 +1,7 @@
+- name: Ensure that /readiness rejects POST requests
+  request:
+    url: "{pcs_base_url}/readiness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

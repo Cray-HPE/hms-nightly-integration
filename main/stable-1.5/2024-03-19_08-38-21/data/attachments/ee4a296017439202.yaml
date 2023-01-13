@@ -1,0 +1,63 @@
+body:
+  ComponentEndpointType: ComponentEndpointComputerSystem
+  Enabled: true
+  ID: x3000c0s6b0n0
+  OdataID: /redfish/v1/Systems/1
+  RedfishEndpointFQDN: x3000c0s6b0
+  RedfishEndpointID: x3000c0s6b0
+  RedfishSubtype: Physical
+  RedfishSystemInfo:
+    Actions:
+      '#ComputerSystem.Reset':
+        '@Redfish.ActionInfo': ''
+        ResetType@Redfish.AllowableValues:
+        - 'On'
+        - ForceOff
+        - GracefulShutdown
+        - ForceRestart
+        - Nmi
+        - PushPowerButton
+        - GracefulRestart
+        target: /redfish/v1/Systems/1/Actions/ComputerSystem.Reset
+    EthernetNICInfo:
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/1
+      MACAddress: 00:40:a6:06:20:27
+      PermanentMACAddress: 00:40:a6:06:20:27
+      RedfishId: '1'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/2
+      MACAddress: 00:40:a6:67:79:98
+      PermanentMACAddress: 00:40:a6:67:79:98
+      RedfishId: '2'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/3
+      MACAddress: 00:40:a6:4a:e4:37
+      PermanentMACAddress: 00:40:a6:4a:e4:37
+      RedfishId: '3'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/4
+      MACAddress: 00:40:a6:26:00:42
+      PermanentMACAddress: 00:40:a6:26:00:42
+      RedfishId: '4'
+    Name: Computer System
+    PowerControl:
+    - '@odata.id': /redfish/v1/Chassis/1/Power#PowerControl/0
+      MemberId: '0'
+      Name: PowerLimit Resource for AccPowerService
+      OEM:
+        HPE:
+          PowerLimit:
+            Max: 11221
+            Min: 5036
+          PowerRegulationEnabled: true
+          Status: OK
+          Target: /redfish/v1/Chassis/1/Power/AccPowerService/PowerLimit/Actions/HpeServerAccPowerLimit.ConfigurePowerLimit
+      PowerCapacityWatts: 12000
+    PowerURL: /redfish/v1/Chassis/1/Power/AccPowerService/PowerLimit
+  RedfishType: ComputerSystem
+  RedfishURL: x3000c0s6b0/redfish/v1/Systems/1
+  Type: Node
+  UUID: 38334C44-4735-534A-3035-4E5031303732
+headers:
+  Content-Length: '1739'
+  Content-Type: application/json
+  Date: Tue, 19 Mar 2024 08:38:12 GMT
+redirect_query_params: {}
+status_code: 200

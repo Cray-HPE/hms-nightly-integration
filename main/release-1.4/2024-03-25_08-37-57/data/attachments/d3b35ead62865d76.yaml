@@ -1,0 +1,52 @@
+body:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: Unknown
+    ID: x9999c7s9b9n8
+    NID: 9999999998
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus8
+    State: Unknown
+    SubRole: Master
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b9n7
+    NID: 9999999997
+    NetType: Infiniband
+    Role: Service
+    SoftwareStatus: TestStatus7
+    State: Empty
+    SubRole: Worker
+    Type: Node
+  - Arch: ARM
+    Class: River
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9n6
+    NID: 9999999996
+    NetType: Ethernet
+    Role: System
+    SoftwareStatus: TestStatus6
+    State: Populated
+    SubRole: Storage
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: false
+    Flag: Warning
+    ID: x9999c7r9e9
+    NetType: Sling
+    State: 'On'
+    Type: HSNBoard
+headers:
+  Content-Length: '806'
+  Content-Type: application/json
+  Date: Mon, 25 Mar 2024 08:37:51 GMT
+redirect_query_params: {}
+status_code: 200

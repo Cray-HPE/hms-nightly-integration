@@ -1,0 +1,7 @@
+- name: Perform POST against /hosts to force a sync with HSM
+  request:
+    url: "{bss_base_url}/boot/v1/hosts"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

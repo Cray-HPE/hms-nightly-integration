@@ -1,0 +1,24 @@
+- name: Verify /groups/label DELETE method exclusive group Lion
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroupLion"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "deleted 1 entry"

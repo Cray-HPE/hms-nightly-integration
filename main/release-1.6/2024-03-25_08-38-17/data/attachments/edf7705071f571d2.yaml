@@ -1,0 +1,14 @@
+- name: Create new component ethernet interface
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces"
+    json: {"Description":"Test Component Interface","MACAddress":"9A:99:99:99:99:99","IPAddresses":[{"IPAddress":"99.9.9.9","Network":"HSMTavernTest"}]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+    json:
+      URI: "/hsm/v2/Inventory/EthernetInterfaces/9a9999999999"
+    save:
+      json:
+        uri: "URI"
+

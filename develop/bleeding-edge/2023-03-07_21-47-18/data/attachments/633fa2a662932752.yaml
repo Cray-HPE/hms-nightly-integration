@@ -1,0 +1,28 @@
+- name: Query the Components collection using the NidOnly query parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?nidonly=True"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Components:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                    NID:
+                      type: int
+                      required: False
+                    Type:
+                      type: str
+                      required: True

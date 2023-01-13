@@ -1,0 +1,67 @@
+body:
+  actionID: 2870060f-76a4-45d8-af20-47674de9c0f1
+  blockedBy: []
+  command:
+    description: test_actions CT test description
+    overrideDryrun: false
+    overwriteSameImage: false
+    restoreNotPossibleOverride: false
+    tag: default
+    timeLimit: 120
+    version: latest
+  endTime: 2023-07-12 08:09:33.789754533 +0000 UTC
+  errors:
+  - No Viable Targets
+  operationDetails:
+    aborted:
+      operationKeys: []
+    blocked:
+      operationKeys: []
+    configured:
+      operationKeys: []
+    failed:
+      operationKeys: []
+    inProgress:
+      operationKeys: []
+    initial:
+      operationKeys: []
+    needsVerified:
+      operationKeys: []
+    noOperation:
+      operationKeys: []
+    noSolution:
+      operationKeys: []
+    succeeded:
+      operationKeys: []
+    unknown:
+      operationKeys: []
+    verifying:
+      operationKeys: []
+  parameters:
+    command:
+      description: test_actions CT test description
+      overrideDryrun: false
+      overwriteSameImage: false
+      restoreNotPossibleOverride: false
+      tag: default
+      timeLimit: 120
+      version: latest
+    imageFilter:
+      imageID: 00000000-0000-0000-0000-000000000000
+      overrideImage: false
+    inventoryHardwareFilter: {}
+    stateComponentFilter:
+      xnames:
+      - x3000c0s5b0
+    targetFilter:
+      targets:
+      - BMC
+  snapshotID: 00000000-0000-0000-0000-000000000000
+  startTime: 2023-07-12 08:09:33.717628689 +0000 UTC
+  state: completed
+headers:
+  Content-Length: '1300'
+  Content-Type: application/json
+  Date: Wed, 12 Jul 2023 08:09:33 GMT
+redirect_query_params: {}
+status_code: 200

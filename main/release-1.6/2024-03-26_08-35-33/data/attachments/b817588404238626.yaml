@@ -1,0 +1,12 @@
+body:
+  detail: allow POST,DELETE
+  status: 405
+  title: Method Not Allowed
+  type: about:blank
+headers:
+  Allow: POST,DELETE
+  Content-Length: '94'
+  Content-Type: application/problem+json
+  Date: Tue, 26 Mar 2024 08:19:32 GMT
+redirect_query_params: {}
+status_code: 405

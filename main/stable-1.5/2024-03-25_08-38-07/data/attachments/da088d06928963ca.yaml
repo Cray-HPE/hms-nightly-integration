@@ -1,0 +1,16 @@
+body:
+  e: 22
+  err_msg: No supported power capping controls
+  nids:
+  - e: 22
+    err_msg: Control (Node Power Limit) value (5036) is greater than maximum (925)
+    nid: 1026
+  - e: 22
+    err_msg: No NID supported controls specified
+    nid: 20
+headers:
+  Content-Length: '234'
+  Content-Type: application/json
+  Date: Mon, 25 Mar 2024 08:31:47 GMT
+redirect_query_params: {}
+status_code: 200

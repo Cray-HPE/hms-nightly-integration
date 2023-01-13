@@ -1,0 +1,12 @@
+body:
+  detail: A network with that name already exists in the database
+  instance: /v1/networks
+  status: 409
+  title: Conflict
+  type: 'about: blank'
+headers:
+  Content-Length: '149'
+  Content-Type: application/problem+json
+  Date: Wed, 20 Mar 2024 08:09:10 GMT
+redirect_query_params: {}
+status_code: 409

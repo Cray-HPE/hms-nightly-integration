@@ -1,0 +1,28 @@
+body:
+  captureTime: 2024-03-27 08:09:02.821123278 +0000 UTC
+  devices: []
+  errors:
+  - No Viable Targets
+  name: fasTestSnapshot
+  parameters:
+    inventoryHardwareFilter: {}
+    name: fasTestSnapshot
+    stateComponentFilter:
+      deviceTypes:
+      - chassisBMC
+      - nodeBMC
+      - routerBMC
+    targetFilter:
+      targets:
+      - BMC
+      - BIOS
+      - iLO 5
+      - System ROM
+  ready: true
+  relatedActions: []
+headers:
+  Content-Length: '367'
+  Content-Type: application/json
+  Date: Wed, 27 Mar 2024 08:09:12 GMT
+redirect_query_params: {}
+status_code: 200

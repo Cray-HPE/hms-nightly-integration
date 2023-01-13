@@ -1,0 +1,16 @@
+- name: Create and replace bootparamaters with multiple hosts x9999c0s6b0n[1, 2]
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s6b0n1
+      - x9999c0s6b0n2
+      params: console=tty0 create_replaced
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000003/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000003/initrd
+  response:
+    status_code: 200
+    headers:
+      BSS-Referral-Token: !anystr

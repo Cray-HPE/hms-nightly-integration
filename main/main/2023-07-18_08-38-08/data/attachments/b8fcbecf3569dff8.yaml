@@ -1,0 +1,498 @@
+body:
+  ServiceEndpoints:
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: AccountService
+    RedfishURL: x3000c0s5b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#AccountService.AccountService
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_5_0.AccountService'
+      AccountLockoutCounterResetAfter: 0
+      AccountLockoutDuration: 0
+      AccountLockoutThreshold: 0
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 0
+      Description: iLO User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      Status:
+        Health: ''
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: AccountService
+    RedfishURL: x3000c0s6b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#AccountService.AccountService
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_5_0.AccountService'
+      AccountLockoutCounterResetAfter: 0
+      AccountLockoutDuration: 0
+      AccountLockoutThreshold: 0
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 0
+      Description: iLO User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      Status:
+        Health: ''
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s4b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s5b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s2b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s6b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s0b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s2b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s5b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s4b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s0b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s7b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s7b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s1b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s3b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s3b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s6b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s1b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+headers:
+  Content-Type: application/json
+  Date: Tue, 18 Jul 2023 08:09:13 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

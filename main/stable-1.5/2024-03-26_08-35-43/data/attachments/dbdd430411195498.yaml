@@ -1,0 +1,33 @@
+body:
+  Chassis:
+  - ChassisLocationInfo:
+      Description: CMM
+      HostName: ''
+      Id: Enclosure
+      Name: Enclosure
+    HWInventoryByLocationType: HWInvByLocChassis
+    ID: x9999c7
+    Ordinal: 7
+    PopulatedFRU:
+      ChassisFRUInfo:
+        AssetTag: ''
+        ChassisType: Enclosure
+        Manufacturer: HPE
+        Model: CMM
+        PartNumber: 101426404.D
+        SKU: ''
+        SerialNumber: IMZ2409069079
+      FRUID: Chassis.HPE.101426404D.IMZ2409069079
+      HWInventoryByFRUType: HWInvByFRUChassis
+      Subtype: ''
+      Type: Chassis
+    Status: Populated
+    Type: Chassis
+  Format: NestNodesOnly
+  XName: x9999c7
+headers:
+  Content-Length: '564'
+  Content-Type: application/json
+  Date: Tue, 26 Mar 2024 08:19:13 GMT
+redirect_query_params: {}
+status_code: 200

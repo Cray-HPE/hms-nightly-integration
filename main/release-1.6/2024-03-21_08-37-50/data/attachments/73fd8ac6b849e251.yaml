@@ -1,0 +1,44 @@
+body:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: Unknown
+    ID: x9999c7s9b9n8
+    NID: 9999999998
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus8
+    State: Unknown
+    SubRole: Master
+    Type: Node
+  - Arch: ARM
+    Class: Mountain
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9n5
+    NID: 9999999995
+    NetType: OEM
+    Role: Application
+    SoftwareStatus: TestStatus5
+    State: 'Off'
+    SubRole: Master
+    Type: Node
+  - Arch: UNKNOWN
+    Class: Hill
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9b9n2
+    NID: 9999999992
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus2
+    State: Halt
+    SubRole: Master
+    Type: Node
+headers:
+  Content-Length: '668'
+  Content-Type: application/json
+  Date: Thu, 21 Mar 2024 08:37:40 GMT
+redirect_query_params: {}
+status_code: 200

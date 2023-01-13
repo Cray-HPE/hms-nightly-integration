@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsBulkNidPATCHnodes - Bulk update Node Component NID values using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkNID"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7s9b8n7","NID":9999999977},{"ID":"x9999c7s9b8n6","NID":9999999976}]}
+  response:
+    status_code: 204
+
+

@@ -1,0 +1,48 @@
+body:
+  ExtraProperties:
+    CIDR: 10.94.100.0/24
+    MTU: 9000
+    Subnets:
+    - CIDR: 10.94.100.0/24
+      FullName: HMN MetalLB
+      Gateway: 10.94.100.1
+      IPReservations:
+      - Aliases:
+        - rsyslog-agg-service
+        Comment: rsyslog-agg-service
+        IPAddress: 10.94.100.72
+        Name: rsyslog-aggregator
+      - Aliases:
+        - tftp-service
+        Comment: tftp-service
+        IPAddress: 10.94.100.60
+        Name: cray-tftp
+      - Aliases:
+        - unbound
+        Comment: unbound
+        IPAddress: 10.94.100.225
+        Name: unbound
+      - Aliases:
+        - docker_registry_service
+        Comment: docker_registry_service
+        IPAddress: 10.94.100.73
+        Name: docker-registry
+      - IPAddress: 10.94.100.71
+        Name: istio-ingressgateway
+      MetalLBPoolName: hardware-management
+      Name: hmn_metallb_address_pool
+      VlanID: 4
+    VlanRange: null
+  FullName: Hardware Management Network LoadBalancers
+  IPRanges:
+  - 10.94.100.0/24
+  LastUpdated: 1710749208
+  LastUpdatedTime: 2024-03-18 08:06:48.682403 +0000 UTC
+  Name: HMNLB
+  Type: ethernet
+headers:
+  Content-Length: '963'
+  Content-Type: application/json
+  Date: Mon, 18 Mar 2024 08:08:14 GMT
+redirect_query_params: {}
+status_code: 200

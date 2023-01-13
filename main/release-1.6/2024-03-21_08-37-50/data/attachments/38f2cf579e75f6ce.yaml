@@ -1,0 +1,15 @@
+- name: Verify that HMNFD properly handles requests to retrieve state change notification subscriptions for non-present xnames
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/subscriptions/x9999c7s9b9n9"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            SubscriptionList: null
+

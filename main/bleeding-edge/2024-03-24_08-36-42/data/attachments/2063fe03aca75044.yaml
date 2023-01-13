@@ -1,0 +1,109 @@
+body:
+- Class: River
+  ExtraProperties:
+    Networks:
+      cn:
+        HMN:
+          CIDR: 10.107.0.0/22
+          Gateway: 10.107.0.1
+          VLan: 1513
+        NMN:
+          CIDR: 10.106.0.0/22
+          Gateway: 10.106.0.1
+          VLan: 1770
+      ncn:
+        HMN:
+          CIDR: 10.107.0.0/22
+          Gateway: 10.107.0.1
+          VLan: 1513
+        NMN:
+          CIDR: 10.106.0.0/22
+          Gateway: 10.106.0.1
+          VLan: 1770
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: s0
+  Type: comptype_cabinet
+  TypeString: Cabinet
+  Xname: x3000
+- Class: River
+  ExtraProperties:
+    '@rie.mockup': DL325
+    Aliases:
+    - uan01
+    Role: Application
+    SubRole: UAN
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: x3000c0s5b0
+  Type: comptype_node
+  TypeString: Node
+  Xname: x3000c0s5b0n0
+- Class: River
+  ExtraProperties:
+    '@rie.mockup': XL675d_A40
+    Aliases:
+    - nid000020
+    NID: 20
+    Role: Compute
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: x3000c0s6b0
+  Type: comptype_node
+  TypeString: Node
+  Xname: x3000c0s6b0n0
+- Children:
+  - x3000c0w31j18
+  - x3000c0w31j19
+  Class: River
+  ExtraProperties:
+    Aliases:
+    - sw-leaf-bmc-001
+    Brand: Aruba
+    IP4addr: 10.254.0.8
+    SNMPAuthPassword: vault://hms-creds/x3000c0w31
+    SNMPAuthProtocol: MD5
+    SNMPPrivPassword: vault://hms-creds/x3000c0w31
+    SNMPPrivProtocol: DES
+    SNMPUsername: testuser
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: x3000c0
+  Type: comptype_mgmt_switch
+  TypeString: MgmtSwitch
+  Xname: x3000c0w31
+- Class: River
+  ExtraProperties:
+    NodeNics:
+    - x3000c0s5b0
+    VendorName: 1/1/18
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: x3000c0w31
+  Type: comptype_mgmt_switch_connector
+  TypeString: MgmtSwitchConnector
+  Xname: x3000c0w31j18
+- Class: River
+  ExtraProperties:
+    NodeNics:
+    - x3000c0s6b0
+    VendorName: 1/1/19
+  LastUpdated: 1711267563
+  LastUpdatedTime: 2024-03-24 08:06:03.913577 +0000 UTC
+  Parent: x3000c0w31
+  Type: comptype_mgmt_switch_connector
+  TypeString: MgmtSwitchConnector
+  Xname: x3000c0w31j19
+- Class: River
+  LastUpdated: 1711267710
+  LastUpdatedTime: 2024-03-24 08:08:30.794965 +0000 UTC
+  Parent: x9998c7s9
+  Type: comptype_ncard
+  TypeString: NodeBMC
+  Xname: x9998c7s9b9001
+headers:
+  Content-Type: application/json
+  Date: Sun, 24 Mar 2024 08:08:30 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

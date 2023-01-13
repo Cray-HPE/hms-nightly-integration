@@ -1,0 +1,6 @@
+- name: Remove any test {type} from SLS
+  request:
+    url: "{sls_base_url}/v1/hardware/{xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+

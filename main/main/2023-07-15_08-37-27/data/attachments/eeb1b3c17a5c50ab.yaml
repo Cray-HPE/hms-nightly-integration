@@ -1,0 +1,10 @@
+- name: Delete Bootparameters with NID as identifier
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      nids:
+      - !int "{node_nid}"
+  response:
+    status_code: 200

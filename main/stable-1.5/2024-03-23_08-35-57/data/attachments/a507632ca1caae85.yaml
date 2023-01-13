@@ -1,0 +1,55 @@
+body:
+  Components:
+  - Arch: UNKNOWN
+    Class: Hill
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9b9n1
+    NID: 9999999991
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus1
+    State: Ready
+    SubRole: Worker
+    Type: Node
+  - Arch: X86
+    Class: Hill
+    Enabled: true
+    Flag: OK
+    ID: x9999c7s9b9n0
+    NID: 9999999990
+    NetType: Sling
+    Role: Compute
+    SoftwareStatus: TestStatus0
+    State: Ready
+    SubRole: Storage
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7r9b9
+    NetType: Sling
+    State: Ready
+    Type: RouterBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7b0
+    NetType: Sling
+    State: Ready
+    Type: ChassisBMC
+  - Arch: X86
+    Enabled: true
+    Flag: OK
+    ID: x9999m3
+    NetType: Infiniband
+    State: Ready
+    Type: CabinetPDUController
+headers:
+  Content-Length: '834'
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:35:49 GMT
+redirect_query_params: {}
+status_code: 200

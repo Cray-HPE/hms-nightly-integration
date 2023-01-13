@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentIDs:
+  - x9999c7s9b8n7
+  - x9999c7s9b8n6
+  Enabled: false
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/BulkEnabled
+verify: false

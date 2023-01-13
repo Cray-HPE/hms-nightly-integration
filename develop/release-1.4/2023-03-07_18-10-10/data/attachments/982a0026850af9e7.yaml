@@ -1,0 +1,43 @@
+- name: Retrieve the hardware information for a given node xname from the Hardware collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/{node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      HWInventoryByLocationType: "HWInvByLocNode"
+      ID: "{node_xname}"
+      NodeLocationInfo:
+        Description: !anystr
+        HostName: !anystr
+        Id: !anystr
+        MemorySummary:
+          TotalSystemMemoryGiB: !anyint
+        Name: !anystr
+        ProcessorSummary:
+          Count: !anyint
+          Model: !anystr
+      Ordinal: !anyint
+      PopulatedFRU:
+        FRUID: !anystr
+        HWInventoryByFRUType: "HWInvByFRUNode"
+        NodeFRUInfo:
+          AssetTag: !anystr
+          BiosVersion: !anystr
+          Manufacturer: !anystr
+          Model: !anystr
+          PartNumber: !anystr
+          SKU: !anystr
+          SerialNumber: !anystr
+          SystemType: !anystr
+          UUID: !anystr
+        Subtype: !anystr
+        Type: "Node"
+      Status: !anystr
+      Type: "Node"
+    save:
+      json:
+        FRUID: PopulatedFRU.FRUID
+
+

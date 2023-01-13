@@ -1,0 +1,8 @@
+- name: Restore the original state of the second target node
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_2_xname}/StateData"
+    json: {"State":"{state_1_initial}"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

@@ -1,0 +1,9 @@
+- name: slsAPINetworksPOSTEntry - create a new entry with good data
+  request:
+    url: "{sls_base_url}/v1/networks"
+    method: POST
+    verify: !bool "{verify}"
+    json: {   "Name": "dummy","FullName":"dummynetwork","Type": "ethernet", "IPRanges":["127.0.0.1/8"]}
+  response:
+    status_code: 201
+

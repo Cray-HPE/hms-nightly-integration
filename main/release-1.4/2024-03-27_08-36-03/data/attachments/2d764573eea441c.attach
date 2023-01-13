@@ -1,0 +1,102 @@
+Format variables:
+  bss_base_url = 'http://cray-bss:27778'
+  verify = 'False'
+  node_xname = 'x1000c0s3b1n0'
+  node_xname = 'x1000c0s3b1n0'
+
+Source test stage (line 149):
+- name: Query endpoint-history with node xname, and verify state
+  request:
+    url: "{bss_base_url}/boot/v1/endpoint-history"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      name: "{node_xname}"
+      endpoint: user-data
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          range:
+            min: 1
+            max: 1
+          sequence:
+          - type: map
+            mapping:
+              name:
+                type: str
+                enum:
+                - "{node_xname}"
+              endpoint:
+                type: str
+                enum:
+                - user-data
+              last_epoch:
+                type: int
+                range:
+                  min: 1
+
+
+Formatted stage:
+  name: Query endpoint-history with node xname, and verify state
+  request:
+    method: GET
+    params:
+      endpoint: user-data
+      name: 'x1000c0s3b1n0'
+    url: 'http://cray-bss:27778/boot/v1/endpoint-history'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          matching: all
+          range:
+            max: 1
+            min: 1
+          sequence:
+          - mapping:
+              endpoint:
+                enum:
+                - user-data
+                type: str
+              last_epoch:
+                range:
+                  min: 1
+                type: int
+              name:
+                enum:
+                - 'x1000c0s3b1n0'
+                type: str
+            type: map
+          type: seq
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Query endpoint-history with node xname, and verify state' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7f3bc79e55e0>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Type 'scalar' has size of '0', less than min limit '1'. Path: '/0/last_epoch'.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

@@ -1,0 +1,9 @@
+allow_redirects: false
+headers: {}
+json:
+  xnames:
+  - FAKE
+method: POST
+stream: false
+url: http://cray-power-control:28007/power-cap/snapshot
+verify: false

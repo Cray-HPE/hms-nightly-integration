@@ -1,0 +1,25 @@
+body:
+  automaticExpirationTime: '2024-03-24T08:25:47.491813184Z'
+  createTime: '2024-03-23T08:25:47.491813103Z'
+  operation: 'On'
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Transition aborted
+    taskStatus: failed
+    taskStatusDescription: Aborted. Last status - Confirming successful transition,
+      on
+    xname: x1000c0s3b1n1
+  transitionID: b7808d1e-27a6-47fb-b1c3-444d68f36849
+  transitionStatus: aborted
+headers:
+  Content-Length: '470'
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:25:47 GMT
+redirect_query_params: {}
+status_code: 200

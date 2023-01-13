@@ -1,0 +1,28 @@
+body:
+  ExtraProperties:
+    CIDR: 10.106.0.0/17
+    MTU: 9000
+    Subnets:
+    - CIDR: 10.106.0.0/22
+      DHCPEnd: 10.106.3.254
+      DHCPStart: 10.106.0.10
+      FullName: ''
+      Gateway: 10.106.0.1
+      Name: cabinet_3000
+      VlanID: 1770
+    VlanRange:
+    - 1770
+    - 1770
+  FullName: River Compute Node Management Network
+  IPRanges:
+  - 10.106.0.0/17
+  LastUpdated: 1689149263
+  LastUpdatedTime: 2023-07-12 08:07:43.700963 +0000 UTC
+  Name: NMN_RVR
+  Type: ethernet
+headers:
+  Content-Length: '437'
+  Content-Type: application/json
+  Date: Wed, 12 Jul 2023 08:09:27 GMT
+redirect_query_params: {}
+status_code: 200

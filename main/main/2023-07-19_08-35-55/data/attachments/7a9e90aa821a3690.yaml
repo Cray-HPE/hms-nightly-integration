@@ -1,0 +1,110 @@
+- name: capmcAPIGetPowerCapCapabilities - test2 - POST get_power_cap_capabilities - two nids
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_power_cap_capabilities"
+    json:
+      nids:
+        - !int "{nid0:d}"
+        - !int "{nid1:d}"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        schema:
+          type: map
+          mapping:
+            e:
+              type: int
+              required: True
+              enum:
+                - 0
+            err_msg:
+              type: str
+              required: True
+            groups:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                -  type: map
+                   mapping:
+                     name:
+                       type: str
+                       required: True
+                     desc:
+                       type: str
+                       required: True
+                     host_limit_max:
+                       type: int
+                       required: True
+                     host_limit_min:
+                       type: int
+                       required: True
+                     static:
+                       type: int
+                       required: True
+                     supply:
+                       type: int
+                       required: True
+                     powerup:
+                       type: int
+                       required: True
+                     nids:
+                       type: seq
+                       required: True
+                       matching: all
+                       sequence:
+                         - type: int
+                           required: true
+                           enum:
+                             - !int "{nid0:d}"
+                             - !int "{nid1:d}"
+                     controls:
+                       type: seq
+                       required: True
+                       matching: all
+                       sequence:
+                         - type: map
+                           mapping:
+                             name:
+                               type: str
+                               required: True
+                             desc:
+                               type: str
+                               required: True
+                             max:
+                               type: int
+                               required: True
+                             min:
+                               type: int
+                               required: True

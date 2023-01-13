@@ -1,0 +1,11 @@
+- name: Retrieve a virtual node from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=VirtualNode&enabled=True"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_xname: Components[0].ID
+

@@ -1,0 +1,14 @@
+- name: Retrieve two compute nodes from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_1_xname: Components[0].ID
+        state_1_initial: Components[0].State
+        node_2_xname: Components[1].ID
+        state_2_initial: Components[1].State
+

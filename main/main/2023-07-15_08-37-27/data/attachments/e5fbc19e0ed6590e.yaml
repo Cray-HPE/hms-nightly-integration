@@ -1,0 +1,107 @@
+body:
+  ExtraProperties:
+    CIDR: 10.102.3.128/26
+    MTU: 9000
+    Subnets:
+    - CIDR: 10.102.3.160/27
+      FullName: CAN Dynamic MetalLB
+      Gateway: 10.102.3.161
+      MetalLBPoolName: customer-access
+      Name: can_metallb_address_pool
+      VlanID: 6
+    - CIDR: 10.102.3.128/26
+      DHCPEnd: 10.102.3.159
+      DHCPStart: 10.102.3.143
+      FullName: CAN Bootstrap DHCP Subnet
+      Gateway: 10.102.3.129
+      IPReservations:
+      - IPAddress: 10.102.3.130
+        Name: can-switch-1
+      - IPAddress: 10.102.3.131
+        Name: can-switch-2
+      - Comment: k8s-virtual-ip
+        IPAddress: 10.102.3.132
+        Name: kubeapi-vip
+      - Aliases:
+        - ncn-s003-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s17b0n0
+        IPAddress: 10.102.3.133
+        Name: ncn-s003
+      - Aliases:
+        - ncn-s002-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s15b0n0
+        IPAddress: 10.102.3.134
+        Name: ncn-s002
+      - Aliases:
+        - ncn-s001-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s13b0n0
+        IPAddress: 10.102.3.135
+        Name: ncn-s001
+      - Aliases:
+        - ncn-w003-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s11b0n0
+        IPAddress: 10.102.3.136
+        Name: ncn-w003
+      - Aliases:
+        - ncn-w002-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s9b0n0
+        IPAddress: 10.102.3.137
+        Name: ncn-w002
+      - Aliases:
+        - ncn-w001-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s7b0n0
+        IPAddress: 10.102.3.138
+        Name: ncn-w001
+      - Aliases:
+        - ncn-m003-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s5b0n0
+        IPAddress: 10.102.3.139
+        Name: ncn-m003
+      - Aliases:
+        - ncn-m002-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s3b0n0
+        IPAddress: 10.102.3.140
+        Name: ncn-m002
+      - Aliases:
+        - ncn-m001-can
+        - time-can
+        - time-can.local
+        Comment: x3000c0s1b0n0
+        IPAddress: 10.102.3.141
+        Name: ncn-m001
+      - Comment: x3000c0s27b0n0
+        IPAddress: 10.102.3.142
+        Name: uan01
+      Name: bootstrap_dhcp
+      VlanID: 6
+    VlanRange:
+    - 6
+  FullName: Customer Access Network
+  IPRanges:
+  - 10.102.3.128/26
+  LastUpdated: 1689408449
+  LastUpdatedTime: 2023-07-15 08:07:29.374063 +0000 UTC
+  Name: CAN
+  Type: ethernet
+headers:
+  Content-Length: '2035'
+  Content-Type: application/json
+  Date: Sat, 15 Jul 2023 08:09:18 GMT
+redirect_query_params: {}
+status_code: 200

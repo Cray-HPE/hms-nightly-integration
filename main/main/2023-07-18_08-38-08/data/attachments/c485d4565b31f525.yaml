@@ -1,0 +1,21 @@
+body:
+  Debug: 1
+  KV_url: http://cray-hmnfd-ct-test:9999
+  Nosm: 1
+  Port: 28600
+  SM_retries: 9
+  SM_timeout: 99
+  SM_url: http://cray-smd-ct-test:99999/hsm/v2
+  Scn_backoff: 9
+  Scn_cache_delay: 9
+  Scn_in_url: http://cray-hmnfd:28600/hmi/v1/scn
+  Scn_max_cache: 999
+  Scn_retries: 9
+  Telemetry_host: kafka:9999:cray-hmsstatechange-notifications-ct-test
+  Use_telemetry: 1
+headers:
+  Content-Length: '366'
+  Content-Type: text/plain; charset=utf-8
+  Date: Tue, 18 Jul 2023 08:30:38 GMT
+redirect_query_params: {}
+status_code: 200

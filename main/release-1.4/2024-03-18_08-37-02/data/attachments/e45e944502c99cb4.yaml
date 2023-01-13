@@ -1,0 +1,37 @@
+body:
+  HWInventoryByLocationType: HWInvByLocNode
+  ID: x3000c0s6b0n0
+  NodeLocationInfo:
+    Description: ''
+    HostName: ''
+    Id: '1'
+    MemorySummary:
+      TotalSystemMemoryGiB: 256
+    Name: Computer System
+    ProcessorSummary:
+      Count: 2
+      Model: 'AMD EPYC 7742 64-Core Processor                '
+  Ordinal: 0
+  PopulatedFRU:
+    FRUID: Node.HPE.MDA3307258943
+    HWInventoryByFRUType: HWInvByFRUNode
+    NodeFRUInfo:
+      AssetTag: ''
+      BiosVersion: A47 v2.52 (10/29/2021)
+      Manufacturer: HPE
+      Model: ProLiant XL675d Gen10 Plus
+      PartNumber: ''
+      SKU: DL385G10+
+      SerialNumber: MDA3307258943
+      SystemType: Physical
+      UUID: 38334C44-4735-534A-3035-4E5031303732
+    Subtype: ''
+    Type: Node
+  Status: Populated
+  Type: Node
+headers:
+  Content-Length: '714'
+  Content-Type: application/json
+  Date: Mon, 18 Mar 2024 08:08:46 GMT
+redirect_query_params: {}
+status_code: 200

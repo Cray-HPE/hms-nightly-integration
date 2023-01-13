@@ -1,0 +1,781 @@
+body:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s5e0
+    NetType: Sling
+    State: 'On'
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s5b0n0
+    NID: 49168544
+    NetType: Sling
+    Role: Application
+    State: 'On'
+    SubRole: UAN
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s5b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s6e0
+    NetType: Sling
+    State: 'On'
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s6b0n0
+    NID: 20
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: true
+    Flag: OK
+    ID: x3000c0s6b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b0n0
+    NID: 1024
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b0n1
+    NID: 1025
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b0n0
+    NID: 1008
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b0n1
+    NID: 1009
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b1n0
+    NID: 1022
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b1n1
+    NID: 1023
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b1n0
+    NID: 1030
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b1n1
+    NID: 1031
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b0n1
+    NID: 1021
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b0n0
+    NID: 1020
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b0n0
+    NID: 1016
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b0n1
+    NID: 1017
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b1n0
+    NID: 1018
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b1n1
+    NID: 1019
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b1n0
+    NID: 1014
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b1n1
+    NID: 1015
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b0n0
+    NID: 1012
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b0n1
+    NID: 1013
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s3
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s5
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r0
+    NetType: Sling
+    State: Empty
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r3
+    NetType: Sling
+    State: 'On'
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r5
+    NetType: Sling
+    State: 'On'
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r6
+    NetType: Sling
+    State: Empty
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s4
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r1
+    NetType: Sling
+    State: 'On'
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r2
+    NetType: Sling
+    State: Empty
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r7
+    NetType: Sling
+    State: 'On'
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7
+    NetType: Sling
+    State: 'On'
+    Type: ComputeModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0
+    NetType: Sling
+    State: 'On'
+    Type: Chassis
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0r4
+    NetType: Sling
+    State: Empty
+    Type: RouterModule
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0b0
+    NetType: Sling
+    State: Ready
+    Type: ChassisBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b0n0
+    NID: 1004
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b0n1
+    NID: 1005
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b1n0
+    NID: 1026
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b1n1
+    NID: 1027
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s6b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b1n0
+    NID: 1006
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b1n1
+    NID: 1007
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s1b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b1n0
+    NID: 1002
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b1n1
+    NID: 1003
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b0n0
+    NID: 1000
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b0n1
+    NID: 1001
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s0b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7e0
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b0n0
+    NID: 1028
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b0n1
+    NID: 1029
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s7b0
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2e1
+    NetType: Sling
+    State: Populated
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b1n0
+    NID: 1010
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b1n1
+    NID: 1011
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x1000c0s2b1
+    NetType: Sling
+    State: Ready
+    Type: NodeBMC
+headers:
+  Content-Type: application/json
+  Date: Wed, 27 Mar 2024 08:08:29 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

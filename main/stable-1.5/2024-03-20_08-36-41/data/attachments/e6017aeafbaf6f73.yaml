@@ -1,0 +1,33 @@
+- name: Ensure that the FAS service status details can be retrieved
+  request:
+    url: "{fas_base_url}/service/status/details"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            serviceVersion:
+              type: str
+              required: True
+              pattern: "[0-9]+.[0-9]+.[0-9]+"
+            serviceStatus:
+              type: str
+              required: True
+              enum:
+                - "running"
+            hsmStatus:
+              type: str
+              required: True
+              enum:
+                - "connected"
+            storageStatus:
+              type: str
+              required: True
+              enum:
+                - "connected"

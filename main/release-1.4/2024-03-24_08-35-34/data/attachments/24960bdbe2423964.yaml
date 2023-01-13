@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2024-03-25T08:27:12.736025652Z'
+  createTime: '2024-03-24T08:27:12.736025532Z'
+  operation: 'On'
+  taskCounts:
+    failed: 0
+    in-progress: 1
+    new: 0
+    succeeded: 1
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, on
+    xname: x1000c0s1b1n0
+  - taskStatus: succeeded
+    taskStatusDescription: Component already in desired state
+    xname: x1000c0s0b0n0
+  transitionID: aca9eec1-9285-4a43-af40-427b6881d6cb
+  transitionStatus: in-progress
+headers:
+  Content-Length: '539'
+  Content-Type: application/json
+  Date: Sun, 24 Mar 2024 08:27:19 GMT
+redirect_query_params: {}
+status_code: 200

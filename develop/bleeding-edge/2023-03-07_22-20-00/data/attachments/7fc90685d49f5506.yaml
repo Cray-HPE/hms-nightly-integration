@@ -1,0 +1,26 @@
+body:
+  ExtraProperties:
+    CIDR: 10.253.0.0/16
+    MTU: 9000
+    Subnets:
+    - CIDR: 10.253.0.0/16
+      FullName: HSN Base Subnet
+      Gateway: 10.253.0.1
+      Name: hsn_base_subnet
+      VlanID: 613
+    VlanRange:
+    - 613
+    - 868
+  FullName: High Speed Network
+  IPRanges:
+  - 10.253.0.0/16
+  LastUpdated: 1678225829
+  LastUpdatedTime: 2023-03-07 21:50:29.424285 +0000 UTC
+  Name: HSN
+  Type: slingshot10
+headers:
+  Content-Length: '381'
+  Content-Type: application/json
+  Date: Tue, 07 Mar 2023 21:51:55 GMT
+redirect_query_params: {}
+status_code: 200

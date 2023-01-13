@@ -1,0 +1,1217 @@
+body:
+  Hardware:
+    x1000:
+      Children:
+      - x1000c0
+      Class: Mountain
+      ExtraProperties:
+        Networks:
+          cn:
+            HMN:
+              CIDR: 10.104.0.0/22
+              Gateway: 10.104.0.1
+              VLan: 3001
+            NMN:
+              CIDR: 10.100.0.0/22
+              Gateway: 10.100.0.1
+              VLan: 2001
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: s0
+      Type: comptype_cabinet
+      TypeString: Cabinet
+      Xname: x1000
+    x1000c0:
+      Children:
+      - x1000c0b0
+      - x1000c0s0
+      - x1000c0s1
+      - x1000c0s2
+      - x1000c0s3
+      - x1000c0s4
+      - x1000c0s5
+      - x1000c0s6
+      - x1000c0s7
+      Class: Mountain
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000
+      Type: comptype_chassis
+      TypeString: Chassis
+      Xname: x1000c0
+    x1000c0b0:
+      Class: Mountain
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_chassis_bmc
+      TypeString: ChassisBMC
+      Xname: x1000c0b0
+    x1000c0s0:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s0
+    x1000c0s0b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001000
+        NID: 1000
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s0b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s0b0n0
+    x1000c0s0b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001001
+        NID: 1001
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s0b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s0b0n1
+    x1000c0s0b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001002
+        NID: 1002
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s0b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s0b1n0
+    x1000c0s0b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001003
+        NID: 1003
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s0b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s0b1n1
+    x1000c0s1:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s1
+    x1000c0s1b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001004
+        NID: 1004
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s1b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s1b0n0
+    x1000c0s1b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001005
+        NID: 1005
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s1b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s1b0n1
+    x1000c0s1b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001006
+        NID: 1006
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s1b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s1b1n0
+    x1000c0s1b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001007
+        NID: 1007
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s1b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s1b1n1
+    x1000c0s2:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s2
+    x1000c0s2b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001008
+        NID: 1008
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s2b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s2b0n0
+    x1000c0s2b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001009
+        NID: 1009
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s2b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s2b0n1
+    x1000c0s2b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001010
+        NID: 1010
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s2b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s2b1n0
+    x1000c0s2b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001011
+        NID: 1011
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s2b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s2b1n1
+    x1000c0s3:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s3
+    x1000c0s3b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001012
+        NID: 1012
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s3b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s3b0n0
+    x1000c0s3b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001013
+        NID: 1013
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s3b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s3b0n1
+    x1000c0s3b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001014
+        NID: 1014
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s3b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s3b1n0
+    x1000c0s3b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001015
+        NID: 1015
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s3b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s3b1n1
+    x1000c0s4:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s4
+    x1000c0s4b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001016
+        NID: 1016
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s4b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s4b0n0
+    x1000c0s4b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001017
+        NID: 1017
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s4b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s4b0n1
+    x1000c0s4b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001018
+        NID: 1018
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s4b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s4b1n0
+    x1000c0s4b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001019
+        NID: 1019
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s4b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s4b1n1
+    x1000c0s5:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s5
+    x1000c0s5b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001020
+        NID: 1020
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s5b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s5b0n0
+    x1000c0s5b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001021
+        NID: 1021
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s5b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s5b0n1
+    x1000c0s5b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001022
+        NID: 1022
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s5b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s5b1n0
+    x1000c0s5b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001023
+        NID: 1023
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s5b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s5b1n1
+    x1000c0s6:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s6
+    x1000c0s6b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001024
+        NID: 1024
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s6b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s6b0n0
+    x1000c0s6b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001025
+        NID: 1025
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s6b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s6b0n1
+    x1000c0s6b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001026
+        NID: 1026
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s6b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s6b1n0
+    x1000c0s6b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001027
+        NID: 1027
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s6b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s6b1n1
+    x1000c0s7:
+      Class: Mountain
+      ExtraProperties:
+        '@rie.mockup': EX425
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0
+      Type: comptype_compmod
+      TypeString: ComputeModule
+      Xname: x1000c0s7
+    x1000c0s7b0n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001028
+        NID: 1028
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s7b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s7b0n0
+    x1000c0s7b0n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001029
+        NID: 1029
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s7b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s7b0n1
+    x1000c0s7b1n0:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001030
+        NID: 1030
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s7b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s7b1n0
+    x1000c0s7b1n1:
+      Class: Mountain
+      ExtraProperties:
+        Aliases:
+        - nid001031
+        NID: 1031
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x1000c0s7b1
+      Type: comptype_node
+      TypeString: Node
+      Xname: x1000c0s7b1n1
+    x3000:
+      Class: River
+      ExtraProperties:
+        Networks:
+          cn:
+            HMN:
+              CIDR: 10.107.0.0/22
+              Gateway: 10.107.0.1
+              VLan: 1513
+            NMN:
+              CIDR: 10.106.0.0/22
+              Gateway: 10.106.0.1
+              VLan: 1770
+          ncn:
+            HMN:
+              CIDR: 10.107.0.0/22
+              Gateway: 10.107.0.1
+              VLan: 1513
+            NMN:
+              CIDR: 10.106.0.0/22
+              Gateway: 10.106.0.1
+              VLan: 1770
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: s0
+      Type: comptype_cabinet
+      TypeString: Cabinet
+      Xname: x3000
+    x3000c0s5b0n0:
+      Class: River
+      ExtraProperties:
+        '@rie.mockup': DL325
+        Aliases:
+        - uan01
+        Role: Application
+        SubRole: UAN
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x3000c0s5b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x3000c0s5b0n0
+    x3000c0s6b0n0:
+      Class: River
+      ExtraProperties:
+        '@rie.mockup': XL675d_A40
+        Aliases:
+        - nid000020
+        NID: 20
+        Role: Compute
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x3000c0s6b0
+      Type: comptype_node
+      TypeString: Node
+      Xname: x3000c0s6b0n0
+    x3000c0w31:
+      Children:
+      - x3000c0w31j18
+      - x3000c0w31j19
+      Class: River
+      ExtraProperties:
+        Aliases:
+        - sw-leaf-bmc-001
+        Brand: Aruba
+        IP4addr: 10.254.0.8
+        SNMPAuthPassword: vault://hms-creds/x3000c0w31
+        SNMPAuthProtocol: MD5
+        SNMPPrivPassword: vault://hms-creds/x3000c0w31
+        SNMPPrivProtocol: DES
+        SNMPUsername: testuser
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x3000c0
+      Type: comptype_mgmt_switch
+      TypeString: MgmtSwitch
+      Xname: x3000c0w31
+    x3000c0w31j18:
+      Class: River
+      ExtraProperties:
+        NodeNics:
+        - x3000c0s5b0
+        VendorName: 1/1/18
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x3000c0w31
+      Type: comptype_mgmt_switch_connector
+      TypeString: MgmtSwitchConnector
+      Xname: x3000c0w31j18
+    x3000c0w31j19:
+      Class: River
+      ExtraProperties:
+        NodeNics:
+        - x3000c0s6b0
+        VendorName: 1/1/19
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.216557 +0000 UTC
+      Parent: x3000c0w31
+      Type: comptype_mgmt_switch_connector
+      TypeString: MgmtSwitchConnector
+      Xname: x3000c0w31j19
+  Networks:
+    BICAN:
+      ExtraProperties:
+        CIDR: 0.0.0.0/0
+        MTU: 9000
+        Subnets: []
+        SystemDefaultRoute: CAN
+        VlanRange:
+        - 0
+      FullName: SystemDefaultRoute points the network name of the default route
+      IPRanges:
+      - 0.0.0.0/0
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: BICAN
+      Type: ethernet
+    CAN:
+      ExtraProperties:
+        CIDR: 10.102.3.128/26
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.102.3.160/27
+          FullName: CAN Dynamic MetalLB
+          Gateway: 10.102.3.161
+          MetalLBPoolName: customer-access
+          Name: can_metallb_address_pool
+          VlanID: 6
+        - CIDR: 10.102.3.128/26
+          DHCPEnd: 10.102.3.159
+          DHCPStart: 10.102.3.143
+          FullName: CAN Bootstrap DHCP Subnet
+          Gateway: 10.102.3.129
+          IPReservations:
+          - IPAddress: 10.102.3.130
+            Name: can-switch-1
+          - IPAddress: 10.102.3.131
+            Name: can-switch-2
+          - Comment: k8s-virtual-ip
+            IPAddress: 10.102.3.132
+            Name: kubeapi-vip
+          - Aliases:
+            - ncn-s003-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s17b0n0
+            IPAddress: 10.102.3.133
+            Name: ncn-s003
+          - Aliases:
+            - ncn-s002-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s15b0n0
+            IPAddress: 10.102.3.134
+            Name: ncn-s002
+          - Aliases:
+            - ncn-s001-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s13b0n0
+            IPAddress: 10.102.3.135
+            Name: ncn-s001
+          - Aliases:
+            - ncn-w003-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s11b0n0
+            IPAddress: 10.102.3.136
+            Name: ncn-w003
+          - Aliases:
+            - ncn-w002-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s9b0n0
+            IPAddress: 10.102.3.137
+            Name: ncn-w002
+          - Aliases:
+            - ncn-w001-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s7b0n0
+            IPAddress: 10.102.3.138
+            Name: ncn-w001
+          - Aliases:
+            - ncn-m003-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s5b0n0
+            IPAddress: 10.102.3.139
+            Name: ncn-m003
+          - Aliases:
+            - ncn-m002-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s3b0n0
+            IPAddress: 10.102.3.140
+            Name: ncn-m002
+          - Aliases:
+            - ncn-m001-can
+            - time-can
+            - time-can.local
+            Comment: x3000c0s1b0n0
+            IPAddress: 10.102.3.141
+            Name: ncn-m001
+          - Comment: x3000c0s27b0n0
+            IPAddress: 10.102.3.142
+            Name: uan01
+          Name: bootstrap_dhcp
+          VlanID: 6
+        VlanRange:
+        - 6
+      FullName: Customer Access Network
+      IPRanges:
+      - 10.102.3.128/26
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: CAN
+      Type: ethernet
+    CMN:
+      ExtraProperties:
+        CIDR: 10.102.3.0/25
+        MTU: 9000
+        MyASN: 65532
+        PeerASN: 65533
+        Subnets:
+        - CIDR: 10.102.3.64/26
+          FullName: CMN Dynamic MetalLB
+          Gateway: 10.102.3.65
+          MetalLBPoolName: customer-management
+          Name: cmn_metallb_address_pool
+          VlanID: 7
+        - CIDR: 10.102.3.0/25
+          FullName: CMN Management Network Infrastructure
+          Gateway: 10.102.3.1
+          IPReservations:
+          - Comment: x3000c0h23s1
+            IPAddress: 10.102.3.2
+            Name: sw-spine-001
+          - Comment: x3000c0h23s2
+            IPAddress: 10.102.3.3
+            Name: sw-spine-002
+          - Comment: x3000c0w22
+            IPAddress: 10.102.3.4
+            Name: sw-leaf-bmc-001
+          Name: network_hardware
+          VlanID: 7
+        - CIDR: 10.102.3.32/25
+          DHCPEnd: 10.102.3.63
+          DHCPStart: 10.102.3.44
+          FullName: CMN Bootstrap DHCP Subnet
+          Gateway: 10.102.3.1
+          IPReservations:
+          - Comment: k8s-virtual-ip
+            IPAddress: 10.102.3.34
+            Name: kubeapi-vip
+          - Aliases:
+            - ncn-s003-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s17b0n0
+            IPAddress: 10.102.3.35
+            Name: ncn-s003
+          - Aliases:
+            - ncn-s002-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s15b0n0
+            IPAddress: 10.102.3.36
+            Name: ncn-s002
+          - Aliases:
+            - ncn-s001-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s13b0n0
+            IPAddress: 10.102.3.37
+            Name: ncn-s001
+          - Aliases:
+            - ncn-w003-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s11b0n0
+            IPAddress: 10.102.3.38
+            Name: ncn-w003
+          - Aliases:
+            - ncn-w002-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s9b0n0
+            IPAddress: 10.102.3.39
+            Name: ncn-w002
+          - Aliases:
+            - ncn-w001-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s7b0n0
+            IPAddress: 10.102.3.40
+            Name: ncn-w001
+          - Aliases:
+            - ncn-m003-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s5b0n0
+            IPAddress: 10.102.3.41
+            Name: ncn-m003
+          - Aliases:
+            - ncn-m002-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s3b0n0
+            IPAddress: 10.102.3.42
+            Name: ncn-m002
+          - Aliases:
+            - ncn-m001-cmn
+            - time-cmn
+            - time-cmn.local
+            Comment: x3000c0s1b0n0
+            IPAddress: 10.102.3.43
+            Name: ncn-m001
+          Name: bootstrap_dhcp
+          VlanID: 7
+        VlanRange:
+        - 7
+      FullName: Customer Management Network
+      IPRanges:
+      - 10.102.3.0/25
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: CMN
+      Type: ethernet
+    HMNLB:
+      ExtraProperties:
+        CIDR: 10.94.100.0/24
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.94.100.0/24
+          FullName: HMN MetalLB
+          Gateway: 10.94.100.1
+          IPReservations:
+          - Aliases:
+            - rsyslog-agg-service
+            Comment: rsyslog-agg-service
+            IPAddress: 10.94.100.72
+            Name: rsyslog-aggregator
+          - Aliases:
+            - tftp-service
+            Comment: tftp-service
+            IPAddress: 10.94.100.60
+            Name: cray-tftp
+          - Aliases:
+            - unbound
+            Comment: unbound
+            IPAddress: 10.94.100.225
+            Name: unbound
+          - Aliases:
+            - docker_registry_service
+            Comment: docker_registry_service
+            IPAddress: 10.94.100.73
+            Name: docker-registry
+          - IPAddress: 10.94.100.71
+            Name: istio-ingressgateway
+          MetalLBPoolName: hardware-management
+          Name: hmn_metallb_address_pool
+          VlanID: 4
+        VlanRange: null
+      FullName: Hardware Management Network LoadBalancers
+      IPRanges:
+      - 10.94.100.0/24
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: HMNLB
+      Type: ethernet
+    HMN_RVR:
+      ExtraProperties:
+        CIDR: 10.107.0.0/17
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.107.0.0/22
+          DHCPEnd: 10.107.3.254
+          DHCPStart: 10.107.0.10
+          FullName: ''
+          Gateway: 10.107.0.1
+          Name: cabinet_3000
+          VlanID: 1513
+        VlanRange:
+        - 1513
+        - 1513
+      FullName: River Compute Hardware Management Network
+      IPRanges:
+      - 10.107.0.0/17
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: HMN_RVR
+      Type: ethernet
+    HSN:
+      ExtraProperties:
+        CIDR: 10.253.0.0/16
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.253.0.0/16
+          FullName: HSN Base Subnet
+          Gateway: 10.253.0.1
+          Name: hsn_base_subnet
+          VlanID: 613
+        VlanRange:
+        - 613
+        - 868
+      FullName: High Speed Network
+      IPRanges:
+      - 10.253.0.0/16
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: HSN
+      Type: slingshot10
+    NMN:
+      ExtraProperties:
+        CIDR: 10.252.0.0/17
+        MTU: 9000
+        MyASN: 65531
+        PeerASN: 65533
+        Subnets:
+        - CIDR: 10.252.0.0/17
+          FullName: NMN Management Network Infrastructure
+          Gateway: 10.252.0.1
+          IPReservations:
+          - Comment: x3000c0h23s1
+            IPAddress: 10.252.0.2
+            Name: sw-spine-001
+          - Comment: x3000c0h23s2
+            IPAddress: 10.252.0.3
+            Name: sw-spine-002
+          - Comment: x3000c0w22
+            IPAddress: 10.252.0.4
+            Name: sw-leaf-bmc-001
+          Name: network_hardware
+          VlanID: 2
+        - CIDR: 10.252.1.0/17
+          DHCPEnd: 10.252.1.213
+          DHCPStart: 10.252.1.13
+          FullName: NMN Bootstrap DHCP Subnet
+          Gateway: 10.252.0.1
+          IPReservations:
+          - Aliases:
+            - kubeapi-vip.local
+            Comment: k8s-virtual-ip
+            IPAddress: 10.252.1.2
+            Name: kubeapi-vip
+          - Aliases:
+            - rgw-vip.local
+            Comment: rgw-virtual-ip
+            IPAddress: 10.252.1.3
+            Name: rgw-vip
+          - Aliases:
+            - ncn-s003-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s17b0n0
+            - ncn-s003.local
+            Comment: x3000c0s17b0n0
+            IPAddress: 10.252.1.4
+            Name: ncn-s003
+          - Aliases:
+            - ncn-s002-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s15b0n0
+            - ncn-s002.local
+            Comment: x3000c0s15b0n0
+            IPAddress: 10.252.1.5
+            Name: ncn-s002
+          - Aliases:
+            - ncn-s001-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s13b0n0
+            - ncn-s001.local
+            Comment: x3000c0s13b0n0
+            IPAddress: 10.252.1.6
+            Name: ncn-s001
+          - Aliases:
+            - ncn-w003-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s11b0n0
+            - ncn-w003.local
+            Comment: x3000c0s11b0n0
+            IPAddress: 10.252.1.7
+            Name: ncn-w003
+          - Aliases:
+            - ncn-w002-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s9b0n0
+            - ncn-w002.local
+            Comment: x3000c0s9b0n0
+            IPAddress: 10.252.1.8
+            Name: ncn-w002
+          - Aliases:
+            - ncn-w001-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s7b0n0
+            - ncn-w001.local
+            Comment: x3000c0s7b0n0
+            IPAddress: 10.252.1.9
+            Name: ncn-w001
+          - Aliases:
+            - ncn-m003-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s5b0n0
+            - ncn-m003.local
+            Comment: x3000c0s5b0n0
+            IPAddress: 10.252.1.10
+            Name: ncn-m003
+          - Aliases:
+            - ncn-m002-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s3b0n0
+            - ncn-m002.local
+            Comment: x3000c0s3b0n0
+            IPAddress: 10.252.1.11
+            Name: ncn-m002
+          - Aliases:
+            - ncn-m001-nmn
+            - time-nmn
+            - time-nmn.local
+            - x3000c0s1b0n0
+            - ncn-m001.local
+            Comment: x3000c0s1b0n0
+            IPAddress: 10.252.1.12
+            Name: ncn-m001
+          Name: bootstrap_dhcp
+          VlanID: 2
+        - CIDR: 10.252.2.0/23
+          FullName: NMN UAIs
+          Gateway: 10.252.0.1
+          IPReservations:
+          - Aliases:
+            - pbs-comm-service
+            - pbs-comm-service-nmn
+            - pbs_comm_service.local
+            Comment: pbs-comm-service,pbs-comm-service-nmn
+            IPAddress: 10.252.2.2
+            Name: pbs_comm_service
+          - Aliases:
+            - pbs-service
+            - pbs-service-nmn
+            - pbs_service.local
+            Comment: pbs-service,pbs-service-nmn
+            IPAddress: 10.252.2.3
+            Name: pbs_service
+          - Aliases:
+            - slurmctld-service
+            - slurmctld-service-nmn
+            - slurmctld_service.local
+            Comment: slurmctld-service,slurmctld-service-nmn
+            IPAddress: 10.252.2.4
+            Name: slurmctld_service
+          - Aliases:
+            - slurmdbd-service
+            - slurmdbd-service-nmn
+            - slurmdbd_service.local
+            Comment: slurmdbd-service,slurmdbd-service-nmn
+            IPAddress: 10.252.2.5
+            Name: slurmdbd_service
+          - Aliases:
+            - uai-nmn-blackhole
+            - uai_nmn_blackhole.local
+            Comment: uai-nmn-blackhole
+            IPAddress: 10.252.2.6
+            Name: uai_nmn_blackhole
+          Name: uai_macvlan
+          ReservationEnd: 10.252.3.254
+          ReservationStart: 10.252.2.10
+          VlanID: 2
+        VlanRange:
+        - 2
+      FullName: Node Management Network
+      IPRanges:
+      - 10.252.0.0/17
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: NMN
+      Type: ethernet
+    NMNLB:
+      ExtraProperties:
+        CIDR: 10.92.100.0/24
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.92.100.0/24
+          FullName: NMN MetalLB
+          Gateway: 10.92.100.1
+          IPReservations:
+          - Aliases:
+            - docker_registry_service
+            Comment: docker_registry_service
+            IPAddress: 10.92.100.73
+            Name: docker-registry
+          - Aliases:
+            - api-gw-service
+            - api-gw-service-nmn.local
+            - packages
+            - registry
+            - spire.local
+            - api_gw_service
+            - registry.local
+            - packages
+            - packages.local
+            - spire
+            Comment: api-gw-service,api-gw-service-nmn.local,packages,registry,spire.local,api_gw_service,registry.local,packages,packages.local,spire
+            IPAddress: 10.92.100.71
+            Name: istio-ingressgateway
+          - Aliases:
+            - api-gw-service.local
+            Comment: api-gw-service.local
+            IPAddress: 10.92.100.81
+            Name: istio-ingressgateway-local
+          - Aliases:
+            - rsyslog-agg-service
+            Comment: rsyslog-agg-service
+            IPAddress: 10.92.100.72
+            Name: rsyslog-aggregator
+          - Aliases:
+            - tftp-service
+            Comment: tftp-service
+            IPAddress: 10.92.100.60
+            Name: cray-tftp
+          - Aliases:
+            - unbound
+            Comment: unbound
+            IPAddress: 10.92.100.225
+            Name: unbound
+          MetalLBPoolName: node-management
+          Name: nmn_metallb_address_pool
+          VlanID: 2
+        VlanRange: null
+      FullName: Node Management Network LoadBalancers
+      IPRanges:
+      - 10.92.100.0/24
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: NMNLB
+      Type: ethernet
+    NMN_RVR:
+      ExtraProperties:
+        CIDR: 10.106.0.0/17
+        MTU: 9000
+        Subnets:
+        - CIDR: 10.106.0.0/22
+          DHCPEnd: 10.106.3.254
+          DHCPStart: 10.106.0.10
+          FullName: ''
+          Gateway: 10.106.0.1
+          Name: cabinet_3000
+          VlanID: 1770
+        VlanRange:
+        - 1770
+        - 1770
+      FullName: River Compute Node Management Network
+      IPRanges:
+      - 10.106.0.0/17
+      LastUpdated: 1711181170
+      LastUpdatedTime: 2024-03-23 08:06:10.224763 +0000 UTC
+      Name: NMN_RVR
+      Type: ethernet
+headers:
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:07:30 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

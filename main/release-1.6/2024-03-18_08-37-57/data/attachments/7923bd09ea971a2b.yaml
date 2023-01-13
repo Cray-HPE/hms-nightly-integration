@@ -1,0 +1,37 @@
+- name: hsmAPIdefaultsNodeMapsPOSTconflictingNID - Attempt to create multiple NodeMaps for VirtualNodes that both use the same NID using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"NodeMaps":[{"ID":"x9999c7s9b9n9v0","NID":9999999999,"Role":"Compute","SubRole":"Worker"},{"ID":"x9999c7s9b9n8v0","NID":9999999999,"Role":"Compute","SubRole":"Worker"}]}
+  response:
+    status_code: 409
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Conflict"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "operation would conflict with an existing xname ID that has the same NID."
+            status:
+              type: int
+              required: True
+              enum:
+                - 409
+
+

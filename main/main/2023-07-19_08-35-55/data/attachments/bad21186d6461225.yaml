@@ -1,0 +1,13 @@
+- name: Delete testing bootparameters for x9999c0s6b0n0
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s6b0n0
+  response:
+    status_code:
+    - 200
+    - 400
+    - 404

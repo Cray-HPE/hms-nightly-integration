@@ -1,0 +1,83 @@
+Format variables:
+  hsm_base_url = 'http://cray-smd:27779'
+  verify = 'False'
+
+Source test stage (line 480):
+  - name: hsmAPIinventoryHardwareQueryXnameGETnonExistentNode - Attempt to query for Node Hardware Inventory entries with an xname that doesn't exist using GET.
+    request:
+      url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9n9?children=False"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              XName:
+                type: str
+                required: True
+                enum:
+                  - "x9999c7s9b9n9"
+              Format:
+                type: str
+                required: True
+                enum:
+                  - "NestNodesOnly"
+
+
+
+
+Formatted stage:
+  name: hsmAPIinventoryHardwareQueryXnameGETnonExistentNode - Attempt to query for Node
+    Hardware Inventory entries with an xname that doesn't exist using GET.
+  request:
+    method: GET
+    url: 'http://cray-smd:27779/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9n9?children=False'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            Format:
+              enum:
+              - NestNodesOnly
+              required: true
+              type: str
+            XName:
+              enum:
+              - x9999c7s9b9n9
+              required: true
+              type: str
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'hsmAPIinventoryHardwareQueryXnameGETnonExistentNode - Attempt to query for Node Hardware Inventory entries with an xname that doesn't exist using GET.' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7fb0e218ce50>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Key 'Nodes' was not defined. Path: ''.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

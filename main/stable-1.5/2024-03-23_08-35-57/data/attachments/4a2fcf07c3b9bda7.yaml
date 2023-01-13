@@ -1,0 +1,9 @@
+allow_redirects: false
+headers: {}
+method: GET
+params:
+  nid: '1006'
+  retry: 7
+stream: false
+url: http://cray-bss:27778/boot/v1/bootscript
+verify: false

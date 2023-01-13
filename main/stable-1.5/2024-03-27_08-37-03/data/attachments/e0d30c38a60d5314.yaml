@@ -1,0 +1,12 @@
+body:
+  detail: allow GET,POST
+  status: 405
+  title: Method Not Allowed
+  type: about:blank
+headers:
+  Allow: GET,POST
+  Content-Length: '91'
+  Content-Type: application/problem+json
+  Date: Wed, 27 Mar 2024 08:30:43 GMT
+redirect_query_params: {}
+status_code: 405

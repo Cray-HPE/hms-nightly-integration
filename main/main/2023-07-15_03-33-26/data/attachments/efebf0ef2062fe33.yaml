@@ -1,0 +1,2666 @@
+body:
+  ComponentEndpoints:
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x3000c0s5e0
+    OdataID: /redfish/v1/Chassis/1
+    RedfishChassisInfo:
+      Name: Computer System Chassis
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishSubtype: RackMount
+    RedfishType: Chassis
+    RedfishURL: x3000c0s5b0/redfish/v1/Chassis/1
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x3000c0s5b0n0
+    OdataID: /redfish/v1/Systems/1
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - GracefulShutdown
+          - ForceRestart
+          - Nmi
+          - PushPowerButton
+          - GracefulRestart
+          target: /redfish/v1/Systems/1/Actions/ComputerSystem.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/2
+        InterfaceEnabled: true
+        MACAddress: 00:40:a6:1e:b7:a1
+        PermanentMACAddress: 00:40:a6:1e:b7:a1
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/3
+        InterfaceEnabled: true
+        MACAddress: 00:40:a6:77:bc:8f
+        PermanentMACAddress: 00:40:a6:77:bc:8f
+        RedfishId: '3'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/4
+        InterfaceEnabled: true
+        MACAddress: 00:40:a6:79:0a:8e
+        PermanentMACAddress: 00:40:a6:79:0a:8e
+        RedfishId: '4'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/1
+        MACAddress: 00:40:a6:4c:a5:e2
+        PermanentMACAddress: 00:40:a6:4c:a5:e2
+        RedfishId: '1'
+      Name: Computer System
+      PowerControl:
+      - '@odata.id': /redfish/v1/Chassis/1/Power#PowerControl/0
+        MemberId: '0'
+        OEM:
+          HPE:
+            PowerLimit: {}
+            PowerRegulationEnabled: false
+            Status: Empty
+            Target: ''
+        PowerCapacityWatts: 1000
+      PowerURL: /redfish/v1/Chassis/1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x3000c0s5b0/redfish/v1/Systems/1
+    Type: Node
+    UUID: 36383150-3630-584D-5130-313930323042
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x3000c0s5b0
+    MACAddr: 0a:ca:fe:f0:0d:04
+    OdataID: /redfish/v1/Managers/1
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - GracefulRestart
+          target: /redfish/v1/Managers/1/Actions/Manager.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/1
+        Description: Configuration of this Manager Network Interface
+        FQDN: ILOMXQ019020B.hmn
+        Hostname: ILOMXQ019020B
+        InterfaceEnabled: true
+        MACAddress: 94:40:c9:37:d3:fc
+        PermanentMACAddress: 94:40:c9:37:d3:fc
+        RedfishId: '1'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/2
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOMXQ019020B
+        InterfaceEnabled: false
+        MACAddress: 94:40:c9:37:d3:fd
+        PermanentMACAddress: 94:40:c9:37:d3:fd
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/3
+        Description: Configuration of this Manager USB Ethernet Interface available
+          for access from Host.
+        InterfaceEnabled: true
+        MACAddress: 0a:ca:fe:f0:0d:04
+        PermanentMACAddress: 0a:ca:fe:f0:0d:04
+        RedfishId: '3'
+      Name: Manager
+    RedfishSubtype: BMC
+    RedfishType: Manager
+    RedfishURL: x3000c0s5b0/redfish/v1/Managers/1
+    Type: NodeBMC
+    UUID: 1668bf7f-855a-5188-aece-3e5c1627ac7f
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x3000c0s6e0
+    OdataID: /redfish/v1/Chassis/1
+    RedfishChassisInfo:
+      Name: Computer System Chassis
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishSubtype: RackMount
+    RedfishType: Chassis
+    RedfishURL: x3000c0s6b0/redfish/v1/Chassis/1
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x3000c0s6b0n0
+    OdataID: /redfish/v1/Systems/1
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - GracefulShutdown
+          - ForceRestart
+          - Nmi
+          - PushPowerButton
+          - GracefulRestart
+          target: /redfish/v1/Systems/1/Actions/ComputerSystem.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/1
+        MACAddress: 00:40:a6:16:08:ae
+        PermanentMACAddress: 00:40:a6:16:08:ae
+        RedfishId: '1'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/2
+        MACAddress: 00:40:a6:64:bc:01
+        PermanentMACAddress: 00:40:a6:64:bc:01
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/3
+        MACAddress: 00:40:a6:08:ee:0a
+        PermanentMACAddress: 00:40:a6:08:ee:0a
+        RedfishId: '3'
+      - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/4
+        MACAddress: 00:40:a6:48:9d:40
+        PermanentMACAddress: 00:40:a6:48:9d:40
+        RedfishId: '4'
+      Name: Computer System
+      PowerControl:
+      - '@odata.id': /redfish/v1/Chassis/1/Power#PowerControl/0
+        MemberId: '0'
+        Name: PowerLimit Resource for AccPowerService
+        OEM:
+          HPE:
+            PowerLimit:
+              Max: 11221
+              Min: 5036
+            PowerRegulationEnabled: true
+            Status: OK
+            Target: /redfish/v1/Chassis/1/Power/AccPowerService/PowerLimit/Actions/HpeServerAccPowerLimit.ConfigurePowerLimit
+        PowerCapacityWatts: 12000
+      PowerURL: /redfish/v1/Chassis/1/Power/AccPowerService/PowerLimit
+    RedfishType: ComputerSystem
+    RedfishURL: x3000c0s6b0/redfish/v1/Systems/1
+    Type: Node
+    UUID: 38334C44-4735-534A-3035-4E5031303732
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x3000c0s6b0
+    MACAddr: 0a:ca:fe:f0:0d:04
+    OdataID: /redfish/v1/Managers/1
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - GracefulRestart
+          target: /redfish/v1/Managers/1/Actions/Manager.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/1
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOJS05NP1072
+        InterfaceEnabled: true
+        MACAddress: 94:40:c9:41:f8:ea
+        PermanentMACAddress: 94:40:c9:41:f8:ea
+        RedfishId: '1'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/2
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOJS05NP1072
+        InterfaceEnabled: false
+        MACAddress: 94:40:c9:41:f8:eb
+        PermanentMACAddress: 94:40:c9:41:f8:eb
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/3
+        Description: Configuration of this Manager USB Ethernet Interface available
+          for access from Host.
+        InterfaceEnabled: true
+        MACAddress: 0a:ca:fe:f0:0d:04
+        PermanentMACAddress: 0a:ca:fe:f0:0d:04
+        RedfishId: '3'
+      Name: Manager
+    RedfishSubtype: BMC
+    RedfishType: Manager
+    RedfishURL: x3000c0s6b0/redfish/v1/Managers/1
+    Type: NodeBMC
+    UUID: 715c4f01-06a8-5532-b685-c6ba8f11099e
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s1e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s1b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s1b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:18:f2:9b
+        PermanentMACAddress: 00:40:a6:18:f2:9b
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s1b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s1b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:55:a6:9e
+        PermanentMACAddress: 00:40:a6:55:a6:9e
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s1b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s1b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s1b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s3e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s3b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s3b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:33:39:a9
+        PermanentMACAddress: 00:40:a6:33:39:a9
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s3b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s3b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:4f:09:5b
+        PermanentMACAddress: 00:40:a6:4f:09:5b
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s3b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s3b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s3b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s7e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s7b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s7b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:73:f3:39
+        PermanentMACAddress: 00:40:a6:73:f3:39
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s7b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s7b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:74:ca:68
+        PermanentMACAddress: 00:40:a6:74:ca:68
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s7b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s7b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s7b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s2e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s2b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s2b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:59:21:bb
+        PermanentMACAddress: 00:40:a6:59:21:bb
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s2b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s7
+    OdataID: /redfish/v1/Chassis/Blade7
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade7/Actions/Chassis.Reset
+      Name: Blade7
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade7
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s6e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s6b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s6b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:22:9c:43
+        PermanentMACAddress: 00:40:a6:22:9c:43
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s6b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s6b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:3f:6f:23
+        PermanentMACAddress: 00:40:a6:3f:6f:23
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s6b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s6b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s6b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s5e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s5b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s5b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:30:43:a5
+        PermanentMACAddress: 00:40:a6:30:43:a5
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s5b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s5b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:43:55:1a
+        PermanentMACAddress: 00:40:a6:43:55:1a
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s5b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s5b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s5b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s4e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s4b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s4b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:7a:31:28
+        PermanentMACAddress: 00:40:a6:7a:31:28
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s4b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0b0/redfish/v1/Managers/BMC
+    Type: ChassisBMC
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s4b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:7a:9f:2b
+        PermanentMACAddress: 00:40:a6:7a:9f:2b
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s4b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s4b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s4b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s4e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s4b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s4b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:0f:2c:c3
+        PermanentMACAddress: 00:40:a6:0f:2c:c3
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s4b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s4b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:41:8c:6c
+        PermanentMACAddress: 00:40:a6:41:8c:6c
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s4b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s4b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s4b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s0e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s0b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s0b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:73:75:2a
+        PermanentMACAddress: 00:40:a6:73:75:2a
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s0b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s0b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:02:8c:08
+        PermanentMACAddress: 00:40:a6:02:8c:08
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s0b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s0b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s0b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s6e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s6b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s2b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:51:e3:d2
+        PermanentMACAddress: 00:40:a6:51:e3:d2
+        RedfishId: ManagementEthernet
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s2b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s2b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s2b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s1e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s1b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s1b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:2f:a1:c2
+        PermanentMACAddress: 00:40:a6:2f:a1:c2
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s1b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s1b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:0c:4c:83
+        PermanentMACAddress: 00:40:a6:0c:4c:83
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s1b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s1b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s1b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s7e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s7b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s7b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:37:b4:c5
+        PermanentMACAddress: 00:40:a6:37:b4:c5
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s7b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s7b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:0a:bc:dc
+        PermanentMACAddress: 00:40:a6:0a:bc:dc
+        RedfishId: ManagementEthernet
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s7b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s7b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s7b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s2e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s2b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s2b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:45:e3:49
+        PermanentMACAddress: 00:40:a6:45:e3:49
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s2b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s2b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:55:ce:d8
+        PermanentMACAddress: 00:40:a6:55:ce:d8
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s2b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s2b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s2b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Enclosure/Actions/Chassis.Reset
+        Oem:
+          '#Chassis.EmergencyPower':
+            '@Redfish.ActionInfo': ''
+            ResetType@Redfish.AllowableValues:
+            - ForceOff
+            target: /redfish/v1/Chassis/Enclosure/Actions/Oem/Chassis.EmergencyPower
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Enclosure
+    Type: Chassis
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r4
+    OdataID: /redfish/v1/Chassis/Perif4
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif4/Actions/Chassis.Reset
+      Name: Perif4
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif4
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r7
+    OdataID: /redfish/v1/Chassis/Perif7
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif7/Actions/Chassis.Reset
+      Name: Perif7
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif7
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s1
+    OdataID: /redfish/v1/Chassis/Blade1
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade1/Actions/Chassis.Reset
+      Name: Blade1
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade1
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s2
+    OdataID: /redfish/v1/Chassis/Blade2
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade2/Actions/Chassis.Reset
+      Name: Blade2
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade2
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s4
+    OdataID: /redfish/v1/Chassis/Blade4
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade4/Actions/Chassis.Reset
+      Name: Blade4
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade4
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r1
+    OdataID: /redfish/v1/Chassis/Perif1
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif1/Actions/Chassis.Reset
+      Name: Perif1
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif1
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r2
+    OdataID: /redfish/v1/Chassis/Perif2
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif2/Actions/Chassis.Reset
+      Name: Perif2
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif2
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r6
+    OdataID: /redfish/v1/Chassis/Perif6
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif6/Actions/Chassis.Reset
+      Name: Perif6
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif6
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r3
+    OdataID: /redfish/v1/Chassis/Perif3
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif3/Actions/Chassis.Reset
+      Name: Perif3
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif3
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s5
+    OdataID: /redfish/v1/Chassis/Blade5
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade5/Actions/Chassis.Reset
+      Name: Blade5
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade5
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s6
+    OdataID: /redfish/v1/Chassis/Blade6
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade6/Actions/Chassis.Reset
+      Name: Blade6
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade6
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r0
+    OdataID: /redfish/v1/Chassis/Perif0
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif0/Actions/Chassis.Reset
+      Name: Perif0
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif0
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0r5
+    OdataID: /redfish/v1/Chassis/Perif5
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Perif5/Actions/Chassis.Reset
+      Name: Perif5
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Perif5
+    Type: RouterModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s0
+    OdataID: /redfish/v1/Chassis/Blade0
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade0/Actions/Chassis.Reset
+      Name: Blade0
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade0
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s3
+    OdataID: /redfish/v1/Chassis/Blade3
+    RedfishChassisInfo:
+      Actions:
+        '#Chassis.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - 'On'
+          - ForceOff
+          - 'Off'
+          target: /redfish/v1/Chassis/Blade3/Actions/Chassis.Reset
+      Name: Blade3
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishSubtype: Blade
+    RedfishType: Chassis
+    RedfishURL: x1000c0b0/redfish/v1/Chassis/Blade3
+    Type: ComputeModule
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s6b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:44:9e:6f
+        PermanentMACAddress: 00:40:a6:44:9e:6f
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s6b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s6b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:39:bb:68
+        PermanentMACAddress: 00:40:a6:39:bb:68
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s6b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s6b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s6b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s0e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s0b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s0b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:79:5b:5f
+        PermanentMACAddress: 00:40:a6:79:5b:5f
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s0b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s0b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:43:9c:bc
+        PermanentMACAddress: 00:40:a6:43:9c:bc
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s0b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s0b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s0b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s5e0
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s5b0/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s5b0n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:1b:5a:35
+        PermanentMACAddress: 00:40:a6:1b:5a:35
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s5b0/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s5b0n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:1b:b4:51
+        PermanentMACAddress: 00:40:a6:1b:b4:51
+        RedfishId: ManagementEthernet
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s5b0/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s5b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s5b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointChassis
+    Enabled: true
+    ID: x1000c0s3e1
+    OdataID: /redfish/v1/Chassis/Enclosure
+    RedfishChassisInfo:
+      Name: Enclosure
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishSubtype: Enclosure
+    RedfishType: Chassis
+    RedfishURL: x1000c0s3b1/redfish/v1/Chassis/Enclosure
+    Type: NodeEnclosure
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s3b1n0
+    OdataID: /redfish/v1/Systems/Node0
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node0/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node0/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node0/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node0/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:44:02:e5
+        PermanentMACAddress: 00:40:a6:44:02:e5
+        RedfishId: ManagementEthernet
+      Name: Node0
+      PowerURL: /redfish/v1/Chassis/Node0/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s3b1/redfish/v1/Systems/Node0
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointComputerSystem
+    Enabled: true
+    ID: x1000c0s3b1n1
+    OdataID: /redfish/v1/Systems/Node1
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishSubtype: Physical
+    RedfishSystemInfo:
+      Actions:
+        '#ComputerSystem.Reset':
+          '@Redfish.ActionInfo': /redfish/v1/Systems/Node1/ResetActionInfo
+          ResetType@Redfish.AllowableValues:
+          - ForceOff
+          - 'On'
+          - 'Off'
+          target: /redfish/v1/Systems/Node1/Actions/ComputerSystem.Reset
+      Controls:
+      - Control:
+          ControlDelaySeconds: 6
+          ControlMode: Disabled
+          ControlType: Power
+          Id: NodePowerLimit
+          Name: Node Power Limit
+          PhysicalContext: Chassis
+          SetPoint: 0
+          SetPointUnits: ''
+          SettingRangeMax: 925
+          SettingRangeMin: 350
+          Status:
+            Health: OK
+        URL: /redfish/v1/Chassis/Node1/Controls/NodePowerLimit
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/HPCNet0
+        Description: SS11 200Gb 2P NIC Mezz REV02 (HSN)
+        MACAddress: Not Available
+        RedfishId: HPCNet0
+      - '@odata.id': /redfish/v1/Systems/Node1/EthernetInterfaces/ManagementEthernet
+        Description: Node Maintenance Network
+        MACAddress: 00:40:a6:07:80:78
+        PermanentMACAddress: 00:40:a6:07:80:78
+        RedfishId: ManagementEthernet
+      Name: Node1
+      PowerURL: /redfish/v1/Chassis/Node1/Power
+    RedfishType: ComputerSystem
+    RedfishURL: x1000c0s3b1/redfish/v1/Systems/Node1
+    Type: Node
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s3b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s3b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+headers:
+  Content-Type: application/json
+  Date: Sat, 15 Jul 2023 03:05:28 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

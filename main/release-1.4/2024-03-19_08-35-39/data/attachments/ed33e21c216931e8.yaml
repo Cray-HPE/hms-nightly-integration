@@ -1,0 +1,14 @@
+- name: Verify failure when conducting a query on the Component collection by looking for a fictitious type of hardware (Booster)
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Booster"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    json:
+      detail: "bad query param: Argument was not a valid HMS Type"
+      status: 400
+      title: "Bad Request"
+      type: "about:blank"
+
+

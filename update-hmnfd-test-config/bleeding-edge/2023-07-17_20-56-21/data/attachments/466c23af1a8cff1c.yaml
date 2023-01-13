@@ -1,0 +1,37 @@
+- name: capmcAPIxnameOffPOSTonChassisStatusCheck - Verify that the target chassis is powered off using get_xname_status
+
+  max_retries: !int "{xname_off_poll_num_attempts}"
+  delay_after: !float "{xname_off_poll_interval}"
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"source":"redfish","xnames":["{chassis_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""
+            "off":
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: str
+                  unique: True
+                  enum:
+                    - "{chassis_xname}"

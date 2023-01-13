@@ -1,0 +1,31 @@
+- name: hsmAPIserviceValuesFlagGET - Retrieve the valid HSM service flag values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values/flag"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Flag:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+
+
+                  unique: False
+                  enum:
+                    - "Alert"
+                    - "Locked"
+                    - "OK"
+                    - "Unknown"
+                    - "Warning"
+
+

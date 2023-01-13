@@ -1,0 +1,10 @@
+- name: capmcAPIxnameReinitPOSTnodeXnameRecursiveAndPrereqPrep - Get compute Node xname from HSM Components to use in upcoming stage
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute&locked=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_xname: Components[0].ID

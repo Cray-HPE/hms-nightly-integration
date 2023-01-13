@@ -1,0 +1,13 @@
+- name: Ensure that the BMC firmware can be updated with a FAS action
+  request:
+    url: "{fas_base_url}/actions"
+    json: { "stateComponentFilter": { "xnames": [ "{xname}" ] },"targetFilter": { "targets": [ "BMC" ] },"command": { "version": "latest","tag": "default","overrideDryrun": false,"timeLimit": 120,"description": "test_actions CT test description" } }
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 202
+    save:
+      json:
+        newActionID: actionID
+
+

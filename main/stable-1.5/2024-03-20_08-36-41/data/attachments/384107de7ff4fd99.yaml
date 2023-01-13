@@ -1,0 +1,93 @@
+body:
+  Components:
+  - Arch: ARM
+    Class: Mountain
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9
+    NetType: Infiniband
+    Role: Management
+    State: 'Off'
+    Type: NodeBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9e9
+    NetType: Sling
+    State: 'On'
+    Type: NodeEnclosure
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7
+    NetType: Sling
+    State: 'Off'
+    Type: Chassis
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7b0
+    NetType: Sling
+    State: Ready
+    Type: ChassisBMC
+  - Arch: ARM
+    Class: Mountain
+    Enabled: true
+    Flag: Warning
+    ID: x9999c7s9b9n5
+    NID: 9999999995
+    NetType: OEM
+    Role: Application
+    SoftwareStatus: TestStatus5
+    State: 'Off'
+    SubRole: Master
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Alert
+    ID: x9999c7s9b9n4
+    NID: 9999999994
+    NetType: None
+    Role: Storage
+    SoftwareStatus: TestStatus4
+    State: 'On'
+    SubRole: Worker
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Locked
+    ID: x9999c7s9b9n3
+    NID: 9999999993
+    NetType: Sling
+    Role: Management
+    SoftwareStatus: TestStatus3
+    State: Standby
+    SubRole: Storage
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7r9b9
+    NetType: Sling
+    State: Ready
+    Type: RouterBMC
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    Flag: OK
+    ID: x9999c7r9
+    NetType: Sling
+    State: Empty
+    Type: RouterModule
+headers:
+  Content-Length: '1497'
+  Content-Type: application/json
+  Date: Wed, 20 Mar 2024 08:36:34 GMT
+redirect_query_params: {}
+status_code: 200

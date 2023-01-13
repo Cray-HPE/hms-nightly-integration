@@ -1,0 +1,12 @@
+- name: hsmAPIstateComponentsBulkStateDataPATCHnodesStateFlag - Bulk update Node Component state and flag values using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkStateData"
+    method: PATCH
+    verify: !bool "{verify}"
+
+
+    json: {"ComponentIDs":["x9999c7s9b8n8","x9999c7s9b8n7"],"State":"Standby","Flag":"Alert","Force":true}
+  response:
+    status_code: 204
+
+

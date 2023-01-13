@@ -1,0 +1,44 @@
+- name: capmcAPIGetXnameStatusPOST - Validate response has valid fields (Redfish)
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"source": "redfish"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+
+            "err_msg":
+              required: True
+              type: str
+
+            "on":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "off":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True
+            "undefined":
+              type: seq
+              matching: all
+              required: False
+              sequence:
+                - type: str
+                  unique: True

@@ -1,0 +1,44 @@
+body:
+  OdataID: /redfish/v1/EventService
+  RedfishEndpointFQDN: x3000c0s5b0
+  RedfishEndpointID: x3000c0s5b0
+  RedfishType: EventService
+  RedfishURL: x3000c0s5b0/redfish/v1/EventService
+  ServiceInfo:
+    '@odata.context': /redfish/v1/$metadata#EventService.EventService
+    '@odata.id': /redfish/v1/EventService
+    '@odata.type': '#EventService.v1_0_8.EventService'
+    Actions:
+      '#EventService.SubmitTestEvent':
+        EventType@Redfish.AllowableValues:
+        - StatusChange
+        - ResourceUpdated
+        - ResourceAdded
+        - ResourceRemoved
+        - Alert
+        target: /redfish/v1/EventService/Actions/EventService.SubmitTestEvent
+    DeliveryRetryAttempts: 3
+    DeliveryRetryIntervalInSeconds: 0
+    EventTypesForSubscription:
+    - StatusChange
+    - ResourceUpdated
+    - ResourceAdded
+    - ResourceRemoved
+    - Alert
+    EventTypesForSubscription@odata.count: 0
+    Id: EventService
+    Name: Event Service
+    ServiceEnabled: true
+    Status:
+      Health: OK
+      HealthRollUp: OK
+      State: Enabled
+    Subscriptions:
+      '@odata.id': /redfish/v1/EventService/Subscriptions
+  UUID: ''
+headers:
+  Content-Length: '1010'
+  Content-Type: application/json
+  Date: Fri, 22 Mar 2024 08:09:11 GMT
+redirect_query_params: {}
+status_code: 200

@@ -1,0 +1,31 @@
+body:
+  OdataID: /redfish/v1/AccountService
+  RedfishEndpointFQDN: x3000c0s5b0
+  RedfishEndpointID: x3000c0s5b0
+  RedfishType: AccountService
+  RedfishURL: x3000c0s5b0/redfish/v1/AccountService
+  ServiceInfo:
+    '@odata.context': /redfish/v1/$metadata#AccountService.AccountService
+    '@odata.id': /redfish/v1/AccountService
+    '@odata.type': '#AccountService.v1_5_0.AccountService'
+    AccountLockoutCounterResetAfter: 0
+    AccountLockoutDuration: 0
+    AccountLockoutThreshold: 0
+    Accounts:
+      '@odata.id': /redfish/v1/AccountService/Accounts
+    AuthFailureLoggingThreshold: 0
+    Description: iLO User Accounts
+    Id: AccountService
+    MinPasswordLength: 8
+    Name: Account Service
+    Roles:
+      '@odata.id': /redfish/v1/AccountService/Roles
+    Status:
+      Health: ''
+  UUID: ''
+headers:
+  Content-Length: '756'
+  Content-Type: application/json
+  Date: Wed, 20 Mar 2024 08:08:16 GMT
+redirect_query_params: {}
+status_code: 200

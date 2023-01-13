@@ -1,0 +1,51 @@
+body:
+  ComponentEndpointType: ComponentEndpointManager
+  Enabled: true
+  ID: x3000c0s5b0
+  MACAddr: 0a:ca:fe:f0:0d:04
+  OdataID: /redfish/v1/Managers/1
+  RedfishEndpointFQDN: x3000c0s5b0
+  RedfishEndpointID: x3000c0s5b0
+  RedfishManagerInfo:
+    Actions:
+      '#Manager.Reset':
+        '@Redfish.ActionInfo': ''
+        ResetType@Redfish.AllowableValues:
+        - ForceRestart
+        - GracefulRestart
+        target: /redfish/v1/Managers/1/Actions/Manager.Reset
+    EthernetNICInfo:
+    - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/1
+      Description: Configuration of this Manager Network Interface
+      FQDN: ILOMXQ019020B.hmn
+      Hostname: ILOMXQ019020B
+      InterfaceEnabled: true
+      MACAddress: 94:40:c9:37:d3:fc
+      PermanentMACAddress: 94:40:c9:37:d3:fc
+      RedfishId: '1'
+    - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/2
+      Description: Configuration of this Manager Network Interface
+      Hostname: ILOMXQ019020B
+      InterfaceEnabled: false
+      MACAddress: 94:40:c9:37:d3:fd
+      PermanentMACAddress: 94:40:c9:37:d3:fd
+      RedfishId: '2'
+    - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/3
+      Description: Configuration of this Manager USB Ethernet Interface available
+        for access from Host.
+      InterfaceEnabled: true
+      MACAddress: 0a:ca:fe:f0:0d:04
+      PermanentMACAddress: 0a:ca:fe:f0:0d:04
+      RedfishId: '3'
+    Name: Manager
+  RedfishSubtype: BMC
+  RedfishType: Manager
+  RedfishURL: x3000c0s5b0/redfish/v1/Managers/1
+  Type: NodeBMC
+  UUID: 1668bf7f-855a-5188-aece-3e5c1627ac7f
+headers:
+  Content-Length: '1460'
+  Content-Type: application/json
+  Date: Wed, 20 Mar 2024 08:08:07 GMT
+redirect_query_params: {}
+status_code: 200

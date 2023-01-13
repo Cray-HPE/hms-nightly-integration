@@ -1,0 +1,7 @@
+- name: Verify failure when providing an invalid BMC xname in the ComponentEndpoints collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ComponentEndpoints/x1025000c7s4b4"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 400

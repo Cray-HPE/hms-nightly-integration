@@ -1,0 +1,7 @@
+- name: capmcAPILivenessPOST - Ensure that /liveness cannot be posted to
+  request:
+    url: "{capmc_base_url}/capmc/v1/liveness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

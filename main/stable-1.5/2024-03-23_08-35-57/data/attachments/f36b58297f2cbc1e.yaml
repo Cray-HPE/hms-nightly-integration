@@ -1,0 +1,178 @@
+body:
+  ExtraProperties:
+    CIDR: 10.252.0.0/17
+    MTU: 9000
+    MyASN: 65531
+    PeerASN: 65533
+    Subnets:
+    - CIDR: 10.252.0.0/17
+      FullName: NMN Management Network Infrastructure
+      Gateway: 10.252.0.1
+      IPReservations:
+      - Comment: x3000c0h23s1
+        IPAddress: 10.252.0.2
+        Name: sw-spine-001
+      - Comment: x3000c0h23s2
+        IPAddress: 10.252.0.3
+        Name: sw-spine-002
+      - Comment: x3000c0w22
+        IPAddress: 10.252.0.4
+        Name: sw-leaf-bmc-001
+      Name: network_hardware
+      VlanID: 2
+    - CIDR: 10.252.1.0/17
+      DHCPEnd: 10.252.1.213
+      DHCPStart: 10.252.1.13
+      FullName: NMN Bootstrap DHCP Subnet
+      Gateway: 10.252.0.1
+      IPReservations:
+      - Aliases:
+        - kubeapi-vip.local
+        Comment: k8s-virtual-ip
+        IPAddress: 10.252.1.2
+        Name: kubeapi-vip
+      - Aliases:
+        - rgw-vip.local
+        Comment: rgw-virtual-ip
+        IPAddress: 10.252.1.3
+        Name: rgw-vip
+      - Aliases:
+        - ncn-s003-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s17b0n0
+        - ncn-s003.local
+        Comment: x3000c0s17b0n0
+        IPAddress: 10.252.1.4
+        Name: ncn-s003
+      - Aliases:
+        - ncn-s002-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s15b0n0
+        - ncn-s002.local
+        Comment: x3000c0s15b0n0
+        IPAddress: 10.252.1.5
+        Name: ncn-s002
+      - Aliases:
+        - ncn-s001-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s13b0n0
+        - ncn-s001.local
+        Comment: x3000c0s13b0n0
+        IPAddress: 10.252.1.6
+        Name: ncn-s001
+      - Aliases:
+        - ncn-w003-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s11b0n0
+        - ncn-w003.local
+        Comment: x3000c0s11b0n0
+        IPAddress: 10.252.1.7
+        Name: ncn-w003
+      - Aliases:
+        - ncn-w002-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s9b0n0
+        - ncn-w002.local
+        Comment: x3000c0s9b0n0
+        IPAddress: 10.252.1.8
+        Name: ncn-w002
+      - Aliases:
+        - ncn-w001-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s7b0n0
+        - ncn-w001.local
+        Comment: x3000c0s7b0n0
+        IPAddress: 10.252.1.9
+        Name: ncn-w001
+      - Aliases:
+        - ncn-m003-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s5b0n0
+        - ncn-m003.local
+        Comment: x3000c0s5b0n0
+        IPAddress: 10.252.1.10
+        Name: ncn-m003
+      - Aliases:
+        - ncn-m002-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s3b0n0
+        - ncn-m002.local
+        Comment: x3000c0s3b0n0
+        IPAddress: 10.252.1.11
+        Name: ncn-m002
+      - Aliases:
+        - ncn-m001-nmn
+        - time-nmn
+        - time-nmn.local
+        - x3000c0s1b0n0
+        - ncn-m001.local
+        Comment: x3000c0s1b0n0
+        IPAddress: 10.252.1.12
+        Name: ncn-m001
+      Name: bootstrap_dhcp
+      VlanID: 2
+    - CIDR: 10.252.2.0/23
+      FullName: NMN UAIs
+      Gateway: 10.252.0.1
+      IPReservations:
+      - Aliases:
+        - pbs-comm-service
+        - pbs-comm-service-nmn
+        - pbs_comm_service.local
+        Comment: pbs-comm-service,pbs-comm-service-nmn
+        IPAddress: 10.252.2.2
+        Name: pbs_comm_service
+      - Aliases:
+        - pbs-service
+        - pbs-service-nmn
+        - pbs_service.local
+        Comment: pbs-service,pbs-service-nmn
+        IPAddress: 10.252.2.3
+        Name: pbs_service
+      - Aliases:
+        - slurmctld-service
+        - slurmctld-service-nmn
+        - slurmctld_service.local
+        Comment: slurmctld-service,slurmctld-service-nmn
+        IPAddress: 10.252.2.4
+        Name: slurmctld_service
+      - Aliases:
+        - slurmdbd-service
+        - slurmdbd-service-nmn
+        - slurmdbd_service.local
+        Comment: slurmdbd-service,slurmdbd-service-nmn
+        IPAddress: 10.252.2.5
+        Name: slurmdbd_service
+      - Aliases:
+        - uai-nmn-blackhole
+        - uai_nmn_blackhole.local
+        Comment: uai-nmn-blackhole
+        IPAddress: 10.252.2.6
+        Name: uai_nmn_blackhole
+      Name: uai_macvlan
+      ReservationEnd: 10.252.3.254
+      ReservationStart: 10.252.2.10
+      VlanID: 2
+    VlanRange:
+    - 2
+  FullName: Node Management Network
+  IPRanges:
+  - 10.252.0.0/17
+  LastUpdated: 1711181179
+  LastUpdatedTime: 2024-03-23 08:06:19.664072 +0000 UTC
+  Name: NMN
+  Type: ethernet
+headers:
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:07:46 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

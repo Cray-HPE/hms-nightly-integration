@@ -1,0 +1,146 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETnodeBMC - Query for NodeBMC Hardware Inventory entries by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9?format=NestNodesOnly&children=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "NestNodesOnly"
+            NodeBMCs:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "NodeBMC"
+                    Ordinal:
+                      type: int
+                      required: True
+                      enum:
+                        - 9
+                    Status:
+                      type: str
+                      required: True
+                      enum:
+                        - "Populated"
+                    HWInventoryByLocationType:
+                      type: str
+                      required: True
+                      enum:
+                        - "HWInvByLocNodeBMC"
+                    NodeBMCLocationInfo:
+                      type: map
+                      required: True
+                      mapping:
+                        DateTime:
+                          type: str
+                          required: True
+                          enum:
+                            - "2022-10-17T16:22:13+00:00"
+                        DateTimeLocalOffset:
+                          type: str
+                          required: True
+                          enum:
+                            - "+00:00"
+                        Description:
+                          type: str
+                          required: True
+                          enum:
+                            - "ShastaManager"
+                        FirmwareVersion:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        Id:
+                          type: str
+                          required: True
+                          enum:
+                            - "BMC"
+                        Name:
+                          type: str
+                          required: True
+                          enum:
+                            - "BMC"
+                    PopulatedFRU:
+                      type: map
+                      required: True
+                      mapping:
+                        FRUID:
+                          type: str
+                          required: True
+                          enum:
+                            - "FRUIDforx9999c7s9b9"
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "NodeBMC"
+                        Subtype:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HWInventoryByFRUType:
+                          type: str
+                          required: True
+                          enum:
+                            - "HWInvByFRUNodeBMC"
+                        NodeBMCFRUInfo:
+                          type: map
+                          required: True
+                          mapping:
+                            ManagerType:
+                              type: str
+                              required: True
+                              enum:
+                                - "EnclosureManager"
+                            Model:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            Manufacturer:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            PartNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            SerialNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+
+

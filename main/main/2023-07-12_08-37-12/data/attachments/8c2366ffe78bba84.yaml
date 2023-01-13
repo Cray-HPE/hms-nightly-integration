@@ -1,0 +1,33 @@
+body:
+  Format: NestNodesOnly
+  RouterModules:
+  - HWInventoryByLocationType: HWInvByLocRouterModule
+    ID: x9999c7r9
+    Ordinal: 9
+    PopulatedFRU:
+      FRUID: FRUIDforx9999c7r9
+      HWInventoryByFRUType: HWInvByFRURouterModule
+      RouterModuleFRUInfo:
+        AssetTag: ''
+        ChassisType: Blade
+        Manufacturer: HPE
+        Model: Perif9
+        PartNumber: ''
+        SKU: ''
+        SerialNumber: ''
+      Subtype: ''
+      Type: RouterModule
+    RouterModuleLocationInfo:
+      Description: ''
+      HostName: ''
+      Id: Perif9
+      Name: Perif9
+    Status: Populated
+    Type: RouterModule
+  XName: x9999c7r9
+headers:
+  Content-Length: '551'
+  Content-Type: application/json
+  Date: Wed, 12 Jul 2023 08:10:18 GMT
+redirect_query_params: {}
+status_code: 200

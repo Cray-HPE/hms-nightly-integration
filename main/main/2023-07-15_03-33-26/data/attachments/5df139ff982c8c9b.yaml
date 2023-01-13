@@ -1,0 +1,27 @@
+allow_redirects: false
+headers: {}
+json:
+  Arch:
+  - Other
+  Class:
+  - Mountain
+  Enabled:
+  - 'false'
+  Flag:
+  - Locked
+  NIDRanges:
+  - '9999999993'
+  Role:
+  - Management
+  SoftwareStatus:
+  - TestStatus3
+  State:
+  - Standby
+  SubRole:
+  - Storage
+  Type:
+  - Node
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/ByNID/Query
+verify: false

@@ -1,0 +1,12 @@
+body:
+  detail: 'couldn''t validate endpoint data: host/domain conflicts with FQDN: ''MyHostname''
+    != ''MyFQDN'''
+  status: 400
+  title: Bad Request
+  type: about:blank
+headers:
+  Content-Length: '160'
+  Content-Type: application/problem+json
+  Date: Mon, 17 Jul 2023 17:20:42 GMT
+redirect_query_params: {}
+status_code: 400

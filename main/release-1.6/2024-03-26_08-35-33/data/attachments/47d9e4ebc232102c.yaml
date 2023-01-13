@@ -1,0 +1,40 @@
+- name: hsmAPIinventoryHardwareByFRUhistoryFruidGETnonExistentFruid - Attempt to retrieve HardwareByFRU Inventory History entries by fruid that don't exist using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/HardwareByFRU/History/{fruid}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+            History:
+              type: seq
+              required: True
+              matching: all
+              range:
+                min: 0
+                max: 0
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                    FRUID:
+                      type: str
+                      required: True
+                    Timestamp:
+                      type: timestamp
+                      required: True
+                    EventType:
+                      type: str
+                      required: True

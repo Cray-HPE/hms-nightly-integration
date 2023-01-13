@@ -1,0 +1,10 @@
+- name: Delete Bootparameters with mac as identifer
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      macs:
+      - "{node_mac_address}"
+  response:
+    status_code: 200

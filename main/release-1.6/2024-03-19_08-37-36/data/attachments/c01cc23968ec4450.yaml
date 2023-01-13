@@ -1,0 +1,13 @@
+allow_redirects: false
+headers: {}
+json:
+  ReservationDuration: 15
+  ReservationKeys:
+  - ID: p9999.9998
+    Key: p9999.9998:rk:d50243fc-cafb-421b-b202-5c67f390a1d4
+  - ID: p9999.9999
+    Key: p9999.9999:rk:659b57fd-b3ca-4bc0-8f72-7cb1eea58d2d
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/service/reservations/renew
+verify: false

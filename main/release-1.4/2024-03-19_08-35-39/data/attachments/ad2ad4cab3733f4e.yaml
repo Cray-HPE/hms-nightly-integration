@@ -1,0 +1,13 @@
+- name: Get Ethernet Interfaces Inventory query BAD REQEST
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces?ComponentID=BADID"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    json:
+      type: "about:blank"
+      title: "Bad Request"
+      detail: "Invalid CompID."
+      status: 400
+

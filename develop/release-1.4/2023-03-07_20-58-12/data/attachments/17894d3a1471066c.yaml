@@ -1,0 +1,12 @@
+- name: hsmAPIstateComponentsXnameStateDataPATCHnodeStateNoFlag - Update state data for specific Node Component using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n6/StateData"
+    method: PATCH
+    verify: !bool "{verify}"
+
+
+    json: {"State":"Ready","Force":true}
+  response:
+    status_code: 204
+
+

@@ -1,0 +1,23 @@
+body:
+  automaticExpirationTime: '2024-03-24T08:24:19.25061637Z'
+  createTime: '2024-03-23T08:24:19.25061631Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 1
+    total: 1
+    un-supported: 0
+  tasks:
+  - taskStatus: succeeded
+    taskStatusDescription: Component already in desired state
+    xname: x1000c0s3
+  transitionID: 48ba31c7-99f5-4628-babf-29058bc42be7
+  transitionStatus: completed
+headers:
+  Content-Length: '422'
+  Content-Type: application/json
+  Date: Sat, 23 Mar 2024 08:24:19 GMT
+redirect_query_params: {}
+status_code: 200

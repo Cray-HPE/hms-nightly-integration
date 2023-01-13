@@ -1,0 +1,53 @@
+body:
+- ChassisLocationInfo:
+    Description: CMM
+    HostName: ''
+    Id: Enclosure
+    Name: Enclosure
+  HWInventoryByLocationType: HWInvByLocChassis
+  ID: x9999c7
+  Ordinal: 7
+  PopulatedFRU:
+    ChassisFRUInfo:
+      AssetTag: ''
+      ChassisType: Enclosure
+      Manufacturer: HPE
+      Model: CMM
+      PartNumber: 101426404.D
+      SKU: ''
+      SerialNumber: IMZ2409069079
+    FRUID: Chassis.HPE.101426404D.IMZ2409069079
+    HWInventoryByFRUType: HWInvByFRUChassis
+    Subtype: ''
+    Type: Chassis
+  Status: Populated
+  Type: Chassis
+- ChassisLocationInfo:
+    Description: CMM
+    HostName: ''
+    Id: Enclosure
+    Name: Enclosure
+  HWInventoryByLocationType: HWInvByLocChassis
+  ID: x1000c0
+  Ordinal: 0
+  PopulatedFRU:
+    ChassisFRUInfo:
+      AssetTag: ''
+      ChassisType: Enclosure
+      Manufacturer: HPE
+      Model: CMM
+      PartNumber: 101426404.D
+      SKU: ''
+      SerialNumber: HAW3299704825
+    FRUID: Chassis.HPE.101426404D.HAW3299704825
+    HWInventoryByFRUType: HWInvByFRUChassis
+    Subtype: ''
+    Type: Chassis
+  Status: Populated
+  Type: Chassis
+headers:
+  Content-Length: '1016'
+  Content-Type: application/json
+  Date: Fri, 22 Mar 2024 08:20:57 GMT
+redirect_query_params: {}
+status_code: 200

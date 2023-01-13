@@ -1,0 +1,166 @@
+Format variables:
+  hsm_base_url = 'http://cray-smd:27779'
+  verify = 'False'
+
+Source test stage (line 2205):
+  - name: hsmAPIinventoryHardwareGET - Retrieve multiple Hardware Inventory entries using GET.
+    request:
+      url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: seq
+            required: True
+            matching: all
+            sequence:
+              - type: map
+                required: True
+
+                allowempty: True
+                mapping:
+                  ID:
+                    type: str
+                    required: True
+                  Type:
+                    type: str
+                    required: True
+                  Ordinal:
+                    type: int
+                    required: True
+                  Status:
+                    type: str
+                    required: True
+                  HWInventoryByLocationType:
+                    type: str
+                    required: True
+                  PopulatedFRU:
+                    type: map
+                    required: True
+
+                    allowempty: True
+                    mapping:
+                      FRUID:
+                        type: str
+                        required: True
+                      Type:
+                        type: str
+                        required: True
+                      Subtype:
+                        type: str
+                        required: True
+
+
+
+
+Formatted stage:
+  name: hsmAPIinventoryHardwareGET - Retrieve multiple Hardware Inventory entries using
+    GET.
+  request:
+    method: GET
+    url: 'http://cray-smd:27779/hsm/v2/Inventory/Hardware'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          matching: all
+          required: true
+          sequence:
+          - allowempty: true
+            mapping:
+              HWInventoryByLocationType:
+                required: true
+                type: str
+              ID:
+                required: true
+                type: str
+              Ordinal:
+                required: true
+                type: int
+              PopulatedFRU:
+                allowempty: true
+                mapping:
+                  FRUID:
+                    required: true
+                    type: str
+                  Subtype:
+                    required: true
+                    type: str
+                  Type:
+                    required: true
+                    type: str
+                required: true
+                type: map
+              Status:
+                required: true
+                type: str
+              Type:
+                required: true
+                type: str
+            required: true
+            type: map
+          type: seq
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'hsmAPIinventoryHardwareGET - Retrieve multiple Hardware Inventory entries using GET.' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7f959a05be50>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Cannot find required key 'PopulatedFRU'. Path: '/5'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/6'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/9'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/10'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/11'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/14'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/15'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/16'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/17'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/18'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/19'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/20'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/26'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/27'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/42'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/45'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/47'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/53'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/57'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/58'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/59'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/60'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/61'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/65'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/66'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/67'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/69'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/70'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/72'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/73'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/406'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/417'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/421'.
+         - Cannot find required key 'PopulatedFRU'. Path: '/422'.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

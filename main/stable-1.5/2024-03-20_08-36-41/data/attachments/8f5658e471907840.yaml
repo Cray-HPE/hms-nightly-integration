@@ -1,0 +1,2296 @@
+body:
+  ServiceEndpoints:
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: AccountService
+    RedfishURL: x3000c0s5b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#AccountService.AccountService
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_5_0.AccountService'
+      AccountLockoutCounterResetAfter: 0
+      AccountLockoutDuration: 0
+      AccountLockoutThreshold: 0
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 0
+      Description: iLO User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      Status:
+        Health: ''
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: SessionService
+    RedfishURL: x3000c0s5b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#SessionService.SessionService
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_0_0.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 0
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: EventService
+    RedfishURL: x3000c0s5b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#EventService.EventService
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_8.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues:
+          - StatusChange
+          - ResourceUpdated
+          - ResourceAdded
+          - ResourceRemoved
+          - Alert
+          target: /redfish/v1/EventService/Actions/EventService.SubmitTestEvent
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        HealthRollUp: OK
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: TaskService
+    RedfishURL: x3000c0s5b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#TaskService.TaskService
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_1.TaskService'
+      CompletedTaskOverWritePolicy: Manual
+      DateTime: '2022-04-14T17:02:18Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        HealthRollUp: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: UpdateService
+    RedfishURL: x3000c0s5b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#UpdateService.UpdateService
+      '@odata.etag': W/"15AD0341"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_1_1.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/UpdateService.SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      HttpPushUri: /cgi-bin/uploadFile
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      SoftwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/SoftwareInventory
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: AccountService
+    RedfishURL: x3000c0s6b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#AccountService.AccountService
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_5_0.AccountService'
+      AccountLockoutCounterResetAfter: 0
+      AccountLockoutDuration: 0
+      AccountLockoutThreshold: 0
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 0
+      Description: iLO User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      Status:
+        Health: ''
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: SessionService
+    RedfishURL: x3000c0s6b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#SessionService.SessionService
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_0_0.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 0
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: EventService
+    RedfishURL: x3000c0s6b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#EventService.EventService
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_8.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues:
+          - StatusChange
+          - ResourceUpdated
+          - ResourceAdded
+          - ResourceRemoved
+          - Alert
+          target: /redfish/v1/EventService/Actions/EventService.SubmitTestEvent
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        HealthRollUp: OK
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: TaskService
+    RedfishURL: x3000c0s6b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#TaskService.TaskService
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_1.TaskService'
+      CompletedTaskOverWritePolicy: Manual
+      DateTime: '2022-04-14T17:26:11Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        HealthRollUp: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: UpdateService
+    RedfishURL: x3000c0s6b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#UpdateService.UpdateService
+      '@odata.etag': W/"870E3F8D"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_1_1.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/UpdateService.SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      HttpPushUri: /cgi-bin/uploadFile
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      SoftwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/SoftwareInventory
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s5b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s5b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s5b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s5b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s5b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s2b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s2b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s2b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s2b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s2b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: EventService
+    RedfishURL: x1000c0b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-20T15:29:24Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1648753932"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s2b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s5b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s5b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s5b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s5b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s5b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s1b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s1b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s1b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s1b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s1b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s7b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s7b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s7b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s7b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s6b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s7b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s1b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s1b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s1b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s1b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s1b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s2b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s2b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s2b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s4b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s7b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s7b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s7b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s7b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s7b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s4b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s3b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s3b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s2b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s6b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s6b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s6b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s6b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s6b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s6b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s6b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s6b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s0b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s6b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s3b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s0b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s0b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s0b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: SessionService
+    RedfishURL: x1000c0s3b1/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s0b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s0b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s0b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s0b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s0b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s0b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: AccountService
+    RedfishURL: x1000c0s4b0/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/SessionService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: SessionService
+    RedfishURL: x1000c0s4b0/redfish/v1/SessionService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/SessionService
+      '@odata.type': '#SessionService.v1_1_3.SessionService'
+      Id: SessionService
+      Name: Session Service
+      ServiceEnabled: true
+      SessionTimeout: 30
+      Sessions:
+        '@odata.id': /redfish/v1/SessionService/Sessions
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s4b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s4b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/AccountService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: AccountService
+    RedfishURL: x1000c0s4b1/redfish/v1/AccountService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/AccountService
+      '@odata.type': '#AccountService.v1_2_1.AccountService'
+      AccountLockoutCounterResetAfter: 30
+      AccountLockoutDuration: 30
+      AccountLockoutThreshold: 5
+      Accounts:
+        '@odata.id': /redfish/v1/AccountService/Accounts
+      AuthFailureLoggingThreshold: 3
+      Description: BMC User Accounts
+      Id: AccountService
+      MinPasswordLength: 8
+      Name: Account Service
+      Roles:
+        '@odata.id': /redfish/v1/AccountService/Roles
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s4b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s4b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s4b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: EventService
+    RedfishURL: x1000c0s3b0/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: TaskService
+    RedfishURL: x1000c0s3b0/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s3b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/EventService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: EventService
+    RedfishURL: x1000c0s3b1/redfish/v1/EventService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/EventService
+      '@odata.type': '#EventService.v1_0_5.EventService'
+      Actions:
+        '#EventService.SubmitTestEvent':
+          EventType@Redfish.AllowableValues: null
+          target: ''
+      DeliveryRetryAttempts: 3
+      DeliveryRetryIntervalInSeconds: 0
+      EventTypesForSubscription:
+      - StatusChange
+      - ResourceUpdated
+      - ResourceAdded
+      - ResourceRemoved
+      - Alert
+      EventTypesForSubscription@odata.count: 0
+      Id: EventService
+      Name: Event Service
+      ServiceEnabled: true
+      Status:
+        Health: ''
+        State: Enabled
+      Subscriptions:
+        '@odata.id': /redfish/v1/EventService/Subscriptions
+    UUID: ''
+  - OdataID: /redfish/v1/TaskService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: TaskService
+    RedfishURL: x1000c0s3b1/redfish/v1/TaskService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.id': /redfish/v1/TaskService
+      '@odata.type': '#TaskService.v1_1_0.TaskService'
+      CompletedTaskOverWritePolicy: Oldest
+      DateTime: '2022-04-14T16:23:07Z'
+      Id: TaskService
+      LifeCycleEventOnTaskStateChange: true
+      Name: Task Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+      Tasks:
+        '@odata.id': /redfish/v1/TaskService/Tasks
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s3b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+headers:
+  Content-Type: application/json
+  Date: Wed, 20 Mar 2024 08:36:37 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

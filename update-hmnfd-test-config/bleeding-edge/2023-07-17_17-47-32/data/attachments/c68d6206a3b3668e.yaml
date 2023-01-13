@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  description: Test group 1 for HSM API testing in CT framework (UPDATED).
+  tags:
+  - hsmtestgroup1_tag3
+  - hsmtestgroup1_tag4
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/groups/hsmtestgroup1
+verify: false

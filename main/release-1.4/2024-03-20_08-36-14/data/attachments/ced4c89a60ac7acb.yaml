@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  force: false
+  reason: 'CT test case: capmcAPIxnameOnPOSTlockedNodeActual'
+  xnames:
+  - x1000c0s0b0n1
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/xname_on
+verify: false

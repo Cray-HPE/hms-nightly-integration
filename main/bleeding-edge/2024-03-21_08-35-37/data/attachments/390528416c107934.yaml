@@ -1,0 +1,38 @@
+body:
+  e: 0
+  err_msg: ''
+  groups:
+  - controls:
+    - desc: PowerLimit Resource for AccPowerService
+      max: 11221
+      min: 5036
+      name: PowerLimit Resource for AccPowerService
+    desc: 3_AdvancedMicroDevices,Inc._64c_256GiB_3200MHz_NodeAccel.NVIDIA.6992G1330200QS1.1334520060099
+    host_limit_max: 11221
+    host_limit_min: 5036
+    name: 3_AdvancedMicroDevices,Inc._64c_256GiB_3200MHz_NodeAccel.NVIDIA.6992G1330200QS1.1334520060099
+    nids:
+    - 20
+    powerup: 0
+    static: 0
+    supply: 12000
+  - controls:
+    - desc: Node Power Limit
+      max: 925
+      min: 350
+      name: Node Power Limit
+    desc: 3_AuthenticAMD_64c_256GiB_3200MHz_NoAccel
+    host_limit_max: 925
+    host_limit_min: 350
+    name: 3_AuthenticAMD_64c_256GiB_3200MHz_NoAccel
+    nids:
+    - 1026
+    powerup: 0
+    static: 0
+    supply: 925
+headers:
+  Content-Length: '754'
+  Content-Type: application/json
+  Date: Thu, 21 Mar 2024 08:08:53 GMT
+redirect_query_params: {}
+status_code: 200

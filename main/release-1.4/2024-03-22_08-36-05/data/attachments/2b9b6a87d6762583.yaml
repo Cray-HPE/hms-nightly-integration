@@ -1,0 +1,495 @@
+body:
+  ComponentEndpoints:
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x3000c0s5b0
+    MACAddr: 94:40:c9:37:d3:fc
+    OdataID: /redfish/v1/Managers/1
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - GracefulRestart
+          target: /redfish/v1/Managers/1/Actions/Manager.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/2
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOMXQ019020B
+        InterfaceEnabled: false
+        MACAddress: 94:40:c9:37:d3:fd
+        PermanentMACAddress: 94:40:c9:37:d3:fd
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/3
+        Description: Configuration of this Manager USB Ethernet Interface available
+          for access from Host.
+        InterfaceEnabled: true
+        MACAddress: 0a:ca:fe:f0:0d:04
+        PermanentMACAddress: 0a:ca:fe:f0:0d:04
+        RedfishId: '3'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/1
+        Description: Configuration of this Manager Network Interface
+        FQDN: ILOMXQ019020B.hmn
+        Hostname: ILOMXQ019020B
+        InterfaceEnabled: true
+        MACAddress: 94:40:c9:37:d3:fc
+        PermanentMACAddress: 94:40:c9:37:d3:fc
+        RedfishId: '1'
+      Name: Manager
+    RedfishSubtype: BMC
+    RedfishType: Manager
+    RedfishURL: x3000c0s5b0/redfish/v1/Managers/1
+    Type: NodeBMC
+    UUID: 1668bf7f-855a-5188-aece-3e5c1627ac7f
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x3000c0s6b0
+    MACAddr: 0a:ca:fe:f0:0d:04
+    OdataID: /redfish/v1/Managers/1
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - GracefulRestart
+          target: /redfish/v1/Managers/1/Actions/Manager.Reset
+      EthernetNICInfo:
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/1
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOJS05NP1072
+        InterfaceEnabled: true
+        MACAddress: 94:40:c9:41:f8:ea
+        PermanentMACAddress: 94:40:c9:41:f8:ea
+        RedfishId: '1'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/2
+        Description: Configuration of this Manager Network Interface
+        Hostname: ILOJS05NP1072
+        InterfaceEnabled: false
+        MACAddress: 94:40:c9:41:f8:eb
+        PermanentMACAddress: 94:40:c9:41:f8:eb
+        RedfishId: '2'
+      - '@odata.id': /redfish/v1/Managers/1/EthernetInterfaces/3
+        Description: Configuration of this Manager USB Ethernet Interface available
+          for access from Host.
+        InterfaceEnabled: true
+        MACAddress: 0a:ca:fe:f0:0d:04
+        PermanentMACAddress: 0a:ca:fe:f0:0d:04
+        RedfishId: '3'
+      Name: Manager
+    RedfishSubtype: BMC
+    RedfishType: Manager
+    RedfishURL: x3000c0s6b0/redfish/v1/Managers/1
+    Type: NodeBMC
+    UUID: 715c4f01-06a8-5532-b685-c6ba8f11099e
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s6b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s6b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s7b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s7b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s3b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s3b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s0b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s0b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s2b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s2b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s1b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s1b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s5b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s5b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s7b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s7b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s6b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s6b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s4b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s4b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s2b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s2b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s0b1
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s0b1/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s3b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s3b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s4b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s4b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s5b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s5b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+  - ComponentEndpointType: ComponentEndpointManager
+    Enabled: true
+    ID: x1000c0s1b0
+    OdataID: /redfish/v1/Managers/BMC
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishManagerInfo:
+      Actions:
+        '#Manager.Reset':
+          '@Redfish.ActionInfo': ''
+          ResetType@Redfish.AllowableValues:
+          - ForceRestart
+          - StatefulReset
+          target: /redfish/v1/Managers/BMC/Actions/Manager.Reset
+        Oem:
+          '#CrayProcess.Schedule':
+            Name@Redfish.AllowableValues:
+            - memtest
+            - cpuburn
+            target: /redfish/v1/Managers/BMC/Actions/Oem/CrayProcess.Schedule
+      Name: BMC
+    RedfishSubtype: EnclosureManager
+    RedfishType: Manager
+    RedfishURL: x1000c0s1b0/redfish/v1/Managers/BMC
+    Type: NodeBMC
+headers:
+  Content-Type: application/json
+  Date: Fri, 22 Mar 2024 08:09:05 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

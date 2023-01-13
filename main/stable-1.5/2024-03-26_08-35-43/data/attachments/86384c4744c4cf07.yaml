@@ -1,0 +1,29 @@
+body:
+  Format: NestNodesOnly
+  NodeHsnNics:
+  - HWInventoryByLocationType: HWInvByLocNodeHsnNic
+    ID: x9999c7s9b9n9h3
+    NodeHsnNicLocationInfo:
+      Description: SS11200Gb2PNICMezzREV02(HSN)
+      Id: HPCNet0
+      Name: ''
+    Ordinal: 3
+    PopulatedFRU:
+      FRUID: NodeHsnNic.HPEPRM.P43012001.OTI6996696413
+      HWInventoryByFRUType: HWInvByFRUNodeHsnNic
+      NodeHsnNicFRUInfo:
+        Manufacturer: HPE-PRM
+        Model: R4K44A
+        PartNumber: P43012-001
+        SerialNumber: OTI6996696413
+      Subtype: ''
+      Type: NodeHsnNic
+    Status: Populated
+    Type: NodeHsnNic
+  XName: x9999c7s9b9n9h3
+headers:
+  Content-Length: '564'
+  Content-Type: application/json
+  Date: Tue, 26 Mar 2024 08:19:13 GMT
+redirect_query_params: {}
+status_code: 200

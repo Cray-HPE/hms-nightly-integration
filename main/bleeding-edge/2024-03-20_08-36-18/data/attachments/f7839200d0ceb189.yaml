@@ -1,0 +1,7 @@
+- name: Delete all ethernet interfaces
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces"
+    method: DELETE
+  response:
+    status_code: 200
+

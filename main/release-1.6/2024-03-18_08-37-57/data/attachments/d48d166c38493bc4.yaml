@@ -1,0 +1,15 @@
+allow_redirects: false
+headers: {}
+json:
+  description: Exclusive test group Red for HSM API testing in CT framework.
+  exclusiveGroup: hsmtestgroupColors
+  label: hsmtestgroupRed
+  members:
+    ids:
+    - x1000c0s7b0n1
+  tags:
+  - hsmtestgroupRed_tag1
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/groups
+verify: false

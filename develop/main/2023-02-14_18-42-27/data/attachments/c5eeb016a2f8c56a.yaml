@@ -1,0 +1,65 @@
+body:
+  ExtraProperties:
+    CIDR: 10.92.100.0/24
+    MTU: 9000
+    Subnets:
+    - CIDR: 10.92.100.0/24
+      FullName: NMN MetalLB
+      Gateway: 10.92.100.1
+      IPReservations:
+      - Aliases:
+        - docker_registry_service
+        Comment: docker_registry_service
+        IPAddress: 10.92.100.73
+        Name: docker-registry
+      - Aliases:
+        - api-gw-service
+        - api-gw-service-nmn.local
+        - packages
+        - registry
+        - spire.local
+        - api_gw_service
+        - registry.local
+        - packages
+        - packages.local
+        - spire
+        Comment: api-gw-service,api-gw-service-nmn.local,packages,registry,spire.local,api_gw_service,registry.local,packages,packages.local,spire
+        IPAddress: 10.92.100.71
+        Name: istio-ingressgateway
+      - Aliases:
+        - api-gw-service.local
+        Comment: api-gw-service.local
+        IPAddress: 10.92.100.81
+        Name: istio-ingressgateway-local
+      - Aliases:
+        - rsyslog-agg-service
+        Comment: rsyslog-agg-service
+        IPAddress: 10.92.100.72
+        Name: rsyslog-aggregator
+      - Aliases:
+        - tftp-service
+        Comment: tftp-service
+        IPAddress: 10.92.100.60
+        Name: cray-tftp
+      - Aliases:
+        - unbound
+        Comment: unbound
+        IPAddress: 10.92.100.225
+        Name: unbound
+      MetalLBPoolName: node-management
+      Name: nmn_metallb_address_pool
+      VlanID: 2
+    VlanRange: null
+  FullName: Node Management Network LoadBalancers
+  IPRanges:
+  - 10.92.100.0/24
+  LastUpdated: 1676399440
+  LastUpdatedTime: 2023-02-14 18:30:40.64557 +0000 UTC
+  Name: NMNLB
+  Type: ethernet
+headers:
+  Content-Length: '1391'
+  Content-Type: application/json
+  Date: Tue, 14 Feb 2023 18:32:27 GMT
+redirect_query_params: {}
+status_code: 200

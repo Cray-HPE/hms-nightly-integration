@@ -1,0 +1,22 @@
+- name: Query for bootscript for unknown hardware
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      mac: 0e:ff:ff:ff:ff:ff
+      arch: x86_64
+  response:
+    status_code: 200
+    headers:
+      content-type: text/plain; charset=UTF-8
+    verify_response_with:
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "unknown_hardware"

@@ -1,0 +1,237 @@
+Format variables:
+  pcs_base_url = 'http://cray-power-control:28007'
+  patch_task_id_1 = 'e2ae8a38-e86c-4fcf-a7f6-ef6065d8437b'
+  verify = 'False'
+  patch_task_id_1 = 'e2ae8a38-e86c-4fcf-a7f6-ef6065d8437b'
+  node_xname = 'x3000c0s6b0n0'
+  node_power_cap_name = 'Node Power Limit'
+  node_power_cap_min = '5036'
+  node_power_cap_max = '11221'
+  node_power_cap_min = '5036'
+
+Source test stage (line 326):
+  - name: Retrieve the completed power-cap patch for the target node and minimum power cap value
+    request:
+      url: "{pcs_base_url}/power-cap/{patch_task_id_1}"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              taskID:
+                type: str
+                required: True
+                enum:
+                  - "{patch_task_id_1}"
+              type:
+                type: str
+                required: True
+                enum:
+                  - "patch"
+              taskCreateTime:
+                type: timestamp
+                required: True
+              automaticExpirationTime:
+                type: timestamp
+                required: True
+              taskStatus:
+                type: str
+                required: True
+                enum:
+                  - "completed"
+              taskCounts:
+                type: map
+                required: True
+                mapping:
+                  total:
+                    type: int
+                    required: True
+                  new:
+                    type: int
+                    required: True
+                  in-progress:
+                    type: int
+                    required: True
+                  failed:
+                    type: int
+                    required: True
+                  succeeded:
+                    type: int
+                    required: True
+                  un-supported:
+                    type: int
+                    required: True
+              components:
+                type: seq
+                matching: all
+                required: True
+                sequence:
+                  - type: map
+                    required: True
+                    mapping:
+                      xname:
+                        type: str
+                        required: True
+                        enum:
+                          - "{node_xname}"
+                      powerCapLimits:
+                        type: seq
+                        matching: all
+                        required: True
+                        sequence:
+                          - type: map
+                            required: True
+                            mapping:
+                              name:
+                                type: str
+                                required: True
+                                enum:
+                                  - "{node_power_cap_name}"
+                              currentValue:
+                                type: int
+                                required: True
+                                enum:
+                                  - !int "{node_power_cap_min}"
+                              maximumValue:
+                                type: int
+                                required: True
+                                enum:
+                                  - !int "{node_power_cap_max}"
+                              minimumValue:
+                                type: int
+                                required: True
+                                enum:
+                                  - !int "{node_power_cap_min}"
+
+
+Formatted stage:
+  name: Retrieve the completed power-cap patch for the target node and minimum power
+    cap value
+  request:
+    method: GET
+    url: 'http://cray-power-control:28007/power-cap/e2ae8a38-e86c-4fcf-a7f6-ef6065d8437b'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            automaticExpirationTime:
+              required: true
+              type: timestamp
+            components:
+              matching: all
+              required: true
+              sequence:
+              - mapping:
+                  powerCapLimits:
+                    matching: all
+                    required: true
+                    sequence:
+                    - mapping:
+                        currentValue:
+                          enum:
+                          - !int '5036'
+                          required: true
+                          type: int
+                        maximumValue:
+                          enum:
+                          - !int '11221'
+                          required: true
+                          type: int
+                        minimumValue:
+                          enum:
+                          - !int '5036'
+                          required: true
+                          type: int
+                        name:
+                          enum:
+                          - 'Node Power Limit'
+                          required: true
+                          type: str
+                      required: true
+                      type: map
+                    type: seq
+                  xname:
+                    enum:
+                    - 'x3000c0s6b0n0'
+                    required: true
+                    type: str
+                required: true
+                type: map
+              type: seq
+            taskCounts:
+              mapping:
+                failed:
+                  required: true
+                  type: int
+                in-progress:
+                  required: true
+                  type: int
+                new:
+                  required: true
+                  type: int
+                succeeded:
+                  required: true
+                  type: int
+                total:
+                  required: true
+                  type: int
+                un-supported:
+                  required: true
+                  type: int
+              required: true
+              type: map
+            taskCreateTime:
+              required: true
+              type: timestamp
+            taskID:
+              enum:
+              - 'e2ae8a38-e86c-4fcf-a7f6-ef6065d8437b'
+              required: true
+              type: str
+            taskStatus:
+              enum:
+              - completed
+              required: true
+              type: str
+            type:
+              enum:
+              - patch
+              required: true
+              type: str
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'Retrieve the completed power-cap patch for the target node and minimum power cap value' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7f1345f2c430>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Cannot find required key 'powerCapLimits'. Path: '/components/0'.
+         - Key 'error' was not defined. Path: '/components/0'.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

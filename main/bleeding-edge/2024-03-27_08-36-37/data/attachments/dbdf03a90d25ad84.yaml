@@ -1,0 +1,37 @@
+- name: hsmAPIdefaultsNodeMapsXnamePUTinvalidSubRole - Attempt to create a NodeMap for a Node with an invalid SubRole using PUT.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/x9999c7s9b9n9"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"NID":9999999999,"Role":"Service","SubRole":"FAKE"}
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Bad Request"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "couldn't validate endpoint data: SubRole 'FAKE' is not valid."
+            status:
+              type: int
+              required: True
+              enum:
+                - 400
+
+

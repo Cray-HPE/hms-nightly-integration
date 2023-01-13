@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  initrd: s3://boot-images/00000000-0000-0000-0000-000000000002/initrd
+  kernel: s3://boot-images/00000000-0000-0000-0000-000000000002/kernel
+  macs:
+  - 00:40:a6:2c:f8:28
+method: PATCH
+stream: false
+url: http://cray-bss:27778/boot/v1/bootparameters
+verify: false

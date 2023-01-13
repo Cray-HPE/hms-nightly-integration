@@ -1,0 +1,9 @@
+- name: capmcAPIGetPowerCap - setup5 - Set HSM Node to its original state
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname}/StateData"
+    json:
+      State: "{original_state}"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

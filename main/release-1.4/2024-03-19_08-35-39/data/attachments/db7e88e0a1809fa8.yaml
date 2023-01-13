@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  fake: payload
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/service/values
+verify: false

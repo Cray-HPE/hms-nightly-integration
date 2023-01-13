@@ -1,0 +1,30 @@
+- name: Attempt to retrieve discovery status data for a non-present discovery instance
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/DiscoveryStatus/999999999"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            type:
+              type: str
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              enum:
+                - "Not Found"
+            detail:
+              type: str
+              enum:
+                - "no such DiscoveryStatus ID."
+            status:
+              type: int
+              enum:
+                - 404
+

@@ -1,0 +1,24 @@
+- name: hsmAPIinventoryDiscover - Initiate a hardware discovery operation for one endpoint
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Discover"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"xnames":["{redfishEndpoint1}"],"force":false}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          required: True
+          sequence:
+            - type: map
+              required: True
+              mapping:
+                URI:
+                  type: str
+                  required: True
+                  pattern: "/hsm/v2/Inventory/DiscoveryStatus/[0-9]+"
+

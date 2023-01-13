@@ -1,0 +1,21 @@
+body:
+  Debug: 0
+  KV_url: http://cray-hmnfd-etcd:2379
+  Nosm: 0
+  Port: 28600
+  SM_retries: 3
+  SM_timeout: 10
+  SM_url: http://cray-smd:27779/hsm/v2
+  Scn_backoff: 1
+  Scn_cache_delay: 5
+  Scn_in_url: http://cray-hmnfd:28600/hmi/v1/scn
+  Scn_max_cache: 100
+  Scn_retries: 5
+  Telemetry_host: kafka:9092:cray-hmsstatechange-notifications
+  Use_telemetry: 0
+headers:
+  Content-Length: '347'
+  Content-Type: application/json
+  Date: Thu, 21 Mar 2024 08:29:13 GMT
+redirect_query_params: {}
+status_code: 200

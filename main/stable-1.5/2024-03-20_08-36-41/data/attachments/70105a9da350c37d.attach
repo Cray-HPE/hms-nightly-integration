@@ -1,0 +1,111 @@
+Format variables:
+  capmc_base_url = 'http://cray-capmc:27777'
+  nid0:d = '1009'
+  min0:d = '5036'
+  nid1:d = '20'
+  min1:d = '5036'
+  verify = 'False'
+
+Source test stage (line 184):
+  - name: capmcAPISetPowerCap - test2 - set_power_cap for two ready nodes
+    request:
+      url: "{capmc_base_url}/capmc/v1/set_power_cap"
+      json:
+        nids:
+          - nid: !int "{nid0:d}"
+            controls:
+              - name: Node Power Limit
+                val: !int "{min0:d}"
+          - nid: !int "{nid1:d}"
+            controls:
+              - name: Node Power Limit
+                val: !int "{min1:d}"
+      method: POST
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+
+
+
+
+
+
+          schema:
+            type: map
+            mapping:
+              e:
+                type: int
+                required: True
+                enum:
+                  - 0
+              err_msg:
+                type: str
+                required: True
+              nids:
+                type: none
+                required: False
+
+
+Formatted stage:
+  name: capmcAPISetPowerCap - test2 - set_power_cap for two ready nodes
+  request:
+    json:
+      nids:
+      - controls:
+        - name: Node Power Limit
+          val: !int '5036'
+        nid: !int '1009'
+      - controls:
+        - name: Node Power Limit
+          val: !int '5036'
+        nid: !int '20'
+    method: POST
+    url: 'http://cray-capmc:27777/capmc/v1/set_power_cap'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            e:
+              enum:
+              - 0
+              required: true
+              type: int
+            err_msg:
+              required: true
+              type: str
+            nids:
+              required: false
+              type: none
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'capmcAPISetPowerCap - test2 - set_power_cap for two ready nodes' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7506fa5475e0>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Enum '22' does not exist. Path: '/e' Enum: [0].
+         - Value '[{'nid': 1009, 'e': 22, 'err_msg': 'Control (Node Power Limit) value (5036) is greater than maximum (925)'}, {'nid': 20, 'e': 22, 'err_msg': 'No NID supported controls specified'}]' is not of type 'none'. Path: '/nids'.: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

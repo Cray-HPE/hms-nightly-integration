@@ -1,0 +1,63 @@
+body:
+  ComponentEndpointType: ComponentEndpointComputerSystem
+  Enabled: true
+  ID: x3000c0s5b0n0
+  OdataID: /redfish/v1/Systems/1
+  RedfishEndpointFQDN: x3000c0s5b0
+  RedfishEndpointID: x3000c0s5b0
+  RedfishSubtype: Physical
+  RedfishSystemInfo:
+    Actions:
+      '#ComputerSystem.Reset':
+        '@Redfish.ActionInfo': ''
+        ResetType@Redfish.AllowableValues:
+        - 'On'
+        - ForceOff
+        - GracefulShutdown
+        - ForceRestart
+        - Nmi
+        - PushPowerButton
+        - GracefulRestart
+        target: /redfish/v1/Systems/1/Actions/ComputerSystem.Reset
+    EthernetNICInfo:
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/2
+      InterfaceEnabled: true
+      MACAddress: 00:40:a6:68:d2:70
+      PermanentMACAddress: 00:40:a6:68:d2:70
+      RedfishId: '2'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/3
+      InterfaceEnabled: true
+      MACAddress: 00:40:a6:76:30:3c
+      PermanentMACAddress: 00:40:a6:76:30:3c
+      RedfishId: '3'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/4
+      InterfaceEnabled: true
+      MACAddress: 00:40:a6:2e:54:04
+      PermanentMACAddress: 00:40:a6:2e:54:04
+      RedfishId: '4'
+    - '@odata.id': /redfish/v1/Systems/1/EthernetInterfaces/1
+      MACAddress: 00:40:a6:01:87:49
+      PermanentMACAddress: 00:40:a6:01:87:49
+      RedfishId: '1'
+    Name: Computer System
+    PowerControl:
+    - '@odata.id': /redfish/v1/Chassis/1/Power#PowerControl/0
+      MemberId: '0'
+      OEM:
+        HPE:
+          PowerLimit: {}
+          PowerRegulationEnabled: false
+          Status: Empty
+          Target: ''
+      PowerCapacityWatts: 1000
+    PowerURL: /redfish/v1/Chassis/1/Power
+  RedfishType: ComputerSystem
+  RedfishURL: x3000c0s5b0/redfish/v1/Systems/1
+  Type: Node
+  UUID: 36383150-3630-584D-5130-313930323042
+headers:
+  Content-Length: '1611'
+  Content-Type: application/json
+  Date: Sun, 16 Jul 2023 08:36:22 GMT
+redirect_query_params: {}
+status_code: 200

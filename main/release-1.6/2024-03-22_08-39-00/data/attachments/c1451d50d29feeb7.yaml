@@ -1,0 +1,22 @@
+body:
+  Enabled: true
+  ID: 1
+  Roles:
+  - compute
+  - service
+  States:
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  Subscriber: cray-hmnfd_7
+  Url: http://cray-hmnfd:28600/hmi/v1/scn
+headers:
+  Content-Length: '192'
+  Content-Type: application/json
+  Date: Fri, 22 Mar 2024 08:09:26 GMT
+redirect_query_params: {}
+status_code: 200

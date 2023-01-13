@@ -1,0 +1,25 @@
+body:
+  e: 0
+  err_msg: ''
+  groups:
+  - controls:
+    - desc: Node Power Limit
+      max: 925
+      min: 350
+      name: Node Power Limit
+    desc: 3_AuthenticAMD_64c_256GiB_3200MHz_NoAccel
+    host_limit_max: 925
+    host_limit_min: 350
+    name: 3_AuthenticAMD_64c_256GiB_3200MHz_NoAccel
+    nids:
+    - 1003
+    - 1026
+    powerup: 0
+    static: 0
+    supply: 925
+headers:
+  Content-Length: '320'
+  Content-Type: application/json
+  Date: Tue, 19 Mar 2024 08:30:46 GMT
+redirect_query_params: {}
+status_code: 200

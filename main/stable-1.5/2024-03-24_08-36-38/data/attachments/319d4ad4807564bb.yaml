@@ -1,0 +1,19 @@
+allow_redirects: false
+headers: {}
+json:
+  cloud-init:
+    meta-data:
+      meta-data-key: foo
+      nested-data:
+        foo: bar
+    user-data:
+      user-data-key: bar
+  hosts:
+  - x9999c0s1b0n0
+  initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+  kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+  params: console=tty0
+method: PUT
+stream: false
+url: http://cray-bss:27778/boot/v1/bootparameters
+verify: false

@@ -1,0 +1,22 @@
+- name: Retrieve the FRU information for a given node FRUID from the HardwareByFRU collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/HardwareByFRU/{FRUID}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      FRUID: "{FRUID}"
+      HWInventoryByFRUType: "HWInvByFRUNode"
+      NodeFRUInfo:
+        AssetTag: !anystr
+        BiosVersion: !anystr
+        Manufacturer: !anystr
+        Model: !anystr
+        PartNumber: !anystr
+        SKU: !anystr
+        SerialNumber: !anystr
+        SystemType: !anystr
+        UUID: !anystr
+      Subtype: !anystr
+      Type: "Node"

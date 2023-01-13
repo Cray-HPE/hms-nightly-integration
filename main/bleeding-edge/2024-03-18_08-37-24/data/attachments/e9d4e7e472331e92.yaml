@@ -1,0 +1,20 @@
+body:
+  Counts:
+    Failure: 2
+    Success: 2
+    Total: 4
+  Failure:
+  - ID: p9999.9998
+    Reason: Unlocked
+  - ID: p9999.9999
+    Reason: Unlocked
+  Success:
+    ComponentIDs:
+    - p9999.9996
+    - p9999.9997
+headers:
+  Content-Length: '194'
+  Content-Type: application/json
+  Date: Mon, 18 Mar 2024 08:09:24 GMT
+redirect_query_params: {}
+status_code: 200

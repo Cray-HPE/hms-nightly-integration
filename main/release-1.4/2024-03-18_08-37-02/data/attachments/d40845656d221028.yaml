@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPUTnodeExistsNoForce - Update an existing Node Component using PUT without the force option.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b9n9"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"Component":{"ID":"x9999c7s9b9n9","Type":"Node","State":"Standby","Flag":"Alert","Enabled":true,"SoftwareStatus":"AdminStatus","Role":"Compute","NID":9999999999,"NetType":"Infiniband","Arch":"ARM","Class":"River"},"Force":false}
+  response:
+    status_code: 204
+
+

@@ -1,0 +1,19 @@
+- name: Query bootscript by MAC address
+
+
+
+
+
+
+  max_retries: 15
+  delay_after: 2
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      mac: "{node_mac_address}"
+  response:
+    status_code: 200
+    headers:
+      content-type: text/plain; charset=UTF-8

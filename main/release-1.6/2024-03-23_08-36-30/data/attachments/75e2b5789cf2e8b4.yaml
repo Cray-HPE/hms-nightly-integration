@@ -1,0 +1,39 @@
+- name: Ensure that /health can be retrieved
+  request:
+    url: "{pcs_base_url}/health"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            KvStore:
+              type: str
+              required: True
+              enum:
+                - "connected, responsive"
+            DistLocking:
+              type: str
+              required: True
+              enum:
+                - "connected, responsive"
+            StateManager:
+              type: str
+              required: True
+              enum:
+                - "connected, responsive"
+            Vault:
+              type: str
+              required: True
+              enum:
+                - "connected, responsive"
+            TaskRunner:
+              type: str
+              required: True
+              enum:
+                - "connected, responsive, local mode"
