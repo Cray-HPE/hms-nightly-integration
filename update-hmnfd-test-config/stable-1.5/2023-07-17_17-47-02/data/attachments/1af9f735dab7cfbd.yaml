@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsXnameFlagOnlyPATCHnode - Update flag data for specific Node Component using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n8/FlagOnly"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Flag":"OK"}
+  response:
+    status_code: 204
+
+

@@ -1,0 +1,7 @@
+- name: slsAPIHardwareDELETEntry - Delete a known good entry
+  request:
+    url: "{sls_base_url}/v1/hardware/x9999c7s9b9"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

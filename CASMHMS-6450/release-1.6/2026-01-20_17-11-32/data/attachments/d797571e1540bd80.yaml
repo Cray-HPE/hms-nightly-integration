@@ -1,0 +1,22 @@
+- name: Ensure that a FAS snapshot can be generated for the system
+  request:
+    url: "{fas_base_url}/snapshots"
+    json: {"name":"fasTestSnapshot","stateComponentFilter":{"deviceTypes":["chassisBMC","nodeBMC","routerBMC"]},"targetFilter":{"targets":["BMC","BIOS","iLO 5","System ROM"]}}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            name:
+              type: str
+              required: True
+              enum:
+                - "fasTestSnapshot"
+
+

@@ -1,0 +1,19 @@
+allow_redirects: false
+headers: {}
+json:
+  name: fasTestSnapshot
+  stateComponentFilter:
+    deviceTypes:
+    - chassisBMC
+    - nodeBMC
+    - routerBMC
+  targetFilter:
+    targets:
+    - BMC
+    - BIOS
+    - iLO 5
+    - System ROM
+method: POST
+stream: false
+url: http://cray-fas:28800/snapshots
+verify: false

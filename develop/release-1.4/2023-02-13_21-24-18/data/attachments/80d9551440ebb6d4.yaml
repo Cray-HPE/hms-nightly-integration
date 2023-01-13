@@ -1,0 +1,443 @@
+body:
+  ServiceEndpoints:
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x3000c0s5b0
+    RedfishEndpointID: x3000c0s5b0
+    RedfishType: UpdateService
+    RedfishURL: x3000c0s5b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#UpdateService.UpdateService
+      '@odata.etag': W/"15AD0341"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_1_1.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/UpdateService.SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      HttpPushUri: /cgi-bin/uploadFile
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      SoftwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/SoftwareInventory
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x3000c0s6b0
+    RedfishEndpointID: x3000c0s6b0
+    RedfishType: UpdateService
+    RedfishURL: x3000c0s6b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': /redfish/v1/$metadata#UpdateService.UpdateService
+      '@odata.etag': W/"870E3F8D"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_1_1.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/UpdateService.SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      HttpPushUri: /cgi-bin/uploadFile
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      SoftwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/SoftwareInventory
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s1b1
+    RedfishEndpointID: x1000c0s1b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s1b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s5b0
+    RedfishEndpointID: x1000c0s5b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s5b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s3b0
+    RedfishEndpointID: x1000c0s3b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s3b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s2b0
+    RedfishEndpointID: x1000c0s2b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s2b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s5b1
+    RedfishEndpointID: x1000c0s5b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s5b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s4b1
+    RedfishEndpointID: x1000c0s4b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s4b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s2b1
+    RedfishEndpointID: x1000c0s2b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s2b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s3b1
+    RedfishEndpointID: x1000c0s3b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s3b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s7b1
+    RedfishEndpointID: x1000c0s7b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s7b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s0b0
+    RedfishEndpointID: x1000c0s0b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s0b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s1b0
+    RedfishEndpointID: x1000c0s1b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s1b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s4b0
+    RedfishEndpointID: x1000c0s4b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s4b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s6b1
+    RedfishEndpointID: x1000c0s6b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s6b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s6b0
+    RedfishEndpointID: x1000c0s6b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s6b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s0b1
+    RedfishEndpointID: x1000c0s0b1
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s0b1/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0b0
+    RedfishEndpointID: x1000c0b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1648753932"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+  - OdataID: /redfish/v1/UpdateService
+    RedfishEndpointFQDN: x1000c0s7b0
+    RedfishEndpointID: x1000c0s7b0
+    RedfishType: UpdateService
+    RedfishURL: x1000c0s7b0/redfish/v1/UpdateService
+    ServiceInfo:
+      '@odata.context': ''
+      '@odata.etag': W/"1649099394"
+      '@odata.id': /redfish/v1/UpdateService
+      '@odata.type': '#UpdateService.v1_2_0.UpdateService'
+      Actions:
+        '#UpdateService.SimpleUpdate':
+          target: /redfish/v1/UpdateService/Actions/SimpleUpdate
+          title: SimpleUpdate
+      FirmwareInventory:
+        '@odata.id': /redfish/v1/UpdateService/FirmwareInventory
+      Id: UpdateService
+      Name: Update Service
+      ServiceEnabled: true
+      Status:
+        Health: OK
+        State: Enabled
+    UUID: ''
+headers:
+  Content-Type: application/json
+  Date: Mon, 13 Feb 2023 21:24:17 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

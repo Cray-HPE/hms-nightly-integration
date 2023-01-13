@@ -1,0 +1,16 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - Arch: X86
+    Class: River
+    ID: x9999c5s17b0n0
+    NID: 9999999977
+    NetType: Sling
+    Role: Management
+    State: Populated
+    SubRole: Worker
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components
+verify: false

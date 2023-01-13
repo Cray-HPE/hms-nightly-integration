@@ -1,0 +1,28 @@
+- name: capmcAPIHealthGET - Ensure that /health can be retrieved
+  request:
+    url: "{capmc_base_url}/capmc/v1/health"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            readiness:
+              type: str
+              required: True
+              enum:
+                - "Ready"
+            vault:
+              type: str
+              required: True
+              pattern: "Vault connection established with [0-9]+ credentials loaded"
+            hsm:
+              type: str
+              required: True
+              enum:
+                - "HSM Ready"

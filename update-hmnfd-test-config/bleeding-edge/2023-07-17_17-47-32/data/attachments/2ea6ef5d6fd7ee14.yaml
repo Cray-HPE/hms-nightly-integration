@@ -1,0 +1,7 @@
+- name: Delete existing FAS test snapshot (if present) to prevent conflict
+  request:
+    url: "{fas_base_url}/snapshots/fasTestSnapshot"
+    method: DELETE
+    verify: !bool "{verify}"
+
+

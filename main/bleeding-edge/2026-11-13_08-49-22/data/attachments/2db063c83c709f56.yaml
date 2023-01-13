@@ -1,0 +1,7 @@
+- name: Clean up - Delete VirtualNode in HSM
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{virtual_node_xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

@@ -1,0 +1,8 @@
+- name: Perform PUT against /hosts
+  request:
+    url: "{bss_base_url}/boot/v1/hosts"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

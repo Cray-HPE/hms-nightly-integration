@@ -1,0 +1,14 @@
+allow_redirects: false
+headers: {}
+json:
+  fqdn: fqdn_value
+  hostname: hostname_value
+  instance_id: instance_id_value
+  pub_key_dsa: pub_key_dsa_value
+  pub_key_ecdsa: pub_key_ecdsa_value
+  pub_key_ed25519: pub_key_ed25519_value
+  pub_key_rsa: pub_key_rsa_value
+method: POST
+stream: false
+url: http://cray-bss:27778/phone-home
+verify: false

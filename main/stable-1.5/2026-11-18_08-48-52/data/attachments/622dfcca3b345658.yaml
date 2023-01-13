@@ -1,0 +1,30 @@
+- name: slsAPINetworksPOSTEntryDuplicateFail - attempt to duplicate an entry
+  request:
+    url: "{sls_base_url}/v1/networks"
+    method: POST
+    verify: !bool "{verify}"
+    json: { "Name": "dummy","Type": "ethernet", "IPRanges":["127.0.0.1/8"]}
+  response:
+    status_code: 409
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+            title:
+              type: str
+              required: True
+            detail:
+              type: str
+              required: True
+            instance:
+              type: str
+              required: True
+            status:
+              type: int
+              required: True

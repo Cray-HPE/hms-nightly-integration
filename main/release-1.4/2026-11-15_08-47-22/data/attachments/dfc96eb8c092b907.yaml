@@ -1,0 +1,37 @@
+- name: Verify /groups/label/members GET method
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroup1/members"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ids:
+              type: seq
+              required: True
+              unique: True
+              matching: all
+              sequence:
+                - type: str
+                  enum:
+                    - "{xname1}"
+                    - "{xname2}"
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+          - jmespath: "length(values(@)[0])"
+            operator: "eq"
+            expected: 2
+          - jmespath: "contains(values(@)[0], '{xname1}')"
+            operator: "eq"
+            expected: True
+          - jmespath: "contains(values(@)[0], '{xname2}')"
+            operator: "eq"
+            expected: True
+

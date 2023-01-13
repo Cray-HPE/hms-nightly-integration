@@ -1,0 +1,51 @@
+- name: slsAPISearchHardwareFindEntry - Find hardware in SLS by parameters (xname)
+  request:
+    url: "{sls_base_url}/v1/search/hardware?xname=x9998c7s9b9001"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          required: True
+          sequence:
+            - type: map
+              mapping:
+                Parent:
+                  type: str
+                  required: True
+                  pattern: "x9998c7s9"
+                Children:
+                  type: seq
+                  required: False
+                  matching: all
+                  sequence:
+                    - type: str
+                      pattern: "^[xs].+"
+                Xname:
+                  type: str
+                  required: True
+                  pattern: "x9998c7s9b9001"
+                Type:
+                  type: str
+                  required: True
+                  pattern: "comptype_ncard"
+                Class:
+                  type: str
+                  required: True
+                  pattern: "River"
+                TypeString:
+                  type: str
+                  required: True
+                  pattern: "NodeBMC"
+                LastUpdated:
+                  type: int
+                  required: True
+                LastUpdatedTime:
+                  type: str
+                  required: True
+                  pattern: "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ \\+[0-9]{{4}} \\+[0-9]{{4}}|[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}} [0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}.[0-9]+ \\+[0-9]{{4}} UTC"

@@ -1,0 +1,6 @@
+- name: Delete existing test partition1 in HSM (if present) to prevent conflict
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/p98"
+    method: DELETE
+    verify: !bool "{verify}"
+

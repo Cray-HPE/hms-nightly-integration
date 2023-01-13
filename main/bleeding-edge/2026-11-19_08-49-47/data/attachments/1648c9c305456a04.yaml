@@ -1,0 +1,7 @@
+- name: Ensure that /scn rejects unsupported DELETE operations
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/scn"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

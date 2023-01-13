@@ -1,0 +1,13 @@
+body:
+  e: 22
+  err_msg: invalid argument
+  xnames:
+  - e: 22
+    err_msg: invalid/duplicate xname
+    xname: .*&^%$#$%$^
+headers:
+  Content-Length: '121'
+  Content-Type: application/json
+  Date: Wed, 25 Jan 2023 20:50:44 GMT
+redirect_query_params: {}
+status_code: 400

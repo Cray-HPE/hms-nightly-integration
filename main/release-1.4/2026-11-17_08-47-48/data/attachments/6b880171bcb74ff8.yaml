@@ -1,0 +1,10 @@
+- name: Query HSM EthernetInterfaces for the compute nodes MAC address
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces?ComponentID={node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_mac_address: '[0].MACAddress'

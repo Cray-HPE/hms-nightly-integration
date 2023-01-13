@@ -1,0 +1,31 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - x9999c0s4b0n0v0
+  Enabled: true
+  Roles:
+  - Compute
+  - Service
+  - System
+  - Management
+  SoftwareStatus:
+  - AdminDown
+  - Unknown
+  - Other
+  States:
+  - Ready
+  - 'On'
+  - 'Off'
+  - Standby
+  - Populated
+  - Empty
+  SubRoles:
+  - Master
+  - Worker
+  - Storage
+  Url: http://cray-test-service/boot/v1/scn
+method: POST
+stream: false
+url: http://cray-hmnfd:28600/hmi/v2/subscriptions/x9999c0s4b0n0v0/agents/cray-test-service-999z9z9999-zz9zz
+verify: false

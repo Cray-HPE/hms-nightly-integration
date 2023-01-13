@@ -1,0 +1,70 @@
+- name: Search BSS hosts with MAC address
+  request:
+    url: "{bss_base_url}/boot/v1/hosts"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      mac: "{node_mac_address}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          range:
+            max: 1
+            min: 1
+          sequence:
+          - type: map
+            mapping:
+              ID:
+                type: str
+                enum:
+                - "{node_xname}"
+              Type:
+                type: str
+                enum:
+                - Node
+              State:
+                type: str
+                required: false
+              Flag:
+                type: str
+                required: false
+              Enabled:
+                type: bool
+                required: false
+              Role:
+                type: str
+                required: false
+              NID:
+                type: int
+                required: false
+              NetType:
+                type: str
+                required: false
+              Arch:
+                type: str
+                required: false
+              Class:
+                type: str
+                required: false
+              ReservationDisabled:
+                type: bool
+                required: false
+              Locked:
+                type: bool
+                required: false
+              FQDN:
+                type: str
+                required: true
+              MAC:
+                type: seq
+                sequence:
+                - type: str
+                required: true
+              EndpointEnabled:
+                type: bool
+                required: true

@@ -1,0 +1,17 @@
+- name: Verify /partitions GET method with tag parameter (1)
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions?tag=p98_tag1"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        name: "[0].name"
+        description: "[0].description"
+        tag1: "[0].tags[0]"
+        tag2: "[0].tags[1]"
+        member1: "[0].members.ids[0]"
+        member2: "[0].members.ids[1]"
+
+

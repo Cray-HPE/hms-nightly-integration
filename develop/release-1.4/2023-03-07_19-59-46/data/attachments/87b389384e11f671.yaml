@@ -1,0 +1,11 @@
+- name: bssAPIServicePUT - Perform PUT against the BSS service endpoint
+  request:
+    url: "{bss_base_url}/boot/v1/{service_endpoint}"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+
+
+
+

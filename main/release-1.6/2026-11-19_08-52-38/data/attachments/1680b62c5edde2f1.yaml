@@ -1,0 +1,7 @@
+- name: Perform DELETE against /hosts
+  request:
+    url: "{bss_base_url}/boot/v1/hosts"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2026-11-16T08:47:14.647197912Z'
+  createTime: '2026-11-15T08:47:14.647197872Z'
+  operation: 'On'
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 1
+  tasks:
+  - error: No power control for component type NodeEnclosure
+    taskStatus: unsupported
+    taskStatusDescription: Failed to achieve transition
+    xname: x3000c0s5e0
+  transitionID: 7af47d0a-ca73-4c7f-adea-bc4f5e4cbae1
+  transitionStatus: completed
+headers:
+  Content-Length: '475'
+  Content-Type: application/json
+  Date: Sun, 15 Nov 2026 08:47:14 GMT
+redirect_query_params: {}
+status_code: 200

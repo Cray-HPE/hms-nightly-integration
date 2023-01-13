@@ -1,0 +1,146 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETcomputeModule - Query for ComputeModule Hardware Inventory entries by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9?xname=x9999c7s9&children=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "NestNodesOnly"
+            ComputeModules:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "ComputeModule"
+                    Ordinal:
+                      type: int
+                      required: True
+                      enum:
+                        - 9
+                    Status:
+                      type: str
+                      required: True
+                      enum:
+                        - "Populated"
+                    HWInventoryByLocationType:
+                      type: str
+                      required: True
+                      enum:
+                        - "HWInvByLocComputeModule"
+                    ComputeModuleLocationInfo:
+                      type: map
+                      required: True
+                      mapping:
+                        Id:
+                          type: str
+                          required: True
+                          enum:
+                            - "Blade9"
+                        Name:
+                          type: str
+                          required: True
+                          enum:
+                            - "Blade9"
+                        Description:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HostName:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                    PopulatedFRU:
+                      type: map
+                      required: True
+                      mapping:
+                        FRUID:
+                          type: str
+                          required: True
+                          enum:
+                            - "FRUIDforx9999c7s9"
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "ComputeModule"
+                        Subtype:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HWInventoryByFRUType:
+                          type: str
+                          required: True
+                          enum:
+                            - "HWInvByFRUComputeModule"
+                        ComputeModuleFRUInfo:
+                          type: map
+                          required: True
+                          mapping:
+                            AssetTag:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            ChassisType:
+                              type: str
+                              required: True
+                              enum:
+                                - "Blade"
+                            Model:
+                              type: str
+                              required: True
+                              enum:
+                                - "Blade9"
+                            Manufacturer:
+                              type: str
+                              required: True
+                              enum:
+                                - "HPE"
+                            PartNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            SerialNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            SKU:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+
+

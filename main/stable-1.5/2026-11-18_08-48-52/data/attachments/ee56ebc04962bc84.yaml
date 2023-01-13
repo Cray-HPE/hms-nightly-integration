@@ -1,0 +1,72 @@
+- name: Verify that the HMNFD service parameters can be retrieved
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/params"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Debug:
+              type: int
+              required: True
+            KV_url:
+              type: str
+              required: True
+            Nosm:
+              type: int
+              required: True
+            Port:
+              type: int
+              required: True
+            Scn_in_url:
+              type: str
+              required: True
+            Scn_max_cache:
+              type: int
+              required: True
+            Scn_cache_delay:
+              type: int
+              required: True
+            Scn_retries:
+              type: int
+              required: True
+            Scn_backoff:
+              type: int
+              required: True
+            SM_retries:
+              type: int
+              required: True
+            SM_timeout:
+              type: int
+              required: True
+            SM_url:
+              type: str
+              required: True
+            Telemetry_host:
+              type: str
+              required: True
+            Use_telemetry:
+              type: int
+              required: True
+    save:
+      json:
+        debug_orig: Debug
+        kv_url_orig: KV_url
+        nosm_orig: Nosm
+        port_orig: Port
+        scn_in_url_orig: Scn_in_url
+        scn_max_cache_orig: Scn_max_cache
+        scn_cache_delay_orig: Scn_cache_delay
+        scn_retries_orig: Scn_retries
+        scn_backoff_orig: Scn_backoff
+        sm_retries_orig: SM_retries
+        sm_timeout_orig: SM_timeout
+        sm_url_orig: SM_url
+        telemetry_host_orig: Telemetry_host
+        use_telemetry_orig: Use_telemetry
+

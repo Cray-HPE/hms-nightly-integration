@@ -1,0 +1,10 @@
+- name: Retrieve the power-status for the target Node
+  request:
+    url: "{pcs_base_url}/power-status?xname={node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_power_state: status[0].powerState

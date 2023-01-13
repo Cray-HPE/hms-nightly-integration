@@ -1,0 +1,31 @@
+allow_redirects: false
+headers: {}
+json:
+  Hardware:
+  - ComputeModuleLocationInfo:
+      Description: ''
+      HostName: ''
+      Id: Blade9
+      Name: Blade9
+    HWInventoryByLocationType: HWInvByLocComputeModule
+    ID: x9999c7s9
+    Ordinal: 9
+    PopulatedFRU:
+      ComputeModuleFRUInfo:
+        AssetTag: ''
+        ChassisType: Blade
+        Manufacturer: HPE
+        Model: Blade9
+        PartNumber: ''
+        SKU: ''
+        SerialNumber: ''
+      FRUID: FRUIDforx9999c7s9
+      HWInventoryByFRUType: HWInvByFRUComputeModule
+      Subtype: ''
+      Type: ComputeModule
+    Status: Populated
+    Type: ComputeModule
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/Hardware
+verify: false

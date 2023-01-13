@@ -1,0 +1,8 @@
+- name: slsAPIHardwarePOSTNewVirtualNode - Create a new entry VirtualNode with post
+  request:
+    url: "{sls_base_url}/v1/hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {   "Xname": "x9999c7s9b8n0v420","Class": "River"}
+  response:
+    status_code: 201

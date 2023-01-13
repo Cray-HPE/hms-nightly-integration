@@ -1,0 +1,8 @@
+- name: Ensure that we can conduct a query on the ServiceEndpoints collection for the EventService using the service query parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints?service=EventService"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+

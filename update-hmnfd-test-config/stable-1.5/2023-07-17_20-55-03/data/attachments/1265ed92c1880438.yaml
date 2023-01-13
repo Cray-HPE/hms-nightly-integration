@@ -1,0 +1,30 @@
+body:
+  HWInventoryByLocationType: HWInvByLocNodeBMC
+  ID: x9999c7s9b9
+  NodeBMCLocationInfo:
+    DateTime: '2022-10-17T16:22:13+00:00'
+    DateTimeLocalOffset: +00:00
+    Description: ShastaManager
+    FirmwareVersion: ''
+    Id: BMC
+    Name: BMC
+  Ordinal: 9
+  PopulatedFRU:
+    FRUID: FRUIDforx9999c7s9b9
+    HWInventoryByFRUType: HWInvByFRUNodeBMC
+    NodeBMCFRUInfo:
+      ManagerType: EnclosureManager
+      Manufacturer: ''
+      Model: ''
+      PartNumber: ''
+      SerialNumber: ''
+    Subtype: ''
+    Type: NodeBMC
+  Status: Populated
+  Type: NodeBMC
+headers:
+  Content-Length: '523'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 20:28:03 GMT
+redirect_query_params: {}
+status_code: 200

@@ -1,0 +1,21 @@
+- name: Attempt to create a power-cap snapshot for a NodeBMC
+  request:
+    url: "{pcs_base_url}/power-cap/snapshot"
+    json: {"xnames":["{bmc_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            taskID:
+              type: str
+              required: True
+    save:
+      json:
+        snapshot_task_id_2: taskID

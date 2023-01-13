@@ -1,0 +1,10 @@
+- name: Verify /groups/label PATCH method exclusive group Red
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroupRed"
+    json: {"description":"Exclusive test group Red for HSM API testing in CT framework (UPDATED).","tags":["hsmtestgroupRed_tag2"]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

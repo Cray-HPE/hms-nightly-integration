@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  force: false
+  reason: 'CT test case: capmcAPIxnameOffPOSTonComputeModuleRecursivePrep'
+  recursive: true
+  xnames:
+  - x1000c0s0
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/xname_on
+verify: false

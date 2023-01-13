@@ -1,0 +1,35 @@
+- name: hsmAPIstateComponentsGETflagParamOKflagOnly - Retrieve OK Components using GET and the flag query parameter.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?flag=OK&flagonly=True"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                    Type:
+                      type: str
+                      required: True
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "OK"
+
+

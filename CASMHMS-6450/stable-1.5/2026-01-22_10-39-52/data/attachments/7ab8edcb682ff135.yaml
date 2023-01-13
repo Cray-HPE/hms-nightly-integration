@@ -1,0 +1,7 @@
+- name: capmcAPIxnameReinitHEAD - Verify xname_reinit fails with HEAD method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_reinit"
+    method: HEAD
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

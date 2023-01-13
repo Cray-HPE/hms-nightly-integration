@@ -1,0 +1,7 @@
+- name: Verify that all HMNFD state change notification subscriptions can be deleted for a component
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/subscriptions/{node_xname}/agents"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

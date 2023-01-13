@@ -1,0 +1,8 @@
+- name: Verify that the HMNFD liveness status can be retrieved
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/liveness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+

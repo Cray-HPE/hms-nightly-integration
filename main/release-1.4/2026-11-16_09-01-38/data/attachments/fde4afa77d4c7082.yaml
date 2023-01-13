@@ -1,0 +1,56 @@
+- name: Get component ethernet interface
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "9a9999999999"
+            Description:
+              type: str
+              required: True
+              enum:
+                - "Test Component Interface"
+            LastUpdate:
+              type: str
+              required: True
+            ComponentID:
+              type: str
+              required: True
+            Type:
+              type: str
+              required: True
+            MACAddress:
+              type: str
+              required: True
+              enum:
+                - "9a:99:99:99:99:99"
+            IPAddresses:
+              type: seq
+              required: True
+              sequence:
+                - type: map
+                  required: False
+                  mapping:
+                    IPAddress:
+                      type: str
+                      required: False
+                      enum:
+                        - "99.9.9.9"
+                    Network:
+                      type: str
+                      required: False
+                      enum:
+                        - "HSMTavernTest"
+

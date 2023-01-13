@@ -1,0 +1,23 @@
+body:
+  automaticExpirationTime: '2026-11-20T08:39:11.132182548Z'
+  createTime: '2026-11-19T08:39:11.132182473Z'
+  operation: Hard-Restart
+  taskCounts:
+    failed: 0
+    in-progress: 1
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, gracefulshutdown
+    xname: x1000c0s2b0n0
+  transitionID: e49d6df2-5c8d-4364-a360-65e23683d3c8
+  transitionStatus: in-progress
+headers:
+  Content-Length: '451'
+  Content-Type: application/json
+  Date: Thu, 19 Nov 2026 08:39:30 GMT
+redirect_query_params: {}
+status_code: 200
