@@ -211,12 +211,13 @@ jobs:
         set -ex
         wget "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-${ALLURE_VERSION}.tgz"
         tar -xvf "allure-commandline-${ALLURE_VERSION}.tgz"
-        mv allure-${ALLURE_VERSION} allure-commandline
+      
+        # Add it to the path
+        echo "$(realpath allure-${ALLURE_VERSION}/bin)" >> $GITHUB_PATH
 
     - uses: actions/download-artifact@v3
       with:
         path: artifacts
-
 
     - name: Extract artifacts
       shell: bash
@@ -232,24 +233,24 @@ jobs:
           popd
         done
 
-    # - name: Allure Report action from marketplace
-    #   uses: simple-elf/allure-report-action@master
-    #   if: always()
-    #   id: allure-report
-    #   with:
-    #     # TODO does this encode branch info?
-    #     allure_results: ./allure-agg
-    #     gh_pages: gh-pages
-    #     allure_report: allure-report
-    #     allure_history: allure-history
+    - name: Generate site
+      shell: bash
+      env:
+        BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+      run: | 
+        # Ensure the branch that triggered this run exists. 
+        mkdir -p "${BRANCH_NAME}"
+        
+        # Generate test reports 
+        ./generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
+        
+        # Commit changes
+        git add .
+        git commit --amend -m "Updating reports from branch ${BRANCH_NAME}" 
+        git push --force
 
-    # - name: Deploy report to Github Pages
-    #   if: always()
-    #   uses: peaceiris/actions-gh-pages@v2
-    #   env:
-    #     PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     PUBLISH_BRANCH: gh-pages
-    #     PUBLISH_DIR: allure-history
+        # Add job summary for reports generated
+        # TODO
 
     # Deploy into separate directories with timestamp/branch
     # Prune old directories

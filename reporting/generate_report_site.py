@@ -49,6 +49,8 @@ for report_branch_dir in reports_dir.glob("*/"):
     # Find reports for this branch
     found_reports = [] 
     for report_dir in report_branch_dir.glob("*/"):
+        if not report_dir.is_dir():
+            continue
         found_reports.append(report_dir)
 
     # Check to see if we now have more than the allowed number of reports
@@ -108,6 +110,13 @@ for allure_results_dir in artifacts_dir.glob("*/*/"):
         print("Failed to generate report. Exit code {}".format(result.returncode))
         continue
 
+    # Update latest symlink
+    latest_symlink = reports_dir.joinpath(branch_name, "latest")
+    print(f"  Updating latest symlink: {latest_symlink} -> {destination_directory}")
+    if latest_symlink.is_symlink():
+        latest_symlink.unlink()
+    latest_symlink.symlink_to(destination_directory.name, target_is_directory=True)
+
 #
 # Determine if any reports need to be pruned
 #
@@ -121,6 +130,8 @@ for report_branch_dir in reports_dir.glob("*/"):
     # Find reports for this branch
     found_reports = [] 
     for report_dir in report_branch_dir.glob("*/"):
+        if not reports_dir.is_dir():
+            continue
         found_reports.append(report_dir)
 
     # Check to see if we now have more than the allowed number of reports
