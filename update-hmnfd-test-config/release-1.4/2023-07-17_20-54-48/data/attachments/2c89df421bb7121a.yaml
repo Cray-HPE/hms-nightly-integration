@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  location:
+  - xname: x1000c0s3b1n1
+  - xname: x1000c0s5b1n0
+  operation: force-off
+  taskDeadlineMinutes: 1
+method: POST
+stream: false
+url: http://cray-power-control:28007/transitions
+verify: false

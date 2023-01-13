@@ -1,0 +1,8 @@
+- name: Perform POST against /phone-home with malformed json payload
+  request:
+    url: "{bss_base_url}/phone-home"
+    method: POST
+    verify: !bool "{verify}"
+    data: "This is not json"
+  response:
+    status_code: 400

@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2026-09-22T08:54:39.40714343Z'
+  createTime: '2026-09-21T08:54:39.40714336Z'
+  operation: Hard-Restart
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 0
+    succeeded: 2
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: succeeded
+    taskStatusDescription: Transition confirmed, on
+    xname: x1000c0s3b1n0
+  - taskStatus: succeeded
+    taskStatusDescription: Transition confirmed, on
+    xname: x1000c0s2b0n1
+  transitionID: 23eec77e-9799-4b8e-ad9e-ee4fc409bfc2
+  transitionStatus: completed
+headers:
+  Content-Length: '521'
+  Content-Type: application/json
+  Date: Mon, 21 Sep 2026 08:55:41 GMT
+redirect_query_params: {}
+status_code: 200

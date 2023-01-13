@@ -1,0 +1,32 @@
+- name: capmcAPIGetXnameStatus fails with NodeBMC xname
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"source": "hsm", "xnames":["{bmc_xname}"]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              "e":
+                type: int
+                required: True
+                enum:
+                  - 400
+              "err_msg":
+                required: True
+                type: str
+                enum:
+                  - "xnames not found: [{bmc_xname}]"
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+
+            - jmespath: "length(keys(@))"
+              operator: "eq"
+              expected: 2

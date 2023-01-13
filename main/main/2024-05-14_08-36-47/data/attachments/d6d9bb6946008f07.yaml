@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTcmmRectifier - Create a CMMRectifier Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7t9","Type":"CMMRectifier","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocCMMRectifier","CMMRectifierLocationInfo":{"Name":"Rectifier9","FirmwareVersion":""},"PopulatedFRU":{"FRUID":"CMMRectifier.ABB.LBGEPE20KZ46051725","Type":"CMMRectifier","Subtype":"","HWInventoryByFRUType":"HWInvByFRUCMMRectifier","CMMRectifierFRUInfo":{"Manufacturer":"ABB","SerialNumber":"LBGEPE20KZ46051725","Model":"CC15000H3C380T","PartNumber":"","PowerCapacityWatts":0,"PowerInputWatts":0,"PowerOutputWatts":0,"PowerSupplyType":""}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

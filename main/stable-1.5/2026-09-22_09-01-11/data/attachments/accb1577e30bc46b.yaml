@@ -1,0 +1,37 @@
+- name: hsmAPIdefaultsNodeMapsXnamePUTexists - Update the data for NodeA from an existing NodeMap that has data for NodeA using PUT.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/x9999c7s9b9n9"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"NID":9999999979,"Role":"Storage","SubRole":"Storage"}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9"
+            NID:
+              type: int
+              required: True
+              enum:
+                - 9999999979
+            Role:
+              type: str
+              required: True
+              enum:
+                - "Storage"
+            SubRole:
+              type: str
+              required: True
+              enum:
+                - "Storage"
+
+

@@ -1,0 +1,9 @@
+- name: Update component ethernet interface
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"IPAddresses":[{"IPAddress":"99.9.9.9","Network":"HSMTavernTestPatch"}]}
+  response:
+    status_code: 200
+

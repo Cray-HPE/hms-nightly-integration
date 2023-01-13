@@ -1,0 +1,54 @@
+[33mWARNING [0m tavern.util.dict_util:dict_util.py:46 Formatting 'subscriber_url_id' will result in it being coerced to a string (it is a <class 'NoneType'>)
+[33mWARNING [0m tavern.util.dict_util:dict_util.py:46 Formatting 'subscriber_url_id' will result in it being coerced to a string (it is a <class 'NoneType'>)
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Key 'SubRoles' was not defined. Path: '/SubscriptionList/2'"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'SubscriptionList': [{'ID': 1, 'Subscriber': 'cray-hmnfd_6', 'Enabled': True, 'Roles': ['compute', 'service'], 'States': ['Empty', 'Populated', 'Off', 'On', 'Standby', 'Halt', 'Ready'], 'Url': 'http://cray-hmnfd:28600/hmi/v1/scn'}, {'ID': 2, 'Subscriber': 'cray-hmnfd_7', 'Enabled': True, 'States': ['on', 'off', 'empty', 'unknown', 'populated'], 'Url': 'http://cray-hmnfd:28600/hmi/v1/scn'}, {'ID': 3, 'Subscriber': 'cray-hmnfd_8', 'Enabled': True, 'Roles': ['compute', 'service', 'system', 'management'], 'SubRoles': ['master', 'worker', 'storage'], 'SoftwareStatus': ['admindown', 'unknown', 'other'], 'States': ['ready', 'on', 'off', 'standby', 'populated', 'empty'], 'Url': 'http://cray-hmnfd:28600/hmi/v1/scn'}, {'ID': 4, 'Subscriber': 'test-hmnfd-9z9z999zzz-9zz9z_9', 'Enabled': True, 'Roles': ['compute', 'service'], 'SoftwareStatus': ['SCN subscription for CT testing.'], 'States': ['Empty', 'Populated', 'Off', 'On', 'Standby', 'Halt', 'Ready'], 'Url': 'http://test-hmnfd/hmi/v1/scn'}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Key 'SubRoles' was not defined. Path: '/SubscriptionList/2'.: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7ff4d2e93430>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Key 'SubRoles' was not defined. Path: '/SubscriptionList/2'.: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Key 'SubRoles' was not defined. Path: '/SubscriptionList/2'.: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError

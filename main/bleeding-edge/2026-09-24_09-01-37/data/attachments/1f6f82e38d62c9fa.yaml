@@ -1,0 +1,73 @@
+- name: hsmAPILocksServiceReservationsRenewPOST - Renew 2 reservations flexible
+  request:
+    url: "{hsm_base_url}/hsm/v2/locks/service/reservations/renew"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"ReservationKeys":[{"ID":"{service_key_data_0.ID}","Key":"{service_key_data_0.ReservationKey}"},{"ID":"{service_key_data_1.ID}","Key":"{service_key_data_1.ReservationKey}"}],"ReservationDuration":15,"ProcessingModel":"flexible"}
+  response:
+    status_code: 200
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              Counts:
+                type: map
+                required: True
+                mapping:
+                  Total:
+                    type: int
+                    required: True
+                    enum:
+                      - 2
+                  Success:
+                    type: int
+                    required: True
+                    enum:
+                      - 1
+                  Failure:
+                    type: int
+                    required: True
+                    enum:
+                      - 1
+              Success:
+                type: map
+                required: True
+                mapping:
+                  ComponentIDs:
+                    type: seq
+                    required: True
+                    sequence:
+                      - type: str
+                        required: True
+                        enum:
+                          - "{service_key_data_1.ID}"
+              Failure:
+                type: seq
+                required: True
+                sequence:
+                  - type: map
+                    required: True
+                    mapping:
+                      ID:
+                        type: str
+                        required: True
+                        enum:
+                          - "{service_key_data_0.ID}"
+                      Reason:
+                        type: str
+                        required: True
+                        enum:
+                          - "NotFound"
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+            - jmespath: "length(@.Success.ComponentIDs)"
+              operator: "eq"
+              expected: 1
+            - jmespath: "length(@.Failure)"
+              operator: "eq"
+              expected: 1
+

@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  NodeMaps:
+  - ID: x9999c7s9b9n9
+    NID: 9999999999
+    Role: Compute
+    SubRole: FAKE
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Defaults/NodeMaps
+verify: false

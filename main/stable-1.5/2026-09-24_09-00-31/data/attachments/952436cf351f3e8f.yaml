@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsBulkSoftwareStatusPATCHnodes - Bulk update Node Component softwarestatus values using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkSoftwareStatus"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["x9999c7s9b8n7","x9999c7s9b8n6"],"SoftwareStatus":"UpdatedBulkSoftwareStatus"}
+  response:
+    status_code: 204
+
+

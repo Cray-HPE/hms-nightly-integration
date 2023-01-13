@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentIDs:
+  - p9999.9998
+  - p9999.9999
+  ProcessingModel: flexible
+  ReservationDuration: 15
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/service/reservations
+verify: false

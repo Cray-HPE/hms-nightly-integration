@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  IPRanges:
+  - 127.0.0.1/8
+  Name: dummy
+  Type: OPA
+method: PUT
+stream: false
+url: http://cray-sls:8376/v1/networks/dummy2
+verify: false

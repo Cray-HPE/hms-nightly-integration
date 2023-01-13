@@ -1,0 +1,13 @@
+- name: capmcAPIGetPowerCapabilities - setup1 - Get HSM Nodes
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        xname0: Components[0].ID
+        nid0: Components[0].NID
+        xname1: Components[1].ID
+        nid1: Components[1].NID

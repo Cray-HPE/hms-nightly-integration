@@ -1,0 +1,10 @@
+- name: capmcAPIGetXnameStatus fails with DELETE method
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    json:
+      e: 405
+      err_msg: "(DELETE) Not Allowed"

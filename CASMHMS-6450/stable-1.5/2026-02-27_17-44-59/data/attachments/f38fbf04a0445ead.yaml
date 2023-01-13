@@ -1,0 +1,90 @@
+- name: hsmAPIRedfishEndpointsGET - Check discovery status (on disabled)
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints?id=x9999c7s99b93&id=x9999c7s99b94"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              RedfishEndpoints:
+                type: seq
+                required: True
+                sequence:
+                  - type: map
+                    required: True
+                    mapping:
+                      DiscoveryInfo:
+                        type: map
+                        mapping:
+                          LastDiscoveryAttempt:
+                            type: timestamp
+                            required: False
+                          LastDiscoveryStatus:
+                            type: str
+                            required: True
+                            enum:
+                              - "NotYetQueried"
+                          RedfishVersion:
+                            type: str
+                            required: False
+                      Domain:
+                        type: str
+                        required: True
+                      Enabled:
+                        type: bool
+                        required: True
+                        enum:
+                          - False
+                      FQDN:
+                        type: str
+                        required: True
+                        enum:
+                          - "x9999c7s99b93"
+                          - "x9999c7s99b94"
+                      Hostname:
+                        type: str
+                        required: True
+                      ID:
+                        type: str
+                        required: True
+                        enum:
+                          - "x9999c7s99b93"
+                          - "x9999c7s99b94"
+                      MACAddr:
+                        type: str
+                        required: False
+                      Password:
+                        type: str
+                        required: True
+                        enum:
+                          - ""
+                      IPAddress:
+                        type: str
+                        required: False
+                      RediscoverOnUpdate:
+                        type: bool
+                        required: True
+                      Type:
+                        type: str
+                        required: True
+                        enum:
+                          - "NodeBMC"
+                      UUID:
+                        type: str
+                        required: False
+                      User:
+                        type: str
+                        required: True
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+            - jmespath: "length(@.RedfishEndpoints)"
+              operator: "eq"
+              expected: 2
+

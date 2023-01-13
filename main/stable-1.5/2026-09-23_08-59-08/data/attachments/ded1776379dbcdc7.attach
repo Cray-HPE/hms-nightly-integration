@@ -1,0 +1,212 @@
+Format variables:
+  hsm_base_url = 'http://cray-smd:27779'
+  verify = 'False'
+
+Source test stage (line 339):
+  - name: hsmAPIRedfishEndpointsGET - Check discovery status (on enabled)
+    request:
+      url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints?id=x9999c7s99b92"
+      method: GET
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        - function: tavern.testutils.helpers:validate_pykwalify
+          extra_kwargs:
+            schema:
+              type: map
+              required: True
+              mapping:
+                RedfishEndpoints:
+                  type: seq
+                  required: True
+                  sequence:
+                    - type: map
+                      required: True
+                      mapping:
+                        DiscoveryInfo:
+                          type: map
+                          mapping:
+                            LastDiscoveryAttempt:
+                              type: timestamp
+                              required: True
+                            LastDiscoveryStatus:
+                              type: str
+                              required: True
+                              enum:
+
+
+                                - "HTTPsGetFailed"
+                                - "DiscoveryStarted"
+                            RedfishVersion:
+                              type: str
+                              required: False
+                        Domain:
+                          type: str
+                          required: True
+                        Enabled:
+                          type: bool
+                          required: True
+                          enum:
+                            - True
+                        FQDN:
+                          type: str
+                          required: True
+                          enum:
+                            - "x9999c7s99b92"
+                        Hostname:
+                          type: str
+                          required: True
+                        ID:
+                          type: str
+                          required: True
+                          enum:
+                            - "x9999c7s99b92"
+                        MACAddr:
+                          type: str
+                          required: False
+                        Password:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        IPAddress:
+                          type: str
+                          required: False
+                        RediscoverOnUpdate:
+                          type: bool
+                          required: True
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "NodeBMC"
+                        UUID:
+                          type: str
+                          required: False
+                        User:
+                          type: str
+                          required: True
+        - function: tavern.testutils.helpers:validate_content
+          extra_kwargs:
+            comparisons:
+              - jmespath: "length(@.RedfishEndpoints)"
+                operator: "eq"
+                expected: 1
+
+
+
+Formatted stage:
+  name: hsmAPIRedfishEndpointsGET - Check discovery status (on enabled)
+  request:
+    method: GET
+    url: 'http://cray-smd:27779/hsm/v2/Inventory/RedfishEndpoints?id=x9999c7s99b92'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+    - extra_kwargs:
+        schema:
+          mapping:
+            RedfishEndpoints:
+              required: true
+              sequence:
+              - mapping:
+                  DiscoveryInfo:
+                    mapping:
+                      LastDiscoveryAttempt:
+                        required: true
+                        type: timestamp
+                      LastDiscoveryStatus:
+                        enum:
+                        - HTTPsGetFailed
+                        - DiscoveryStarted
+                        required: true
+                        type: str
+                      RedfishVersion:
+                        required: false
+                        type: str
+                    type: map
+                  Domain:
+                    required: true
+                    type: str
+                  Enabled:
+                    enum:
+                    - true
+                    required: true
+                    type: bool
+                  FQDN:
+                    enum:
+                    - x9999c7s99b92
+                    required: true
+                    type: str
+                  Hostname:
+                    required: true
+                    type: str
+                  ID:
+                    enum:
+                    - x9999c7s99b92
+                    required: true
+                    type: str
+                  IPAddress:
+                    required: false
+                    type: str
+                  MACAddr:
+                    required: false
+                    type: str
+                  Password:
+                    enum:
+                    - ''
+                    required: true
+                    type: str
+                  RediscoverOnUpdate:
+                    required: true
+                    type: bool
+                  Type:
+                    enum:
+                    - NodeBMC
+                    required: true
+                    type: str
+                  UUID:
+                    required: false
+                    type: str
+                  User:
+                    required: true
+                    type: str
+                required: true
+                type: map
+              type: seq
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+    - extra_kwargs:
+        comparisons:
+        - expected: 1
+          jmespath: length(@.RedfishEndpoints)
+          operator: eq
+      function: tavern.testutils.helpers:validate_content
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'hsmAPIRedfishEndpointsGET - Check discovery status (on enabled)' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7f32a7d35ee0>':
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Cannot find required key 'LastDiscoveryAttempt'. Path: '/RedfishEndpoints/0/DiscoveryInfo'.
+         - Enum 'NotYetQueried' does not exist. Path: '/RedfishEndpoints/0/DiscoveryInfo/LastDiscoveryStatus' Enum: ['HTTPsGetFailed', 'DiscoveryStarted'].: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+          File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

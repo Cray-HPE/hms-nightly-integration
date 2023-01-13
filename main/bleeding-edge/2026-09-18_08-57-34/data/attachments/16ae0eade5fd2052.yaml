@@ -1,0 +1,26 @@
+- name: Attempt to restart the target node with a hard-restart transition
+  request:
+    url: "{pcs_base_url}/transitions"
+    json: {"operation":"hard-restart","taskDeadlineMinutes": !int "{transition_hard-restart_task_deadline_minutes}","location":[{"xname":"{node_xname}"}]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            transitionID:
+              type: str
+              required: True
+            operation:
+              required: True
+              type: str
+              enum:
+                - "Hard-Restart"
+    save:
+      json:
+        transition_id_actual: transitionID

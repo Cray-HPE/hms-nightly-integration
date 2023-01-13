@@ -1,0 +1,7 @@
+- name: slsAPIReadinessPOST - Ensure that the SLS readiness cannot be posted to
+  request:
+    url: "{sls_base_url}/v1/readiness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

@@ -1,0 +1,61 @@
+- name: capmcAPIGetPowerCap - test2 - POST get_power_cap when node is Ready
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_power_cap"
+    json:
+      nids:
+        - !int "{nid:d}"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+
+
+
+
+
+        schema:
+          type: map
+          mapping:
+            e:
+              type: int
+              required: True
+              enum:
+                - 0
+            err_msg:
+              type: str
+              required: True
+              enum:
+                - ""
+            nids:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                -  type: map
+                   mapping:
+                     nid:
+                       type: int
+                       required: True
+                       enum:
+                         - !int "{nid:d}"
+                     controls:
+                       type: seq
+                       required: True
+                       matching: all
+                       sequence:
+                         - type: map
+                           mapping:
+                             name:
+                               type: str
+                               required: True
+                             val:
+                               type: int
+                               required: True
+
+
+
+
+

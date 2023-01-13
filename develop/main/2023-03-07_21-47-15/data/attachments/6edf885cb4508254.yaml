@@ -1,0 +1,9 @@
+- name: hsmAPIinventoryHardwareXnameGETrouterBMC - Retrieve a RouterBMC Hardware Inventory entry by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/x9999c7r9b9"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+
+

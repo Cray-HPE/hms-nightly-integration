@@ -1,0 +1,845 @@
+Running smoke tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 6 items                                                              [0m
+
+smoke_pytest/test_smoke.py::test_smoke[Verify GET service/version] [32mPASSED[0m[32m [ 16%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET service/status] [32mPASSED[0m[32m [ 33%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET service/status/details] [32mPASSED[0m[32m [ 50%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET actions] [32mPASSED[0m[32m        [ 66%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET images] [32mPASSED[0m[32m         [ 83%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET snapshots] [32mPASSED[0m[32m      [100%][0m
+
+[32m============================== [32m[1m6 passed[0m[32m in 0.15s[0m[32m ===============================[0m
+2023-02-14 20:22:45,685 PASS
+Running smoke tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 7 items                                                              [0m
+
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/version] [32mPASSED[0m[32m     [ 14%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/health] [32mPASSED[0m[32m      [ 28%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/liveness] [32mPASSED[0m[32m    [ 42%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/readiness] [32mPASSED[0m[32m   [ 57%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/hardware] [32mPASSED[0m[32m    [ 71%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/networks] [32mPASSED[0m[32m    [ 85%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET v1/dumpstate] [32mPASSED[0m[32m   [100%][0m
+
+[32m============================== [32m[1m7 passed[0m[32m in 0.17s[0m[32m ===============================[0m
+2023-02-14 20:22:46,950 PASS
+{
+  "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "SLS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test": "SLS",
+  "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "HSM",
+  "artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test": "HSM",
+  "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "CAPMC",
+  "artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test": "CAPMC",
+  "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": "PCS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-power-control-hmth-test": "PCS",
+  "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "REDS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-reds-hmth-test": "REDS",
+  "artifactory.algol60.net/csm-docker/stable/cray-meds-hmth-test": "MEDS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-meds-hmth-test": "MEDS",
+  "artifactory.algol60.net/csm-docker/stable/hms-discovery-hmth-test": "HMS-DISCOVERY",
+  "artifactory.algol60.net/csm-docker/unstable/hms-discovery-hmth-test": "HMS-DISCOVERY",
+  "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "BSS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test": "BSS",
+  "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "FAS",
+  "artifactory.algol60.net/csm-docker/unstable/cray-firmware-action-hmth-test": "FAS",
+  "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "HBTD",
+  "artifactory.algol60.net/csm-docker/unstable/cray-hbtd-hmth-test": "HBTD",
+  "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "HMNFD",
+  "artifactory.algol60.net/csm-docker/unstable/cray-hmnfd-hmth-test": "HMNFD",
+  "artifactory.algol60.net/csm-docker/stable/cray-scsd-hmth-test": "SCSD",
+  "artifactory.algol60.net/csm-docker/unstable/cray-scsd-hmth-test": "SCSD",
+  "artifactory.algol60.net/csm-docker/stable/hms-hmcollector-hmth-test": "HMCOLLECTOR",
+  "artifactory.algol60.net/csm-docker/unstable/hms-hmcollector-hmth-test": "HMCOLLECTOR"
+}
+Found HMTH test image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0
+Found HMTH test image: artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0
+Found HMTH test image: artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0
+Found HMTH test image: artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0
+Pulling artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0
+Pulling artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0
+Pulling artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0
+Pulling artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0
+Detecting tests in artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0
+  Found test file: src/app/api/1-non-disruptive/
+  Found test file: src/app/smoke.json
+  Found tavern config file: src/app/tavern_global_config_ct_test.yaml
+Detecting tests in artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0
+  Found test file: src/app/api/1-non-disruptive/
+  Found test file: src/app/api/2-disruptive/
+  Found test file: src/app/smoke.json
+  Found tavern config file: src/app/tavern_global_config_ct_test.yaml
+Detecting tests in artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0
+  Found test file: src/app/api/1-non-disruptive/
+  Found test file: src/app/api/2-disruptive/
+  Found test file: src/app/api/4-build-pipeline-only/
+  Found test file: src/app/smoke.json
+  Found tavern config file: src/app/tavern_global_config_ct_test_emulated_hardware.yaml
+  Found tavern config file: src/app/tavern_global_config_ct_test_production.yaml
+Detecting tests in artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0
+  Found test file: src/app/api/1-hardware-checks/
+  Found test file: src/app/smoke.json
+  Found tavern config file: src/app/tavern_global_config_ct_test.yaml
+Smoke test host overrides
+{
+  "artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test": "http://cray-sls:8376",
+  "artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test": "http://cray-sls:8376",
+  "artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test": "http://cray-smd:27779",
+  "artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test": "http://cray-smd:27779",
+  "artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test": "http://cray-capmc:27777",
+  "artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test": "http://cray-capmc:27777",
+  "artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test": "http://cray-power-control:28007",
+  "artifactory.algol60.net/csm-docker/unstable/cray-power-control-hmth-test": "http://cray-power-control:28007",
+  "artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test": "http://cray-reds:8269",
+  "artifactory.algol60.net/csm-docker/unstable/cray-reds-hmth-test": "http://cray-reds:8269",
+  "artifactory.algol60.net/csm-docker/stable/cray-meds-hmth-test": null,
+  "artifactory.algol60.net/csm-docker/unstable/cray-meds-hmth-test": null,
+  "artifactory.algol60.net/csm-docker/stable/hms-discovery-hmth-test": null,
+  "artifactory.algol60.net/csm-docker/unstable/hms-discovery-hmth-test": null,
+  "artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test": "http://cray-bss:27778",
+  "artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test": "http://cray-bss:27778",
+  "artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test": "http://cray-fas:28800",
+  "artifactory.algol60.net/csm-docker/unstable/cray-firmware-action-hmth-test": "http://cray-fas:28800",
+  "artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test": "http://cray-hbtd:28500",
+  "artifactory.algol60.net/csm-docker/unstable/cray-hbtd-hmth-test": "http://cray-hbtd:28500",
+  "artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test": "http://cray-hmnfd:28600",
+  "artifactory.algol60.net/csm-docker/unstable/cray-hmnfd-hmth-test": "http://cray-hmnfd:28600",
+  "artifactory.algol60.net/csm-docker/stable/cray-scsd-hmth-test": "http://cray-scsd:25309",
+  "artifactory.algol60.net/csm-docker/unstable/cray-scsd-hmth-test": "http://cray-scsd:25309",
+  "artifactory.algol60.net/csm-docker/stable/hms-hmcollector-hmth-test": "http://cray-hms-hmcollector-ingress:80",
+  "artifactory.algol60.net/csm-docker/unstable/hms-hmcollector-hmth-test": "http://cray-hms-hmcollector-ingress:80"
+}
+========================================
+Running smoke:all tests
+========================================
+Running artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0 smoke --file smoke.json --url http://cray-fas:28800 --allure-dir=/allure-results/cray-firmware-action-hmth-test/smoke
+Running artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0 smoke --file smoke.json --url http://cray-sls:8376 --allure-dir=/allure-results/cray-sls-hmth-test/smoke
+Running artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0
+Command: Running smoke tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 6 items                                                              [0m
+
+smoke_pytest/test_smoke.py::test_smoke[Verify GET liveness] [32mPASSED[0m[32m       [ 16%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET readiness] [32mPASSED[0m[32m      [ 33%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET health] [32mPASSED[0m[32m         [ 50%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET power-status] [32mPASSED[0m[32m   [ 66%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET power-cap] [32mPASSED[0m[32m      [ 83%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET transitions] [32mPASSED[0m[32m    [100%][0m
+
+[32m============================== [32m[1m6 passed[0m[32m in 0.16s[0m[32m ===============================[0m
+2023-02-14 20:22:48,225 PASS
+Running smoke tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 30 items                                                             [0m
+
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/ready] [32mPASSED[0m[32m [  3%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/liveness] [32mPASSED[0m[32m [  6%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values] [32mPASSED[0m[32m [ 10%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/arch] [32mPASSED[0m[32m [ 13%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/class] [32mPASSED[0m[32m [ 16%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/flag] [32mPASSED[0m[32m [ 20%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/nettype] [32mPASSED[0m[32m [ 23%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/role] [32mPASSED[0m[32m [ 26%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/subrole] [32mPASSED[0m[32m [ 30%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/state] [32mPASSED[0m[32m [ 33%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/service/values/type] [32mPASSED[0m[32m [ 36%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/State/Components] [32mPASSED[0m[32m [ 40%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Defaults/NodeMaps] [32mPASSED[0m[32m [ 43%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/DiscoveryStatus] [32mPASSED[0m[32m [ 46%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/Hardware] [32mPASSED[0m[32m [ 50%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/HardwareByFRU] [32mPASSED[0m[32m [ 53%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/Hardware/History] [32mPASSED[0m[32m [ 56%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/HardwareByFRU/History] [32mPASSED[0m[32m [ 60%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/RedfishEndpoints] [32mPASSED[0m[32m [ 63%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/ComponentEndpoints] [32mPASSED[0m[32m [ 66%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/ServiceEndpoints] [32mPASSED[0m[32m [ 70%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Inventory/EthernetInterfaces] [32mPASSED[0m[32m [ 73%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/groups] [32mPASSED[0m[32m  [ 76%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/groups/labels] [32mPASSED[0m[32m [ 80%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/partitions] [32mPASSED[0m[32m [ 83%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/partitions/names] [32mPASSED[0m[32m [ 86%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/memberships] [32mPASSED[0m[32m [ 90%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/Subscriptions/SCN] [32mPASSED[0m[32m [ 93%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/locks/status] [32mPASSED[0m[32m [ 96%][0m
+smoke_pytest/test_smoke.py::test_smoke[Verify GET hsm/v2/sysinfo/powermaps] [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m30 passed[0m[32m in 0.33s[0m[32m ==============================[0m
+2023-02-14 20:22:49,706 PASS
+Running tavern tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollecting 1 item                                                              [0m[1mcollected 6 items                                                              [0m
+
+api/1-non-disruptive/test_actions.tavern.yaml::Verify the actions resource [32mPASSED[0m[32m [ 16%][0m
+api/1-non-disruptive/test_service_status.tavern.yaml::Verify the service status resource [32mPASSED[0m[32m [ 33%][0m
+api/1-non-disruptive/test_service_status_details.tavern.yaml::Verify the service status details resource [32mPASSED[0m[32m [ 50%][0m
+api/1-non-disruptive/test_service_version.tavern.yaml::Verify the service version resource [32mPASSED[0m[32m [ 66%][0m
+api/1-non-disruptive/test_snapshots.tavern.yaml::Verify the snapshots resource for creating a new snapshot [32mPASSED[0m[32m [ 83%][0m
+api/1-non-disruptive/test_snapshots.tavern.yaml::Verify the snapshots resource for deleting a snapshot [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m6 passed[0m[32m in 31.77s[0m[32m ==============================[0m
+2023-02-14 20:23:22,587 PASS
+Running tavern tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 6 items                                                              [0m
+
+api/1-non-disruptive/test_dumpstate.tavern.yaml::Verify the dumpstate resource [32mPASSED[0m[32m [ 16%][0m
+api/1-non-disruptive/test_hardware.tavern.yaml::Verify the hardware resource [32mPASSED[0m[32m [ 33%][0m
+api/1-non-disruptive/test_hardware.tavern.yaml::Verify the hardware resource with a specific xname [32mPASSED[0m[32m [ 50%][0m
+api/1-non-disruptive/test_health.tavern.yaml::Verify the health resource [32mPASSED[0m[32m [ 66%][0m
+api/1-non-disruptive/test_networks.tavern.yaml::Verify the networks resource [32mPASSED[0m[32m [ 83%][0m
+api/1-non-disruptive/test_service.tavern.yaml::slsAPIServiceAPIS [32mPASSED[0m[32m  [100%][0m
+
+[32m============================== [32m[1m6 passed[0m[32m in 0.96s[0m[32m ===============================[0m
+2023-02-14 20:23:24,810 PASS
+Running tavern tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 31 items                                                             [0m
+
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap rejects unsupported methods [32mPASSED[0m[32m [  3%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles snapshot requests for non-present nodes [32mPASSED[0m[32m [  6%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles snapshot requests for unsupported NodeBMC component type [32mPASSED[0m[32m [  9%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles snapshot requests for invalid components [32mPASSED[0m[32m [ 12%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles non-existent taskIDs [32mPASSED[0m[32m [ 16%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles invalid taskIDs [32mPASSED[0m[32m [ 19%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles patch requests for non-present nodes [32mPASSED[0m[32m [ 22%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles patch requests for unsupported NodeBMC component type [32mPASSED[0m[32m [ 25%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles patch requests for invalid components [32mPASSED[0m[32m [ 29%][0m
+api/1-non-disruptive/test_power-cap_negative.tavern.yaml::Verify power-cap handles patch requests with invalid caps [32mPASSED[0m[32m [ 32%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for all components [32mPASSED[0m[32m [ 35%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for a Node [32mPASSED[0m[32m [ 38%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for a NodeBMC [32mPASSED[0m[32m [ 41%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for multiple components [32mPASSED[0m[32m [ 45%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for a Node using a powerStateFilter [32mPASSED[0m[32m [ 48%][0m
+api/1-non-disruptive/test_power-status.tavern.yaml::Verify power-status for a Node using a managementStateFilter [32mPASSED[0m[32m [ 51%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status with unsupported operations [32mPASSED[0m[32m [ 54%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status for a NodeEnclosure [32mPASSED[0m[32m [ 58%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status with a non-present component [32mPASSED[0m[32m [ 61%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status with an invalid xname [32mPASSED[0m[32m [ 64%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status with an invalid powerStateFilter [32mPASSED[0m[32m [ 67%][0m
+api/1-non-disruptive/test_power-status_negative.tavern.yaml::Verify power-status with an invalid managementStateFilter [32mPASSED[0m[32m [ 70%][0m
+api/1-non-disruptive/test_service_apis.tavern.yaml::Verify the PCS service APIs [32mPASSED[0m[32m [ 74%][0m
+api/1-non-disruptive/test_service_apis_negative.tavern.yaml::Verify the PCS service APIs reject unsupported operations [32mPASSED[0m[32m [ 77%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions rejects unsupported methods [32mPASSED[0m[32m [ 80%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions handles requests for non-present nodes [32mPASSED[0m[32m [ 83%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions handles requests for invalid nodes [32mPASSED[0m[32m [ 87%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions when retrieving non-existent transitionIDs [32mPASSED[0m[32m [ 90%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions when retrieving invalid transitionIDs [32mPASSED[0m[32m [ 93%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions when aborting non-existent transitionIDs [32mPASSED[0m[32m [ 96%][0m
+api/1-non-disruptive/test_transitions_negative.tavern.yaml::Verify transitions when aborting invalid transitionIDs [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m31 passed[0m[32m in 9.94s[0m[32m ==============================[0m
+2023-02-14 20:23:35,868 PASS
+Running tavern tests...
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.16, pytest-7.1.2, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /src/app, configfile: pytest.ini
+plugins: tavern-1.23.1, allure-pytest-2.12.0
+[1mcollecting ... [0m[1mcollected 1 item                                                               [0m
+
+api/1-hardware-checks/test_hardware_checks.tavern.yaml::Query for all Nodes in the Components collection [32mPASSED[0m[32m [100%][0m
+
+[32m============================== [32m[1m1 passed[0m[32m in 0.34s[0m[32m ===============================[0m
+2023-02-14 20:23:37,331 PASS
+docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0 smoke --file smoke.json --url http://cray-power-control:28007 --allure-dir=/allure-results/cray-power-control-hmth-test/smoke
+Running artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0 smoke --file smoke.json --url http://cray-smd:27779 --allure-dir=/allure-results/cray-smd-hmth-test/smoke
+========================================
+Running 1-non-disruptive:all tests
+========================================
+Running artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test:1.24.0 tavern --config /src/app/tavern_global_config_ct_test.yaml --path /src/app/api/1-non-disruptive --allure-dir=/allure-results/cray-firmware-action-hmth-test/1-non-disruptive
+Running artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test:2.0.0 tavern --config /src/app/tavern_global_config_ct_test.yaml --path /src/app/api/1-non-disruptive --allure-dir=/allure-results/cray-sls-hmth-test/1-non-disruptive
+Running artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test:1.5.0 tavern --config /src/app/tavern_global_config_ct_test_emulated_hardware.yaml --path /src/app/api/1-non-disruptive --allure-dir=/allure-results/cray-power-control-hmth-test/1-non-disruptive
+========================================
+Running 1-hardware-checks:all tests
+========================================
+Running artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0
+Command: docker run --rm -t --network hms-simulation-environment_simulation -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/allure:/allure-results/ -v /home/runner/work/hms-nightly-integration/hms-nightly-integration/tavern_global_config.yaml:/tavern_global_config.yaml --user root artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test:2.5.0 tavern --config /src/app/tavern_global_config_ct_test.yaml --path /src/app/api/1-hardware-checks --allure-dir=/allure-results/cray-smd-hmth-test/1-hardware-checks
+Correcting allure report file perms.
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/d6931fa6-312d-485d-b0f5-6f5706da5a57-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/737a53be-0893-49b0-b077-92e9aaa64078-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/616a235f-c200-490e-8d46-1b7ca2f35530-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/06c61e01-e2c4-430d-8d9b-ccc5882ea1bb-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/9a4023d4-38f2-4726-9b50-f58a06cbb3df-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/3636dce6-3c28-45ed-be33-62996460955c-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/5e023aff-3208-4a8d-b286-ec3955337521-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/85b3af9b-4974-4261-b403-dae7d38ff178-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/e3d23ab4-9e35-4d90-b28a-c62c85611809-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/31850a9c-2198-4dcc-92a4-0a2d49ad128c-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/67904669-4a03-4818-b30d-4c71f8a339cc-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/457c8024-fe9a-4480-be9e-90dfb29e2e3c-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/1e4e9c60-b45e-41fd-8dbc-b969254e31ae-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/470731fe-256c-4abd-9402-9c313045633e-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/1579de3e-e84f-4031-873b-769bba09a3b3-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/6e471442-8273-4a0c-b898-0d014b3408ee-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/2d0ece30-f190-4220-b321-37fcd734b587-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/730c904c-c0cd-41b7-8c99-6e840ae18a17-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/82c3e59b-7919-40fb-8760-038171cb82c6-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/63e4a2b4-5f5a-4a0b-8818-b435e76bd6c4-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/f51e2def-a8ea-4c68-a1bb-1c0b0f3a5bc0-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/04cd4e64-9173-4764-b9e6-0e63f3900b94-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/eeab0225-131f-4429-8e5b-3a11e791df7c-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/c4d281cc-5df6-4506-bc88-a8a334783c75-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/b5ae875e-8f8b-4e19-a119-c1735613a119-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/8c957da4-2bdd-4d38-b7a6-5d46fe6404fb-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/aec011c7-8671-402c-b0a4-92ebe166b60f-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/c61b6c8c-098a-48b4-bdcd-c81b13bad6b9-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/9067e514-ee05-4315-af82-4bb1c99ce3d1-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/0a89c7b9-c773-4790-859e-b338896acae0-result.json
+Processing test result: allure/cray-power-control-hmth-test/1-non-disruptive/4c7f2ff9-0058-4f9d-a61f-2a5ecccf5f36-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/80f3f622-7168-4926-ab52-4a0e46e8c511-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/a9d57378-c811-4d01-bd51-9671c4a8e886-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/ea091f62-cddd-45e3-853c-c8406cf2b334-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/6df11547-8876-4060-9a9f-3b11bd4ad2fc-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/023719ee-a20b-4f34-aea1-a2b116df1f5f-result.json
+Processing test result: allure/cray-power-control-hmth-test/smoke/8bb44945-ef98-4313-b1f6-6f74fdd52c24-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/369488bb-5764-48fa-abaa-c9a34a2c7196-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/31dfc7fc-9e71-4485-b6e0-89c6643d869a-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/a5478f3d-cee1-454c-9d07-6853ad094e7f-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/a524f8af-e0ef-49d7-addf-0c0496f6f0bb-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/d7e3271a-004f-4571-b77d-6b7da1b1a095-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/1-non-disruptive/232e5bb4-a968-466b-8c1d-b48a8e1f7650-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/efdcbc15-fbde-4f98-a5f8-7d71ff94c8a6-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/9266dfb5-941d-47bd-885b-cd80db23878e-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/182492f6-7417-479b-b173-06216d88d4f4-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/499236fb-500c-4d9e-a2fc-eafc2824b093-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/18c5c25e-f241-4249-b246-19e9723ea1ff-result.json
+Processing test result: allure/cray-firmware-action-hmth-test/smoke/aa158e65-e869-4654-a1cf-6202489b536d-result.json
+Processing test result: allure/cray-smd-hmth-test/1-hardware-checks/ea7a6d9e-b2a4-4bab-b4eb-8e84c9d627a8-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/2dca44a1-bd98-4402-a96a-b7e63cc431c8-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/88c7ef6c-045d-4122-b09b-a56b21dae410-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/0b45644d-7b5b-4cca-a466-b3e2855273cc-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/aedf1127-4baa-4f9c-b510-7c9bf7eb6488-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/d9a8f8b4-ee00-408d-b8e4-0e00c31d6169-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/9f75f65c-5837-487a-8a3c-1e75aec90fe3-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/a0e53692-6111-4687-9dc1-7296140feca9-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/c8a0a4a3-2184-4709-a011-75d7a5dd7daf-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/373bc4ec-3148-439b-9dd4-bb64b3379c21-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/e77688e5-f37c-42b1-b4c0-873205fed46f-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/0772bc03-dff7-4457-bdfb-fd2a4c2ed937-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/6a1e57f7-1534-4c56-b50e-65f4df9780d8-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/2bd62dc0-2348-44b0-911f-36a9ef2872c7-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/5190f1ff-f213-4d1d-95b0-a2c457818f73-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/7b23d031-56f1-4710-b656-34d8b7f30eeb-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/9267f6fe-3d11-4eec-afdb-9e047eb58206-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/028a82ff-bbb6-4ceb-bc84-9c78a36e8638-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/5964a7e6-73ce-4158-91c8-af5395e6933c-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/8e4f9e52-9b43-412d-95c9-b435c1c741d6-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/7dd716c8-7b96-43ad-89f7-744cd1c33e6f-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/852912f5-f426-47cf-9055-6417e935b9f1-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/2014ee78-d2c0-4d30-a4d1-bbbd1cc7072f-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/a912a055-851a-4be8-a3ca-b86f6e16274b-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/36f8fbae-097f-4efa-b085-8e05e043d05d-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/87e8c377-f637-4d18-ad2a-8fb9258c57c2-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/8ec6c466-e853-425d-9e83-292e97257a06-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/ecf50478-45c5-42a7-a8d3-c92364194eeb-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/e1b0cc81-cce3-46c4-875c-e56f2a2ba605-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/e56db40a-6933-4018-9628-a7603ea04d93-result.json
+Processing test result: allure/cray-smd-hmth-test/smoke/48d4aa8b-2b6c-4e29-a7de-7dd79d12a260-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/f0b37e6d-deaf-45f5-9c85-03b982fad03a-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/5c6ff394-afa8-4456-9794-fb7a63ffd6ad-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/7fde7409-31e3-4be0-88c5-d113d1036f87-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/842d2838-5e94-40f1-91a4-3d965a8bc544-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/233f9180-0e50-41c4-8e31-26ad4b8b4c1f-result.json
+Processing test result: allure/cray-sls-hmth-test/1-non-disruptive/a53f252a-974b-411b-9791-c772219527f6-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/4d933bb9-3cf3-46a5-a428-fd30e80db4ba-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/f089a396-485c-4405-8d53-f751e447e046-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/d5c43be7-910a-40b8-9a00-4b3c63c82888-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/b9f0f7f4-9dbf-416b-8017-dea5a15e3f41-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/24e2e3d6-658e-44e7-a4d3-aeee88b52ddc-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/99ad7c93-f1de-4e3e-a73e-a830bf3660e5-result.json
+Processing test result: allure/cray-sls-hmth-test/smoke/f1cd93f6-16aa-4060-9856-919398cb4cfb-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f56e89b9-a620-478a-b0b2-4231551a1b06-attachment.yaml -> allure/f56e89b9-a620-478a-b0b2-4231551a1b06-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/91eac32d-939b-4909-8fad-e925f5a93981-attachment.yaml -> allure/91eac32d-939b-4909-8fad-e925f5a93981-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/91e5db4e-1591-4320-a482-58fe6dd9e1a9-attachment.yaml -> allure/91e5db4e-1591-4320-a482-58fe6dd9e1a9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d41d880a-eaba-45c3-bd62-94857b6dfee0-attachment.yaml -> allure/d41d880a-eaba-45c3-bd62-94857b6dfee0-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3d948b5e-6889-41cc-a024-a52af0db50b6-attachment.yaml -> allure/3d948b5e-6889-41cc-a024-a52af0db50b6-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/dcd4f541-5cb0-4432-aef9-3e4c5ab77755-attachment.yaml -> allure/dcd4f541-5cb0-4432-aef9-3e4c5ab77755-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/15559ca6-0c10-499d-ac60-46bc56474555-attachment.yaml -> allure/15559ca6-0c10-499d-ac60-46bc56474555-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/649691a7-5698-4725-9f08-c2af5587e3d1-attachment.yaml -> allure/649691a7-5698-4725-9f08-c2af5587e3d1-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fda615d3-6e88-4161-81f9-36c81d4b511d-attachment.yaml -> allure/fda615d3-6e88-4161-81f9-36c81d4b511d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/34f99021-4a7f-455a-9c14-8e2df173d19c-attachment.yaml -> allure/34f99021-4a7f-455a-9c14-8e2df173d19c-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d6931fa6-312d-485d-b0f5-6f5706da5a57-result.json -> allure/d6931fa6-312d-485d-b0f5-6f5706da5a57-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1b5a5d9a-c586-4146-8a4d-8d0ef3c7dc46-attachment.yaml -> allure/1b5a5d9a-c586-4146-8a4d-8d0ef3c7dc46-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/57066964-1c42-4ed2-ae5d-be64c744bdb4-attachment.yaml -> allure/57066964-1c42-4ed2-ae5d-be64c744bdb4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e03358c3-e58b-43d5-b948-d47403d12017-attachment.yaml -> allure/e03358c3-e58b-43d5-b948-d47403d12017-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/52a86e41-d893-49f5-9203-41cd5ab4238a-attachment.yaml -> allure/52a86e41-d893-49f5-9203-41cd5ab4238a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/ba4eb406-761e-4699-92bb-25646101fc02-attachment.yaml -> allure/ba4eb406-761e-4699-92bb-25646101fc02-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/737a53be-0893-49b0-b077-92e9aaa64078-result.json -> allure/737a53be-0893-49b0-b077-92e9aaa64078-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b8a1c1ed-fd70-48f2-b4a0-9ae4dcbbbe70-attachment.yaml -> allure/b8a1c1ed-fd70-48f2-b4a0-9ae4dcbbbe70-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7c603cb5-118c-4f3c-986e-915f6a59834a-attachment.yaml -> allure/7c603cb5-118c-4f3c-986e-915f6a59834a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/688244b0-227a-4ee5-afae-0d42dcb7934c-attachment.yaml -> allure/688244b0-227a-4ee5-afae-0d42dcb7934c-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/616a235f-c200-490e-8d46-1b7ca2f35530-result.json -> allure/616a235f-c200-490e-8d46-1b7ca2f35530-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/06c61e01-e2c4-430d-8d9b-ccc5882ea1bb-result.json -> allure/06c61e01-e2c4-430d-8d9b-ccc5882ea1bb-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/9a4023d4-38f2-4726-9b50-f58a06cbb3df-result.json -> allure/9a4023d4-38f2-4726-9b50-f58a06cbb3df-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/18d26e16-12a8-492c-965d-1c65274a96af-attachment.yaml -> allure/18d26e16-12a8-492c-965d-1c65274a96af-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4bae95dc-a62e-42f7-a2c0-605516e0ce2d-attachment.yaml -> allure/4bae95dc-a62e-42f7-a2c0-605516e0ce2d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/084ca601-0fe6-4730-b937-1b85773a185f-attachment.yaml -> allure/084ca601-0fe6-4730-b937-1b85773a185f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3636dce6-3c28-45ed-be33-62996460955c-result.json -> allure/3636dce6-3c28-45ed-be33-62996460955c-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2d668318-fe94-46fe-a6f5-fa3f40797b22-attachment.yaml -> allure/2d668318-fe94-46fe-a6f5-fa3f40797b22-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/8f687d81-de81-4280-bd10-54fb002635cd-attachment.yaml -> allure/8f687d81-de81-4280-bd10-54fb002635cd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/dfae1f78-b4f5-4641-bb6e-763efe80506d-attachment.yaml -> allure/dfae1f78-b4f5-4641-bb6e-763efe80506d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f4852274-da88-4bd7-a55f-600fb0e9bd9b-attachment.yaml -> allure/f4852274-da88-4bd7-a55f-600fb0e9bd9b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/9ca168de-955c-48db-ac8f-dfec53c64049-attachment.yaml -> allure/9ca168de-955c-48db-ac8f-dfec53c64049-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2010adef-6ec7-4957-a998-3e34bafa43f7-attachment.yaml -> allure/2010adef-6ec7-4957-a998-3e34bafa43f7-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5e023aff-3208-4a8d-b286-ec3955337521-result.json -> allure/5e023aff-3208-4a8d-b286-ec3955337521-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/156414c1-b6f6-4eef-8a8d-9091f3f648ae-attachment.yaml -> allure/156414c1-b6f6-4eef-8a8d-9091f3f648ae-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0f5803c6-22b4-4a69-bd98-4997ab322f97-attachment.yaml -> allure/0f5803c6-22b4-4a69-bd98-4997ab322f97-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/175b1ecb-b50c-4636-869e-41511939d97f-attachment.yaml -> allure/175b1ecb-b50c-4636-869e-41511939d97f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/60f19d90-55cc-48ae-8d8c-951e405c6167-attachment.yaml -> allure/60f19d90-55cc-48ae-8d8c-951e405c6167-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/33f6e5d5-8b65-4d70-acf1-7bdec8710068-attachment.yaml -> allure/33f6e5d5-8b65-4d70-acf1-7bdec8710068-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e5f94760-a9ff-456d-9134-476ccfd0a87e-attachment.yaml -> allure/e5f94760-a9ff-456d-9134-476ccfd0a87e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/11fd4093-39ac-42c5-9424-4324f1a714c7-attachment.yaml -> allure/11fd4093-39ac-42c5-9424-4324f1a714c7-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/85b3af9b-4974-4261-b403-dae7d38ff178-result.json -> allure/85b3af9b-4974-4261-b403-dae7d38ff178-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/44676673-72dc-4c96-933a-c80c42690e7b-attachment.yaml -> allure/44676673-72dc-4c96-933a-c80c42690e7b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/becb1d4f-11ec-4bfe-8ddf-c7b26ec577a4-attachment.yaml -> allure/becb1d4f-11ec-4bfe-8ddf-c7b26ec577a4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fd23b0bf-428d-4d61-baf6-c1720637533e-attachment.yaml -> allure/fd23b0bf-428d-4d61-baf6-c1720637533e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0f384702-726e-4188-9dc4-576b27fed2d5-attachment.yaml -> allure/0f384702-726e-4188-9dc4-576b27fed2d5-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/143bdaa4-154a-44f6-ac68-335edd89142b-attachment.yaml -> allure/143bdaa4-154a-44f6-ac68-335edd89142b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e3d23ab4-9e35-4d90-b28a-c62c85611809-result.json -> allure/e3d23ab4-9e35-4d90-b28a-c62c85611809-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/aec64982-c49d-4814-b64f-1e9f443da7ac-attachment.yaml -> allure/aec64982-c49d-4814-b64f-1e9f443da7ac-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4008a45f-dd2b-470c-a1aa-1e8fb89da159-attachment.yaml -> allure/4008a45f-dd2b-470c-a1aa-1e8fb89da159-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/deee8365-3d31-4e13-96e1-a4c59542db2f-attachment.yaml -> allure/deee8365-3d31-4e13-96e1-a4c59542db2f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1f5b537b-d302-4423-98fe-42a2a3a2721e-attachment.yaml -> allure/1f5b537b-d302-4423-98fe-42a2a3a2721e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/31850a9c-2198-4dcc-92a4-0a2d49ad128c-result.json -> allure/31850a9c-2198-4dcc-92a4-0a2d49ad128c-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f1e49778-83af-4ef5-a360-322f9204a00b-attachment.yaml -> allure/f1e49778-83af-4ef5-a360-322f9204a00b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/a382f326-e88f-4126-95b2-56d59a7d8dbb-attachment.yaml -> allure/a382f326-e88f-4126-95b2-56d59a7d8dbb-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/bafa765b-f298-418c-a255-58290a9cf7f4-attachment.yaml -> allure/bafa765b-f298-418c-a255-58290a9cf7f4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c1233445-c703-4af4-b828-bf9657c3749f-attachment.yaml -> allure/c1233445-c703-4af4-b828-bf9657c3749f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4ae57a89-6bc2-4d43-b17a-9cae44daf5cd-attachment.yaml -> allure/4ae57a89-6bc2-4d43-b17a-9cae44daf5cd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f5f14612-fb3d-4089-a023-53053afdb846-attachment.yaml -> allure/f5f14612-fb3d-4089-a023-53053afdb846-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/380d6d1e-95b2-4f17-a802-8d30d4d4769f-attachment.yaml -> allure/380d6d1e-95b2-4f17-a802-8d30d4d4769f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/21f1526d-0984-478b-a12e-3bdabc0e7eb0-attachment.yaml -> allure/21f1526d-0984-478b-a12e-3bdabc0e7eb0-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fe90dae3-41f4-44e7-825b-cafd5d00287f-attachment.yaml -> allure/fe90dae3-41f4-44e7-825b-cafd5d00287f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/67904669-4a03-4818-b30d-4c71f8a339cc-result.json -> allure/67904669-4a03-4818-b30d-4c71f8a339cc-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2ad83207-622b-49d7-8bf2-3245503d1c37-attachment.yaml -> allure/2ad83207-622b-49d7-8bf2-3245503d1c37-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e0019728-b6d1-441e-9e8a-73ab7764fcb5-attachment.yaml -> allure/e0019728-b6d1-441e-9e8a-73ab7764fcb5-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/610297ba-e306-4905-9a03-afeceffe85d2-attachment.yaml -> allure/610297ba-e306-4905-9a03-afeceffe85d2-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/730676e7-e7ee-45e2-b8db-4a6486843cff-attachment.yaml -> allure/730676e7-e7ee-45e2-b8db-4a6486843cff-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c6b9611a-8ecd-4221-9665-4a3be7ebf191-attachment.yaml -> allure/c6b9611a-8ecd-4221-9665-4a3be7ebf191-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/a6015c3c-fb77-4e01-a8df-40eb245e87e5-attachment.yaml -> allure/a6015c3c-fb77-4e01-a8df-40eb245e87e5-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1acd7d61-100a-44af-bff2-2bb6d1b4889b-attachment.yaml -> allure/1acd7d61-100a-44af-bff2-2bb6d1b4889b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/457c8024-fe9a-4480-be9e-90dfb29e2e3c-result.json -> allure/457c8024-fe9a-4480-be9e-90dfb29e2e3c-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/cc59f55f-bd96-4209-ae98-970ab1733a94-attachment.yaml -> allure/cc59f55f-bd96-4209-ae98-970ab1733a94-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/31c1448b-17d9-4cce-a4fe-12cb1d3abfbe-attachment.yaml -> allure/31c1448b-17d9-4cce-a4fe-12cb1d3abfbe-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1e4e9c60-b45e-41fd-8dbc-b969254e31ae-result.json -> allure/1e4e9c60-b45e-41fd-8dbc-b969254e31ae-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d5984d37-40d7-4d7c-9e4c-b9818d4a074b-attachment.yaml -> allure/d5984d37-40d7-4d7c-9e4c-b9818d4a074b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/981736e8-f0fe-446e-ac52-b690dfff3698-attachment.yaml -> allure/981736e8-f0fe-446e-ac52-b690dfff3698-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/68cb8296-16d2-43df-8545-a8bd0cc2fa55-attachment.yaml -> allure/68cb8296-16d2-43df-8545-a8bd0cc2fa55-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/13a53a0f-15ed-4e3f-8be5-55b90b1e83f4-attachment.yaml -> allure/13a53a0f-15ed-4e3f-8be5-55b90b1e83f4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/15c9265a-d2d0-4ff3-95b9-5a9f8ccf76e6-attachment.yaml -> allure/15c9265a-d2d0-4ff3-95b9-5a9f8ccf76e6-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fd66280d-3780-46be-b60b-9f6a0db1c381-attachment.yaml -> allure/fd66280d-3780-46be-b60b-9f6a0db1c381-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7cce9586-880c-48fd-8442-2afab7216813-attachment.yaml -> allure/7cce9586-880c-48fd-8442-2afab7216813-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/93683f03-9129-4626-9555-fe3c75b7ccfd-attachment.yaml -> allure/93683f03-9129-4626-9555-fe3c75b7ccfd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7b71459f-229f-47db-977a-62a9b4ab9fef-attachment.yaml -> allure/7b71459f-229f-47db-977a-62a9b4ab9fef-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/dfa6addc-9049-490e-a093-15c6e7c3eb51-attachment.yaml -> allure/dfa6addc-9049-490e-a093-15c6e7c3eb51-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/470731fe-256c-4abd-9402-9c313045633e-result.json -> allure/470731fe-256c-4abd-9402-9c313045633e-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b5f4d1aa-32ff-489b-a5f6-bdaffd3fc923-attachment.yaml -> allure/b5f4d1aa-32ff-489b-a5f6-bdaffd3fc923-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c5404f00-207d-4f4b-905b-a6cb7c0e6a03-attachment.yaml -> allure/c5404f00-207d-4f4b-905b-a6cb7c0e6a03-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e04f8da6-e64a-4dbe-91ed-229077e886fd-attachment.yaml -> allure/e04f8da6-e64a-4dbe-91ed-229077e886fd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/07f2c905-c401-4dc1-9ddf-6d607e5552be-attachment.yaml -> allure/07f2c905-c401-4dc1-9ddf-6d607e5552be-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/6dde960f-be7e-4f85-8375-88ed58a55ee6-attachment.yaml -> allure/6dde960f-be7e-4f85-8375-88ed58a55ee6-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1579de3e-e84f-4031-873b-769bba09a3b3-result.json -> allure/1579de3e-e84f-4031-873b-769bba09a3b3-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/72061675-9d43-488e-8315-0a253f4b2dec-attachment.yaml -> allure/72061675-9d43-488e-8315-0a253f4b2dec-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1091a883-e756-47f2-8962-d0eee06d67a5-attachment.yaml -> allure/1091a883-e756-47f2-8962-d0eee06d67a5-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/318c5ffa-031d-4cba-b083-a716e5fef4ff-attachment.yaml -> allure/318c5ffa-031d-4cba-b083-a716e5fef4ff-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/696908b3-1003-42f6-aa7f-fd78e541b94c-attachment.yaml -> allure/696908b3-1003-42f6-aa7f-fd78e541b94c-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7280671b-d21b-4c68-b294-fef450118951-attachment.yaml -> allure/7280671b-d21b-4c68-b294-fef450118951-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/dce45184-5c3e-4c9b-9ebc-676d1cf54060-attachment.yaml -> allure/dce45184-5c3e-4c9b-9ebc-676d1cf54060-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/6c4bf580-0cba-4bf0-9bf0-34d659f1ecc4-attachment.yaml -> allure/6c4bf580-0cba-4bf0-9bf0-34d659f1ecc4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/8c9f1a8b-c8de-41cb-a450-699dc3906913-attachment.yaml -> allure/8c9f1a8b-c8de-41cb-a450-699dc3906913-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/369c1035-f2e7-4b1b-9f13-66db1ab81050-attachment.yaml -> allure/369c1035-f2e7-4b1b-9f13-66db1ab81050-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/cf2286ba-fb78-43b0-bbfb-750e243e5e41-attachment.yaml -> allure/cf2286ba-fb78-43b0-bbfb-750e243e5e41-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b50eec39-6f07-4459-837b-5ac5e9b70f14-attachment.yaml -> allure/b50eec39-6f07-4459-837b-5ac5e9b70f14-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1f35fb63-a654-40f8-aba5-3136196015c7-attachment.yaml -> allure/1f35fb63-a654-40f8-aba5-3136196015c7-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/eb5976e4-11b7-4026-aed2-f67dc2052d98-attachment.yaml -> allure/eb5976e4-11b7-4026-aed2-f67dc2052d98-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4c0577e2-5136-4b60-9044-1d9a60cd59df-attachment.yaml -> allure/4c0577e2-5136-4b60-9044-1d9a60cd59df-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/a7a05e45-62e3-4fb0-86f4-168ff77b8a26-attachment.yaml -> allure/a7a05e45-62e3-4fb0-86f4-168ff77b8a26-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/49a43974-b0ee-4dbe-a665-3339f7989069-attachment.yaml -> allure/49a43974-b0ee-4dbe-a665-3339f7989069-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/6e471442-8273-4a0c-b898-0d014b3408ee-result.json -> allure/6e471442-8273-4a0c-b898-0d014b3408ee-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e1a18010-0927-4b9c-9306-ebe101e34e71-attachment.yaml -> allure/e1a18010-0927-4b9c-9306-ebe101e34e71-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/16355412-6190-4605-96c9-462f0336fbf5-attachment.yaml -> allure/16355412-6190-4605-96c9-462f0336fbf5-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e883d05a-68c3-4a0a-850a-107f6ec60d4d-attachment.yaml -> allure/e883d05a-68c3-4a0a-850a-107f6ec60d4d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b12a72d2-268e-41f5-9942-a8565c5594ee-attachment.yaml -> allure/b12a72d2-268e-41f5-9942-a8565c5594ee-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5f797f7f-5a04-4346-b0f0-321f24932c94-attachment.yaml -> allure/5f797f7f-5a04-4346-b0f0-321f24932c94-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/54c67776-8570-4776-9111-8e11b59b85ff-attachment.yaml -> allure/54c67776-8570-4776-9111-8e11b59b85ff-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0e988436-5c28-4320-817c-25daba663753-attachment.yaml -> allure/0e988436-5c28-4320-817c-25daba663753-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2809e7c1-5afb-4c29-97a0-0108d26a8384-attachment.yaml -> allure/2809e7c1-5afb-4c29-97a0-0108d26a8384-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/548916b6-951b-478c-80f6-93be2cc35ff8-attachment.yaml -> allure/548916b6-951b-478c-80f6-93be2cc35ff8-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fb2c36b6-56a6-49d9-9264-f3e0c0bc3bbf-attachment.yaml -> allure/fb2c36b6-56a6-49d9-9264-f3e0c0bc3bbf-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d1234e8f-26cb-4293-829c-e59b4d1c1a16-attachment.yaml -> allure/d1234e8f-26cb-4293-829c-e59b4d1c1a16-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/15a87e94-db43-4f94-bc87-1e0d3120a7f8-attachment.yaml -> allure/15a87e94-db43-4f94-bc87-1e0d3120a7f8-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3806da8a-96df-462f-96e1-b09425b558aa-attachment.yaml -> allure/3806da8a-96df-462f-96e1-b09425b558aa-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f7dfc94e-d793-47bd-b44b-a854d875b2c0-attachment.yaml -> allure/f7dfc94e-d793-47bd-b44b-a854d875b2c0-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1df89500-558d-4af9-b563-dc56b174a6e2-attachment.yaml -> allure/1df89500-558d-4af9-b563-dc56b174a6e2-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0cc6bc97-94e5-441b-855b-75bd04bc0210-attachment.yaml -> allure/0cc6bc97-94e5-441b-855b-75bd04bc0210-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2d0ece30-f190-4220-b321-37fcd734b587-result.json -> allure/2d0ece30-f190-4220-b321-37fcd734b587-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/730c904c-c0cd-41b7-8c99-6e840ae18a17-result.json -> allure/730c904c-c0cd-41b7-8c99-6e840ae18a17-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f06e53f6-6bc1-4ea3-82b3-d3edd826c7a6-attachment.yaml -> allure/f06e53f6-6bc1-4ea3-82b3-d3edd826c7a6-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/56c3cd00-4b5f-493c-bc3d-dc3acda8129a-attachment.yaml -> allure/56c3cd00-4b5f-493c-bc3d-dc3acda8129a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/84122a0f-966a-43d5-94aa-03e324385085-attachment.yaml -> allure/84122a0f-966a-43d5-94aa-03e324385085-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b05de557-7b90-4324-8748-746b0b723a1b-attachment.yaml -> allure/b05de557-7b90-4324-8748-746b0b723a1b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0ebebf66-2e4f-4384-ad34-77afc8177af0-attachment.yaml -> allure/0ebebf66-2e4f-4384-ad34-77afc8177af0-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5fb554ac-14d2-4d99-8891-2cf8adb12b0d-attachment.yaml -> allure/5fb554ac-14d2-4d99-8891-2cf8adb12b0d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5db911e5-1387-49f6-911b-53e5eef20482-attachment.yaml -> allure/5db911e5-1387-49f6-911b-53e5eef20482-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/82c3e59b-7919-40fb-8760-038171cb82c6-result.json -> allure/82c3e59b-7919-40fb-8760-038171cb82c6-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5af070bd-64c5-4aaf-bb9d-395261690a16-attachment.yaml -> allure/5af070bd-64c5-4aaf-bb9d-395261690a16-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3491363d-b6a0-4895-a339-c1d64c046f28-attachment.yaml -> allure/3491363d-b6a0-4895-a339-c1d64c046f28-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/9b87489c-7d20-4b97-b584-b1acd50db02d-attachment.yaml -> allure/9b87489c-7d20-4b97-b584-b1acd50db02d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/a15d6c7b-c9a4-48a0-a53a-ea4fc0ea8863-attachment.yaml -> allure/a15d6c7b-c9a4-48a0-a53a-ea4fc0ea8863-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/03bd8b4c-2e6a-4e49-90cc-761472293e1e-attachment.yaml -> allure/03bd8b4c-2e6a-4e49-90cc-761472293e1e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0aec35cb-5e1a-4745-8ccb-55e13e988ffe-attachment.yaml -> allure/0aec35cb-5e1a-4745-8ccb-55e13e988ffe-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/8cb4924b-5d48-4194-ae79-8959dea693ac-attachment.yaml -> allure/8cb4924b-5d48-4194-ae79-8959dea693ac-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/776c8a47-a2a2-4983-a8c0-b9cdcf1eeab2-attachment.yaml -> allure/776c8a47-a2a2-4983-a8c0-b9cdcf1eeab2-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/531d1fd1-7a8e-45ed-9714-4c69ba126f00-attachment.yaml -> allure/531d1fd1-7a8e-45ed-9714-4c69ba126f00-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/63e4a2b4-5f5a-4a0b-8818-b435e76bd6c4-result.json -> allure/63e4a2b4-5f5a-4a0b-8818-b435e76bd6c4-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/669b1bdb-eed8-4efc-97d9-968717201825-attachment.yaml -> allure/669b1bdb-eed8-4efc-97d9-968717201825-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f51e2def-a8ea-4c68-a1bb-1c0b0f3a5bc0-result.json -> allure/f51e2def-a8ea-4c68-a1bb-1c0b0f3a5bc0-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/79e5b971-1aea-4f19-8b33-62cd175b1941-attachment.yaml -> allure/79e5b971-1aea-4f19-8b33-62cd175b1941-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/160fef82-be71-4cc5-b199-ea628f711dd9-attachment.yaml -> allure/160fef82-be71-4cc5-b199-ea628f711dd9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/37e1d41d-4e2f-4d31-be69-9638482677fb-attachment.yaml -> allure/37e1d41d-4e2f-4d31-be69-9638482677fb-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c499b1fa-c5d6-4d52-bb52-4b68bb1a6898-attachment.yaml -> allure/c499b1fa-c5d6-4d52-bb52-4b68bb1a6898-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/89f0315d-90a0-403c-9b81-7cd54d2b18e4-attachment.yaml -> allure/89f0315d-90a0-403c-9b81-7cd54d2b18e4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/639eec02-fe22-4dde-8f3d-06e112153810-attachment.yaml -> allure/639eec02-fe22-4dde-8f3d-06e112153810-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/04cd4e64-9173-4764-b9e6-0e63f3900b94-result.json -> allure/04cd4e64-9173-4764-b9e6-0e63f3900b94-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f8271f00-7644-4c8b-8aa5-b3632658fd6a-attachment.yaml -> allure/f8271f00-7644-4c8b-8aa5-b3632658fd6a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/dacdeaf8-1652-4d78-986e-25fd1251cf6a-attachment.yaml -> allure/dacdeaf8-1652-4d78-986e-25fd1251cf6a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/116f90de-b7e8-4f38-9e0e-7e1bfadf0d81-attachment.yaml -> allure/116f90de-b7e8-4f38-9e0e-7e1bfadf0d81-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c75af174-e69c-4fd0-8d80-a7868eb90ac4-attachment.yaml -> allure/c75af174-e69c-4fd0-8d80-a7868eb90ac4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b5e77904-e6e2-43b2-85f2-4c3428f8a1da-attachment.yaml -> allure/b5e77904-e6e2-43b2-85f2-4c3428f8a1da-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/634109a7-66bd-4171-91db-cf167d132dcd-attachment.yaml -> allure/634109a7-66bd-4171-91db-cf167d132dcd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/db287719-2bfa-445c-b7ea-fd403c365491-attachment.yaml -> allure/db287719-2bfa-445c-b7ea-fd403c365491-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3e85bd1e-46ca-43bb-8c7b-aff201246d6e-attachment.yaml -> allure/3e85bd1e-46ca-43bb-8c7b-aff201246d6e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0a0ee230-f8a8-4b82-8850-20f6f1cb37c3-attachment.yaml -> allure/0a0ee230-f8a8-4b82-8850-20f6f1cb37c3-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/06e897b9-11a9-4472-97a7-4fae3a9dbe46-attachment.yaml -> allure/06e897b9-11a9-4472-97a7-4fae3a9dbe46-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c1f8c1c0-5ac1-4e7e-b038-6a4401398bc9-attachment.yaml -> allure/c1f8c1c0-5ac1-4e7e-b038-6a4401398bc9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3fc2b58b-473a-4bd4-b886-c0828913773b-attachment.yaml -> allure/3fc2b58b-473a-4bd4-b886-c0828913773b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f3331c33-ad18-4118-95e5-e7d82fcd1c27-attachment.yaml -> allure/f3331c33-ad18-4118-95e5-e7d82fcd1c27-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7bc52b06-d55f-448b-a411-544ec92159b3-attachment.yaml -> allure/7bc52b06-d55f-448b-a411-544ec92159b3-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b04d4fad-cf9d-4f9f-bb3e-855f8ceb83a7-attachment.yaml -> allure/b04d4fad-cf9d-4f9f-bb3e-855f8ceb83a7-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d6a0314a-f980-47a1-8726-122833c1f56c-attachment.yaml -> allure/d6a0314a-f980-47a1-8726-122833c1f56c-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/eeab0225-131f-4429-8e5b-3a11e791df7c-result.json -> allure/eeab0225-131f-4429-8e5b-3a11e791df7c-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/42e4601d-b25b-441f-9db3-87f1731eb66a-attachment.yaml -> allure/42e4601d-b25b-441f-9db3-87f1731eb66a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/a1863860-5daa-44e7-9fe5-523cef778f8a-attachment.yaml -> allure/a1863860-5daa-44e7-9fe5-523cef778f8a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/cc6bb487-4128-4ed4-b688-9923a68caec8-attachment.yaml -> allure/cc6bb487-4128-4ed4-b688-9923a68caec8-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0a1149f8-1aec-4947-a643-79872bf77013-attachment.yaml -> allure/0a1149f8-1aec-4947-a643-79872bf77013-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3db4ae2c-806b-4fd4-97f5-f127afd2a538-attachment.yaml -> allure/3db4ae2c-806b-4fd4-97f5-f127afd2a538-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/bf204fb1-4203-451e-bd58-2e22f541a07e-attachment.yaml -> allure/bf204fb1-4203-451e-bd58-2e22f541a07e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2c1ff5d9-4647-4066-b0dc-57b9fb82cf7e-attachment.yaml -> allure/2c1ff5d9-4647-4066-b0dc-57b9fb82cf7e-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c4d281cc-5df6-4506-bc88-a8a334783c75-result.json -> allure/c4d281cc-5df6-4506-bc88-a8a334783c75-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c1f03e42-d2ed-466d-927c-58a224f68db7-attachment.yaml -> allure/c1f03e42-d2ed-466d-927c-58a224f68db7-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/aea57a64-5ade-4157-9d54-51b6046faa8a-attachment.yaml -> allure/aea57a64-5ade-4157-9d54-51b6046faa8a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/35ca3f98-7c78-438b-ad72-be824b5a18ea-attachment.yaml -> allure/35ca3f98-7c78-438b-ad72-be824b5a18ea-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/16f66e65-18a3-42b8-8b5d-b9293a499657-attachment.yaml -> allure/16f66e65-18a3-42b8-8b5d-b9293a499657-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/d04f6192-43a9-4e1c-a67c-85fbcc9ccf0b-attachment.yaml -> allure/d04f6192-43a9-4e1c-a67c-85fbcc9ccf0b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b44db61a-5eb2-479d-b487-40eaeceec8f1-attachment.yaml -> allure/b44db61a-5eb2-479d-b487-40eaeceec8f1-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7ec07fb4-905e-4d47-9518-735e97580904-attachment.yaml -> allure/7ec07fb4-905e-4d47-9518-735e97580904-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/f32292e2-de17-4ced-af92-81672ca4e242-attachment.yaml -> allure/f32292e2-de17-4ced-af92-81672ca4e242-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b5ae875e-8f8b-4e19-a119-c1735613a119-result.json -> allure/b5ae875e-8f8b-4e19-a119-c1735613a119-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c5204c42-68de-4e42-b963-ff395855a511-attachment.yaml -> allure/c5204c42-68de-4e42-b963-ff395855a511-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/8c957da4-2bdd-4d38-b7a6-5d46fe6404fb-result.json -> allure/8c957da4-2bdd-4d38-b7a6-5d46fe6404fb-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/ed94f282-fe0c-449f-a75e-4ab56ac3acca-attachment.yaml -> allure/ed94f282-fe0c-449f-a75e-4ab56ac3acca-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/ed4eb321-afce-4381-8c56-aaa64d763245-attachment.yaml -> allure/ed4eb321-afce-4381-8c56-aaa64d763245-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/aec011c7-8671-402c-b0a4-92ebe166b60f-result.json -> allure/aec011c7-8671-402c-b0a4-92ebe166b60f-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7535117e-1030-4eac-ad72-3207ec2f4f88-attachment.yaml -> allure/7535117e-1030-4eac-ad72-3207ec2f4f88-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2e7da26d-76ea-4a34-8d3e-326b32de5309-attachment.yaml -> allure/2e7da26d-76ea-4a34-8d3e-326b32de5309-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/2d7cb32c-84f4-4619-bb3d-bd662b1ab959-attachment.yaml -> allure/2d7cb32c-84f4-4619-bb3d-bd662b1ab959-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/80c2abf7-7375-44cb-9fcc-e4e7e6ac982b-attachment.yaml -> allure/80c2abf7-7375-44cb-9fcc-e4e7e6ac982b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e6735c89-ef49-4993-8b40-4a11f0887c61-attachment.yaml -> allure/e6735c89-ef49-4993-8b40-4a11f0887c61-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1a047a75-28a2-4be7-a9b0-0aac4d84a3ef-attachment.yaml -> allure/1a047a75-28a2-4be7-a9b0-0aac4d84a3ef-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7b41200f-3382-40cc-8562-97a2e4efc8cb-attachment.yaml -> allure/7b41200f-3382-40cc-8562-97a2e4efc8cb-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c63eed2f-72a3-4a74-af0e-9612ee01208b-attachment.yaml -> allure/c63eed2f-72a3-4a74-af0e-9612ee01208b-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fdb3c617-0993-43a8-88c9-c46d751d6ab9-attachment.yaml -> allure/fdb3c617-0993-43a8-88c9-c46d751d6ab9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/1dd30d98-990e-4d45-9fec-f11f2e7d42b1-attachment.yaml -> allure/1dd30d98-990e-4d45-9fec-f11f2e7d42b1-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/c61b6c8c-098a-48b4-bdcd-c81b13bad6b9-result.json -> allure/c61b6c8c-098a-48b4-bdcd-c81b13bad6b9-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/bed37ab2-9060-44c0-af27-0d6e95b005d4-attachment.yaml -> allure/bed37ab2-9060-44c0-af27-0d6e95b005d4-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4043f81f-8316-4cac-9544-222fa7877e7d-attachment.yaml -> allure/4043f81f-8316-4cac-9544-222fa7877e7d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/fd737ed0-6ebd-4a43-893e-23789e1f7886-attachment.yaml -> allure/fd737ed0-6ebd-4a43-893e-23789e1f7886-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3ba2f8a4-bae1-4c0c-a3dc-a0234b23c684-attachment.yaml -> allure/3ba2f8a4-bae1-4c0c-a3dc-a0234b23c684-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/9067e514-ee05-4315-af82-4bb1c99ce3d1-result.json -> allure/9067e514-ee05-4315-af82-4bb1c99ce3d1-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/443dae3b-b129-439a-91d8-3e785415982f-attachment.yaml -> allure/443dae3b-b129-439a-91d8-3e785415982f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/8bc1ac0a-bcb1-459e-b383-5c8cfc2500ae-attachment.yaml -> allure/8bc1ac0a-bcb1-459e-b383-5c8cfc2500ae-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/e6e568e0-3716-4d58-af78-0c8e62966f8f-attachment.yaml -> allure/e6e568e0-3716-4d58-af78-0c8e62966f8f-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3e89f0c0-633d-44d4-ba1c-382f1cd22c5c-attachment.yaml -> allure/3e89f0c0-633d-44d4-ba1c-382f1cd22c5c-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/56a408df-4849-4b76-af44-3e2d9b20de38-attachment.yaml -> allure/56a408df-4849-4b76-af44-3e2d9b20de38-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/b021e277-9c9b-4b5d-9dcd-c6cfb1ce2a62-attachment.yaml -> allure/b021e277-9c9b-4b5d-9dcd-c6cfb1ce2a62-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/52e9338b-9ea9-4c6f-94eb-cd8f0011ded9-attachment.yaml -> allure/52e9338b-9ea9-4c6f-94eb-cd8f0011ded9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/38ec0562-8be3-47b2-859e-ad976cbdf203-attachment.yaml -> allure/38ec0562-8be3-47b2-859e-ad976cbdf203-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7eca2875-e858-49fc-8786-4d68ba9168cd-attachment.yaml -> allure/7eca2875-e858-49fc-8786-4d68ba9168cd-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7d2f78ba-61ed-46b6-977f-8bd881ba8fce-attachment.yaml -> allure/7d2f78ba-61ed-46b6-977f-8bd881ba8fce-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/0a89c7b9-c773-4790-859e-b338896acae0-result.json -> allure/0a89c7b9-c773-4790-859e-b338896acae0-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/54c0b6cb-46da-4fc5-a30f-f3d1e3334ac3-attachment.yaml -> allure/54c0b6cb-46da-4fc5-a30f-f3d1e3334ac3-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/06090f42-4df6-4418-8a0f-92fa60bad1e9-attachment.yaml -> allure/06090f42-4df6-4418-8a0f-92fa60bad1e9-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/9489ebb3-12a1-4f5d-a372-a5e23637abfb-attachment.yaml -> allure/9489ebb3-12a1-4f5d-a372-a5e23637abfb-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/766d7e76-599f-4bdc-91d8-2227507ea2d0-attachment.yaml -> allure/766d7e76-599f-4bdc-91d8-2227507ea2d0-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/4c7f2ff9-0058-4f9d-a61f-2a5ecccf5f36-result.json -> allure/4c7f2ff9-0058-4f9d-a61f-2a5ecccf5f36-result.json
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/3831c6cc-c260-4143-b5ae-0cd2d060290d-attachment.yaml -> allure/3831c6cc-c260-4143-b5ae-0cd2d060290d-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/5eabe7d8-2acd-4b72-924d-03662e98db35-attachment.yaml -> allure/5eabe7d8-2acd-4b72-924d-03662e98db35-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/38828e2c-7299-4650-9894-7d70db69c66a-attachment.yaml -> allure/38828e2c-7299-4650-9894-7d70db69c66a-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7555f42b-065e-4961-ab08-08dc0d4e05ba-attachment.yaml -> allure/7555f42b-065e-4961-ab08-08dc0d4e05ba-attachment.yaml
+Moving allure/cray-power-control-hmth-test/1-non-disruptive/7f89d929-7f7a-4482-895a-5fe80b02a673-attachment.yaml -> allure/7f89d929-7f7a-4482-895a-5fe80b02a673-attachment.yaml
+Moving allure/cray-power-control-hmth-test/smoke/80f3f622-7168-4926-ab52-4a0e46e8c511-result.json -> allure/80f3f622-7168-4926-ab52-4a0e46e8c511-result.json
+Moving allure/cray-power-control-hmth-test/smoke/5f288de5-be6b-4390-8bc9-116de27f53f1-container.json -> allure/5f288de5-be6b-4390-8bc9-116de27f53f1-container.json
+Moving allure/cray-power-control-hmth-test/smoke/a9d57378-c811-4d01-bd51-9671c4a8e886-result.json -> allure/a9d57378-c811-4d01-bd51-9671c4a8e886-result.json
+Moving allure/cray-power-control-hmth-test/smoke/13c8a7cb-9ca5-440e-a40b-efc8d9d09c5c-container.json -> allure/13c8a7cb-9ca5-440e-a40b-efc8d9d09c5c-container.json
+Moving allure/cray-power-control-hmth-test/smoke/ea091f62-cddd-45e3-853c-c8406cf2b334-result.json -> allure/ea091f62-cddd-45e3-853c-c8406cf2b334-result.json
+Moving allure/cray-power-control-hmth-test/smoke/6df11547-8876-4060-9a9f-3b11bd4ad2fc-result.json -> allure/6df11547-8876-4060-9a9f-3b11bd4ad2fc-result.json
+Moving allure/cray-power-control-hmth-test/smoke/0e0f0e37-6575-4c6d-aeea-086c549ee18b-container.json -> allure/0e0f0e37-6575-4c6d-aeea-086c549ee18b-container.json
+Moving allure/cray-power-control-hmth-test/smoke/023719ee-a20b-4f34-aea1-a2b116df1f5f-result.json -> allure/023719ee-a20b-4f34-aea1-a2b116df1f5f-result.json
+Moving allure/cray-power-control-hmth-test/smoke/72809ee2-4e8b-4330-8f21-a816493035c1-container.json -> allure/72809ee2-4e8b-4330-8f21-a816493035c1-container.json
+Moving allure/cray-power-control-hmth-test/smoke/ddf3d076-042a-4b68-a752-54b362e792f0-container.json -> allure/ddf3d076-042a-4b68-a752-54b362e792f0-container.json
+Moving allure/cray-power-control-hmth-test/smoke/8bb44945-ef98-4313-b1f6-6f74fdd52c24-result.json -> allure/8bb44945-ef98-4313-b1f6-6f74fdd52c24-result.json
+Moving allure/cray-power-control-hmth-test/smoke/0089c0dd-fd33-4cdf-bfdf-ace6e7455140-container.json -> allure/0089c0dd-fd33-4cdf-bfdf-ace6e7455140-container.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/04af51cf-29e4-4436-9e5c-661ea4458ac9-attachment.yaml -> allure/04af51cf-29e4-4436-9e5c-661ea4458ac9-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/e6b1b9bf-0f49-4d6e-b0d4-1305b8abe96f-attachment.yaml -> allure/e6b1b9bf-0f49-4d6e-b0d4-1305b8abe96f-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/8ceafe32-7e26-4fec-a283-706550a359d1-attachment.yaml -> allure/8ceafe32-7e26-4fec-a283-706550a359d1-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/1514e235-f780-464f-9886-596c4a28a48b-attachment.yaml -> allure/1514e235-f780-464f-9886-596c4a28a48b-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/388a6566-6fa2-4e86-87c2-68301337992a-attachment.yaml -> allure/388a6566-6fa2-4e86-87c2-68301337992a-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/16c6a7d0-c609-45fb-ae66-abd2d5f98fa6-attachment.yaml -> allure/16c6a7d0-c609-45fb-ae66-abd2d5f98fa6-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/766de64b-ea7c-498a-b542-9e60d15d6d46-attachment.yaml -> allure/766de64b-ea7c-498a-b542-9e60d15d6d46-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/dd7e158f-c416-4794-b1ad-34c20d121bc7-attachment.yaml -> allure/dd7e158f-c416-4794-b1ad-34c20d121bc7-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/3c74d728-05d9-49a9-b3b1-dd00cfbe35bc-attachment.yaml -> allure/3c74d728-05d9-49a9-b3b1-dd00cfbe35bc-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/3677cbab-8f67-4188-8b70-4cfbd6f37639-attachment.yaml -> allure/3677cbab-8f67-4188-8b70-4cfbd6f37639-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/37b0d737-787e-49cd-84c8-ec754feee894-attachment.yaml -> allure/37b0d737-787e-49cd-84c8-ec754feee894-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/ad0fea57-f29d-4dc9-99d5-9a11197cfa24-attachment.yaml -> allure/ad0fea57-f29d-4dc9-99d5-9a11197cfa24-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/f4919376-4d89-4356-a60b-18109c5acea9-attachment.yaml -> allure/f4919376-4d89-4356-a60b-18109c5acea9-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/bb24e927-1fd4-45d2-b125-5d37588e72e3-attachment.yaml -> allure/bb24e927-1fd4-45d2-b125-5d37588e72e3-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/fae42e13-c9c4-4be5-80bc-c8bfc706a6f5-attachment.yaml -> allure/fae42e13-c9c4-4be5-80bc-c8bfc706a6f5-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/b6874d23-a64c-46a1-a86d-758a70937d0f-attachment.yaml -> allure/b6874d23-a64c-46a1-a86d-758a70937d0f-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/45878a27-a54a-450c-b5de-33a332e76299-attachment.yaml -> allure/45878a27-a54a-450c-b5de-33a332e76299-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/b52ebf75-59f2-4ff6-aa6c-2d35c5709037-attachment.yaml -> allure/b52ebf75-59f2-4ff6-aa6c-2d35c5709037-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/4a67b5b5-9fbd-4dfc-93a6-b6a949e1904e-attachment.yaml -> allure/4a67b5b5-9fbd-4dfc-93a6-b6a949e1904e-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/135936a0-141a-4a3d-80e5-e645f3eae726-attachment.yaml -> allure/135936a0-141a-4a3d-80e5-e645f3eae726-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/bddd1283-8976-4bd0-b45e-dad908cdbeb9-attachment.yaml -> allure/bddd1283-8976-4bd0-b45e-dad908cdbeb9-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/b5065fa5-d2a8-4338-ad16-e39e1665316c-attachment.yaml -> allure/b5065fa5-d2a8-4338-ad16-e39e1665316c-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/9924ae68-706f-49d3-beff-a3f1ee809ccd-attachment.yaml -> allure/9924ae68-706f-49d3-beff-a3f1ee809ccd-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/369488bb-5764-48fa-abaa-c9a34a2c7196-result.json -> allure/369488bb-5764-48fa-abaa-c9a34a2c7196-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/7202265b-8c8f-4304-9f6c-e1250691ee90-attachment.yaml -> allure/7202265b-8c8f-4304-9f6c-e1250691ee90-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/31dfc7fc-9e71-4485-b6e0-89c6643d869a-result.json -> allure/31dfc7fc-9e71-4485-b6e0-89c6643d869a-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/9cf171f6-5579-4062-baf2-1b0588687648-attachment.yaml -> allure/9cf171f6-5579-4062-baf2-1b0588687648-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/50d61fd7-7d73-407b-ae84-1eabd92cd160-attachment.yaml -> allure/50d61fd7-7d73-407b-ae84-1eabd92cd160-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/ce12a24d-2987-4276-95cf-490cb1db468b-attachment.yaml -> allure/ce12a24d-2987-4276-95cf-490cb1db468b-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/901e3627-bca2-4fbe-ad16-75a5088941e7-attachment.yaml -> allure/901e3627-bca2-4fbe-ad16-75a5088941e7-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/60adb9e9-e1f9-4dc1-9582-985d5882416c-attachment.yaml -> allure/60adb9e9-e1f9-4dc1-9582-985d5882416c-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/12b569b3-aa84-40f3-8728-45d7496596fa-attachment.yaml -> allure/12b569b3-aa84-40f3-8728-45d7496596fa-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/a5478f3d-cee1-454c-9d07-6853ad094e7f-result.json -> allure/a5478f3d-cee1-454c-9d07-6853ad094e7f-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/7dbc90a5-1759-4c1b-9c33-d79c2e08e6d8-attachment.yaml -> allure/7dbc90a5-1759-4c1b-9c33-d79c2e08e6d8-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/d62f09ba-63fd-4b79-aa50-cddbb9efc8c6-attachment.yaml -> allure/d62f09ba-63fd-4b79-aa50-cddbb9efc8c6-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/f3f2533a-9199-451e-bab3-4ab9b306cccc-attachment.yaml -> allure/f3f2533a-9199-451e-bab3-4ab9b306cccc-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/3b633a31-b3dd-41ab-af0f-d72a9278616a-attachment.yaml -> allure/3b633a31-b3dd-41ab-af0f-d72a9278616a-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/8c8f204d-0304-4df4-868f-945f68fce638-attachment.yaml -> allure/8c8f204d-0304-4df4-868f-945f68fce638-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/e5adeda0-6c7f-4be7-b36c-e9ae3afc2865-attachment.yaml -> allure/e5adeda0-6c7f-4be7-b36c-e9ae3afc2865-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/a524f8af-e0ef-49d7-addf-0c0496f6f0bb-result.json -> allure/a524f8af-e0ef-49d7-addf-0c0496f6f0bb-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/c812613f-6585-44ac-b24a-8de72e45d928-attachment.yaml -> allure/c812613f-6585-44ac-b24a-8de72e45d928-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/07d571ff-d7ab-4195-ab76-d2fccb72a347-attachment.yaml -> allure/07d571ff-d7ab-4195-ab76-d2fccb72a347-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/fbb6dcc9-c9f1-4103-b5bf-8d41cfb30283-attachment.txt -> allure/fbb6dcc9-c9f1-4103-b5bf-8d41cfb30283-attachment.txt
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/2d7fff54-61a7-407d-9e3b-767802a2a465-attachment.yaml -> allure/2d7fff54-61a7-407d-9e3b-767802a2a465-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/392577f3-1b97-413c-8165-950444ea44f2-attachment.yaml -> allure/392577f3-1b97-413c-8165-950444ea44f2-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/0d172468-4de4-448a-b193-3a027333f17c-attachment.yaml -> allure/0d172468-4de4-448a-b193-3a027333f17c-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/c507c2ce-616d-4dec-924a-14a8d53452bb-attachment.yaml -> allure/c507c2ce-616d-4dec-924a-14a8d53452bb-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/a5df18db-0b2f-4688-ba51-246febb2f0bd-attachment.yaml -> allure/a5df18db-0b2f-4688-ba51-246febb2f0bd-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/3da4a472-403f-47cd-bb62-e4927108015b-attachment.yaml -> allure/3da4a472-403f-47cd-bb62-e4927108015b-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/d7e3271a-004f-4571-b77d-6b7da1b1a095-result.json -> allure/d7e3271a-004f-4571-b77d-6b7da1b1a095-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/7f6dc532-d046-48e0-93f5-1b33f147e751-attachment.yaml -> allure/7f6dc532-d046-48e0-93f5-1b33f147e751-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/904b9021-a153-40cc-bd9f-1a793c586543-attachment.yaml -> allure/904b9021-a153-40cc-bd9f-1a793c586543-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/a499d687-391e-4f77-bf4f-afa388963a33-attachment.yaml -> allure/a499d687-391e-4f77-bf4f-afa388963a33-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/253a733d-12e0-4fa7-bd6f-03de8743149a-attachment.yaml -> allure/253a733d-12e0-4fa7-bd6f-03de8743149a-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/9871ef93-c7b0-43c6-b89f-7ca8fde0b9c7-attachment.yaml -> allure/9871ef93-c7b0-43c6-b89f-7ca8fde0b9c7-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/44a26bfa-b9b9-4775-9d7f-24e974e3e627-attachment.yaml -> allure/44a26bfa-b9b9-4775-9d7f-24e974e3e627-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/86716e52-f2bf-48e0-929b-9ba11c6aeff9-attachment.yaml -> allure/86716e52-f2bf-48e0-929b-9ba11c6aeff9-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/44b22f46-d793-4b93-b6a8-0607368c6737-attachment.yaml -> allure/44b22f46-d793-4b93-b6a8-0607368c6737-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/bb29ca41-9ef7-42e5-960b-0767d08be1f3-attachment.yaml -> allure/bb29ca41-9ef7-42e5-960b-0767d08be1f3-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/44a2ba8b-edb2-44d5-8fdc-6b6cb0a83d2d-attachment.yaml -> allure/44a2ba8b-edb2-44d5-8fdc-6b6cb0a83d2d-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/b29572e5-61b8-4081-819d-cd295262f182-attachment.yaml -> allure/b29572e5-61b8-4081-819d-cd295262f182-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/cb9f6309-00ec-4470-95c6-bd695cbdf67d-attachment.yaml -> allure/cb9f6309-00ec-4470-95c6-bd695cbdf67d-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/40222c52-8d67-4b3e-98b4-3086342daac7-attachment.yaml -> allure/40222c52-8d67-4b3e-98b4-3086342daac7-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/d66eeef8-3d64-4465-98cb-a8c49101f9c9-attachment.yaml -> allure/d66eeef8-3d64-4465-98cb-a8c49101f9c9-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/0a95212f-29e0-4e03-bf60-7b6cacc14e87-attachment.yaml -> allure/0a95212f-29e0-4e03-bf60-7b6cacc14e87-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/47bce62c-eaf5-49e9-b9ec-45352309f746-attachment.yaml -> allure/47bce62c-eaf5-49e9-b9ec-45352309f746-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/558778f2-435d-4d46-88b9-6e7c477583c4-attachment.yaml -> allure/558778f2-435d-4d46-88b9-6e7c477583c4-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/365e818c-311a-4382-bc0a-c62c73dc4c81-attachment.yaml -> allure/365e818c-311a-4382-bc0a-c62c73dc4c81-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/788f7da9-3e71-44ce-ae11-cb9b7baaceef-attachment.yaml -> allure/788f7da9-3e71-44ce-ae11-cb9b7baaceef-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/261d3805-4f07-4c0f-a246-020fa76307f4-attachment.yaml -> allure/261d3805-4f07-4c0f-a246-020fa76307f4-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/07fdd4d3-1b83-4bb3-a402-790718e8c2f1-attachment.yaml -> allure/07fdd4d3-1b83-4bb3-a402-790718e8c2f1-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/9d2e2716-32c4-4654-aa76-a7cb32b0b986-attachment.yaml -> allure/9d2e2716-32c4-4654-aa76-a7cb32b0b986-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/d777dbad-0ad2-4f8e-a004-bbb778eb5fc8-attachment.yaml -> allure/d777dbad-0ad2-4f8e-a004-bbb778eb5fc8-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/232e5bb4-a968-466b-8c1d-b48a8e1f7650-result.json -> allure/232e5bb4-a968-466b-8c1d-b48a8e1f7650-result.json
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/d384611e-a376-4e69-99a5-599d76d3a0de-attachment.yaml -> allure/d384611e-a376-4e69-99a5-599d76d3a0de-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/f4127c9f-41e8-4448-ab15-1d3d861de6d5-attachment.yaml -> allure/f4127c9f-41e8-4448-ab15-1d3d861de6d5-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/9b41dcee-4607-4f24-a324-6ab1f178164d-attachment.yaml -> allure/9b41dcee-4607-4f24-a324-6ab1f178164d-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/1-non-disruptive/8c75e81a-68aa-400d-99c9-9ba0ef3b4010-attachment.yaml -> allure/8c75e81a-68aa-400d-99c9-9ba0ef3b4010-attachment.yaml
+Moving allure/cray-firmware-action-hmth-test/smoke/efdcbc15-fbde-4f98-a5f8-7d71ff94c8a6-result.json -> allure/efdcbc15-fbde-4f98-a5f8-7d71ff94c8a6-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/2b2d3ca7-fbd3-4bba-9064-70d329304fd0-container.json -> allure/2b2d3ca7-fbd3-4bba-9064-70d329304fd0-container.json
+Moving allure/cray-firmware-action-hmth-test/smoke/3989514e-a4f6-4af2-b0d1-ab2fd11532ca-container.json -> allure/3989514e-a4f6-4af2-b0d1-ab2fd11532ca-container.json
+Moving allure/cray-firmware-action-hmth-test/smoke/1836a178-0bda-405f-b0e8-87a5a7e896c3-container.json -> allure/1836a178-0bda-405f-b0e8-87a5a7e896c3-container.json
+Moving allure/cray-firmware-action-hmth-test/smoke/f3b2614f-e0b6-40ee-aa95-a789ff31d2a9-container.json -> allure/f3b2614f-e0b6-40ee-aa95-a789ff31d2a9-container.json
+Moving allure/cray-firmware-action-hmth-test/smoke/9266dfb5-941d-47bd-885b-cd80db23878e-result.json -> allure/9266dfb5-941d-47bd-885b-cd80db23878e-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/182492f6-7417-479b-b173-06216d88d4f4-result.json -> allure/182492f6-7417-479b-b173-06216d88d4f4-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/263f71ca-d4f7-464e-94fb-502d2ab9efa7-container.json -> allure/263f71ca-d4f7-464e-94fb-502d2ab9efa7-container.json
+Moving allure/cray-firmware-action-hmth-test/smoke/499236fb-500c-4d9e-a2fc-eafc2824b093-result.json -> allure/499236fb-500c-4d9e-a2fc-eafc2824b093-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/18c5c25e-f241-4249-b246-19e9723ea1ff-result.json -> allure/18c5c25e-f241-4249-b246-19e9723ea1ff-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/aa158e65-e869-4654-a1cf-6202489b536d-result.json -> allure/aa158e65-e869-4654-a1cf-6202489b536d-result.json
+Moving allure/cray-firmware-action-hmth-test/smoke/efdfb9ac-2ea1-48ee-9fab-d838c22d2caf-container.json -> allure/efdfb9ac-2ea1-48ee-9fab-d838c22d2caf-container.json
+Moving allure/cray-smd-hmth-test/1-hardware-checks/aa052877-5bbf-4944-95bb-a826ccb62e5b-attachment.yaml -> allure/aa052877-5bbf-4944-95bb-a826ccb62e5b-attachment.yaml
+Moving allure/cray-smd-hmth-test/1-hardware-checks/74f56cd3-092c-4137-8172-e0f198343212-attachment.yaml -> allure/74f56cd3-092c-4137-8172-e0f198343212-attachment.yaml
+Moving allure/cray-smd-hmth-test/1-hardware-checks/ea7a6d9e-b2a4-4bab-b4eb-8e84c9d627a8-result.json -> allure/ea7a6d9e-b2a4-4bab-b4eb-8e84c9d627a8-result.json
+Moving allure/cray-smd-hmth-test/1-hardware-checks/0a8861a6-8ab5-4641-a499-d7a66574678a-attachment.yaml -> allure/0a8861a6-8ab5-4641-a499-d7a66574678a-attachment.yaml
+Moving allure/cray-smd-hmth-test/smoke/fbf2bc43-d55c-46b6-b552-8d944d0322d6-container.json -> allure/fbf2bc43-d55c-46b6-b552-8d944d0322d6-container.json
+Moving allure/cray-smd-hmth-test/smoke/f4230d4d-f89e-45a2-ab96-3d72213035fc-container.json -> allure/f4230d4d-f89e-45a2-ab96-3d72213035fc-container.json
+Moving allure/cray-smd-hmth-test/smoke/10deab08-9205-41cd-a0f0-ba5217f0f5a3-container.json -> allure/10deab08-9205-41cd-a0f0-ba5217f0f5a3-container.json
+Moving allure/cray-smd-hmth-test/smoke/f592b98a-dd2f-4c4e-9818-ec5b61354b34-container.json -> allure/f592b98a-dd2f-4c4e-9818-ec5b61354b34-container.json
+Moving allure/cray-smd-hmth-test/smoke/31f82a93-8bec-4f26-b5d8-a2c5b58d1a52-container.json -> allure/31f82a93-8bec-4f26-b5d8-a2c5b58d1a52-container.json
+Moving allure/cray-smd-hmth-test/smoke/b0aec77f-19fd-49c8-b7ac-07681a72cf88-container.json -> allure/b0aec77f-19fd-49c8-b7ac-07681a72cf88-container.json
+Moving allure/cray-smd-hmth-test/smoke/2dca44a1-bd98-4402-a96a-b7e63cc431c8-result.json -> allure/2dca44a1-bd98-4402-a96a-b7e63cc431c8-result.json
+Moving allure/cray-smd-hmth-test/smoke/88c7ef6c-045d-4122-b09b-a56b21dae410-result.json -> allure/88c7ef6c-045d-4122-b09b-a56b21dae410-result.json
+Moving allure/cray-smd-hmth-test/smoke/0b45644d-7b5b-4cca-a466-b3e2855273cc-result.json -> allure/0b45644d-7b5b-4cca-a466-b3e2855273cc-result.json
+Moving allure/cray-smd-hmth-test/smoke/aedf1127-4baa-4f9c-b510-7c9bf7eb6488-result.json -> allure/aedf1127-4baa-4f9c-b510-7c9bf7eb6488-result.json
+Moving allure/cray-smd-hmth-test/smoke/b934bbd6-3c9f-4901-814b-e475f00f7541-container.json -> allure/b934bbd6-3c9f-4901-814b-e475f00f7541-container.json
+Moving allure/cray-smd-hmth-test/smoke/b89769fd-330f-4fa9-869f-4671464e2d63-container.json -> allure/b89769fd-330f-4fa9-869f-4671464e2d63-container.json
+Moving allure/cray-smd-hmth-test/smoke/637ad6f8-2b7e-4161-a61f-3b184df07ac0-container.json -> allure/637ad6f8-2b7e-4161-a61f-3b184df07ac0-container.json
+Moving allure/cray-smd-hmth-test/smoke/aaed8319-cb65-4191-a7bd-cfaaff3c6a02-container.json -> allure/aaed8319-cb65-4191-a7bd-cfaaff3c6a02-container.json
+Moving allure/cray-smd-hmth-test/smoke/d9a8f8b4-ee00-408d-b8e4-0e00c31d6169-result.json -> allure/d9a8f8b4-ee00-408d-b8e4-0e00c31d6169-result.json
+Moving allure/cray-smd-hmth-test/smoke/9f75f65c-5837-487a-8a3c-1e75aec90fe3-result.json -> allure/9f75f65c-5837-487a-8a3c-1e75aec90fe3-result.json
+Moving allure/cray-smd-hmth-test/smoke/a0e53692-6111-4687-9dc1-7296140feca9-result.json -> allure/a0e53692-6111-4687-9dc1-7296140feca9-result.json
+Moving allure/cray-smd-hmth-test/smoke/c8a0a4a3-2184-4709-a011-75d7a5dd7daf-result.json -> allure/c8a0a4a3-2184-4709-a011-75d7a5dd7daf-result.json
+Moving allure/cray-smd-hmth-test/smoke/373bc4ec-3148-439b-9dd4-bb64b3379c21-result.json -> allure/373bc4ec-3148-439b-9dd4-bb64b3379c21-result.json
+Moving allure/cray-smd-hmth-test/smoke/e77688e5-f37c-42b1-b4c0-873205fed46f-result.json -> allure/e77688e5-f37c-42b1-b4c0-873205fed46f-result.json
+Moving allure/cray-smd-hmth-test/smoke/0772bc03-dff7-4457-bdfb-fd2a4c2ed937-result.json -> allure/0772bc03-dff7-4457-bdfb-fd2a4c2ed937-result.json
+Moving allure/cray-smd-hmth-test/smoke/923c1ad2-6590-4b36-8c6d-5ad0edcebabc-container.json -> allure/923c1ad2-6590-4b36-8c6d-5ad0edcebabc-container.json
+Moving allure/cray-smd-hmth-test/smoke/6a1e57f7-1534-4c56-b50e-65f4df9780d8-result.json -> allure/6a1e57f7-1534-4c56-b50e-65f4df9780d8-result.json
+Moving allure/cray-smd-hmth-test/smoke/2bd62dc0-2348-44b0-911f-36a9ef2872c7-result.json -> allure/2bd62dc0-2348-44b0-911f-36a9ef2872c7-result.json
+Moving allure/cray-smd-hmth-test/smoke/5190f1ff-f213-4d1d-95b0-a2c457818f73-result.json -> allure/5190f1ff-f213-4d1d-95b0-a2c457818f73-result.json
+Moving allure/cray-smd-hmth-test/smoke/d7038649-69fb-45d1-b236-79c770350e8f-container.json -> allure/d7038649-69fb-45d1-b236-79c770350e8f-container.json
+Moving allure/cray-smd-hmth-test/smoke/7b23d031-56f1-4710-b656-34d8b7f30eeb-result.json -> allure/7b23d031-56f1-4710-b656-34d8b7f30eeb-result.json
+Moving allure/cray-smd-hmth-test/smoke/9267f6fe-3d11-4eec-afdb-9e047eb58206-result.json -> allure/9267f6fe-3d11-4eec-afdb-9e047eb58206-result.json
+Moving allure/cray-smd-hmth-test/smoke/ddfa5de7-8472-43fa-8f8c-6034cb4f2826-container.json -> allure/ddfa5de7-8472-43fa-8f8c-6034cb4f2826-container.json
+Moving allure/cray-smd-hmth-test/smoke/028a82ff-bbb6-4ceb-bc84-9c78a36e8638-result.json -> allure/028a82ff-bbb6-4ceb-bc84-9c78a36e8638-result.json
+Moving allure/cray-smd-hmth-test/smoke/4baf307f-e0f9-4a31-bb56-f954cff90826-container.json -> allure/4baf307f-e0f9-4a31-bb56-f954cff90826-container.json
+Moving allure/cray-smd-hmth-test/smoke/5964a7e6-73ce-4158-91c8-af5395e6933c-result.json -> allure/5964a7e6-73ce-4158-91c8-af5395e6933c-result.json
+Moving allure/cray-smd-hmth-test/smoke/53300cdd-a75e-4400-ae32-f7e892df97c3-container.json -> allure/53300cdd-a75e-4400-ae32-f7e892df97c3-container.json
+Moving allure/cray-smd-hmth-test/smoke/d58e1a52-c567-49ee-8e5b-be1d5fa7d2ed-container.json -> allure/d58e1a52-c567-49ee-8e5b-be1d5fa7d2ed-container.json
+Moving allure/cray-smd-hmth-test/smoke/8e4f9e52-9b43-412d-95c9-b435c1c741d6-result.json -> allure/8e4f9e52-9b43-412d-95c9-b435c1c741d6-result.json
+Moving allure/cray-smd-hmth-test/smoke/7dd716c8-7b96-43ad-89f7-744cd1c33e6f-result.json -> allure/7dd716c8-7b96-43ad-89f7-744cd1c33e6f-result.json
+Moving allure/cray-smd-hmth-test/smoke/7eb2a974-8603-486c-94e1-cd98d3caca31-container.json -> allure/7eb2a974-8603-486c-94e1-cd98d3caca31-container.json
+Moving allure/cray-smd-hmth-test/smoke/852912f5-f426-47cf-9055-6417e935b9f1-result.json -> allure/852912f5-f426-47cf-9055-6417e935b9f1-result.json
+Moving allure/cray-smd-hmth-test/smoke/924a3fd8-390a-4b0b-b3d4-8c7ec78cc364-container.json -> allure/924a3fd8-390a-4b0b-b3d4-8c7ec78cc364-container.json
+Moving allure/cray-smd-hmth-test/smoke/2014ee78-d2c0-4d30-a4d1-bbbd1cc7072f-result.json -> allure/2014ee78-d2c0-4d30-a4d1-bbbd1cc7072f-result.json
+Moving allure/cray-smd-hmth-test/smoke/a912a055-851a-4be8-a3ca-b86f6e16274b-result.json -> allure/a912a055-851a-4be8-a3ca-b86f6e16274b-result.json
+Moving allure/cray-smd-hmth-test/smoke/c6f7668a-545c-46bc-8dd1-fd9e5970f55b-container.json -> allure/c6f7668a-545c-46bc-8dd1-fd9e5970f55b-container.json
+Moving allure/cray-smd-hmth-test/smoke/b4a574f5-6a84-4d2f-b277-43ef67f99387-container.json -> allure/b4a574f5-6a84-4d2f-b277-43ef67f99387-container.json
+Moving allure/cray-smd-hmth-test/smoke/36f8fbae-097f-4efa-b085-8e05e043d05d-result.json -> allure/36f8fbae-097f-4efa-b085-8e05e043d05d-result.json
+Moving allure/cray-smd-hmth-test/smoke/f29ff0ad-a8ae-419e-a7a0-e8fe930188e3-container.json -> allure/f29ff0ad-a8ae-419e-a7a0-e8fe930188e3-container.json
+Moving allure/cray-smd-hmth-test/smoke/42b83248-c5b4-4df9-a644-a00c29c3e7ef-container.json -> allure/42b83248-c5b4-4df9-a644-a00c29c3e7ef-container.json
+Moving allure/cray-smd-hmth-test/smoke/87e8c377-f637-4d18-ad2a-8fb9258c57c2-result.json -> allure/87e8c377-f637-4d18-ad2a-8fb9258c57c2-result.json
+Moving allure/cray-smd-hmth-test/smoke/3247d000-305c-4ddc-92d3-ef4381f3f07e-container.json -> allure/3247d000-305c-4ddc-92d3-ef4381f3f07e-container.json
+Moving allure/cray-smd-hmth-test/smoke/8ec6c466-e853-425d-9e83-292e97257a06-result.json -> allure/8ec6c466-e853-425d-9e83-292e97257a06-result.json
+Moving allure/cray-smd-hmth-test/smoke/a30af130-7c43-41c9-ba80-2895f0b618f8-container.json -> allure/a30af130-7c43-41c9-ba80-2895f0b618f8-container.json
+Moving allure/cray-smd-hmth-test/smoke/d9898ced-0b7c-4d38-8cc0-6e44f49b90a9-container.json -> allure/d9898ced-0b7c-4d38-8cc0-6e44f49b90a9-container.json
+Moving allure/cray-smd-hmth-test/smoke/d3d8c100-b278-4a4f-ab7a-cf382ba806dd-container.json -> allure/d3d8c100-b278-4a4f-ab7a-cf382ba806dd-container.json
+Moving allure/cray-smd-hmth-test/smoke/ecf50478-45c5-42a7-a8d3-c92364194eeb-result.json -> allure/ecf50478-45c5-42a7-a8d3-c92364194eeb-result.json
+Moving allure/cray-smd-hmth-test/smoke/b3f11dc7-0d7e-4545-814d-00eac9eeb3a5-container.json -> allure/b3f11dc7-0d7e-4545-814d-00eac9eeb3a5-container.json
+Moving allure/cray-smd-hmth-test/smoke/2ee6c2cf-dcb4-4f09-a255-4deab4b51863-container.json -> allure/2ee6c2cf-dcb4-4f09-a255-4deab4b51863-container.json
+Moving allure/cray-smd-hmth-test/smoke/e1b0cc81-cce3-46c4-875c-e56f2a2ba605-result.json -> allure/e1b0cc81-cce3-46c4-875c-e56f2a2ba605-result.json
+Moving allure/cray-smd-hmth-test/smoke/e56db40a-6933-4018-9628-a7603ea04d93-result.json -> allure/e56db40a-6933-4018-9628-a7603ea04d93-result.json
+Moving allure/cray-smd-hmth-test/smoke/dee26398-892c-4ca8-bd2b-eb7671576b25-container.json -> allure/dee26398-892c-4ca8-bd2b-eb7671576b25-container.json
+Moving allure/cray-smd-hmth-test/smoke/973b7283-dacb-40e1-aaf5-5ec2a501a06a-container.json -> allure/973b7283-dacb-40e1-aaf5-5ec2a501a06a-container.json
+Moving allure/cray-smd-hmth-test/smoke/48d4aa8b-2b6c-4e29-a7de-7dd79d12a260-result.json -> allure/48d4aa8b-2b6c-4e29-a7de-7dd79d12a260-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/4194cf0a-eb21-431c-9b7f-811cf263572b-attachment.yaml -> allure/4194cf0a-eb21-431c-9b7f-811cf263572b-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/24535287-2f3f-4daf-aff2-7be9a1bd8abc-attachment.yaml -> allure/24535287-2f3f-4daf-aff2-7be9a1bd8abc-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/dbd31d8f-06c2-4ddb-8dea-3750871d944d-attachment.yaml -> allure/dbd31d8f-06c2-4ddb-8dea-3750871d944d-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/4f508bb6-b935-4b66-a2b1-01a177039966-attachment.yaml -> allure/4f508bb6-b935-4b66-a2b1-01a177039966-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/b5452000-ee4d-4344-b002-deaac2d15490-attachment.yaml -> allure/b5452000-ee4d-4344-b002-deaac2d15490-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/5ee3127f-b312-4299-b9c9-42b3da0fce31-attachment.yaml -> allure/5ee3127f-b312-4299-b9c9-42b3da0fce31-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/8c7f57d1-5d77-47e5-a1d0-13f12251942a-attachment.yaml -> allure/8c7f57d1-5d77-47e5-a1d0-13f12251942a-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/0036f085-1264-4fab-9cb1-92af13bbdf38-attachment.yaml -> allure/0036f085-1264-4fab-9cb1-92af13bbdf38-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/d2975261-bab9-47ba-863c-a7fb01859786-attachment.yaml -> allure/d2975261-bab9-47ba-863c-a7fb01859786-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/f0b37e6d-deaf-45f5-9c85-03b982fad03a-result.json -> allure/f0b37e6d-deaf-45f5-9c85-03b982fad03a-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/52c26f9b-1415-41cc-93e7-71660bcce1d2-attachment.yaml -> allure/52c26f9b-1415-41cc-93e7-71660bcce1d2-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/b5020b5d-2002-4e21-9989-68754dcd48f1-attachment.yaml -> allure/b5020b5d-2002-4e21-9989-68754dcd48f1-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/f3c9d3f7-935b-4e77-b7e0-636192dbcbb5-attachment.yaml -> allure/f3c9d3f7-935b-4e77-b7e0-636192dbcbb5-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/c74ecfa0-ef07-44fc-9f7f-c00a2042ecab-attachment.yaml -> allure/c74ecfa0-ef07-44fc-9f7f-c00a2042ecab-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/87c91fa2-3e1f-40ef-87a8-030fa2c172ce-attachment.yaml -> allure/87c91fa2-3e1f-40ef-87a8-030fa2c172ce-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/5c62cce7-f8e4-437c-b973-807e7901abdb-attachment.yaml -> allure/5c62cce7-f8e4-437c-b973-807e7901abdb-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/463e3c14-b9b9-4e23-aa26-4b869b58a4e0-attachment.yaml -> allure/463e3c14-b9b9-4e23-aa26-4b869b58a4e0-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/e3c8834a-9803-472c-8204-37662e1a1153-attachment.yaml -> allure/e3c8834a-9803-472c-8204-37662e1a1153-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/19edc61a-b55f-46ce-848f-721562c81f5e-attachment.yaml -> allure/19edc61a-b55f-46ce-848f-721562c81f5e-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/5c6ff394-afa8-4456-9794-fb7a63ffd6ad-result.json -> allure/5c6ff394-afa8-4456-9794-fb7a63ffd6ad-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/e6e0e74e-dec9-4463-afa3-c51e518076f4-attachment.yaml -> allure/e6e0e74e-dec9-4463-afa3-c51e518076f4-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/0628e807-72db-4f8b-877f-7f356ac0a2f6-attachment.yaml -> allure/0628e807-72db-4f8b-877f-7f356ac0a2f6-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/7fde7409-31e3-4be0-88c5-d113d1036f87-result.json -> allure/7fde7409-31e3-4be0-88c5-d113d1036f87-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/385a700f-baa8-4c3e-a79c-3a322e29aa46-attachment.yaml -> allure/385a700f-baa8-4c3e-a79c-3a322e29aa46-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/cec06caf-8397-400a-96b4-0f6d8e411d9f-attachment.yaml -> allure/cec06caf-8397-400a-96b4-0f6d8e411d9f-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/f9978361-cd44-477d-ac44-568dd60398c5-attachment.yaml -> allure/f9978361-cd44-477d-ac44-568dd60398c5-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/e8a3b3d7-bf12-49c9-a66d-d96560fccaea-attachment.yaml -> allure/e8a3b3d7-bf12-49c9-a66d-d96560fccaea-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/1c450df6-263a-4495-b6c5-13878e64e3ec-attachment.yaml -> allure/1c450df6-263a-4495-b6c5-13878e64e3ec-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/b221b6e3-c993-4008-bb77-6355be4a8fda-attachment.yaml -> allure/b221b6e3-c993-4008-bb77-6355be4a8fda-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/80af9478-5a27-4393-96b4-117f39a391ab-attachment.yaml -> allure/80af9478-5a27-4393-96b4-117f39a391ab-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/1a7afde8-2ecf-4c5c-a5c8-46a3542c848c-attachment.yaml -> allure/1a7afde8-2ecf-4c5c-a5c8-46a3542c848c-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/be3829d0-91ec-405b-aa2f-400623481862-attachment.yaml -> allure/be3829d0-91ec-405b-aa2f-400623481862-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/d47ce855-8a60-4a70-b816-dadc5b95c15c-attachment.yaml -> allure/d47ce855-8a60-4a70-b816-dadc5b95c15c-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/aff8866b-7d94-4e83-9ccd-275b70ada8d9-attachment.yaml -> allure/aff8866b-7d94-4e83-9ccd-275b70ada8d9-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/842d2838-5e94-40f1-91a4-3d965a8bc544-result.json -> allure/842d2838-5e94-40f1-91a4-3d965a8bc544-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/233f9180-0e50-41c4-8e31-26ad4b8b4c1f-result.json -> allure/233f9180-0e50-41c4-8e31-26ad4b8b4c1f-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/c4ec490c-ba96-44c7-9f89-931366048391-attachment.yaml -> allure/c4ec490c-ba96-44c7-9f89-931366048391-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/fcfef7e7-1d82-490d-a9ad-51aa05e8dcea-attachment.yaml -> allure/fcfef7e7-1d82-490d-a9ad-51aa05e8dcea-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/a53f252a-974b-411b-9791-c772219527f6-result.json -> allure/a53f252a-974b-411b-9791-c772219527f6-result.json
+Moving allure/cray-sls-hmth-test/1-non-disruptive/d8ddeb36-0550-4e6e-93d6-3125e59e59d4-attachment.yaml -> allure/d8ddeb36-0550-4e6e-93d6-3125e59e59d4-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/82d7ba5a-d00b-4132-9aed-ccaaeb2b6680-attachment.yaml -> allure/82d7ba5a-d00b-4132-9aed-ccaaeb2b6680-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/bb33417a-3ee9-40d6-948e-a6521e5b9f45-attachment.yaml -> allure/bb33417a-3ee9-40d6-948e-a6521e5b9f45-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/78e72163-2ca6-4ce3-853a-743043eec38d-attachment.yaml -> allure/78e72163-2ca6-4ce3-853a-743043eec38d-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/09456f17-1dd1-442c-a495-aebc6f2eb62f-attachment.yaml -> allure/09456f17-1dd1-442c-a495-aebc6f2eb62f-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/61a715b8-2a5a-41e0-aad5-1c010a53b2a7-attachment.yaml -> allure/61a715b8-2a5a-41e0-aad5-1c010a53b2a7-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/6bbc885b-0641-4b99-99ad-0bc66129976c-attachment.yaml -> allure/6bbc885b-0641-4b99-99ad-0bc66129976c-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/4501580f-d5d5-4831-a46a-5026f837a5e9-attachment.yaml -> allure/4501580f-d5d5-4831-a46a-5026f837a5e9-attachment.yaml
+Moving allure/cray-sls-hmth-test/1-non-disruptive/d962d4e0-49dc-4432-a24c-e1920f1cade7-attachment.yaml -> allure/d962d4e0-49dc-4432-a24c-e1920f1cade7-attachment.yaml
+Moving allure/cray-sls-hmth-test/smoke/0d4b8187-e439-441c-be06-8af605dbae1f-container.json -> allure/0d4b8187-e439-441c-be06-8af605dbae1f-container.json
+Moving allure/cray-sls-hmth-test/smoke/4d933bb9-3cf3-46a5-a428-fd30e80db4ba-result.json -> allure/4d933bb9-3cf3-46a5-a428-fd30e80db4ba-result.json
+Moving allure/cray-sls-hmth-test/smoke/f089a396-485c-4405-8d53-f751e447e046-result.json -> allure/f089a396-485c-4405-8d53-f751e447e046-result.json
+Moving allure/cray-sls-hmth-test/smoke/345faf8a-0b08-4644-bf65-9bafcfafe709-container.json -> allure/345faf8a-0b08-4644-bf65-9bafcfafe709-container.json
+Moving allure/cray-sls-hmth-test/smoke/d5c43be7-910a-40b8-9a00-4b3c63c82888-result.json -> allure/d5c43be7-910a-40b8-9a00-4b3c63c82888-result.json
+Moving allure/cray-sls-hmth-test/smoke/b9f0f7f4-9dbf-416b-8017-dea5a15e3f41-result.json -> allure/b9f0f7f4-9dbf-416b-8017-dea5a15e3f41-result.json
+Moving allure/cray-sls-hmth-test/smoke/24e2e3d6-658e-44e7-a4d3-aeee88b52ddc-result.json -> allure/24e2e3d6-658e-44e7-a4d3-aeee88b52ddc-result.json
+Moving allure/cray-sls-hmth-test/smoke/9407302f-9eb6-4308-8421-7715a81d3a64-container.json -> allure/9407302f-9eb6-4308-8421-7715a81d3a64-container.json
+Moving allure/cray-sls-hmth-test/smoke/99ad7c93-f1de-4e3e-a73e-a830bf3660e5-result.json -> allure/99ad7c93-f1de-4e3e-a73e-a830bf3660e5-result.json
+Moving allure/cray-sls-hmth-test/smoke/088c1d57-e9e5-4fa2-98de-dd6e7fd6c4a5-container.json -> allure/088c1d57-e9e5-4fa2-98de-dd6e7fd6c4a5-container.json
+Moving allure/cray-sls-hmth-test/smoke/472c4ffd-eccc-4343-a073-afd9472a7841-container.json -> allure/472c4ffd-eccc-4343-a073-afd9472a7841-container.json
+Moving allure/cray-sls-hmth-test/smoke/94eed41b-2324-46b2-abc0-b6e4629b1880-container.json -> allure/94eed41b-2324-46b2-abc0-b6e4629b1880-container.json
+Moving allure/cray-sls-hmth-test/smoke/f1cd93f6-16aa-4060-9856-919398cb4cfb-result.json -> allure/f1cd93f6-16aa-4060-9856-919398cb4cfb-result.json
+Moving allure/cray-sls-hmth-test/smoke/09bab76c-b3f2-436e-8306-8e717e6a3cf3-container.json -> allure/09bab76c-b3f2-436e-8306-8e717e6a3cf3-container.json
+
+View allure report locally
+allure serve --host localhost allure

@@ -1,0 +1,55 @@
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Cannot find required key 'LastDiscoveryAttempt'. Path: '/RedfishEndpoints/0/DiscoveryInfo'", "Enum 'NotYetQueried' does not exist. Path: '/RedfishEndpoints/0/DiscoveryInfo/LastDiscoveryStatus' Enum: ['HTTPsGetFailed', 'DiscoveryStarted']"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'RedfishEndpoints': [{'ID': 'x9999c7s99b92', 'Type': 'NodeBMC', 'Hostname': '', 'Domain': '', 'FQDN': 'x9999c7s99b92', 'Enabled': True, 'User': '', 'Password': '', 'RediscoverOnUpdate': True, 'DiscoveryInfo': {'LastDiscoveryStatus': 'NotYetQueried'}}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Cannot find required key 'LastDiscoveryAttempt'. Path: '/RedfishEndpoints/0/DiscoveryInfo'.
+ - Enum 'NotYetQueried' does not exist. Path: '/RedfishEndpoints/0/DiscoveryInfo/LastDiscoveryStatus' Enum: ['HTTPsGetFailed', 'DiscoveryStarted'].: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7f32a7d35ee0>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Cannot find required key 'LastDiscoveryAttempt'. Path: '/RedfishEndpoints/0/DiscoveryInfo'.
+     - Enum 'NotYetQueried' does not exist. Path: '/RedfishEndpoints/0/DiscoveryInfo/LastDiscoveryStatus' Enum: ['HTTPsGetFailed', 'DiscoveryStarted'].: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Cannot find required key 'LastDiscoveryAttempt'. Path: '/RedfishEndpoints/0/DiscoveryInfo'.
+ - Enum 'NotYetQueried' does not exist. Path: '/RedfishEndpoints/0/DiscoveryInfo/LastDiscoveryStatus' Enum: ['HTTPsGetFailed', 'DiscoveryStarted'].: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError

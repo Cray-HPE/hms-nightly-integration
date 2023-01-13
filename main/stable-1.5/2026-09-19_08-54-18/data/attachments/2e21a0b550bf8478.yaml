@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  force: true
+  reason: 'CT test case: capmcAPIxnameOnPOSTmultipleOffComputeNodesPrep'
+  xnames:
+  - x3000c0s6b0n0
+  - x1000c0s3b1n1
+method: POST
+stream: false
+url: http://cray-capmc:27777/capmc/v1/xname_off
+verify: false
