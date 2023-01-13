@@ -1,0 +1,24 @@
+- name: Get membership data for a given node using API endpoint
+  request:
+    url: "{hsm_base_url}/hsm/v2/memberships/{id}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            groupLabels:
+              type: seq
+              matching: all
+              sequence:
+                - type: str
+            id:
+              type: str
+            partitionName:
+              type: str
+
+

@@ -1,0 +1,6 @@
+- name: hsmAPILocksPOSTnodes - Create 4 components for locking usage.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    json: {"Components":[{"ID":"p9999.9996","State":"Populated"},{"ID":"p9999.9997","State":"Populated"},{"ID":"p9999.9998","State":"Populated"},{"ID":"p9999.9999","State":"Populated"}]}
+

@@ -1,0 +1,35 @@
+- name: Create duplicate Bootparameters with xname specified as identifier
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s1b0n0
+      params: console=tty0
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+            title:
+              type: str
+              required: True
+            detail:
+              type: str
+              required: False
+            instance:
+              type: str
+              required: False
+            status:
+              type: int
+              required: False

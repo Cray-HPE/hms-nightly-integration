@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+method: GET
+params:
+  key: not-a-valid-metadata-key
+stream: false
+url: http://cray-bss:27778/meta-data
+verify: false

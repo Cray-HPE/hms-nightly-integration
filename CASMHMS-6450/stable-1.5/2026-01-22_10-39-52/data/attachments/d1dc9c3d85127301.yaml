@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsBulkEnabledPATCHnodes - Bulk update Node Component enabled values using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkEnabled"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["x9999c7s9b8n7","x9999c7s9b8n6"],"Enabled":false}
+  response:
+    status_code: 204
+
+

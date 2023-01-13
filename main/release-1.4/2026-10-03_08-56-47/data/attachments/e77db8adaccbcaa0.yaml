@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentIDs:
+  - p9999.9996
+  - p9999.9997
+  - p9999.9998
+  - p9999.9999
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/status
+verify: false

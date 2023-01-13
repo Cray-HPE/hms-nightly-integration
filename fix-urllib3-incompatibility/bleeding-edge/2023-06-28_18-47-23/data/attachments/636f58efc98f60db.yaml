@@ -1,0 +1,24 @@
+body:
+  automaticExpirationTime: '2023-06-29T18:18:54.705956725Z'
+  createTime: '2023-06-28T18:18:54.705956625Z'
+  operation: 'On'
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Invalid xname
+    taskStatus: failed
+    taskStatusDescription: Failed to achieve transition
+    xname: FAKE
+  transitionID: d25ebe66-cf26-46df-a9b7-e3666ce35a50
+  transitionStatus: completed
+headers:
+  Content-Length: '427'
+  Content-Type: application/json
+  Date: Wed, 28 Jun 2023 18:18:55 GMT
+redirect_query_params: {}
+status_code: 200

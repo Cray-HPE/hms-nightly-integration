@@ -1,0 +1,31 @@
+- name: Get discovery status data for a single discovery instance using API endpoint
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/DiscoveryStatus/{id}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            ID:
+              type: int
+              enum:
+                - !int "{id:d}"
+            LastUpdateTime:
+              type: timestamp
+            Status:
+              type: str
+              enum:
+                - "Complete"
+                - "NotStarted"
+            Details:
+              type: map
+              required: False
+              mapping:
+                description:
+                  type: str
+                  required: False

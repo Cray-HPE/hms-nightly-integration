@@ -1,0 +1,32 @@
+body:
+  Components:
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Alert
+    ID: x9999c7s9b9n4
+    NID: 9999999994
+    NetType: None
+    Role: Storage
+    SoftwareStatus: TestStatus4
+    State: 'On'
+    SubRole: Worker
+    Type: Node
+  - Arch: Other
+    Class: Mountain
+    Enabled: false
+    Flag: Locked
+    ID: x9999c7s9b9n3
+    NID: 9999999993
+    NetType: Sling
+    Role: Management
+    SoftwareStatus: TestStatus3
+    State: Standby
+    SubRole: Storage
+    Type: Node
+headers:
+  Content-Length: '460'
+  Content-Type: application/json
+  Date: Mon, 17 Jul 2023 20:54:41 GMT
+redirect_query_params: {}
+status_code: 200

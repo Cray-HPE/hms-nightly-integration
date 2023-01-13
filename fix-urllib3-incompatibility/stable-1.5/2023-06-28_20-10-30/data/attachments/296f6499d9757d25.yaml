@@ -1,0 +1,26 @@
+body:
+  OdataID: /redfish/v1/SessionService
+  RedfishEndpointFQDN: x3000c0s5b0
+  RedfishEndpointID: x3000c0s5b0
+  RedfishType: SessionService
+  RedfishURL: x3000c0s5b0/redfish/v1/SessionService
+  ServiceInfo:
+    '@odata.context': /redfish/v1/$metadata#SessionService.SessionService
+    '@odata.id': /redfish/v1/SessionService
+    '@odata.type': '#SessionService.v1_0_0.SessionService'
+    Id: SessionService
+    Name: Session Service
+    ServiceEnabled: true
+    SessionTimeout: 0
+    Sessions:
+      '@odata.id': /redfish/v1/SessionService/Sessions
+    Status:
+      Health: OK
+      State: Enabled
+  UUID: ''
+headers:
+  Content-Length: '581'
+  Content-Type: application/json
+  Date: Wed, 28 Jun 2023 19:44:00 GMT
+redirect_query_params: {}
+status_code: 200

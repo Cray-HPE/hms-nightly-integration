@@ -1,0 +1,7 @@
+- name: Delete existing exclusive test group Red in HSM (if present) to prevent conflict
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroupRed"
+    method: DELETE
+    verify: !bool "{verify}"
+
+

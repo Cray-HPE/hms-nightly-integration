@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTrouterModule - Create a RouterModule Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7r9","Type":"RouterModule","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocRouterModule","RouterModuleLocationInfo":{"Id":"Perif9","Name":"Perif9","Description":"","HostName":""},"PopulatedFRU":{"FRUID":"FRUIDforx9999c7r9","Type":"RouterModule","Subtype":"","HWInventoryByFRUType":"HWInvByFRURouterModule","RouterModuleFRUInfo":{"AssetTag":"","ChassisType":"Blade","Model":"Perif9","Manufacturer":"HPE","PartNumber":"","SerialNumber":"","SKU":""}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

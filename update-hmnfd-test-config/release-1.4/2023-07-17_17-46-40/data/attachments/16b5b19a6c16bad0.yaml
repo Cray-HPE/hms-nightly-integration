@@ -1,0 +1,76 @@
+- name: hsmAPIstateComponentsByNidGETnidNodeA - Retrieve an existing Component by NID using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/ByNID/9999999990"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n0"
+            Type:
+              type: str
+              required: True
+              enum:
+                - "Node"
+            State:
+              type: str
+              required: True
+              enum:
+                - "Ready"
+            Flag:
+              type: str
+              required: True
+              enum:
+                - "OK"
+            Enabled:
+              type: bool
+              required: True
+              enum:
+                - true
+            SoftwareStatus:
+              type: str
+              required: True
+              enum:
+                - "TestStatus0"
+            Role:
+              type: str
+              required: True
+              enum:
+                - "Compute"
+            SubRole:
+              type: str
+              required: True
+              enum:
+                - "Storage"
+            NID:
+              type: int
+              required: True
+              enum:
+                - 9999999990
+            NetType:
+              type: str
+              required: True
+              enum:
+                - "Sling"
+            Arch:
+              type: str
+              required: True
+              enum:
+                - "X86"
+            Class:
+              type: str
+              required: True
+              enum:
+                - "Hill"
+
+

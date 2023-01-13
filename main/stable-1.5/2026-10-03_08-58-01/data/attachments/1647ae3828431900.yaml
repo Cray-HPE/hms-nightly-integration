@@ -1,0 +1,7 @@
+- name: capmcAPIGetXnameStatus fails with HEAD method
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    method: HEAD
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

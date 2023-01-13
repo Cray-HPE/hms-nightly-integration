@@ -1,0 +1,7 @@
+- name: slsAPIReadinessGET - Ensure that the SLS readiness can be retrieved
+  request:
+    url: "{sls_base_url}/v1/readiness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

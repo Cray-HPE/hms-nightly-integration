@@ -1,0 +1,10 @@
+- name: Retrieve test container IP address
+  request:
+
+    url: "{bss_base_url}/boot/v1/service/status"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    save:
+      $ext:
+        function: bss_test_utils:save_ip_address_of_test_container

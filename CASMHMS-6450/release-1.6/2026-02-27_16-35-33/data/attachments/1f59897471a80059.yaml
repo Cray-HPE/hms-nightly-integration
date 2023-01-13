@@ -1,0 +1,8 @@
+- name: capmcAPISetPowerCap - setup5 - Set HSM Node 0 to Ready
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname0}/StateData"
+    json: {"State":"Ready"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

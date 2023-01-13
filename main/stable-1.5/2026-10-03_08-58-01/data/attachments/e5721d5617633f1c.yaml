@@ -1,0 +1,7 @@
+- name: Verify that the HMNFD readiness status can be retrieved
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/readiness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

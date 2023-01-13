@@ -1,0 +1,29 @@
+- name: slsAPINetworksGETEntryNotFound - Get an entry that does not exist
+  request:
+    url: "{sls_base_url}/v1/networks/x9999c7s9b999"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+            title:
+              type: str
+              required: True
+            detail:
+              type: str
+              required: True
+            instance:
+              type: str
+              required: True
+            status:
+              type: int
+              required: True

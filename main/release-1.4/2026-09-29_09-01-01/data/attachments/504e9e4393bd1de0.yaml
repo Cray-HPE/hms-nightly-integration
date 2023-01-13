@@ -1,0 +1,14 @@
+- name: Verify successfully querying for Nodes and get an xname for a particular Node from the response
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Components: !anything
+    save:
+      json:
+        xname: Components[0].ID
+
+

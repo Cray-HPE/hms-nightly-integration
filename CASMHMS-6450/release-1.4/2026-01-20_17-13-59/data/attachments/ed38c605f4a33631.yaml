@@ -1,0 +1,25 @@
+- name: hsmAPIinventoryHardwareHistoryXnameDELETE - Remove Hardware Inventory History entries by xname using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/History/{xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              pattern: "deleted [0-9]+ entries"
+
+

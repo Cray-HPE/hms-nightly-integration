@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsXnameNidPATCHnode - Update NID data for specific Node Component using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b8n8/NID"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"NID":9999999978}
+  response:
+    status_code: 204
+
+

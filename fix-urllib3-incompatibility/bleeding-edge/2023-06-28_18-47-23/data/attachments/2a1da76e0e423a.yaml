@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTmemory - Create a Memory Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7s9b9n9d9","Type":"Memory","Ordinal":9,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocMemory","MemoryLocationInfo":{"Id":"DIMM9","Name":"DIMM9","Description":"","MemoryLocation":{"Socket":9,"MemoryController":9,"Channel":9,"Slot":9}},"PopulatedFRU":{"FRUID":"Memory.SKHynix.HMA82GR7CJR8NXN.YBZ0215997182","Type":"Memory","Subtype":"","HWInventoryByFRUType":"HWInvByFRUMemory","MemoryFRUInfo":{"BaseModuleType":"RDIMM","BusWidthBits":72,"CapacityMiB":16384,"DataWidthBits":64,"ErrorCorrection":"Multi-bitECC","Manufacturer":"SKHynix","MemoryType":"DRAM","MemoryDeviceType":"DDR4","OperatingSpeedMhz":3200,"PartNumber":"HMA82GR7CJR8N-XN","RankCount":2,"SerialNumber":"YBZ0215997182"}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

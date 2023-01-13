@@ -1,0 +1,14 @@
+- name: Retrieve a node xname from the Components collection to use in the next stage
+  request:
+
+
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node&role=Compute"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_xname: Components[0].ID
+
+

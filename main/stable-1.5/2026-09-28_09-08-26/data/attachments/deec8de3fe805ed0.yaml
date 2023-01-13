@@ -1,0 +1,10 @@
+allow_redirects: false
+headers: {}
+json:
+  hosts:
+  - x9999c0s6b0n1
+  params: console=tty0 updated
+method: PATCH
+stream: false
+url: http://cray-bss:27778/boot/v1/bootparameters
+verify: false

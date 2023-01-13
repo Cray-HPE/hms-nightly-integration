@@ -1,0 +1,60 @@
+- name: Ensure that we can conduct a query for a specific ID from the State Change Notifications collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{ID}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            ID:
+              type: int
+              required: True
+            Subscriber:
+              type: str
+              required: True
+            Enabled:
+              type: bool
+              required: False
+            Roles:
+              type: seq
+              required: False
+              matching: all
+              sequence:
+                - type: str
+            SoftwareStatus:
+              type: seq
+              required: False
+              matching: all
+              sequence:
+                - type: str
+            States:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  enum:
+                    - "Empty"
+                    - "empty"
+                    - "Unknown"
+                    - "unknown"
+                    - "Populated"
+                    - "populated"
+                    - "Off"
+                    - "off"
+                    - "On"
+                    - "on"
+                    - "Standby"
+                    - "standby"
+                    - "Halt"
+                    - "halt"
+                    - "Ready"
+                    - "ready"
+            Url:
+              type: str
+              required: True

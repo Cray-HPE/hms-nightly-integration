@@ -1,0 +1,32 @@
+- name: Query for cloud-init user-data for the node
+
+
+
+
+  request:
+    url: "{bss_base_url}/user-data"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    headers:
+      content-type: text/yaml
+
+
+
+
+
+
+
+
+
+    verify_response_with:
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "
+      - function: bss_test_utils:validate_yaml_simple
+        extra_kwargs:
+          expected:
+            local-hostname: x9999c0s1b0n0
+            user-data-key: bar

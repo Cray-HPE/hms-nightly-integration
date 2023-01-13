@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  DeputyKeys:
+  - ID: p9999.9998
+    Key: p9999.9998:dk:73188cb9-a88a-4e5a-85db-178218d17b6b
+  - ID: p9999.9999
+    Key: p9999.9999:dk:d7531247-0b2d-4ed7-a63a-9448a1f483e7
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/locks/service/reservations/check
+verify: false

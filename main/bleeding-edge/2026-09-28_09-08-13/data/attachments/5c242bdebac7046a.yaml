@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  description: Fake test partition for HSM API testing in CT framework.
+  tags:
+  - FAKE_tag1
+  - FAKE_tag2
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/partitions/FAKE
+verify: false

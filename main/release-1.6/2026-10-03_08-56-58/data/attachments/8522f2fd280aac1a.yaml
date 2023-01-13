@@ -1,0 +1,70 @@
+- name: Retrieve all State Change Notification subscriptions
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            SubscriptionList:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: int
+                      required: True
+                    Subscriber:
+                      type: str
+                      required: True
+                    Enabled:
+                      type: bool
+                      required: False
+                    Roles:
+                      type: seq
+                      required: False
+                      matching: all
+                      sequence:
+                        - type: str
+                    SoftwareStatus:
+                      type: seq
+                      required: False
+                      matching: all
+                      sequence:
+                        - type: str
+                    States:
+                      type: seq
+                      required: True
+                      matching: all
+                      sequence:
+                        - type: str
+                          enum:
+                            - "Empty"
+                            - "empty"
+                            - "Unknown"
+                            - "unknown"
+                            - "Populated"
+                            - "populated"
+                            - "Off"
+                            - "off"
+                            - "On"
+                            - "on"
+                            - "Standby"
+                            - "standby"
+                            - "Halt"
+                            - "halt"
+                            - "Ready"
+                            - "ready"
+                    Url:
+                      type: str
+                      required: True
+

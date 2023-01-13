@@ -1,0 +1,89 @@
+- name: Verify bootparameter for x9999c0s6b0n1 was updated
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    params:
+      name: x9999c0s6b0n1
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          range:
+            max: 1
+          matching: all
+          sequence:
+          - type: map
+            mapping:
+              hosts:
+                type: seq
+                sequence:
+                - type: str
+                  enum:
+                  - x9999c0s6b0n1
+              macs:
+                type: seq
+                range:
+                  max: 0
+                sequence:
+                - type: str
+              nids:
+                type: seq
+                range:
+                  max: 0
+                sequence:
+                - type: int
+              params:
+                type: str
+                enum:
+                - console=tty0 replaced
+              kernel:
+                type: str
+                enum:
+                - s3://boot-images/00000000-0000-0000-0000-000000000003/kernel
+              initrd:
+                type: str
+                enum:
+                - s3://boot-images/00000000-0000-0000-0000-000000000003/initrd
+              cloud-init:
+                type: map
+                allowempty: true
+                mapping:
+                  meta-data:
+                    type: none
+                  user-data:
+                    type: none
+                  phone-home:
+                    type: map
+                    mapping:
+                      pub_key_dsa:
+                        type: str
+                        enum:
+                        - ""
+                      pub_key_rsa:
+                        type: str
+                        enum:
+                        - ""
+                      pub_key_ecdsa:
+                        type: str
+                        enum:
+                        - ""
+                      pub_key_ed25519:
+                        type: str
+                        enum:
+                        - ""
+                      instance_id:
+                        type: str
+                        enum:
+                        - ""
+                      hostname:
+                        type: str
+                        enum:
+                        - ""
+                      fqdn:
+                        type: str
+                        enum:
+                        - ""

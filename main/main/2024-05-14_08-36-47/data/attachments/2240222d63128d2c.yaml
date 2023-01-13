@@ -1,0 +1,197 @@
+- name: hsmAPIinventoryHardwareQueryXnameGETprocessor - Query for Processor Hardware Inventory entries by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/Query/x9999c7s9b9n9p3"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            XName:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9p3"
+            Format:
+              type: str
+              required: True
+              enum:
+                - "NestNodesOnly"
+            Processors:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n9p3"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Processor"
+                    Ordinal:
+                      type: int
+                      required: True
+                      enum:
+                        - 3
+                    Status:
+                      type: str
+                      required: True
+                      enum:
+                        - "Populated"
+                    HWInventoryByLocationType:
+                      type: str
+                      required: True
+                      enum:
+                        - "HWInvByLocProcessor"
+                    ProcessorLocationInfo:
+                      type: map
+                      required: True
+                      mapping:
+                        Id:
+                          type: str
+                          required: True
+                          enum:
+                            - "CPU3"
+                        Name:
+                          type: str
+                          required: True
+                          enum:
+                            - "Processor"
+                        Description:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        Socket:
+                          type: str
+                          required: True
+                          enum:
+                            - "CPU3"
+                    PopulatedFRU:
+                      type: map
+                      required: True
+                      mapping:
+                        FRUID:
+                          type: str
+                          required: True
+                          enum:
+                            - "Processor.AdvancedMicroDevicesInc.EWN8203534712"
+                        Type:
+                          type: str
+                          required: True
+                          enum:
+                            - "Processor"
+                        Subtype:
+                          type: str
+                          required: True
+                          enum:
+                            - ""
+                        HWInventoryByFRUType:
+                          type: str
+                          required: True
+                          enum:
+                            - "HWInvByFRUProcessor"
+                        ProcessorFRUInfo:
+                          type: map
+                          required: True
+
+                          allowempty: True
+                          mapping:
+                            InstructionSet:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            Manufacturer:
+                              type: str
+                              required: True
+                              enum:
+                                - "AdvancedMicroDevices,Inc."
+                            MaxSpeedMHz:
+                              type: int
+                              required: True
+                              enum:
+                                - 3525
+                            Model:
+                              type: str
+                              required: True
+                              enum:
+                                - "AMDEPYC776364-CoreProcessor"
+                            SerialNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - "EWN8203534712"
+                            PartNumber:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            ProcessorArchitecture:
+                              type: str
+                              required: True
+                              enum:
+                                - ""
+                            ProcessorId:
+                              type: map
+                              required: True
+                              mapping:
+                                EffectiveFamily:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - "0x19"
+                                EffectiveModel:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - "0x01"
+                                IdentificationRegisters:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - ""
+                                MicrocodeInfo:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - ""
+                                Step:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - "0x1"
+                                VendorID:
+                                  type: str
+                                  required: True
+                                  enum:
+                                    - "AuthenticAMD"
+                            ProcessorType:
+                              type: str
+                              required: True
+                              enum:
+                                - "CPU"
+                            TotalCores:
+                              type: int
+                              required: True
+                              enum:
+                                - 64
+                            TotalThreads:
+                              type: int
+                              required: True
+                              enum:
+                                - 128
+
+

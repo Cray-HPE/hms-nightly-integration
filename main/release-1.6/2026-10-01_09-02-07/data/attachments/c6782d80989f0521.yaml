@@ -1,0 +1,10 @@
+- name: Verify /partitions/partition PATCH method
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/p98"
+    json: {"description":"Test partition 1 for HSM API testing in CT framework (UPDATED).","tags":["p98_tag3","p98_tag4"]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

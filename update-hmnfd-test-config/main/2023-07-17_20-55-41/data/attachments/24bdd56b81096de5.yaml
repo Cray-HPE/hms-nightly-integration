@@ -1,0 +1,20 @@
+- name: Create or update Bootparameter for node with cloud-init data
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s1b0n0
+      params: console=tty0
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000000/kernel
+      initrd: s3://boot-images/00000000-0000-0000-0000-000000000000/initrd
+      cloud-init:
+        meta-data:
+          meta-data-key: "foo"
+          nested-data:
+            foo: bar
+        user-data:
+          user-data-key: "bar"
+  response:
+    status_code: 200

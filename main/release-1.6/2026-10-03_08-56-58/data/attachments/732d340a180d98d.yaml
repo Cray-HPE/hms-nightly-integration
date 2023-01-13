@@ -1,0 +1,8 @@
+- name: slsAPINetworksPUTexisting - update and existing entry
+  request:
+    url: "{sls_base_url}/v1/networks/dummy"
+    method: PUT
+    verify: !bool "{verify}"
+    json: { "Name": "dummy","Type": "OPA", "IPRanges":["127.0.0.1/8"] }
+  response:
+    status_code: 200

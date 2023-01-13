@@ -1,0 +1,26 @@
+- name: capmcAPIxnameOnPOSTmultipleOffComputeNodesPrep - Power the target nodes off to prepare them for the test case
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+
+    json: {"reason":"CT test case: capmcAPIxnameOnPOSTmultipleOffComputeNodesPrep","xnames":["{node_1_xname}","{node_2_xname}"],"force":true}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            "e":
+              type: int
+              required: True
+              enum:
+                - 0
+            "err_msg":
+              required: True
+              type: str
+              enum:
+                - ""
