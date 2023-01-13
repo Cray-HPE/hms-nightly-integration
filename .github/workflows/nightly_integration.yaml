@@ -224,6 +224,13 @@ jobs:
         ls artifacts
 
         find artifacts -maxdepth 3
+        for artifact_dir in ./artifacts/*; do
+          pushd "$artifact_dir"
+          
+          tar -xvf allure-results.tar
+
+          popd
+        done
 
     # - name: Allure Report action from marketplace
     #   uses: simple-elf/allure-report-action@master
