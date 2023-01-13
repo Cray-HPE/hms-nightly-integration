@@ -1,0 +1,7 @@
+- name: Ensure that we can conduct a query for a specific xname in the ServiceEndpoints collection for the EventService
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints/EventService/RedfishEndpoints/{id}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

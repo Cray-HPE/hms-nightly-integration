@@ -1,0 +1,17 @@
+- name: Verify /groups GET method with group parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups?group=hsmtestgroup1"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        label: "[0].label"
+        description: "[0].description"
+        tag1: "[0].tags[0]"
+        tag2: "[0].tags[1]"
+        member1: "[0].members.ids[0]"
+        member2: "[0].members.ids[1]"
+
+

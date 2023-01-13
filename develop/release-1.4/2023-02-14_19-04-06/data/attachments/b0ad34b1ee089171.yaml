@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSTchassisAndChassisBMC - Create Chassis and ChassisBMC Components using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7","Type":"Chassis","State":"Off","Flag":"OK","Enabled":true,"NetType":"Sling","Arch":"X86","Class":"Mountain"},{"ID":"x9999c7b0","Type":"ChassisBMC","State":"Ready","Flag":"OK","Enabled":true,"NetType":"Sling","Arch":"X86","Class":"Mountain"}],"Force":false}
+  response:
+    status_code: 204
+
+

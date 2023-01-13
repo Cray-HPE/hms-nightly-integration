@@ -1,0 +1,11 @@
+- name: hsmAPIdefaultsNodeMapsXnameDELETEnodeB - DELETE any previously leftover test NodeMap for NodeB.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/x9999c7s9b9n8"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code:
+      - 200
+      - 404
+
+

@@ -1,0 +1,5 @@
+- name: Delete component ethernet interface
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999"
+    method: DELETE
+

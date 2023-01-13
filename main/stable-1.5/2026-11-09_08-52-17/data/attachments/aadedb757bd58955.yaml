@@ -1,0 +1,10 @@
+- name: Verify /partitions POST method
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions"
+    json: {"name":"p99","description":"Test partition 2 for HSM API testing in CT framework.","tags":["p99_tag1","p99_tag2"],"members":{"ids":["{xname3}"]}}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201
+
+

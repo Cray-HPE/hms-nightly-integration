@@ -1,0 +1,35 @@
+- name: Verify /partitions/partition/members POST method non-present partition
+  request:
+    url: "{hsm_base_url}/hsm/v2/partitions/p99/members"
+    json: {"id":"{xname4}"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Not Found"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "No such partition: p99"
+            status:
+              type: int
+              required: True
+              enum:
+                - 404

@@ -1,0 +1,11 @@
+- name: capmcAPIGetXnameStatus fails with invalid filter
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"filter": "show_fake"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 400
+    json:
+      e: 400
+      err_msg: "invalid filter string: show_fake"

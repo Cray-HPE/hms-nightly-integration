@@ -1,0 +1,11 @@
+- name: capmcAPIxnameOffPUT - Verify xname_off fails with PUT method
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+    json: {"reason":"CT test case: capmcAPIxnameOffPUT","xnames":["FAKE"]}
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    json:
+      e: 405
+      err_msg: "(PUT) Not Allowed"

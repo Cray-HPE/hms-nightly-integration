@@ -1,0 +1,44 @@
+- name: hsmAPIdefaultsNodeMapsGETchanged - Retrieve an existing NodeMap that has been updated using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            NodeMaps:
+              type: seq
+              matching: "*"
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n9"
+                        - "x9999c7s9b9n8"
+                        - "x9999c7s9b9n7"
+                    NID:
+                      type: int
+                      required: True
+                      enum:
+                        - 9999999999
+                        - 9999999988
+                        - 9999999987
+                    Role:
+                      type: str
+                      required: False
+                    SubRole:
+                      type: str
+                      required: False
+
+

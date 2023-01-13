@@ -1,0 +1,34 @@
+- name: Query endpoint-history with node xname, and verify state
+  request:
+    url: "{bss_base_url}/boot/v1/endpoint-history"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      name: "{node_xname}"
+      endpoint: bootscript
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          range:
+            min: 1
+            max: 1
+          sequence:
+          - type: map
+            mapping:
+              name:
+                type: str
+                enum:
+                - "{node_xname}"
+              endpoint:
+                type: str
+                enum:
+                - bootscript
+              last_epoch:
+                type: int
+                range:
+                  min: 0

@@ -1,0 +1,16 @@
+- name: capmcAPIGetXnameStatusPOST - Validate proper number of json fields (Redfish)
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    json: {"source": "redfish"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_content
+      extra_kwargs:
+        comparisons:
+
+          - jmespath: "length(keys(@))"
+            operator: "gt"
+            expected: 2

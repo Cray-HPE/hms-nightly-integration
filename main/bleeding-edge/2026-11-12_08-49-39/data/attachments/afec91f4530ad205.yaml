@@ -1,0 +1,8 @@
+- name: capmcAPISetPowerCap - setup7 - Set HSM Node 0 to Off
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname0}/StateData"
+    json: {"State":"Off"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

@@ -1,0 +1,75 @@
+- name: hsmAPIserviceValuesTypeGET - Retrieve the valid HSM service type values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values/type"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Type:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "All"
+                    - "AllComp"
+                    - "AllSvc"
+                    - "CDU"
+                    - "CDUMgmtSwitch"
+                    - "CEC"
+                    - "CMMFpga"
+                    - "CMMRectifier"
+                    - "Cabinet"
+                    - "CabinetBMC"
+                    - "CabinetCDU"
+                    - "CabinetPDU"
+                    - "CabinetPDUController"
+                    - "CabinetPDUNic"
+                    - "CabinetPDUOutlet"
+                    - "CabinetPDUPowerConnector"
+                    - "Chassis"
+                    - "ChassisBMC"
+                    - "ChassisBMCNic"
+                    - "ComputeModule"
+                    - "Drive"
+                    - "HSNAsic"
+                    - "HSNBoard"
+                    - "HSNConnector"
+                    - "HSNConnectorPort"
+                    - "HSNLink"
+                    - "INVALID"
+                    - "Memory"
+                    - "MgmtHLSwitch"
+                    - "MgmtSwitch"
+                    - "MgmtSwitchConnector"
+                    - "Node"
+                    - "NodeAccel"
+                    - "NodeAccelRiser"
+                    - "NodeBMC"
+                    - "NodeBMCNic"
+                    - "NodeEnclosure"
+                    - "NodeEnclosurePowerSupply"
+                    - "NodeFpga"
+                    - "NodeHsnNic"
+                    - "NodeNic"
+                    - "NodePowerConnector"
+                    - "Partition"
+                    - "Processor"
+                    - "RouterBMC"
+                    - "RouterBMCNic"
+                    - "RouterFpga"
+                    - "RouterModule"
+                    - "RouterPowerConnector"
+                    - "RouterTORFpga"
+                    - "SMSBox"
+                    - "StorageGroup"
+                    - "System"

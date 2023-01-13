@@ -1,0 +1,40 @@
+- name: capmcAPISetPowerCap - test2 - set_power_cap for two ready nodes
+  request:
+    url: "{capmc_base_url}/capmc/v1/set_power_cap"
+    json:
+      nids:
+        - nid: !int "{nid0:d}"
+          controls:
+            - name: Node Power Limit
+              val: !int "{min0:d}"
+        - nid: !int "{nid1:d}"
+          controls:
+            - name: Node Power Limit
+              val: !int "{min1:d}"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+
+
+
+
+
+
+        schema:
+          type: map
+          mapping:
+            e:
+              type: int
+              required: True
+              enum:
+                - 0
+            err_msg:
+              type: str
+              required: True
+            nids:
+              type: none
+              required: False

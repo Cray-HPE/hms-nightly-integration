@@ -1,0 +1,7 @@
+- name: Verify failure when providing a valid but nonexistent xname for the SessionService in the ServiceEndpoints collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ServiceEndpoints/SessionService/RedfishEndpoints/x1025c7s4b4"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404

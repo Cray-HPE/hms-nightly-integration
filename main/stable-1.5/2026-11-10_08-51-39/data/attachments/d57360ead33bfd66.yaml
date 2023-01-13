@@ -1,0 +1,26 @@
+- name: hsmAPIstateComponentsDELETExname - Remove a specific Node Component using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9999c7s9b9n9"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "deleted 1 entry"
+
+

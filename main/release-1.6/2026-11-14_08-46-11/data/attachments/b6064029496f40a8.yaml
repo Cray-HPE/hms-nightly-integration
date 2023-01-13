@@ -1,0 +1,19 @@
+- name: Create using PUT the test {type} into SLS
+  request:
+    url: "{sls_base_url}/v1/hardware/{xname}"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      ID: "{xname}"
+      Class: River
+      ExtraProperties:
+        Role: Application
+        SubRole: Storage
+        NID: 9999999967
+        Aliases:
+        - uan999
+  response:
+    status_code:
+    - 201
+
+

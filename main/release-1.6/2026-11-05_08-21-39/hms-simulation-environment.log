@@ -1,0 +1,1811 @@
+time="2026-11-05T08:21:38Z" level=warning msg="/home/runner/work/hms-nightly-integration/hms-nightly-integration/hms-simulation-environment/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+time="2026-11-05T08:21:38Z" level=warning msg="/home/runner/work/hms-nightly-integration/hms-nightly-integration/hms-simulation-environment/docker-compose.hardware.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+cray-shared-kafka-1  | ===> User
+cray-shared-kafka-1  | uid=1000(appuser) gid=1000(appuser) groups=1000(appuser)
+cray-shared-kafka-1  | ===> Configuring ...
+x1000c0s2b0-1        | INFO:root:Starting update thread
+x1000c0s2b0-1        | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s2b0-1        | DEBUG:root:set_auth_from_env called
+x1000c0s2b0-1        | DEBUG:root:set_users called
+x1000c0s2b0-1        | DEBUG:root:Using accounts from env
+x1000c0s2b0-1        | INFO:root:Mockup folder
+x1000c0s2b0-1        | INFO:root:Init ResourceDictionary.
+x1000c0s2b0-1        | INFO:root:Generic init called for type, EX425
+x1000c0s2b0-1        | INFO:root:CreatePower put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s2b0-1        | INFO:root:CreatePower put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s2b0-1        | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s2b0-1        | INFO:root:CreateComputerSystem called
+x1000c0s2b0-1        | DEBUG:root:added config for Systems/Node0
+x1000c0s2b0-1        | INFO:root:CreateComputerSystem called
+x1000c0s2b0-1        | DEBUG:root:added config for Systems/Node1
+x1000c0s2b0-1        | INFO:root:CreateManager called
+x1000c0s2b0-1        | DEBUG:root:added config for Manager/BMC
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for BMC
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for FPGA0
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node1.BIOS
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Bootloader
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node0.BIOS
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for FPGA1
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Recovery
+x1000c0s2b0-1        | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b0-1        | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s2b0-1        | INFO:root:CreateEventService put called
+x1000c0s2b0-1        | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s2b0-1        | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s2b0-1        | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s2b0-1        | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s2b0-1        | DEBUG:root:added config for AccountService/1 - root
+x1000c0s2b0-1        | DEBUG:root:added config for AccountService
+x1000c0s2b0-1        | DEBUG:root:added config for SessionService
+x1000c0s2b0-1        | INFO:root:CreateCert called
+x1000c0s2b0-1        | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s2b0-1        | INFO:root:CreateNetworkProtocol called
+x1000c0s2b0-1        | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s2b0-1        |  * Redfish endpoint at localhost:443
+x1000c0s2b0-1        | EX425
+x1000c0s2b0-1        |  * Use HTTPS
+x1000c0s2b0-1        |  * Running in Redfish mode
+x1000c0s2b0-1        |  * Serving Flask app 'g' (lazy loading)
+x1000c0s2b0-1        |  * Environment: production
+x1000c0s2b0-1        |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s2b0-1        |    Use a production WSGI server instead.
+x1000c0s2b0-1        |  * Debug mode: off
+x1000c0s2b0-1        | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s2b0-1        |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s2b0-1        |  * Running on https://127.0.0.1:443
+x1000c0s2b0-1        |  * Running on https://172.18.0.3:443 (Press CTRL+C to quit)
+x1000c0s1b0-1        | INFO:root:Starting update thread
+x1000c0s1b0-1        | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s1b0-1        | DEBUG:root:set_auth_from_env called
+x1000c0s1b0-1        | DEBUG:root:set_users called
+x1000c0s1b0-1        | DEBUG:root:Using accounts from env
+x1000c0s1b0-1        | INFO:root:Mockup folder
+x1000c0s1b0-1        | INFO:root:Init ResourceDictionary.
+x1000c0s1b0-1         | INFO:root:Generic init called for type, EX425
+x1000c0s1b0-1         | INFO:root:CreatePower put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s1b0-1         | INFO:root:CreatePower put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s1b0-1         | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s1b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s1b0-1         | DEBUG:root:added config for Systems/Node0
+x1000c0s1b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s1b0-1         | DEBUG:root:added config for Systems/Node1
+x1000c0s1b0-1         | INFO:root:CreateManager called
+x1000c0s1b0-1         | DEBUG:root:added config for Manager/BMC
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for BMC
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for FPGA0
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node1.BIOS
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Bootloader
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node0.BIOS
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for FPGA1
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Recovery
+x1000c0s1b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b0-1         | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s1b0-1         | INFO:root:CreateEventService put called
+x1000c0s1b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s1b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s1b0-1         | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s1b0-1         | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s1b0-1         | DEBUG:root:added config for AccountService/1 - root
+x1000c0s1b0-1         | DEBUG:root:added config for AccountService
+x1000c0s1b0-1         | DEBUG:root:added config for SessionService
+x1000c0s1b0-1         | INFO:root:CreateCert called
+x1000c0s1b0-1         | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s1b0-1         | INFO:root:CreateNetworkProtocol called
+x1000c0s1b0-1         | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s1b0-1         |  * Redfish endpoint at localhost:443
+x1000c0s1b0-1         | EX425
+x1000c0s1b0-1         |  * Use HTTPS
+x1000c0s1b0-1         |  * Running in Redfish mode
+x1000c0s1b0-1         |  * Serving Flask app 'g' (lazy loading)
+x1000c0s1b0-1         |  * Environment: production
+x1000c0s1b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s1b0-1         |    Use a production WSGI server instead.
+x1000c0s1b0-1         |  * Debug mode: off
+x1000c0s1b0-1         | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s1b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s1b0-1         |  * Running on https://127.0.0.1:443
+x1000c0s1b0-1         |  * Running on https://172.18.0.14:443 (Press CTRL+C to quit)
+x1000c0b0-1           | INFO:root:Starting update thread
+x1000c0b0-1           | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0b0-1           | DEBUG:root:set_auth_from_env called
+x1000c0b0-1           | DEBUG:root:set_users called
+x1000c0b0-1           | DEBUG:root:Using accounts from env
+x1000c0b0-1           | INFO:root:Mockup folder
+x1000c0b0-1           | INFO:root:Init ResourceDictionary.
+x1000c0b0-1           | INFO:root:Generic init called for type, CMM
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade7
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif2
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif0
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Enclosure
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade5
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade0
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif3
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade2
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade3
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade4
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif5
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif1
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif4
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade6
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif6
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Blade1
+x1000c0b0-1           | INFO:root:CreateChassis called
+x1000c0b0-1           | DEBUG:root:added config for Chassis/Perif7
+x1000c0b0-1           | INFO:root:CreateManager called
+x1000c0b0-1           | DEBUG:root:added config for Manager/BMC
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Rectifier1
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for FPGA0
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Rectifier3
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for BMC
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Rectifier0
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Bootloader
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Recovery
+x1000c0b0-1           | INFO:root:CreateFirmwareTarget put called
+x1000c0b0-1           | DEBUG:root:added config for Rectifier2
+x1000c0b0-1           | INFO:root:CreateEventService put called
+x1000c0b0-1           | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0b0-1           | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0b0-1           | DEBUG:root:added config for AccountService/1 - root
+x1000c0b0-1           | DEBUG:root:added config for AccountService/3 - guest
+x1000c0b0-1           | DEBUG:root:added config for AccountService/2 - operator
+x1000c0b0-1           | DEBUG:root:added config for AccountService
+x1000c0b0-1           | DEBUG:root:added config for SessionService
+x1000c0b0-1           | INFO:root:CreateCert called
+x1000c0b0-1           | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0b0-1           | INFO:root:CreateNetworkProtocol called
+x1000c0b0-1           | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0b0-1           |  * Redfish endpoint at localhost:443
+x1000c0b0-1           | CMM
+x1000c0b0-1           |  * Use HTTPS
+x1000c0b0-1           |  * Running in Redfish mode
+x1000c0b0-1           |  * Serving Flask app 'g' (lazy loading)
+x1000c0b0-1           |  * Environment: production
+x1000c0b0-1           |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0b0-1           |    Use a production WSGI server instead.
+x1000c0b0-1           |  * Debug mode: off
+x1000c0b0-1           | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0b0-1           |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0b0-1           |  * Running on https://127.0.0.1:443
+x1000c0b0-1           |  * Running on https://172.18.0.13:443 (Press CTRL+C to quit)
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Setting log level to: TRACE\n"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=error
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Service/Instance name: 1302a058febf"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="SMS Server: http://cray-smd:27779"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="HSM Lock Enabled: true"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Vault Enabled: true"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Max Completed Records: 20000"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Completed Record Expire Time: 1440"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Using TRS_IMPLEMENTATION: LOCAL" func=main.main file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:209"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=trace msg="Init() successful" func="github.com/Cray-HPE/hms-power-control/vendor/github.com/Cray-HPE/hms-trs-app-api/v3/pkg/trs_http_api.(*TRSHTTPLocal).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/vendor/github.com/Cray-HPE/hms-trs-app-api/v3/pkg/trs_http_api/trshttp_local.go:80"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=trace msg="Init() successful" func="github.com/Cray-HPE/hms-power-control/vendor/github.com/Cray-HPE/hms-trs-app-api/v3/pkg/trs_http_api.(*TRSHTTPLocal).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/vendor/github.com/Cray-HPE/hms-trs-app-api/v3/pkg/trs_http_api/trshttp_local.go:80"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Storage Provider: ETCD" func=main.main file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:273"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="Distributed Lock Provider: ETCD" func=main.main file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:276"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="ETCD storage maximum settings, disable_size_checks: false, page_size: 5000, message_len: 130, object_size: 1570000" func="github.com/Cray-HPE/hms-power-control/internal/storage.(*ETCDStorage).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/storage/storage_etcd_impl.go:181"
+cray-power-control-1  | time="2026-11-05T08:21:36Z" level=info msg="http://cray-power-control-etcd:2379" func="github.com/Cray-HPE/hms-power-control/internal/storage.(*ETCDStorage).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/storage/storage_etcd_impl.go:198"
+cray-power-control-1  | time="2026-11-05T08:21:37Z" level=info msg="ETCD connection succeeded." func="github.com/Cray-HPE/hms-power-control/internal/storage.(*ETCDStorage).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/storage/storage_etcd_impl.go:207"
+cray-power-control-1  | time="2026-11-05T08:21:37Z" level=info msg="http://cray-power-control-etcd:2379" func="github.com/Cray-HPE/hms-power-control/internal/storage.(*ETCDLockProvider).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/storage/distlock_etcd_impl.go:76"
+cray-power-control-1  | time="2026-11-05T08:21:37Z" level=info msg="ETCD connection succeeded." func="github.com/Cray-HPE/hms-power-control/internal/storage.(*ETCDLockProvider).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/storage/distlock_etcd_impl.go:85"
+cray-power-control-1  | time="2026-11-05T08:21:38Z" level=info msg="Connected to Vault." func="github.com/Cray-HPE/hms-power-control/internal/credstore.(*VAULTv0).Init" file="/go/src/github.com/Cray-HPE/hms-power-control/internal/credstore/credstore.go:51"
+cray-power-control-1  | time="2026-11-05T08:21:38Z" level=debug msg="Starting records reaper." func=github.com/Cray-HPE/hms-power-control/internal/domain.StartRecordsReaper.func1 file="/go/src/github.com/Cray-HPE/hms-power-control/internal/domain/globals.go:98"
+cray-power-control-1  | time="2026-11-05T08:21:38Z" level=info msg="NOT starting control loop" func=main.main file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:515"
+cray-power-control-1  | time="2026-11-05T08:21:38Z" level=info msg="**RUNNING -- Listening on 28007" func=main.doRest file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:533"
+cray-power-control-1  | time="2026-11-05T08:21:38Z" level=info msg="REST collection server started on port 28007" func=main.doRest file="/go/src/github.com/Cray-HPE/hms-power-control/cmd/hms-power-control/main.go:549"
+api-gateway-1         | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+api-gateway-1         | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+api-gateway-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+api-gateway-1         | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+api-gateway-1         | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+api-gateway-1         | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+api-gateway-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+api-gateway-1         | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+api-gateway-1         | /docker-entrypoint.sh: Configuration complete; ready for start up
+x1000c0s0b0-1         | INFO:root:Starting update thread
+x1000c0s0b0-1         | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s0b0-1         | DEBUG:root:set_auth_from_env called
+x1000c0s0b0-1         | DEBUG:root:set_users called
+x1000c0s0b0-1         | DEBUG:root:Using accounts from env
+x1000c0s0b0-1         | INFO:root:Mockup folder
+x1000c0s0b0-1         | INFO:root:Init ResourceDictionary.
+x1000c0s0b0-1         | INFO:root:Generic init called for type, EX425
+x1000c0s0b0-1         | INFO:root:CreatePower put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s0b0-1         | INFO:root:CreatePower put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s0b0-1         | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s0b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s0b0-1         | DEBUG:root:added config for Systems/Node0
+x1000c0s0b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s0b0-1         | DEBUG:root:added config for Systems/Node1
+x1000c0s0b0-1         | INFO:root:CreateManager called
+x1000c0s0b0-1         | DEBUG:root:added config for Manager/BMC
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for BMC
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for FPGA0
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node1.BIOS
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Bootloader
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node0.BIOS
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for FPGA1
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Recovery
+x1000c0s0b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b0-1         | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s0b0-1         | INFO:root:CreateEventService put called
+x1000c0s0b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s0b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s0b0-1         | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s0b0-1         | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s0b0-1         | DEBUG:root:added config for AccountService/1 - root
+x1000c0s0b0-1         | DEBUG:root:added config for AccountService
+x1000c0s0b0-1         | DEBUG:root:added config for SessionService
+x1000c0s0b0-1         | INFO:root:CreateCert called
+x1000c0s0b0-1         | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s0b0-1         | INFO:root:CreateNetworkProtocol called
+x1000c0s0b0-1         | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s0b0-1         |  * Redfish endpoint at localhost:443
+x1000c0s0b0-1         | EX425
+x1000c0s0b0-1         |  * Use HTTPS
+x1000c0s0b0-1         |  * Running in Redfish mode
+x1000c0s0b0-1         |  * Serving Flask app 'g' (lazy loading)
+x1000c0s0b0-1         |  * Environment: production
+x1000c0s0b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s0b0-1         |    Use a production WSGI server instead.
+x1000c0s0b0-1         |  * Debug mode: off
+x1000c0s0b0-1         | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s0b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s0b0-1         |  * Running on https://127.0.0.1:443
+x1000c0s0b0-1         |  * Running on https://172.18.0.10:443 (Press CTRL+C to quit)
+cray-bss-1            | 2026/11/05 08:21:36 Service bss started
+cray-bss-1            | 2026/11/05 08:21:36         httpListen:           :27778
+cray-bss-1            | 2026/11/05 08:21:36         hsmBase:              http://cray-smd:27779
+cray-bss-1            | 2026/11/05 08:21:36         nfdBase:              http://cray-hmnfd:28600
+cray-bss-1            | 2026/11/05 08:21:36         datastoreBase         http://cray-bss-etcd:2379
+cray-bss-1            | 2026/11/05 08:21:36         debugFlag:            false
+cray-bss-1            | 2026/11/05 08:21:36         cacheEvictionTimeout: 600
+cray-bss-1            | 2026/11/05 08:21:36         globalDataTimeout:    1
+cray-bss-1            | 2026/11/05 08:21:36         retryDelay:           30
+cray-bss-1            | 2026/11/05 08:21:36         hsmRetrievalDelay:    10
+cray-bss-1            | 2026/11/05 08:21:36         spireServiceURL:      https://spire-tokens.spire:54440
+cray-bss-1            | 2026/11/05 08:21:36         advertiseAddress:     http://0.0.0.0:8888
+cray-bss-1            | 2026/11/05 08:21:36 Accessing state manager via http://cray-smd:27779/hsm/v2
+cray-bss-1            | 2026/11/05 08:21:36 Notification endpoint: http://bss:27778/boot/v1/scn
+cray-bss-1            | 2026/11/05 08:21:36 Attempting connection to ETCD (attempt  1 )
+cray-bss-1            | 2026/11/05 08:21:36 KV service initialized connecting to http://cray-bss-etcd:2379
+cray-bss-1            | 2026/11/05 08:21:36 WARNING: insecure https connection to spire token service
+cray-fas-etcd-1       | 2026-11-05 08:21:36.617992 I | pkg/flags: recognized and used environment variable ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618086 I | pkg/flags: recognized and used environment variable ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+cray-fas-etcd-1       | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618149 I | etcdmain: etcd Version: 3.4.7
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618159 I | etcdmain: Git SHA: e694b7bb0
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618168 I | etcdmain: Go Version: go1.12.17
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618177 I | etcdmain: Go OS/Arch: linux/amd64
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618186 I | etcdmain: setting maximum number of CPUs to 4, total number of available CPUs is 4
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618198 W | etcdmain: no data-dir provided, using default data-dir ./default.etcd
+cray-fas-etcd-1       | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618600 I | embed: name = default
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618619 I | embed: data dir = default.etcd
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618630 I | embed: member dir = default.etcd/member
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618633 I | embed: heartbeat = 100ms
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618635 I | embed: election = 1000ms
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618638 I | embed: snapshot count = 100000
+cray-fas-etcd-1       | 2026-11-05 08:21:36.618655 I | embed: advertise client URLs = http://cray-fas-etcd:2379
+cray-fas-etcd-1       | 2026-11-05 08:21:36.628749 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=()
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 0
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 1
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-fas-etcd-1       | 2026-11-05 08:21:36.636804 W | auth: simple token is not cryptographically signed
+cray-fas-etcd-1       | 2026-11-05 08:21:36.640504 I | etcdserver: starting server... [version: 3.4.7, cluster version: to_be_decided]
+cray-fas-etcd-1       | 2026-11-05 08:21:36.640665 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+cray-fas-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-fas-etcd-1       | 2026-11-05 08:21:36.641068 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+cray-fas-etcd-1       | 2026-11-05 08:21:36.643248 I | embed: listening for peers on 127.0.0.1:2380
+cray-fas-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d is starting a new election at term 1
+cray-fas-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became candidate at term 2
+cray-fas-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+cray-fas-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became leader at term 2
+cray-fas-etcd-1       | raft2026/11/05 08:21:37 INFO: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+cray-fas-etcd-1       | 2026-11-05 08:21:37.429367 I | etcdserver: setting up the initial cluster version to 3.4
+cray-fas-etcd-1       | 2026-11-05 08:21:37.529014 N | etcdserver/membership: set the initial cluster version to 3.4
+cray-fas-etcd-1       | 2026-11-05 08:21:37.529057 I | etcdserver/api: enabled capabilities for version 3.4
+cray-fas-etcd-1       | 2026-11-05 08:21:37.529097 I | etcdserver: published {Name:default ClientURLs:[http://cray-fas-etcd:2379]} to cluster cdf818194e3a8c32
+cray-fas-etcd-1       | 2026-11-05 08:21:37.529689 I | embed: ready to serve client requests
+cray-fas-etcd-1       | 2026-11-05 08:21:37.530445 N | embed: serving insecure client requests on [::]:2379, this is strongly discouraged!
+x1000c0s5b0-1         | INFO:root:Starting update thread
+x1000c0s5b0-1         | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s5b0-1         | DEBUG:root:set_auth_from_env called
+x1000c0s5b0-1         | DEBUG:root:set_users called
+x1000c0s5b0-1         | DEBUG:root:Using accounts from env
+x1000c0s5b0-1         | INFO:root:Mockup folder
+x1000c0s5b0-1         | INFO:root:Init ResourceDictionary.
+x1000c0s5b0-1         | INFO:root:Generic init called for type, EX425
+x1000c0s5b0-1         | INFO:root:CreatePower put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s5b0-1         | INFO:root:CreatePower put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s5b0-1         | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s5b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s5b0-1         | DEBUG:root:added config for Systems/Node0
+x1000c0s5b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s5b0-1         | DEBUG:root:added config for Systems/Node1
+x1000c0s5b0-1         | INFO:root:CreateManager called
+x1000c0s5b0-1         | DEBUG:root:added config for Manager/BMC
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for BMC
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for FPGA0
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node1.BIOS
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Bootloader
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node0.BIOS
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for FPGA1
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Recovery
+x1000c0s5b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b0-1         | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s5b0-1         | INFO:root:CreateEventService put called
+x1000c0s5b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s5b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s5b0-1         | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s5b0-1         | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s5b0-1         | DEBUG:root:added config for AccountService/1 - root
+x1000c0s5b0-1         | DEBUG:root:added config for AccountService
+x1000c0s5b0-1         | DEBUG:root:added config for SessionService
+x1000c0s5b0-1         | INFO:root:CreateCert called
+x1000c0s5b0-1         | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s5b0-1         | INFO:root:CreateNetworkProtocol called
+x1000c0s5b0-1         | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s5b0-1         |  * Redfish endpoint at localhost:443
+x1000c0s5b0-1         | EX425
+x1000c0s5b0-1         |  * Use HTTPS
+x1000c0s5b0-1         |  * Running in Redfish mode
+x1000c0s5b0-1         |  * Serving Flask app 'g' (lazy loading)
+x1000c0s5b0-1         |  * Environment: production
+x1000c0s5b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s5b0-1         |    Use a production WSGI server instead.
+x1000c0s5b0-1         |  * Debug mode: off
+x1000c0s5b0-1         | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s5b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s5b0-1         |  * Running on https://127.0.0.1:443
+x1000c0s5b0-1         |  * Running on https://172.18.0.12:443 (Press CTRL+C to quit)
+x1000c0s6b0-1         | INFO:root:Starting update thread
+x1000c0s6b0-1         | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s6b0-1         | DEBUG:root:set_auth_from_env called
+x1000c0s6b0-1         | DEBUG:root:set_users called
+x1000c0s6b0-1         | DEBUG:root:Using accounts from env
+x1000c0s6b0-1         | INFO:root:Mockup folder
+x1000c0s6b0-1         | INFO:root:Init ResourceDictionary.
+x1000c0s6b0-1         | INFO:root:Generic init called for type, EX425
+x1000c0s6b0-1         | INFO:root:CreatePower put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s6b0-1         | INFO:root:CreatePower put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s6b0-1         | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s6b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s6b0-1         | DEBUG:root:added config for Systems/Node0
+x1000c0s6b0-1         | INFO:root:CreateComputerSystem called
+x1000c0s6b0-1         | DEBUG:root:added config for Systems/Node1
+x1000c0s6b0-1         | INFO:root:CreateManager called
+x1000c0s6b0-1         | DEBUG:root:added config for Manager/BMC
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for BMC
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for FPGA0
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node1.BIOS
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Bootloader
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node0.BIOS
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for FPGA1
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Recovery
+x1000c0s6b0-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b0-1         | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s6b0-1         | INFO:root:CreateEventService put called
+x1000c0s6b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s6b0-1         | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s6b0-1         | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s6b0-1         | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s6b0-1         | DEBUG:root:added config for AccountService/1 - root
+x1000c0s6b0-1         | DEBUG:root:added config for AccountService
+x1000c0s6b0-1         | DEBUG:root:added config for SessionService
+x1000c0s6b0-1         | INFO:root:CreateCert called
+x1000c0s6b0-1         | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s6b0-1         | INFO:root:CreateNetworkProtocol called
+x1000c0s6b0-1         | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s6b0-1         |  * Redfish endpoint at localhost:443
+x1000c0s6b0-1         | EX425
+x1000c0s6b0-1         |  * Use HTTPS
+x1000c0s6b0-1         |  * Running in Redfish mode
+x1000c0s6b0-1         |  * Serving Flask app 'g' (lazy loading)
+x1000c0s6b0-1         |  * Environment: production
+x1000c0s6b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s6b0-1         |    Use a production WSGI server instead.
+x1000c0s6b0-1         |  * Debug mode: off
+x1000c0s6b0-1         | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s6b0-1         |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s6b0-1         |  * Running on https://127.0.0.1:443
+x1000c0s6b0-1         |  * Running on https://172.18.0.11:443 (Press CTRL+C to quit)
+x1000c0s6b1-1         | INFO:root:Starting update thread
+x1000c0s6b1-1         | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s6b1-1         | DEBUG:root:set_auth_from_env called
+x1000c0s6b1-1         | DEBUG:root:set_users called
+x1000c0s6b1-1         | DEBUG:root:Using accounts from env
+x1000c0s6b1-1         | INFO:root:Mockup folder
+x1000c0s6b1-1         | INFO:root:Init ResourceDictionary.
+x1000c0s6b1-1         | INFO:root:Generic init called for type, EX425
+x1000c0s6b1-1         | INFO:root:CreatePower put called
+x1000c0s6b1-1         | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s6b1-1         | INFO:root:CreatePower put called
+x1000c0s6b1-1         | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s6b1-1         | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s6b1-1         | INFO:root:CreateComputerSystem called
+x1000c0s6b1-1         | DEBUG:root:added config for Systems/Node0
+x1000c0s6b1-1         | INFO:root:CreateComputerSystem called
+x1000c0s6b1-1         | DEBUG:root:added config for Systems/Node1
+x1000c0s6b1-1         | INFO:root:CreateManager called
+x1000c0s6b1-1         | DEBUG:root:added config for Manager/BMC
+x1000c0s6b1-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1         | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s6b1-1         | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1         | DEBUG:root:added config for BMC
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for FPGA0
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Node1.BIOS
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Bootloader
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Node0.BIOS
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for FPGA1
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Recovery
+x1000c0s6b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s6b1-1                  | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s6b1-1                  | INFO:root:CreateEventService put called
+x1000c0s6b1-1                  | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s6b1-1                  | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s6b1-1                  | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s6b1-1                  | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s6b1-1                  | DEBUG:root:added config for AccountService/1 - root
+x1000c0s6b1-1                  | DEBUG:root:added config for AccountService
+x1000c0s6b1-1                  | DEBUG:root:added config for SessionService
+x1000c0s6b1-1                  | INFO:root:CreateCert called
+x1000c0s6b1-1                  | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s6b1-1                  | INFO:root:CreateNetworkProtocol called
+x1000c0s6b1-1                  | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s6b1-1                  |  * Redfish endpoint at localhost:443
+x1000c0s6b1-1                  | EX425
+x1000c0s6b1-1                  |  * Use HTTPS
+x1000c0s6b1-1                  |  * Running in Redfish mode
+x1000c0s6b1-1                  |  * Serving Flask app 'g' (lazy loading)
+x1000c0s6b1-1                  |  * Environment: production
+x1000c0s6b1-1                  |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s6b1-1                  |    Use a production WSGI server instead.
+x1000c0s6b1-1                  |  * Debug mode: off
+x1000c0s6b1-1                  | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s6b1-1                  |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s6b1-1                  |  * Running on https://127.0.0.1:443
+x1000c0s6b1-1                  |  * Running on https://172.18.0.9:443 (Press CTRL+C to quit)
+x1000c0s7b0-1                  | INFO:root:Starting update thread
+x1000c0s7b0-1                  | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s7b0-1                  | DEBUG:root:set_auth_from_env called
+x1000c0s7b0-1                  | DEBUG:root:set_users called
+x1000c0s7b0-1                  | DEBUG:root:Using accounts from env
+x1000c0s7b0-1                  | INFO:root:Mockup folder
+x1000c0s7b0-1                  | INFO:root:Init ResourceDictionary.
+x1000c0s7b0-1                  | INFO:root:Generic init called for type, EX425
+x1000c0s7b0-1                  | INFO:root:CreatePower put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s7b0-1                  | INFO:root:CreatePower put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s7b0-1                  | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s7b0-1                  | INFO:root:CreateComputerSystem called
+x1000c0s7b0-1                  | DEBUG:root:added config for Systems/Node0
+x1000c0s7b0-1                  | INFO:root:CreateComputerSystem called
+x1000c0s7b0-1                  | DEBUG:root:added config for Systems/Node1
+x1000c0s7b0-1                  | INFO:root:CreateManager called
+x1000c0s7b0-1                  | DEBUG:root:added config for Manager/BMC
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for BMC
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for FPGA0
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node1.BIOS
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Bootloader
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node0.BIOS
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for FPGA1
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Recovery
+x1000c0s7b0-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b0-1                  | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s7b0-1                  | INFO:root:CreateEventService put called
+x1000c0s7b0-1                  | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s7b0-1                  | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s7b0-1                  | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s7b0-1                  | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s7b0-1                  | DEBUG:root:added config for AccountService/1 - root
+x1000c0s7b0-1                  | DEBUG:root:added config for AccountService
+x1000c0s7b0-1                  | DEBUG:root:added config for SessionService
+x1000c0s7b0-1                  | INFO:root:CreateCert called
+x1000c0s7b0-1                  | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s7b0-1                  | INFO:root:CreateNetworkProtocol called
+x1000c0s7b0-1                  | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s7b0-1                  |  * Redfish endpoint at localhost:443
+x1000c0s7b0-1                  | EX425
+x1000c0s7b0-1                  |  * Use HTTPS
+x1000c0s7b0-1                  |  * Running in Redfish mode
+x1000c0s7b0-1                  |  * Serving Flask app 'g' (lazy loading)
+x1000c0s7b0-1                  |  * Environment: production
+x1000c0s7b0-1                  |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s7b0-1                  |    Use a production WSGI server instead.
+x1000c0s7b0-1                  |  * Debug mode: off
+x1000c0s7b0-1                  | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s7b0-1                  |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s7b0-1                  |  * Running on https://127.0.0.1:443
+x1000c0s7b0-1                  |  * Running on https://172.18.0.6:443 (Press CTRL+C to quit)
+x3000c0s6b0-1         | INFO:root:Starting update thread
+x3000c0s6b0-1                  | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x3000c0s6b0-1                  | DEBUG:root:set_auth_from_env called
+x3000c0s6b0-1                  | DEBUG:root:set_users called
+x3000c0s6b0-1                  | DEBUG:root:Using accounts from env
+x3000c0s6b0-1                  | INFO:root:Mockup folder
+x3000c0s6b0-1                  | INFO:root:Init ResourceDictionary.
+x3000c0s6b0-1                  | INFO:root:Generic init called for type, XL675d_A40
+x3000c0s6b0-1                  | INFO:root:CreatePower called
+x3000c0s6b0-1                  | DEBUG:root:added config for 1/Power/AccPowerService/PowerLimit
+x3000c0s6b0-1                  | INFO:root:Detected power limit schema is HPE iLO
+x3000c0s6b0-1                  | INFO:root:CreateComputerSystem called
+x3000c0s6b0-1                  | DEBUG:root:added config for Systems/1
+x3000c0s6b0-1                  | INFO:root:CreateManager called
+x3000c0s6b0-1                  | DEBUG:root:added config for Manager/1
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 1
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 2
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 3
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 4
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 5
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 6
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 7
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 8
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 9
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 10
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 11
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 12
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 13
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 14
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 15
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                  | DEBUG:root:added config for 16
+x3000c0s6b0-1                  | INFO:root:CreateFirmwareTarget put called
+cray-sls-postgres-1   | ********************************************************************************
+cray-sls-postgres-1            | WARNING: POSTGRES_HOST_AUTH_METHOD has been set to "trust". This will allow
+cray-sls-postgres-1            |          anyone with access to the Postgres port to access your database without
+cray-sls-postgres-1            |          a password, even if POSTGRES_PASSWORD is set. See PostgreSQL
+cray-sls-postgres-1            |          documentation about "trust":
+cray-sls-postgres-1            |          https://www.postgresql.org/docs/current/auth-trust.html
+cray-sls-postgres-1            |          In Docker's default configuration, this is effectively any other
+cray-sls-postgres-1            |          container on the same system.
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            |          It is not recommended to use POSTGRES_HOST_AUTH_METHOD=trust. Replace
+cray-sls-postgres-1            |          it with "-e POSTGRES_PASSWORD=password" instead to set a password in
+cray-sls-postgres-1            |          "docker run".
+cray-sls-postgres-1            | ********************************************************************************
+cray-sls-postgres-1            | The files belonging to this database system will be owned by user "postgres".
+cray-sls-postgres-1            | This user must also own the server process.
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | The database cluster will be initialized with locale "en_US.utf8".
+cray-sls-postgres-1            | The default database encoding has accordingly been set to "UTF8".
+cray-sls-postgres-1            | The default text search configuration will be set to "english".
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | Data page checksums are disabled.
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+cray-sls-postgres-1            | creating subdirectories ... ok
+cray-sls-postgres-1            | selecting default max_connections ... 100
+cray-sls-postgres-1            | selecting default shared_buffers ... 128MB
+cray-sls-postgres-1            | selecting default timezone ... UTC
+cray-sls-postgres-1            | selecting dynamic shared memory implementation ... posix
+cray-sls-postgres-1            | creating configuration files ... ok
+cray-sls-postgres-1            | running bootstrap script ... ok
+cray-sls-postgres-1            | sh: locale: not found
+cray-sls-postgres-1            | 2026-11-05 08:21:36.761 UTC [31] WARNING:  no usable system locales were found
+cray-sls-postgres-1            | performing post-bootstrap initialization ... ok
+cray-sls-postgres-1            | syncing data to disk ... ok
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | Success. You can now start the database server using:
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | WARNING: enabling "trust" authentication for local connections
+cray-sls-postgres-1            | You can change this by editing pg_hba.conf or using the option -A, or
+cray-sls-postgres-1            | --auth-local and --auth-host, the next time you run initdb.
+cray-sls-postgres-1            | waiting for server to start....2026-11-05 08:21:38.051 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+cray-sls-postgres-1            | 2026-11-05 08:21:38.065 UTC [38] LOG:  database system was shut down at 2026-11-05 08:21:37 UTC
+cray-sls-postgres-1            | 2026-11-05 08:21:38.074 UTC [37] LOG:  database system is ready to accept connections
+cray-sls-postgres-1            |  done
+cray-sls-postgres-1            | server started
+cray-sls-postgres-1            | CREATE DATABASE
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | waiting for server to shut down...2026-11-05 08:21:38.409 UTC [37] LOG:  received fast shutdown request
+cray-sls-postgres-1            | .2026-11-05 08:21:38.413 UTC [37] LOG:  aborting any active transactions
+cray-sls-postgres-1            | 2026-11-05 08:21:38.420 UTC [37] LOG:  background worker "logical replication launcher" (PID 44) exited with exit code 1
+cray-sls-postgres-1            | 2026-11-05 08:21:38.421 UTC [39] LOG:  shutting down
+cray-sls-postgres-1            | 2026-11-05 08:21:38.431 UTC [37] LOG:  database system is shut down
+cray-sls-postgres-1            |  done
+cray-sls-postgres-1            | server stopped
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | PostgreSQL init process complete; ready for start up.
+cray-sls-postgres-1            | 
+cray-sls-postgres-1            | 2026-11-05 08:21:38.525 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+cray-sls-postgres-1            | 2026-11-05 08:21:38.525 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+cray-sls-postgres-1            | 2026-11-05 08:21:38.526 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+cray-sls-postgres-1            | 2026-11-05 08:21:38.537 UTC [52] LOG:  database system was shut down at 2026-11-05 08:21:38 UTC
+cray-sls-postgres-1            | 2026-11-05 08:21:38.546 UTC [1] LOG:  database system is ready to accept connections
+x1000c0s4b1-1                  | INFO:root:Starting update thread
+x1000c0s4b1-1                  | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s4b1-1                  | DEBUG:root:set_auth_from_env called
+x1000c0s4b1-1                  | DEBUG:root:set_users called
+x1000c0s4b1-1                  | DEBUG:root:Using accounts from env
+x1000c0s4b1-1                  | INFO:root:Mockup folder
+x1000c0s4b1-1                  | INFO:root:Init ResourceDictionary.
+x1000c0s4b1-1                  | INFO:root:Generic init called for type, EX425
+x1000c0s4b1-1                  | INFO:root:CreatePower put called
+x1000c0s4b1-1                  | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s4b1-1                  | INFO:root:CreatePower put called
+x1000c0s4b1-1                  | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s4b1-1                  | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s4b1-1                  | INFO:root:CreateComputerSystem called
+x1000c0s4b1-1                  | DEBUG:root:added config for Systems/Node0
+x1000c0s4b1-1                  | INFO:root:CreateComputerSystem called
+x1000c0s4b1-1                  | DEBUG:root:added config for Systems/Node1
+x1000c0s4b1-1                  | INFO:root:CreateManager called
+x1000c0s4b1-1                  | DEBUG:root:added config for Manager/BMC
+x1000c0s4b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                  | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s4b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                  | DEBUG:root:added config for BMC
+x1000c0s4b1-1                  | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                  | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s4b1-1                  | INFO:root:CreateFirmwareTarget put called
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6689627,"msg":"Extended logging config","modes":"","xnames":"","supported modes":["errors"]}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6689851,"msg":"Service/Instance name:","":"34fb88a96111"}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6690161,"msg":"hmcollector starting...","logLevel":"info"}
+cray-hms-hmcollector-ingress-1  | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-hms-hmcollector-ingress-1  | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.669745,"msg":"All RF threads paused."}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6698515,"msg":"Creating Redfish HTTP client without CA trust bundle."}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6698976,"msg":"Redfish HTTP client pair creation succeeded."}
+cray-hms-hmcollector-ingress-1  | {"level":"warn","ts":1793866896.6699066,"msg":"No CA bundle URI specified, not watching for CA changes."}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.66992,"msg":"REST collection endpoint enabled."}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.669928,"msg":"Starting rest server."}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6699834,"msg":"REST server started.","portStr":"80"}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.6707952,"msg":"Connecting to Kafka broker...","BrokerAddress":"cray-shared-kafka:9092"}
+cray-hms-hmcollector-ingress-1  | {"level":"info","ts":1793866896.685845,"msg":"Connected to Kafka broker.","broker":"Broker Address: cray-shared-kafka:9092, Topics: [cray-dmtf-resource-event]"}
+cray-hms-hmcollector-ingress-1  | {"level":"error","ts":1793866897.686123,"msg":"No brokers to ping..."}
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716053 I | pkg/flags: recognized and used environment variable ETCD_ADVERTISE_CLIENT_URLS=http://cray-power-control-etcd:2379
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716117 I | pkg/flags: recognized and used environment variable ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+cray-power-control-etcd-1       | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716165 I | etcdmain: etcd Version: 3.4.7
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716167 I | etcdmain: Git SHA: e694b7bb0
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716170 I | etcdmain: Go Version: go1.12.17
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716172 I | etcdmain: Go OS/Arch: linux/amd64
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716175 I | etcdmain: setting maximum number of CPUs to 4, total number of available CPUs is 4
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716180 W | etcdmain: no data-dir provided, using default data-dir ./default.etcd
+cray-power-control-etcd-1       | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716629 I | embed: name = default
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716633 I | embed: data dir = default.etcd
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716636 I | embed: member dir = default.etcd/member
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716639 I | embed: heartbeat = 100ms
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716641 I | embed: election = 1000ms
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716643 I | embed: snapshot count = 100000
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.716660 I | embed: advertise client URLs = http://cray-power-control-etcd:2379
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.720928 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=()
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 0
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 1
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.728298 W | auth: simple token is not cryptographically signed
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.731005 I | etcdserver: starting server... [version: 3.4.7, cluster version: to_be_decided]
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.733784 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+cray-power-control-etcd-1       | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.734181 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+cray-power-control-etcd-1       | 2026-11-05 08:21:36.735907 I | embed: listening for peers on 127.0.0.1:2380
+cray-power-control-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d is starting a new election at term 1
+cray-power-control-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became candidate at term 2
+cray-power-control-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+cray-power-control-etcd-1       | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became leader at term 2
+cray-power-control-etcd-1       | raft2026/11/05 08:21:37 INFO: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.422614 I | etcdserver: published {Name:default ClientURLs:[http://cray-power-control-etcd:2379]} to cluster cdf818194e3a8c32
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.422673 I | embed: ready to serve client requests
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.422805 I | etcdserver: setting up the initial cluster version to 3.4
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.423404 N | embed: serving insecure client requests on [::]:2379, this is strongly discouraged!
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.528769 N | etcdserver/membership: set the initial cluster version to 3.4
+cray-power-control-etcd-1       | 2026-11-05 08:21:37.538040 I | etcdserver/api: enabled capabilities for version 3.4
+x1000c0s3b0-1         | INFO:root:Starting update thread
+x1000c0s3b0-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s3b0-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s3b0-1                   | DEBUG:root:set_users called
+x1000c0s3b0-1                   | DEBUG:root:Using accounts from env
+x1000c0s3b0-1                   | INFO:root:Mockup folder
+x1000c0s3b0-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s3b0-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s3b0-1                   | INFO:root:CreatePower put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s3b0-1                   | INFO:root:CreatePower put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s3b0-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s3b0-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b0-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s3b0-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b0-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s3b0-1                   | INFO:root:CreateManager called
+x1000c0s3b0-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for BMC
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for FPGA0
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Bootloader
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for FPGA1
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Recovery
+x1000c0s3b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b0-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s3b0-1                   | INFO:root:CreateEventService put called
+x1000c0s3b0-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s3b0-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s3b0-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s3b0-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s3b0-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s3b0-1                   | DEBUG:root:added config for AccountService
+x1000c0s3b0-1                   | DEBUG:root:added config for SessionService
+x1000c0s3b0-1                   | INFO:root:CreateCert called
+x1000c0s3b0-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s3b0-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s3b0-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s3b0-1                   |  * Redfish endpoint at localhost:443
+x1000c0s3b0-1                   | EX425
+x1000c0s3b0-1                   |  * Use HTTPS
+x1000c0s3b0-1                   |  * Running in Redfish mode
+x1000c0s3b0-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s3b0-1                   |  * Environment: production
+x1000c0s3b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s3b0-1                   |    Use a production WSGI server instead.
+x1000c0s3b0-1                   |  * Debug mode: off
+x1000c0s3b0-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s3b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s3b0-1                   |  * Running on https://127.0.0.1:443
+x1000c0s3b0-1                   |  * Running on https://172.18.0.17:443 (Press CTRL+C to quit)
+cray-sls-1            | Running /bin/sh
+cray-sls-1                      | + echo 'Running /bin/sh'
+cray-sls-1                      | + '[' /bin/sh '=' sls-init ]
+cray-sls-1                      | + '[' /bin/sh '=' sls-loader ]
+cray-sls-1                      | + exec /bin/sh -c sls
+cray-sls-1                      | 2026/11/05 08:21:37 INFO: Starting SLS
+cray-sls-1                      | 2026/11/05 08:21:37 INFO: Caching layer is disabled
+cray-sls-1                      | 2026/11/05 08:21:37 DEBUG: Parsing command line options
+cray-sls-1                      | 2026/11/05 08:21:37 INFO: Configuration: HTTP Listen Address: :8376
+cray-sls-1                      | 2026/11/05 08:21:37 INFO: Backing datastore: 
+cray-sls-1                      | 2026/11/05 08:21:37 DEBUG: Done parsing command line options
+cray-sls-1                      | 2026/11/05 08:21:37 DEBUG: Connecting to database...
+cray-sls-1                      | 2026/11/05 08:21:37 Max database connections: 25
+cray-sls-1                      | 2026/11/05 08:21:37 DB connection failed ('dial tcp 172.18.0.21:5432: connect: connection refused'), retrying after 1 second...
+cray-bss-etcd-1       | 2026-11-05 08:21:36.805839 I | pkg/flags: recognized and used environment variable ETCD_ADVERTISE_CLIENT_URLS=http://cray-bss-etcd:2379
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806020 I | pkg/flags: recognized and used environment variable ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+cray-bss-etcd-1                 | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806134 I | etcdmain: etcd Version: 3.4.7
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806138 I | etcdmain: Git SHA: e694b7bb0
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806141 I | etcdmain: Go Version: go1.12.17
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806143 I | etcdmain: Go OS/Arch: linux/amd64
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806146 I | etcdmain: setting maximum number of CPUs to 4, total number of available CPUs is 4
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806152 W | etcdmain: no data-dir provided, using default data-dir ./default.etcd
+cray-bss-etcd-1                 | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806781 I | embed: name = default
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806825 I | embed: data dir = default.etcd
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806838 I | embed: member dir = default.etcd/member
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806881 I | embed: heartbeat = 100ms
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806885 I | embed: election = 1000ms
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806887 I | embed: snapshot count = 100000
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.806902 I | embed: advertise client URLs = http://cray-bss-etcd:2379
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.809300 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=()
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 0
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 1
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.811711 W | auth: simple token is not cryptographically signed
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.812349 I | etcdserver: starting server... [version: 3.4.7, cluster version: to_be_decided]
+cray-bss-etcd-1                 | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.817152 I | embed: listening for peers on 127.0.0.1:2380
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.817417 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+cray-bss-etcd-1                 | 2026-11-05 08:21:36.817531 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+cray-bss-etcd-1                 | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d is starting a new election at term 1
+cray-bss-etcd-1                 | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became candidate at term 2
+cray-bss-etcd-1                 | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+cray-bss-etcd-1                 | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became leader at term 2
+cray-bss-etcd-1                 | raft2026/11/05 08:21:37 INFO: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.710334 I | etcdserver: setting up the initial cluster version to 3.4
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.738576 N | etcdserver/membership: set the initial cluster version to 3.4
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.738673 I | etcdserver: published {Name:default ClientURLs:[http://cray-bss-etcd:2379]} to cluster cdf818194e3a8c32
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.739009 I | etcdserver/api: enabled capabilities for version 3.4
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.739048 I | embed: ready to serve client requests
+cray-bss-etcd-1                 | 2026-11-05 08:21:37.739689 N | embed: serving insecure client requests on [::]:2379, this is strongly discouraged!
+s3-1                  | INFO: WARNING: MINIO_ACCESS_KEY and MINIO_SECRET_KEY are deprecated.
+s3-1                            |          Please use MINIO_ROOT_USER and MINIO_ROOT_PASSWORD
+s3-1                            | INFO: Formatting 1st pool, 1 set(s), 1 drives per set.
+s3-1                            | INFO: WARNING: Host local has more than 0 drives of set. A host failure will result in data becoming unavailable.
+s3-1                            | MinIO Object Storage Server
+s3-1                            | Copyright: 2015-2026 MinIO, Inc.
+s3-1                            | License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+s3-1                            | Version: RELEASE.2025-09-07T16-13-09Z (go1.24.6 linux/amd64)
+s3-1                            | 
+s3-1                            | API: http://172.19.0.2:9000  http://127.0.0.1:9000 
+s3-1                            | WebUI: http://172.19.0.2:38675 http://127.0.0.1:38675  
+s3-1                            | 
+s3-1                            | Docs: https://docs.min.io
+cray-sls-init-1       | + echo 'Running sls-init'
+cray-sls-init-1                 | + '[' sls-init '=' sls-init ]
+cray-sls-init-1                 | + '[' '!' -d /persistent_migrations ]
+cray-sls-init-1                 | + cp /migrations/1_add_tables.down.sql /migrations/1_add_tables.up.sql /migrations/2_add_tables.down.sql /migrations/2_add_tables.up.sql /migrations/3_add_epoch.down.sql /migrations/3_add_epoch.up.sql /persistent_migrations/
+cray-sls-init-1                 | + echo 'Migrations copied to persistent location.'
+cray-sls-init-1                 | Running sls-init
+cray-sls-init-1                 | Migrations copied to persistent location.
+cray-sls-init-1                 | + exec sls-init
+cray-sls-init-1                 | 2026/11/05 08:21:37 Beginning migration...
+cray-sls-init-1                 | 2026/11/05 08:21:37 Max database connections: 25
+cray-sls-init-1                 | 2026/11/05 08:21:37 DB connection failed ('dial tcp 172.18.0.21:5432: connect: connection refused'), retrying after 1 second...
+cray-sls-init-1                 | 2026/11/05 08:21:38 DB connection failed ('dial tcp 172.18.0.21:5432: connect: connection refused'), retrying after 1 second...
+x1000c0s2b1-1         | INFO:root:Starting update thread
+x1000c0s2b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s2b1-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s2b1-1                   | DEBUG:root:set_users called
+x1000c0s2b1-1                   | DEBUG:root:Using accounts from env
+x1000c0s2b1-1                   | INFO:root:Mockup folder
+x1000c0s2b1-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s2b1-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s2b1-1                   | INFO:root:CreatePower put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s2b1-1                   | INFO:root:CreatePower put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+cray-hbtd-1           | 2026/11/05 08:21:36 Cray Node Heartbeat Monitor/Tracker started.
+cray-hbtd-1                     | 2026/11/05 08:21:36 Service name: 'b7ebe4db58a3'
+cray-hbtd-1                     | 2026/11/05 08:21:36 Waiting for HSM to be responsive...
+cray-hbtd-1                     | 2026/11/05 08:21:36 HSM is not responsive (0 seconds).
+cray-hbtd-etcd-1      | 2026-11-05 08:21:36.389033 I | pkg/flags: recognized and used environment variable ETCD_ADVERTISE_CLIENT_URLS=http://cray-hbtd-etcd:2379
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389147 I | pkg/flags: recognized and used environment variable ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+cray-hbtd-etcd-1                | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389215 I | etcdmain: etcd Version: 3.4.7
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389225 I | etcdmain: Git SHA: e694b7bb0
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389243 I | etcdmain: Go Version: go1.12.17
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389252 I | etcdmain: Go OS/Arch: linux/amd64
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389261 I | etcdmain: setting maximum number of CPUs to 4, total number of available CPUs is 4
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389273 W | etcdmain: no data-dir provided, using default data-dir ./default.etcd
+cray-hbtd-etcd-1                | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389910 I | embed: name = default
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.389959 I | embed: data dir = default.etcd
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.390017 I | embed: member dir = default.etcd/member
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.390029 I | embed: heartbeat = 100ms
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.390038 I | embed: election = 1000ms
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.390047 I | embed: snapshot count = 100000
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.390061 I | embed: advertise client URLs = http://cray-hbtd-etcd:2379
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.395596 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=()
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 0
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 1
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.400744 W | auth: simple token is not cryptographically signed
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.403803 I | etcdserver: starting server... [version: 3.4.7, cluster version: to_be_decided]
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.407532 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.409694 I | embed: listening for peers on 127.0.0.1:2380
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.410038 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d is starting a new election at term 1
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became candidate at term 2
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became leader at term 2
+cray-hbtd-etcd-1                | raft2026/11/05 08:21:36 INFO: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.998118 I | etcdserver: setting up the initial cluster version to 3.4
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.998349 N | etcdserver/membership: set the initial cluster version to 3.4
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.998396 I | etcdserver/api: enabled capabilities for version 3.4
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.998420 I | etcdserver: published {Name:default ClientURLs:[http://cray-hbtd-etcd:2379]} to cluster cdf818194e3a8c32
+cray-hbtd-etcd-1                | 2026-11-05 08:21:36.998504 I | embed: ready to serve client requests
+cray-hbtd-etcd-1                | 2026-11-05 08:21:37.004029 N | embed: serving insecure client requests on [::]:2379, this is strongly discouraged!
+x1000c0s0b1-1         | INFO:root:Starting update thread
+x1000c0s0b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s0b1-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s0b1-1                   | DEBUG:root:set_users called
+x1000c0s0b1-1                   | DEBUG:root:Using accounts from env
+x1000c0s0b1-1                   | INFO:root:Mockup folder
+x1000c0s0b1-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s0b1-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s0b1-1                   | INFO:root:CreatePower put called
+x1000c0s0b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s0b1-1                   | INFO:root:CreatePower put called
+x1000c0s0b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s0b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s0b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s0b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s0b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s0b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s0b1-1                   | INFO:root:CreateManager called
+x1000c0s0b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b1-1                   | DEBUG:root:added config for BMC
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s0b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1         | INFO:root:Starting update thread
+x3000c0s5b0-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x3000c0s5b0-1                   | DEBUG:root:set_auth_from_env called
+x3000c0s5b0-1                   | DEBUG:root:set_users called
+x3000c0s5b0-1                   | DEBUG:root:Using accounts from env
+x3000c0s5b0-1                   | INFO:root:Mockup folder
+x3000c0s5b0-1                   | INFO:root:Init ResourceDictionary.
+x3000c0s5b0-1                   | INFO:root:Generic init called for type, DL325
+x3000c0s5b0-1                   | INFO:root:CreatePower put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 1/Power
+x3000c0s5b0-1                   | INFO:root:Detected power limit schema is Generic
+x3000c0s5b0-1                   | INFO:root:CreateComputerSystem called
+x3000c0s5b0-1                   | DEBUG:root:added config for Systems/1
+x3000c0s5b0-1                   | INFO:root:CreateManager called
+x3000c0s5b0-1                   | DEBUG:root:added config for Manager/1
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 1
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 2
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 3
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 4
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 5
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 6
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 7
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 8
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 9
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 10
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 11
+x3000c0s5b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s5b0-1                   | DEBUG:root:added config for 12
+x3000c0s5b0-1                   | INFO:root:CreateEventService put called
+x3000c0s5b0-1                   | INFO:root:Using Proliant iLO redfish event schema
+x3000c0s5b0-1                   | INFO:root:Using Proliant iLO redfish event schema
+x3000c0s5b0-1                   | DEBUG:root:added config for AccountService/1 - Administrator
+x3000c0s5b0-1                   | DEBUG:root:added config for AccountService/2 - root
+x3000c0s5b0-1                   | DEBUG:root:added config for AccountService
+x3000c0s5b0-1                   | DEBUG:root:added config for SessionService
+x3000c0s5b0-1                   | INFO:root:CreateNetworkProtocol called
+x3000c0s5b0-1                   | DEBUG:root:added config for 1/NetworkProtocol
+x3000c0s5b0-1                   |  * Redfish endpoint at localhost:443
+x3000c0s5b0-1                   | DL325
+x3000c0s5b0-1                   |  * Use HTTPS
+x3000c0s5b0-1                   |  * Running in Redfish mode
+x3000c0s5b0-1                   |  * Serving Flask app 'g' (lazy loading)
+x3000c0s5b0-1                   |  * Environment: production
+x3000c0s5b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x3000c0s5b0-1                   |    Use a production WSGI server instead.
+x3000c0s5b0-1                   |  * Debug mode: off
+x3000c0s5b0-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x3000c0s5b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x3000c0s5b0-1                   |  * Running on https://127.0.0.1:443
+x3000c0s5b0-1                   |  * Running on https://172.18.0.15:443 (Press CTRL+C to quit)
+x3000c0s6b0-1                   | DEBUG:root:added config for 17
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 18
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 19
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 20
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 21
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 22
+x3000c0s6b0-1                   | INFO:root:CreateFirmwareTarget put called
+x3000c0s6b0-1                   | DEBUG:root:added config for 23
+x3000c0s6b0-1                   | INFO:root:CreateEventService put called
+x3000c0s6b0-1                   | INFO:root:Using Proliant iLO redfish event schema
+x3000c0s6b0-1                   | INFO:root:Using Proliant iLO redfish event schema
+x3000c0s6b0-1                   | DEBUG:root:added config for AccountService/1 - Administrator
+x3000c0s6b0-1                   | DEBUG:root:added config for AccountService/2 - root
+x3000c0s6b0-1                   | DEBUG:root:added config for AccountService
+x3000c0s6b0-1                   | DEBUG:root:added config for SessionService
+x3000c0s6b0-1                   | INFO:root:CreateNetworkProtocol called
+x3000c0s6b0-1                   | DEBUG:root:added config for 1/NetworkProtocol
+x3000c0s6b0-1                   |  * Redfish endpoint at localhost:443
+x3000c0s6b0-1                   | XL675d_A40
+x3000c0s6b0-1                   |  * Use HTTPS
+x3000c0s6b0-1                   |  * Running in Redfish mode
+x3000c0s6b0-1                   |  * Serving Flask app 'g' (lazy loading)
+x3000c0s6b0-1                   |  * Environment: production
+x3000c0s6b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x3000c0s6b0-1                   |    Use a production WSGI server instead.
+x3000c0s6b0-1                   |  * Debug mode: off
+x3000c0s6b0-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x3000c0s6b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x3000c0s6b0-1                   |  * Running on https://127.0.0.1:443
+x3000c0s6b0-1                   |  * Running on https://172.18.0.4:443 (Press CTRL+C to quit)
+x1000c0s2b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s2b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s2b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s2b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s2b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s2b1-1                   | INFO:root:CreateManager called
+x1000c0s2b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for BMC
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for FPGA1
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s2b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s2b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s2b1-1                   | INFO:root:CreateEventService put called
+x1000c0s2b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s2b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s2b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s2b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s2b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s2b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s2b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s2b1-1                   | INFO:root:CreateCert called
+x1000c0s2b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s2b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s2b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s2b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s2b1-1                   | EX425
+x1000c0s2b1-1                   |  * Use HTTPS
+x1000c0s2b1-1                   |  * Running in Redfish mode
+x1000c0s2b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s2b1-1                   |  * Environment: production
+x1000c0s2b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s2b1-1                   |    Use a production WSGI server instead.
+x1000c0s2b1-1                   |  * Debug mode: off
+x1000c0s2b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s2b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s2b1-1                   |  * Running on https://127.0.0.1:443
+x1000c0s2b1-1                   |  * Running on https://172.18.0.19:443 (Press CTRL+C to quit)
+x1000c0s1b1-1         | INFO:root:Starting update thread
+x1000c0s1b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s1b1-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s1b1-1                   | DEBUG:root:set_users called
+x1000c0s1b1-1                   | DEBUG:root:Using accounts from env
+x1000c0s1b1-1                   | INFO:root:Mockup folder
+x1000c0s1b1-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s1b1-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s1b1-1                   | INFO:root:CreatePower put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s1b1-1                   | INFO:root:CreatePower put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s7b1-1         | INFO:root:Starting update thread
+x1000c0s1b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s1b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s1b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s1b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s1b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s1b1-1                   | INFO:root:CreateManager called
+x1000c0s1b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for BMC
+x1000c0s7b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s7b1-1                   | DEBUG:root:set_users called
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:Using accounts from env
+x1000c0s1b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s7b1-1                   | INFO:root:Mockup folder
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for FPGA1
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1         | INFO:root:Starting update thread
+vault-1               | ==> Vault server configuration:
+x1000c0s3b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+vault-1                         | 
+x1000c0s3b1-1                   | DEBUG:root:set_auth_from_env called
+vault-1                         |              Api Address: http://0.0.0.0:8200
+x1000c0s3b1-1                   | DEBUG:root:set_users called
+vault-1                         |                      Cgo: disabled
+x1000c0s3b1-1                   | DEBUG:root:Using accounts from env
+cray-shared-kafka-zookeeper-1  | ===> User
+x1000c0s3b1-1                   | INFO:root:Mockup folder
+x1000c0s3b1-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s3b1-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s3b1-1                   | INFO:root:CreatePower put called
+x1000c0s3b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s3b1-1                   | INFO:root:CreatePower put called
+x1000c0s3b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s3b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s3b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s3b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s3b1-1                   | INFO:root:CreateManager called
+x1000c0s3b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for BMC
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s3b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s1b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s3b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s1b1-1                   | INFO:root:CreateEventService put called
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s1b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s3b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s7b1-1                   | INFO:root:Init ResourceDictionary.
+cray-shared-kafka-zookeeper-1   | uid=1000(appuser) gid=1000(appuser) groups=1000(appuser)
+x1000c0s7b1-1                   | INFO:root:Generic init called for type, EX425
+cray-shared-kafka-zookeeper-1   | ===> Configuring ...
+x1000c0s7b1-1                   | INFO:root:CreatePower put called
+cray-shared-kafka-zookeeper-1   | ===> Running preflight checks ... 
+x1000c0s7b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+cray-shared-kafka-zookeeper-1   | ===> Check if /var/lib/zookeeper/data is writable ...
+x1000c0s7b1-1                   | INFO:root:CreatePower put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+vault-1                         |          Cluster Address: https://0.0.0.0:8201
+x1000c0s7b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s7b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s3b1-1                   | DEBUG:root:added config for FPGA1
+x1000c0s7b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s3b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s7b1-1                   | INFO:root:CreateManager called
+x1000c0s3b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s3b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | INFO:root:CreateEventService put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s3b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s7b1-1                   | DEBUG:root:added config for BMC
+x1000c0s3b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s3b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s3b1-1                   | DEBUG:root:added config for AccountService/1 - root
+vault-1                         |               Go Version: go1.14.7
+cray-capmc-1          | 2026/11/05 08:21:36 capmcd.go:413: Service name/instance: '47266833c440'
+vault-1                         |               Listener 1: tcp (addr: "0.0.0.0:8200", cluster address: "0.0.0.0:8201", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+vault-1                         |                Log Level: info
+vault-1                         |                    Mlock: supported: true, enabled: false
+vault-1                         |            Recovery Mode: false
+vault-1                         |                  Storage: inmem
+x1000c0s5b1-1         | INFO:root:Starting update thread
+vault-1                         |                  Version: Vault v1.5.5
+vault-1                         |              Version Sha: f5d1ddb3750e7c28e25036e1ef26a4c02379fc01
+x1000c0s5b1-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+vault-1                         | 
+x1000c0s5b1-1                   | DEBUG:root:set_auth_from_env called
+vault-1                         | WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+x1000c0s5b1-1                   | DEBUG:root:set_users called
+vault-1                         | and starts unsealed with a single unseal key. The root token is already
+x1000c0s0b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s5b1-1                   | DEBUG:root:Using accounts from env
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | INFO:root:Mockup folder
+x1000c0s0b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s5b1-1                   | INFO:root:Init ResourceDictionary.
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s0b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s5b1-1                   | INFO:root:CreatePower put called
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+x1000c0s0b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-capmc-1                    | 2026/11/05 08:21:36 config.go:72: Info: Reading config from: /usr/local/etc/capmc-service/default/config.toml
+x1000c0s0b1-1                   | DEBUG:root:added config for FPGA1
+cray-capmc-1                    | 2026/11/05 08:21:36 config.go:105: Info: /usr/local/etc/capmc-service/default/config.toml: config values override defaults
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:418: Configuration loaded:
+x1000c0s0b1-1                   | DEBUG:root:added config for Recovery
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:419: 	Max workers: 1000
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:420: 	On unsupported action: simulate
+x1000c0s0b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:421: 	Reinit seq: [Off ForceOff Restart ForceRestart On ForceOn NMI]
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:422: 	Wait for off retries: 60
+vault-1                         | authenticated to the CLI, so you can immediately begin using Vault.
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:423: 	Wait for off sleep: 15
+x1000c0s5b1-1                   | INFO:root:CreatePower put called
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:435: Starting on host: 47266833c440
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:456: Info: hardware state manager (HSM) --> http://cray-smd:27779
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:485: Info: power control service (PCS) --> http://cray-power-control:28007
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:519: CAPMC serivce starting (debug=false)
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:567: INFO: Creating inter-service HTTP transport (not TLS validated).
+cray-capmc-1                    | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:542: Info: Connecting to secure store (Vault)...
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:585: Info: Creating Redfish secure HTTP client transports...
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:336: INFO: Creating non-validated Redfish HTTP transport (no CA bundle)
+cray-capmc-1                    | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:357: INFO: CA bundle URI is empty, no CA bundle watcher registered.
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:588: Info: Success creating Redfish HTTP clients.
+cray-capmc-1                    | 2026/11/05 08:21:36 capmcd.go:635: Info: CAPMC API listening on: 0.0.0.0:27777
+cray-capmc-1                    | 2026/11/05 08:21:38 capmcd.go:548: Info: Connection to secure store (Vault) succeeded
+vault-1                         | 
+vault-1                         | You may need to set the following environment variable:
+vault-1                         | 
+vault-1                         |     $ export VAULT_ADDR='http://0.0.0.0:8200'
+vault-1                         | 
+vault-1                         | The unseal key and root token are displayed below in case you want to
+vault-1                         | seal/unseal the Vault or re-authenticate.
+vault-1                         | 
+vault-1                         | Unseal Key: M57qmWDNxxWJ5OYjObaVQJfuoZjAQwx1XVIZGsUIhKs=
+vault-1                         | Root Token: hms
+vault-1                         | 
+vault-1                         | Development mode should NOT be used in production installations!
+vault-1                         | 
+vault-1                         | ==> Vault server started! Log data will stream in below:
+vault-1                         | 
+x1000c0s5b1-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s5b1-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+x1000c0s5b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s5b1-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s5b1-1                   | INFO:root:CreateComputerSystem called
+x1000c0s5b1-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s5b1-1                   | INFO:root:CreateManager called
+x1000c0s5b1-1                   | DEBUG:root:added config for Manager/BMC
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node1.HPCNet0
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for BMC
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for FPGA1
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s5b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s5b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s5b1-1                   | INFO:root:CreateEventService put called
+x1000c0s5b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s5b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s5b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s5b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s5b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s5b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s5b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s5b1-1                   | INFO:root:CreateCert called
+x1000c0s5b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s5b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s5b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s1b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s1b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s1b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s1b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s1b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s1b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s1b1-1                   | INFO:root:CreateCert called
+x1000c0s1b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s1b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s1b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s1b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s1b1-1                   | EX425
+x1000c0s1b1-1                   |  * Use HTTPS
+x1000c0s1b1-1                   |  * Running in Redfish mode
+x1000c0s1b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s1b1-1                   |  * Environment: production
+x1000c0s1b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s1b1-1                   |    Use a production WSGI server instead.
+x1000c0s1b1-1                   |  * Debug mode: off
+x1000c0s1b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s1b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s1b1-1                   |  * Running on https://127.0.0.1:443
+x1000c0s1b1-1                   |  * Running on https://172.18.0.2:443 (Press CTRL+C to quit)
+cray-hmnfd-1          | 2026/11/05 08:21:36 Cray Notification Fanout Service started.
+cray-hmnfd-1                    | 2026/11/05 08:21:36 Service name: 'cray-hmnfd'
+cray-hmnfd-1                    | INFO: Setting KV URL from ETCD_HOST and ETCD_PORT (http://cray-hmnfd-etcd:2379)
+cray-hmnfd-1                    | 2026/11/05 08:21:36 ETCD connection succeeded.
+cray-hmnfd-1                    | 2026/11/05 08:21:37 K/V health check succeeded.
+cray-hmnfd-1                    | 2026/11/05 08:21:37 Subscriber loop started.
+cray-hmnfd-1                    | 2026/11/05 08:21:37 Auto-subscribing to SCNs.
+cray-hmnfd-1                    | 2026/11/05 08:21:37 Listening on port 28600
+cray-hmnfd-1                    | 2026/11/05 08:21:37 URLs:
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/subscribe
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/scn
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/subscriptions
+x1000c0s0b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s0b1-1                   | INFO:root:CreateEventService put called
+x1000c0s0b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s0b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s0b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s0b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s0b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s0b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s0b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s0b1-1                   | INFO:root:CreateCert called
+x1000c0s0b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s0b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s0b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s0b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s0b1-1                   | EX425
+x1000c0s0b1-1                   |  * Use HTTPS
+x1000c0s0b1-1                   |  * Running in Redfish mode
+x1000c0s0b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s0b1-1                   |  * Environment: production
+x1000c0s0b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s0b1-1                   |    Use a production WSGI server instead.
+x1000c0s0b1-1                   |  * Debug mode: off
+x1000c0s0b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s0b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s0b1-1                   |  * Running on https://127.0.0.1:443
+x1000c0s0b1-1                   |  * Running on https://172.18.0.18:443 (Press CTRL+C to quit)
+x1000c0s7b1-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for FPGA0
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node1.BIOS
+x1000c0s3b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s3b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s3b1-1                   | INFO:root:CreateCert called
+x1000c0s3b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s3b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s3b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s3b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s3b1-1                   | EX425
+x1000c0s3b1-1                   |  * Use HTTPS
+x1000c0s3b1-1                   |  * Running in Redfish mode
+x1000c0s3b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s3b1-1                   |  * Environment: production
+x1000c0s3b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s4b0-1                   | INFO:root:Starting update thread
+x1000c0s3b1-1                   |    Use a production WSGI server instead.
+x1000c0s3b1-1                   |  * Debug mode: off
+x1000c0s3b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s4b0-1                   | INFO:root:AUTH_CONFIG=root:ss0xchdgtu:Administrator
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/params
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/liveness
+vault-1                         | 2026-11-05T08:21:37.846Z [INFO]  proxy environment: http_proxy= https_proxy= no_proxy=
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/readiness
+cray-hmnfd-1                    | 2026/11/05 08:21:37     /hmi/v2/health
+x1000c0s5b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s5b1-1                   | EX425
+cray-hmnfd-1                    | 2026/11/05 08:21:37 Sending SCN subscription to HSM: {[] hmnfd   0xc0003461cc [compute service] [] [] [Empty Populated Off On Standby Halt Ready] http://cray-hmnfd:28600/hmi/v1/scn}
+x1000c0s5b1-1                   |  * Use HTTPS
+cray-hmnfd-1                    | 2026/11/05 08:21:37 Starting up HTTP server.
+x1000c0s5b1-1                   |  * Running in Redfish mode
+cray-hmnfd-1                    | 2026/11/05 08:21:37 ERROR sending POST to SM: Post "http://cray-smd:27779/hsm/v2/Subscriptions/SCN": dial tcp: lookup cray-smd on 127.0.0.11:53: server misbehaving
+x1000c0s5b1-1                   |  * Serving Flask app 'g' (lazy loading)
+cray-hmnfd-1                    | 2026/11/05 08:21:37 ERROR sending HSM SCN subscription: Post "http://cray-smd:27779/hsm/v2/Subscriptions/SCN": dial tcp: lookup cray-smd on 127.0.0.11:53: server misbehaving retrying.
+cray-hmnfd-1                    | 2026/11/05 08:21:37 ERROR sending GET to HSM for node states: Get "http://cray-smd:27779/hsm/v2/State/Components?state=Off&state=Empty&state=Halt&stateonly=true&type=Node": dial tcp: lookup cray-smd on 127.0.0.11:53: server misbehaving
+cray-hmnfd-1                    | 2026/11/05 08:21:38 Sending SCN subscription to HSM: {[] hmnfd   0xc0003461cc [compute service] [] [] [Empty Populated Off On Standby Halt Ready] http://cray-hmnfd:28600/hmi/v1/scn}
+cray-hmnfd-1                    | 2026/11/05 08:21:38 ERROR sending POST to SM: Post "http://cray-smd:27779/hsm/v2/Subscriptions/SCN": dial tcp: lookup cray-smd on 127.0.0.11:53: server misbehaving
+cray-hmnfd-1                    | 2026/11/05 08:21:38 ERROR sending HSM SCN subscription: Post "http://cray-smd:27779/hsm/v2/Subscriptions/SCN": dial tcp: lookup cray-smd on 127.0.0.11:53: server misbehaving retrying.
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for FPGA1
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496278 I | pkg/flags: recognized and used environment variable ETCD_ADVERTISE_CLIENT_URLS=http://cray-hmnfd-etcd:2379
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s7b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s7b1-1                   | INFO:root:CreateEventService put called
+x1000c0s7b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b0-1                   | DEBUG:root:set_auth_from_env called
+x1000c0s4b0-1                   | DEBUG:root:set_users called
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496433 I | pkg/flags: recognized and used environment variable ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+x1000c0s4b0-1                   | DEBUG:root:Using accounts from env
+cray-hmnfd-etcd-1               | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+x1000c0s4b0-1                   | INFO:root:Mockup folder
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496492 I | etcdmain: etcd Version: 3.4.7
+x1000c0s4b0-1                   | INFO:root:Init ResourceDictionary.
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496497 I | etcdmain: Git SHA: e694b7bb0
+x1000c0s3b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496500 I | etcdmain: Go Version: go1.12.17
+x1000c0s3b1-1                   |  * Running on https://127.0.0.1:443
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496502 I | etcdmain: Go OS/Arch: linux/amd64
+x1000c0s3b1-1                   |  * Running on https://172.18.0.5:443 (Press CTRL+C to quit)
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496505 I | etcdmain: setting maximum number of CPUs to 4, total number of available CPUs is 4
+vault-1                         | 2026-11-05T08:21:37.846Z [WARN]  no `api_addr` value specified in config or in VAULT_API_ADDR; falling back to detection if possible, but this value should be manually set
+x1000c0s4b0-1                   | INFO:root:Generic init called for type, EX425
+x1000c0s4b0-1                   | INFO:root:CreatePower put called
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.496511 W | etcdmain: no data-dir provided, using default data-dir ./default.etcd
+x1000c0s4b0-1                   | DEBUG:root:added config for Node1/Controls/NodePowerLimit
+cray-hmnfd-etcd-1               | [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+x1000c0s4b0-1                   | INFO:root:CreatePower put called
+x1000c0s7b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b0-1                   | DEBUG:root:added config for Node0/Controls/NodePowerLimit
+x1000c0s7b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s7b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s5b1-1                   |  * Environment: production
+x1000c0s7b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s5b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s7b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s5b1-1                   |    Use a production WSGI server instead.
+x1000c0s7b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s5b1-1                   |  * Debug mode: off
+x1000c0s7b1-1                   | INFO:root:CreateCert called
+x1000c0s5b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s7b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s5b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s7b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s5b1-1                   |  * Running on https://127.0.0.1:443
+x1000c0s7b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s5b1-1                   |  * Running on https://172.18.0.7:443 (Press CTRL+C to quit)
+x1000c0s7b1-1                   |  * Redfish endpoint at localhost:443
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497023 I | embed: name = default
+x1000c0s4b0-1                   | INFO:root:Detected power limit schema is HPE Cray EX
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497063 I | embed: data dir = default.etcd
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497066 I | embed: member dir = default.etcd/member
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497068 I | embed: heartbeat = 100ms
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497070 I | embed: election = 1000ms
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497073 I | embed: snapshot count = 100000
+vault-1                         | 2026-11-05T08:21:37.850Z [INFO]  core: security barrier not initialized
+vault-1                         | 2026-11-05T08:21:37.851Z [INFO]  core: security barrier initialized: stored=1 shares=1 threshold=1
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.497088 I | embed: advertise client URLs = http://cray-hmnfd-etcd:2379
+vault-1                         | 2026-11-05T08:21:37.851Z [INFO]  core: post-unseal setup starting
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.505470 I | etcdserver: starting member 8e9e05c52164694d in cluster cdf818194e3a8c32
+vault-1                         | 2026-11-05T08:21:37.864Z [INFO]  core: loaded wrapping token key
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=()
+vault-1                         | 2026-11-05T08:21:37.864Z [INFO]  core: successfully setup plugin catalog: plugin-directory=
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 0
+vault-1                         | 2026-11-05T08:21:37.864Z [INFO]  core: no mounts; adding default mount table
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+vault-1                         | 2026-11-05T08:21:37.865Z [INFO]  core: successfully mounted backend: type=cubbyhole path=cubbyhole/
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d became follower at term 1
+vault-1                         | 2026-11-05T08:21:37.865Z [INFO]  core: successfully mounted backend: type=system path=sys/
+x1000c0s7b1-1                   | EX425
+vault-1                         | 2026-11-05T08:21:37.866Z [INFO]  core: successfully mounted backend: type=identity path=identity/
+x1000c0s7b1-1                   |  * Use HTTPS
+vault-1                         | 2026-11-05T08:21:37.869Z [INFO]  core: successfully enabled credential backend: type=token path=token/
+x1000c0s7b1-1                   |  * Running in Redfish mode
+vault-1                         | 2026-11-05T08:21:37.869Z [INFO]  core: restoring leases
+vault-1                         | 2026-11-05T08:21:37.869Z [INFO]  rollback: starting rollback manager
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+vault-1                         | 2026-11-05T08:21:37.870Z [INFO]  expiration: lease restore complete
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.507982 W | auth: simple token is not cryptographically signed
+vault-1                         | 2026-11-05T08:21:37.873Z [INFO]  identity: entities restored
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.510638 I | etcdserver: starting server... [version: 3.4.7, cluster version: to_be_decided]
+vault-1                         | 2026-11-05T08:21:37.873Z [INFO]  identity: groups restored
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.511722 I | etcdserver: 8e9e05c52164694d as single-node; fast-forwarding 9 ticks (election ticks 10)
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:36 INFO: 8e9e05c52164694d switched to configuration voters=(10276657743932975437)
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.512032 I | etcdserver/membership: added member 8e9e05c52164694d [http://localhost:2380] to cluster cdf818194e3a8c32
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:36.515090 I | embed: listening for peers on 127.0.0.1:2380
+x1000c0s4b0-1                   | INFO:root:CreateComputerSystem called
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d is starting a new election at term 1
+x1000c0s4b0-1                   | DEBUG:root:added config for Systems/Node0
+x1000c0s4b0-1                   | INFO:root:CreateComputerSystem called
+x1000c0s7b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s4b0-1                   | DEBUG:root:added config for Systems/Node1
+x1000c0s7b1-1                   |  * Environment: production
+x1000c0s4b0-1                   | INFO:root:CreateManager called
+x1000c0s7b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s4b0-1                   | DEBUG:root:added config for Manager/BMC
+vault-1                         | 2026-11-05T08:21:37.873Z [INFO]  core: post-unseal setup complete
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: root token generated
+x1000c0s4b0-1                   | DEBUG:root:added config for Node1.HPCNet0
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: pre-seal teardown starting
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  rollback: stopping rollback manager
+x1000c0s4b0-1                   | DEBUG:root:added config for BMC
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: pre-seal teardown complete
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core.cluster-listener.tcp: starting listener: listener_address=0.0.0.0:8201
+x1000c0s4b0-1                   | DEBUG:root:added config for Node1.ManagementEthernet
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core.cluster-listener: serving cluster requests: cluster_listen_address=[::]:8201
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: post-unseal setup starting
+x1000c0s4b1-1                  | DEBUG:root:added config for FPGA0
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became candidate at term 2
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:37 INFO: 8e9e05c52164694d became leader at term 2
+x1000c0s4b1-1                   | DEBUG:root:added config for Node0.HPCNet0
+cray-hmnfd-etcd-1               | raft2026/11/05 08:21:37 INFO: raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.206505 I | etcdserver: published {Name:default ClientURLs:[http://cray-hmnfd-etcd:2379]} to cluster cdf818194e3a8c32
+x1000c0s4b1-1                   | DEBUG:root:added config for Node1.BIOS
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.206521 I | embed: ready to serve client requests
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.206578 I | etcdserver: setting up the initial cluster version to 3.4
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.207093 N | embed: serving insecure client requests on [::]:2379, this is strongly discouraged!
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: loaded wrapping token key
+x1000c0s4b0-1                   | DEBUG:root:added config for FPGA0
+vault-1                         | 2026-11-05T08:21:37.874Z [INFO]  core: successfully setup plugin catalog: plugin-directory=
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.875Z [INFO]  core: successfully mounted backend: type=system path=sys/
+x1000c0s4b0-1                   | DEBUG:root:added config for Node0.HPCNet0
+vault-1                         | 2026-11-05T08:21:37.876Z [INFO]  core: successfully mounted backend: type=identity path=identity/
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.876Z [INFO]  core: successfully mounted backend: type=cubbyhole path=cubbyhole/
+x1000c0s4b0-1                   | DEBUG:root:added config for Node1.BIOS
+vault-1                         | 2026-11-05T08:21:37.876Z [INFO]  core: successfully enabled credential backend: type=token path=token/
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.876Z [INFO]  core: restoring leases
+x1000c0s4b0-1                   | DEBUG:root:added config for Bootloader
+vault-1                         | 2026-11-05T08:21:37.876Z [INFO]  rollback: starting rollback manager
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+vault-1                         | 2026-11-05T08:21:37.877Z [INFO]  expiration: lease restore complete
+x1000c0s4b0-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s4b1-1                   | DEBUG:root:added config for Bootloader
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                   | DEBUG:root:added config for Node0.BIOS
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   |    Use a production WSGI server instead.
+x1000c0s4b1-1                   | DEBUG:root:added config for FPGA1
+x1000c0s7b1-1                   |  * Debug mode: off
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s7b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s7b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.298160 N | etcdserver/membership: set the initial cluster version to 3.4
+x1000c0s7b1-1                   |  * Running on https://127.0.0.1:443
+cray-hmnfd-etcd-1               | 2026-11-05 08:21:37.298295 I | etcdserver/api: enabled capabilities for version 3.4
+x1000c0s7b1-1                   |  * Running on https://172.18.0.20:443 (Press CTRL+C to quit)
+x1000c0s4b1-1                   | DEBUG:root:added config for Recovery
+x1000c0s4b1-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b1-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s4b1-1                   | INFO:root:CreateEventService put called
+x1000c0s4b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b1-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b1-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s4b1-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s4b1-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s4b1-1                   | DEBUG:root:added config for AccountService
+x1000c0s4b1-1                   | DEBUG:root:added config for SessionService
+x1000c0s4b1-1                   | INFO:root:CreateCert called
+x1000c0s4b1-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s4b1-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s4b1-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s4b1-1                   |  * Redfish endpoint at localhost:443
+x1000c0s4b1-1                   | EX425
+x1000c0s4b1-1                   |  * Use HTTPS
+x1000c0s4b1-1                   |  * Running in Redfish mode
+x1000c0s4b1-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s4b1-1                   |  * Environment: production
+x1000c0s4b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s4b1-1                   |    Use a production WSGI server instead.
+x1000c0s4b1-1                   |  * Debug mode: off
+x1000c0s4b1-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s4b1-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+vault-1                         | 2026-11-05T08:21:37.877Z [INFO]  identity: entities restored
+vault-1                         | 2026-11-05T08:21:37.877Z [INFO]  identity: groups restored
+vault-1                         | 2026-11-05T08:21:37.877Z [INFO]  core: post-unseal setup complete
+vault-1                         | 2026-11-05T08:21:37.877Z [INFO]  core: vault is unsealed
+vault-1                         | 2026-11-05T08:21:37.878Z [INFO]  expiration: revoked lease: lease_id=auth/token/root/h61a6b1794b1bb24900b1a7e832b576338790a0e3df79093df03a9bb0d566d782
+vault-1                         | 2026-11-05T08:21:37.880Z [INFO]  core: successful mount: namespace= path=secret/ type=kv
+vault-1                         | 2026-11-05T08:21:37.890Z [INFO]  secrets.kv.kv_9fa7cd54: collecting keys to upgrade
+vault-1                         | 2026-11-05T08:21:37.890Z [INFO]  secrets.kv.kv_9fa7cd54: done collecting keys: num_keys=1
+vault-1                         | 2026-11-05T08:21:37.890Z [INFO]  secrets.kv.kv_9fa7cd54: upgrading keys finished
+x1000c0s4b0-1                   | DEBUG:root:added config for FPGA1
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b0-1                   | DEBUG:root:added config for Recovery
+x1000c0s4b0-1                   | INFO:root:CreateFirmwareTarget put called
+x1000c0s4b0-1                   | DEBUG:root:added config for Node0.ManagementEthernet
+x1000c0s4b0-1                   | INFO:root:CreateEventService put called
+x1000c0s4b0-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b0-1                   | INFO:root:Using HPE Cray EX redfish event schema
+x1000c0s4b0-1                   | DEBUG:root:added config for AccountService/2 - operator
+x1000c0s4b0-1                   | DEBUG:root:added config for AccountService/3 - guest
+x1000c0s4b0-1                   | DEBUG:root:added config for AccountService/1 - root
+x1000c0s4b0-1                   | DEBUG:root:added config for AccountService
+x1000c0s4b0-1                   | DEBUG:root:added config for SessionService
+x1000c0s4b0-1                   | INFO:root:CreateCert called
+x1000c0s4b0-1                   | DEBUG:root:added config for /redfish/v1/Managers/BMC/NetworkProtocol/HTTPS/Certificates/1
+x1000c0s4b0-1                   | INFO:root:CreateNetworkProtocol called
+x1000c0s4b0-1                   | DEBUG:root:added config for BMC/NetworkProtocol
+x1000c0s4b0-1                   |  * Redfish endpoint at localhost:443
+x1000c0s4b0-1                   | EX425
+x1000c0s4b0-1                   |  * Use HTTPS
+x1000c0s4b0-1                   |  * Running in Redfish mode
+x1000c0s4b0-1                   |  * Serving Flask app 'g' (lazy loading)
+x1000c0s4b0-1                   |  * Environment: production
+x1000c0s4b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s4b0-1                   |    Use a production WSGI server instead.
+x1000c0s4b0-1                   |  * Debug mode: off
+x1000c0s4b0-1                   | INFO:werkzeug: * Running on all addresses (0.0.0.0)
+x1000c0s4b0-1                   |    WARNING: This is a development server. Do not use it in a production deployment.
+x1000c0s4b0-1                   |  * Running on https://127.0.0.1:443
+x1000c0s4b0-1                   |  * Running on https://172.18.0.16:443 (Press CTRL+C to quit)
+x1000c0s4b1-1                   |  * Running on https://127.0.0.1:443
+x1000c0s4b1-1                   |  * Running on https://172.18.0.8:443 (Press CTRL+C to quit)
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.609635,"msg":"Extended logging config","modes":"","xnames":"","supported modes":["errors"]}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6097023,"msg":"Service/Instance name:","":"7d2b212a2ef8"}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.609737,"msg":"hmcollector starting...","logLevel":"info"}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.60984,"msg":"All RF threads paused."}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6098413,"msg":"Creating Redfish HTTP client without CA trust bundle."}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6098547,"msg":"Redfish HTTP client pair creation succeeded."}
+cray-hms-hmcollector-poll-1     | {"level":"warn","ts":1793866896.6098566,"msg":"No CA bundle URI specified, not watching for CA changes."}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6098626,"msg":"REST collection endpoint enabled."}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6098642,"msg":"Starting rest server."}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.6098871,"msg":"REST server started.","portStr":"80"}
+cray-hms-hmcollector-poll-1     | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-hms-hmcollector-poll-1     | time="2026-11-05T08:21:36Z" level=warning msg="CA URI is empty, creating non-cert validated HTTPS transport."
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866896.610122,"msg":"Connecting to Vault...","vaultAddr":"http://vault:8200"}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866898.0844328,"msg":"Connected to Vault.","vaultAddr":"http://vault:8200"}
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866898.0844884,"msg":"Connecting to Kafka broker...","BrokerAddress":"cray-shared-kafka:9092"}
+cray-hms-hmcollector-poll-1     | %3|1793866898.086|FAIL|rdkafka#producer-1| [thrd:cray-shared-kafka:9092/bootstrap]: cray-shared-kafka:9092/bootstrap: Connect to ipv4#172.18.0.40:9092 failed: Connection refused (after 0ms in state CONNECT)
+cray-hms-hmcollector-poll-1     | {"level":"info","ts":1793866898.0969045,"msg":"Connected to Kafka broker.","broker":"Broker Address: cray-shared-kafka:9092, Topics: [cray-dmtf-resource-event]"}

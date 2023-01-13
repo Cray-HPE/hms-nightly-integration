@@ -1,0 +1,10 @@
+- name: Delete existing unknown boot parameters if it exists
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - Unknown-x86_64
+  response:
+    status_code: 200

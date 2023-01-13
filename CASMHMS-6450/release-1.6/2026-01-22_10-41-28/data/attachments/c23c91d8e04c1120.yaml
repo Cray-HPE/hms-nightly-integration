@@ -1,0 +1,11 @@
+- name: hsmAPIdefaultsNodeMapsDELETE - Remove all NodeMaps using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code:
+      - 200
+      - 404
+
+

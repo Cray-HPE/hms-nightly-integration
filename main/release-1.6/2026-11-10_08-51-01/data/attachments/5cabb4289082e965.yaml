@@ -1,0 +1,34 @@
+- name: Ensure that the deleted FAS snapshot information can no longer be retrieved
+  request:
+    url: "{fas_base_url}/snapshots/fasTestSnapshot"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "Key /snapshots/fasTestSnapshot does not exist"
+            status:
+              type: int
+              required: True
+              enum:
+                - 404
+            title:
+              type: str
+              required: True
+              enum:
+                - "Not Found"

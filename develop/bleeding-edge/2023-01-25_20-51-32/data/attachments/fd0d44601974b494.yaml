@@ -1,0 +1,33 @@
+body:
+  SubscriptionList:
+  - Enabled: true
+    ID: 1
+    Roles:
+    - compute
+    - service
+    States:
+    - Empty
+    - Populated
+    - 'Off'
+    - 'On'
+    - Standby
+    - Halt
+    - Ready
+    Subscriber: cray-hmnfd_6
+    Url: http://cray-hmnfd:28600/hmi/v1/scn
+  - Enabled: true
+    ID: 2
+    States:
+    - 'on'
+    - 'off'
+    - empty
+    - unknown
+    - populated
+    Subscriber: cray-hmnfd_7
+    Url: http://cray-hmnfd:28600/hmi/v1/scn
+headers:
+  Content-Length: '362'
+  Content-Type: application/json
+  Date: Wed, 25 Jan 2023 20:50:40 GMT
+redirect_query_params: {}
+status_code: 200

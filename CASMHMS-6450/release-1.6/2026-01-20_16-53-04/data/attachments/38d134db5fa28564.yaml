@@ -1,0 +1,8 @@
+- name: Perform DELETE against /user-data
+  request:
+    url: "{bss_base_url}/user-data"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

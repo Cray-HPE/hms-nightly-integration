@@ -1,0 +1,8 @@
+allow_redirects: false
+headers: {}
+json:
+  ID: foo
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/RedfishEndpoints/foo
+verify: false

@@ -1,0 +1,36 @@
+- name: Attempt to replace a State Change Notification subscription without supplying an ID
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"Subscriber":"test-FAKE","Enabled":true,"Roles":["compute","service"],"SoftwareStatus":["SCN subscription for CT testing."],"States":["Empty","Populated","Off","On","Standby","Halt","Ready"],"Url":"http://test-FAKE"}
+  response:
+    status_code: 405
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Method Not Allowed"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "allow POST,DELETE"
+            status:
+              type: int
+              required: True
+              enum:
+                - 405
+

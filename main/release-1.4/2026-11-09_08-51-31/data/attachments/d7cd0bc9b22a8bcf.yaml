@@ -1,0 +1,25 @@
+body:
+  automaticExpirationTime: '2026-11-10T08:39:07.814977546Z'
+  createTime: '2026-11-09T08:39:07.814977455Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 1
+    in-progress: 0
+    new: 0
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - error: Transition aborted
+    taskStatus: failed
+    taskStatusDescription: Aborted. Last status - Confirming successful transition,
+      forceoff
+    xname: x1000c0s1b0n1
+  transitionID: 279e223c-b7df-449a-bd93-9119295f4e3f
+  transitionStatus: aborted
+headers:
+  Content-Length: '483'
+  Content-Type: application/json
+  Date: Mon, 09 Nov 2026 08:39:08 GMT
+redirect_query_params: {}
+status_code: 200

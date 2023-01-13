@@ -1,0 +1,11 @@
+- name: hsmAPIstateComponentsDELETE - Remove all Components using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code:
+      - 200
+      - 404
+
+

@@ -1,0 +1,33 @@
+- name: slsAPISearchNetworksNotFound - Search the networks for a unfound params
+  request:
+    url: "{sls_base_url}/v1/search/networks?{param}=DOESNOTEXIST"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              pattern: "about: blank"
+            title:
+              type: str
+              required: True
+              pattern: "Not Found"
+            detail:
+              type: str
+              required: True
+              pattern: "Network not found in DB"
+            instance:
+              type: str
+              required: True
+              pattern: "/v1/search/networks"
+            status:
+              type: int
+              required: True

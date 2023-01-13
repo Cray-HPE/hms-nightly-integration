@@ -1,0 +1,10 @@
+- name: hsmAPIserviceLivenessPUT - Attempt an unsupported PUT operation on the service liveness endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/liveness"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 404
+
+

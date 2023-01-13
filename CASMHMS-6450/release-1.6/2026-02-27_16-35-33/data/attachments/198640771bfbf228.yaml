@@ -1,0 +1,8 @@
+- name: Verify that /readiness rejects PATCH requests
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/readiness"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

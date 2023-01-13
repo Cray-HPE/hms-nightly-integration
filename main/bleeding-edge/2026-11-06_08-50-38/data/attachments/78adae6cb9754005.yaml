@@ -1,0 +1,8 @@
+- name: Verify that /health rejects PUT requests
+  request:
+    url: "{hmnfd_base_url}/hmi/v2/health"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

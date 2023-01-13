@@ -1,0 +1,18 @@
+- name: Get info about a Node from the Components collection to use in upcoming stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node_id: Components[0].ID
+        type: Components[0].Type
+        state: Components[0].State
+        flag: Components[0].Flag
+        role: Components[0].Role
+        nid: Components[0].NID
+        arch: Components[0].Arch
+
+

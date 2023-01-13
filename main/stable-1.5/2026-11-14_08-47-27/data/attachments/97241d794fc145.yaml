@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsBulkFlagOnlyPATCHnodes - Bulk update Node Component flag values using PATCH.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/BulkFlagOnly"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["x9999c7s9b8n7","x9999c7s9b8n6"],"Flag":"Warning"}
+  response:
+    status_code: 204
+
+
