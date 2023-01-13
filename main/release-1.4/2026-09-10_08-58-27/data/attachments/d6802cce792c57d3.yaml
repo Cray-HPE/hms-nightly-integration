@@ -1,0 +1,85 @@
+- name: hsmAPIstateComponentsByNIDqueryPOSTsoftwareStatusExistingComponent - Query for existing Components with specific NID ranges and SoftwareStatus using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/ByNID/Query"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"NIDRanges":["9999999995"],"SoftwareStatus":["TestStatus5"]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n5"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"
+                    State:
+                      type: str
+                      required: True
+                      enum:
+                        - "Off"
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "Warning"
+                    Enabled:
+                      type: bool
+                      required: True
+                      enum:
+                        - true
+                    SoftwareStatus:
+                      type: str
+                      required: True
+                      enum:
+                        - "TestStatus5"
+                    Role:
+                      type: str
+                      required: True
+                      enum:
+                        - "Application"
+                    SubRole:
+                      type: str
+                      required: True
+                      enum:
+                        - "Master"
+                    NID:
+                      type: int
+                      required: True
+                      enum:
+                        - 9999999995
+                    NetType:
+                      type: str
+                      required: True
+                      enum:
+                        - "OEM"
+                    Arch:
+                      type: str
+                      required: True
+                      enum:
+                        - "ARM"
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "Mountain"
+
+

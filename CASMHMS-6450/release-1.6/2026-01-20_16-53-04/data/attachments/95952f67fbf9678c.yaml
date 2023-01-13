@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  NID:
+  - '9999999993'
+  NIDRanges:
+  - '9999999993'
+  nidonly: true
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/ByNID/Query
+verify: false

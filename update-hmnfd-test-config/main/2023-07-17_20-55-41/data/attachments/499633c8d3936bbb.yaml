@@ -1,0 +1,65 @@
+- name: Retrieve a State Change Notification subscription by ID
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{subID}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            ID:
+              type: int
+              required: True
+              enum:
+                - !int "{subID}"
+            Subscriber:
+              type: str
+              required: True
+              enum:
+                - "test-hmnfd-9z9z999zzz-9zz9z_9"
+            Enabled:
+              type: bool
+              required: True
+              enum:
+                - true
+            Roles:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  enum:
+                    - "compute"
+                    - "service"
+            SoftwareStatus:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  enum:
+                    - "SCN subscription for CT testing."
+            States:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  enum:
+                    - "Empty"
+                    - "Populated"
+                    - "Off"
+                    - "On"
+                    - "Standby"
+                    - "Halt"
+                    - "Ready"
+            Url:
+              type: str
+              required: True
+              enum:
+                - "http://test-hmnfd/hmi/v1/scn"
+

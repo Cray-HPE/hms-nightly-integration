@@ -1,0 +1,10 @@
+- name: capmcAPIxnameOnPOSToffComputeModuleTarget - Retrieve a compute module from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=ComputeModule&locked=False"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        compute_module_xname: Components[0].ID

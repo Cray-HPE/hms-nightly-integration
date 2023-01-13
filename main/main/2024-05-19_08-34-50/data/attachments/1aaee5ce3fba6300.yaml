@@ -1,0 +1,43 @@
+- name: hsmAPIinventoryHardwareByFRUhistoryFruidGET - Retrieve HardwareByFRU Inventory History entries by fruid using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/HardwareByFRU/History/{fruid}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "{fruid}"
+            History:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                    FRUID:
+                      type: str
+                      required: True
+                      enum:
+                        - "{fruid}"
+                    Timestamp:
+                      type: timestamp
+                      required: True
+                    EventType:
+                      type: str
+                      required: True
+
+

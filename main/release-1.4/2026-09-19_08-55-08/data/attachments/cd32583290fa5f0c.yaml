@@ -1,0 +1,7 @@
+- name: Ensure that transitions rejects unsupported PATCH operations
+  request:
+    url: "{pcs_base_url}/transitions"
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

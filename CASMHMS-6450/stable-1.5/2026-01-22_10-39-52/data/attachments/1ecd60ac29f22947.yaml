@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentID: x1000c0s5b0n0
+  Description: Created by BSS CT Tavern Tests
+  IPAddresses:
+  - IPAddress: 172.18.0.39
+  MACAddress: 0e:ff:ff:ff:ff:fe
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/EthernetInterfaces
+verify: false

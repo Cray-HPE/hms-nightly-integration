@@ -1,0 +1,28 @@
+- name: Retrieve component ethernet interface IPAddresses
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999/IPAddresses"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          required: True
+          sequence:
+            - type: map
+              required: True
+              mapping:
+                IPAddress:
+                  type: str
+                  required: True
+                  enum:
+                    - "99.9.9.9"
+                Network:
+                  type: str
+                  required: True
+                  enum:
+                    - "HSMTavernTestPatch"
+

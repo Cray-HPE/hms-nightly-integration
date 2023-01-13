@@ -1,0 +1,26 @@
+- name: Attempt a power transition for an invalid node
+  request:
+    url: "{pcs_base_url}/transitions"
+    json: {"operation":"on","taskDeadlineMinutes": !int "{transition_on_task_deadline_minutes}","location":[{"xname":"FAKE"}]}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            transitionID:
+              type: str
+              required: True
+            operation:
+              required: True
+              type: str
+              enum:
+                - "On"
+    save:
+      json:
+        transition_id: transitionID

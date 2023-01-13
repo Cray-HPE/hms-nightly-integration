@@ -1,0 +1,11 @@
+- name: Update bootparameter for only x9999c0s6b0n1
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: PATCH
+    verify: !bool "{verify}"
+    json:
+      hosts:
+      - x9999c0s6b0n1
+      params: console=tty0 updated
+  response:
+    status_code: 200

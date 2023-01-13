@@ -1,0 +1,7 @@
+- name: Remove the test {type} from NodeMaps
+  request:
+    url: "{hsm_base_url}/hsm/v2/Defaults/NodeMaps/{xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

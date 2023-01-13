@@ -1,0 +1,12 @@
+- name: Retrieve multiple Nodes from HSM to be used in later stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        node1_xname: Components[0].ID
+        node2_xname: Components[1].ID
+        node3_xname: Components[2].ID

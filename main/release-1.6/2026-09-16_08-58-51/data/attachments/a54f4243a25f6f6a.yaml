@@ -1,0 +1,13 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentIDs:
+  - x9999c7s9b9n8
+  - x9999c7s9b9n7
+  - x9999c7s9b9n6
+  nid_start:
+  - '9999999996'
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/Query
+verify: false

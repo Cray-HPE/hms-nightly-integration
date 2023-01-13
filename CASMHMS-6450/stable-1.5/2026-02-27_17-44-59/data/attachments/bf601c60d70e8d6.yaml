@@ -1,0 +1,8 @@
+- name: slsAPINetworksPUTNew - Create a new entry with put
+  request:
+    url: "{sls_base_url}/v1/networks/dummy2"
+    method: PUT
+    verify: !bool "{verify}"
+    json: { "Name": "dummy","Type": "OPA", "IPRanges":["127.0.0.1/8"]  }
+  response:
+    status_code: 200

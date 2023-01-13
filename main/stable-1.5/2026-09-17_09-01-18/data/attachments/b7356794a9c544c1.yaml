@@ -1,0 +1,24 @@
+- name: hsmAPIserviceValuesRoleGET - Retrieve the valid HSM service role values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values/role"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            Role:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+
+
+

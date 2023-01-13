@@ -1,0 +1,9 @@
+- name: hsmAPIserviceLivenessGET - Retrieve the HSM liveness status using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/liveness"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

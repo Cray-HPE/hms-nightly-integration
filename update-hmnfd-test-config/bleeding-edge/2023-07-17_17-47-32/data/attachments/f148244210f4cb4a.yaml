@@ -1,0 +1,36 @@
+- name: hsmAPIstateComponentsGETinvalidXname - Attempt to retrieve a Component with an invalid xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/FAKE"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Not Found"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "no such xname."
+            status:
+              type: int
+              required: True
+              enum:
+                - 404
+
+

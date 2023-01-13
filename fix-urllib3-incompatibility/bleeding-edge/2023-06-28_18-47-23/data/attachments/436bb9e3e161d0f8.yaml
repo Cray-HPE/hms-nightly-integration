@@ -1,0 +1,17 @@
+allow_redirects: false
+headers: {}
+json:
+  Components:
+  - Arch: X86
+    Class: Mountain
+    Enabled: false
+    Flag: OK
+    ID: x9999c7s9e9
+    NetType: Sling
+    State: 'On'
+    Type: NodeEnclosure
+  Force: false
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components
+verify: false

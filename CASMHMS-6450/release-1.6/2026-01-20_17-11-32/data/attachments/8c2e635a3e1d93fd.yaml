@@ -1,0 +1,45 @@
+- name: hsmAPIstateComponentsQueryPOSTroleComputeExistingComponent - Query for existing Compute Components with a specific ComponentID using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/Query"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["x9999c7s9b9n2"],"Role":["Compute"],"roleonly":true}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n2"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"
+                    Role:
+                      type: str
+                      required: True
+                      enum:
+                        - "Compute"
+                    SubRole:
+                      type: str
+                      required: True
+                      enum:
+                        - "Master"
+
+

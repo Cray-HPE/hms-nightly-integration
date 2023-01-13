@@ -1,0 +1,14 @@
+- name: Retrieve a Node from the Components collection to use in upcoming stages
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=Node"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      Components: !anything
+    save:
+      json:
+        xname: Components[0].ID
+
+

@@ -1,0 +1,7 @@
+- name: Perform PUT against /user-data
+  request:
+    url: "{bss_base_url}/user-data"
+    method: PUT
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

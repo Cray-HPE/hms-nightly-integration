@@ -1,0 +1,7 @@
+- name: slsAPISearchNetworksNotFound - Search the networks for an infiniband network
+  request:
+    url: "{sls_base_url}/v1/search/networks?type=infiniband"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404

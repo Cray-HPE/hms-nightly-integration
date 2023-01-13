@@ -1,0 +1,8 @@
+- name: Verify /groups POST method exclusive group Lion
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups"
+    json: {"label":"hsmtestgroupLion","description":"Exclusive test group Lion for HSM API testing in CT framework.","tags":["hsmtestgroupLion_tag1"],"members":{"ids":["{xname1}","{xname2}"]},"exclusiveGroup":"hsmtestgroupAnimals"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201

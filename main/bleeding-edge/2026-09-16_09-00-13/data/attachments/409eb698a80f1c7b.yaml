@@ -1,0 +1,34 @@
+body:
+  status:
+  - error: ''
+    lastUpdated: '2026-09-16T08:47:27.321142548Z'
+    managementState: available
+    powerState: 'off'
+    supportedPowerTransitions:
+    - Force-Off
+    - 'On'
+    - Soft-Off
+    - 'Off'
+    - Init
+    - Hard-Restart
+    - Soft-Restart
+    xname: x1000c0s2b0n1
+  - error: ''
+    lastUpdated: '2026-09-16T08:43:56.300819603Z'
+    managementState: available
+    powerState: 'off'
+    supportedPowerTransitions:
+    - 'On'
+    - Force-Off
+    - Soft-Off
+    - 'Off'
+    - Soft-Restart
+    - Init
+    - Hard-Restart
+    xname: x3000c0s6b0n0
+headers:
+  Content-Length: '480'
+  Content-Type: application/json
+  Date: Wed, 16 Sep 2026 08:47:43 GMT
+redirect_query_params: {}
+status_code: 200

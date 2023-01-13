@@ -1,0 +1,20 @@
+allow_redirects: false
+headers: {}
+json:
+  Component:
+    Arch: ARM
+    Class: River
+    Enabled: FAKE
+    Flag: Alert
+    ID: x9998c7s9b9n9
+    NID: 9998999999
+    NetType: Infiniband
+    Role: Compute
+    SoftwareStatus: AdminStatus
+    State: Standby
+    Type: Node
+  Force: false
+method: PUT
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/x9998c7s9b9n9
+verify: false

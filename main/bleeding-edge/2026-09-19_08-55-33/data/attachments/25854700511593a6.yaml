@@ -1,0 +1,10 @@
+- name: Patch another component ethernet interface IPAddresses network
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999/IPAddresses/99.9.9.7"
+    json: {"Network":"HSMTavernTest2PATCH"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+
+
