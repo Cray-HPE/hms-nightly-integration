@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  IPRanges:
+  - 127.0.0.1/8
+  Type: ethernet
+  foo: dummy
+method: POST
+stream: false
+url: http://cray-sls:8376/v1/networks
+verify: false

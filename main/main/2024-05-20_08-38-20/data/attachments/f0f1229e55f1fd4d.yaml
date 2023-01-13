@@ -1,0 +1,108 @@
+- name: hsmAPIinventoryHardwareXnameGETnodeHsnNic - Retrieve a NodeHsnNic Hardware Inventory entry by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/x9999c7s9b9n9h3"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9h3"
+            Type:
+              type: str
+              required: True
+              enum:
+                - "NodeHsnNic"
+            Ordinal:
+              type: int
+              required: True
+              enum:
+                - 3
+            Status:
+              type: str
+              required: True
+              enum:
+                - "Populated"
+            HWInventoryByLocationType:
+              type: str
+              required: True
+              enum:
+                - "HWInvByLocNodeHsnNic"
+            NodeHsnNicLocationInfo:
+              type: map
+              required: True
+              mapping:
+                Id:
+                  type: str
+                  required: True
+                  enum:
+                    - "HPCNet0"
+                Name:
+                  type: str
+                  required: True
+                  enum:
+                    - ""
+                Description:
+                  type: str
+                  required: True
+                  enum:
+                    - "SS11200Gb2PNICMezzREV02(HSN)"
+            PopulatedFRU:
+              type: map
+              required: True
+              mapping:
+                FRUID:
+                  type: str
+                  required: True
+                  enum:
+                    - "NodeHsnNic.HPEPRM.P43012001.OTI6996696413"
+                Type:
+                  type: str
+                  required: True
+                  enum:
+                    - "NodeHsnNic"
+                Subtype:
+                  type: str
+                  required: True
+                  enum:
+                    - ""
+                HWInventoryByFRUType:
+                  type: str
+                  required: True
+                  enum:
+                    - "HWInvByFRUNodeHsnNic"
+                NodeHsnNicFRUInfo:
+                  type: map
+                  required: True
+                  mapping:
+                    Manufacturer:
+                      type: str
+                      required: True
+                      enum:
+                        - "HPE-PRM"
+                    Model:
+                      type: str
+                      required: True
+                      enum:
+                        - "R4K44A"
+                    PartNumber:
+                      type: str
+                      required: True
+                      enum:
+                        - "P43012-001"
+                    SerialNumber:
+                      type: str
+                      required: True
+                      enum:
+                        - "OTI6996696413"
+
+

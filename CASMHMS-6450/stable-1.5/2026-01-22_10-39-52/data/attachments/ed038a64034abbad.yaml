@@ -1,0 +1,36 @@
+- name: hsmAPIserviceValuesPATCH - Attempt an unsupported PATCH operation on the service values endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 405
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Method Not Allowed"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "allow GET"
+            status:
+              type: int
+              required: True
+              enum:
+                - 405
+
+

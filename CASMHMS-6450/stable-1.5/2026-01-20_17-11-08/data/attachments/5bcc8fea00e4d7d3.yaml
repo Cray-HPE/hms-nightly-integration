@@ -1,0 +1,36 @@
+- name: hsmAPIRedfishEndpointsPATCH - Patch same FQDN (fail)
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/RedfishEndpoints/x9999c7s99b94"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"FQDN":"MyHostname"}
+  response:
+    status_code: 409
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Conflict"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "operation would conflict with an existing resource that has the same FQDN"
+            status:
+              type: int
+              required: True
+              enum:
+                - 409
+

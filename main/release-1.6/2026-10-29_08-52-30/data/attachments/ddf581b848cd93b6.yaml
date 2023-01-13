@@ -1,0 +1,23 @@
+- name: Ensure that we can conduct a query on a specific Node ID in the ComponentEndpoints collection
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/ComponentEndpoints/{id}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+
+
+          allowempty: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "{id}"
+

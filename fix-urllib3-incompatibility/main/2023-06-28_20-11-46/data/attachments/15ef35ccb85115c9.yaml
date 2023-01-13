@@ -1,0 +1,33 @@
+body:
+  Format: NestNodesOnly
+  RouterBMCs:
+  - HWInventoryByLocationType: HWInvByLocRouterBMC
+    ID: x9999c7r9b9
+    Ordinal: 9
+    PopulatedFRU:
+      FRUID: FRUIDforx9999c7r9b9
+      HWInventoryByFRUType: HWInvByFRURouterBMC
+      RouterBMCFRUInfo:
+        ManagerType: EnclosureManager
+        Manufacturer: ''
+        Model: ''
+        PartNumber: ''
+        SerialNumber: ''
+      Subtype: ''
+      Type: RouterBMC
+    RouterBMCLocationInfo:
+      DateTime: '2022-10-18T15:36:06Z'
+      DateTimeLocalOffset: '0'
+      Description: ShastaManager
+      FirmwareVersion: ''
+      Id: BMC
+      Name: BMC
+    Status: Populated
+    Type: RouterBMC
+  XName: x9999c7r9b9
+headers:
+  Content-Length: '589'
+  Content-Type: application/json
+  Date: Wed, 28 Jun 2023 20:04:08 GMT
+redirect_query_params: {}
+status_code: 200

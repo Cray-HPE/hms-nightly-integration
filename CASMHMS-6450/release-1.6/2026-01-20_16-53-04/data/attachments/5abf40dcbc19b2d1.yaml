@@ -1,0 +1,70 @@
+- name: Get a Ready NodeBMC xname from the HSM Components collection to use in the next stage
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components?type=NodeBMC&state=Ready&flag=OK"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      pattern: "x[0-9]+c[0-9]+s[0-9]+b[0-9]+"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "NodeBMC"
+                    State:
+                      type: str
+                      required: True
+                      enum:
+                        - "Ready"
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "OK"
+                    Enabled:
+                      type: bool
+                      required: True
+
+                    Role:
+                      type: str
+                      required: False
+                    NetType:
+                      type: str
+                      required: True
+                    Arch:
+                      type: str
+                      required: True
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "River"
+                        - "Mountain"
+                        - "Hill"
+
+                    Locked:
+                      type: bool
+                      required: False
+    save:
+      json:
+        xname: Components[0].ID
+
+

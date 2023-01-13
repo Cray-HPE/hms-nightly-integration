@@ -1,0 +1,29 @@
+- name: hsmAPIserviceValuesNetTypeGET - Retrieve the valid HSM service nettype values using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/values/nettype"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            NetType:
+              type: seq
+              required: True
+              matching: all
+              sequence:
+                - type: str
+                  required: True
+                  unique: True
+                  enum:
+                    - "Ethernet"
+                    - "Infiniband"
+                    - "None"
+                    - "OEM"
+                    - "Sling"
+
+

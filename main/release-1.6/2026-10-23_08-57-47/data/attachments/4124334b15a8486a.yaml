@@ -1,0 +1,12 @@
+- name: Delete testing bootparameters by kernel 2
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      kernel: s3://boot-images/00000000-0000-0000-0000-000000000003/kernel
+  response:
+    status_code:
+    - 200
+    - 400
+    - 404

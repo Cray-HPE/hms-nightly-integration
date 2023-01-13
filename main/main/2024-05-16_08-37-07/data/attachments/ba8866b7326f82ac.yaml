@@ -1,0 +1,34 @@
+- name: Perform DELETE against bootparameters with non-existent nid
+  request:
+    url: "{bss_base_url}/boot/v1/bootparameters"
+    method: DELETE
+    verify: !bool "{verify}"
+    json:
+      nids:
+      - 2147483647
+  response:
+    status_code: 400
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+            title:
+              type: str
+              required: True
+            detail:
+              type: str
+              required: False
+            instance:
+              type: str
+              required: False
+            status:
+              type: int
+              required: False
+
+

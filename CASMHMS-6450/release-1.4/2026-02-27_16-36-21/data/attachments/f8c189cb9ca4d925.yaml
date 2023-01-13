@@ -1,0 +1,12 @@
+allow_redirects: false
+headers: {}
+json:
+  Description: Test Component Interface
+  IPAddresses:
+  - IPAddress: 99.9.9.9
+    Network: HSMTavernTest
+  MACAddress: 9A:99:99:99:99:99
+method: POST
+stream: false
+url: http://cray-smd:27779/hsm/v2/Inventory/EthernetInterfaces
+verify: false

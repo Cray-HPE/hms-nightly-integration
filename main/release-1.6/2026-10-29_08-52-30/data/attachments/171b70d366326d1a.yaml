@@ -1,0 +1,9 @@
+- name: Remove test Node from State Components
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+
+

@@ -1,0 +1,38 @@
+- name: hsmAPIstateComponentsPUTinvalidComponentNoForce - Attempt to create a Component with an invalid payload using PUT without the force option.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/x9998c7s9b9n9"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"Component":{"ID":"x9998c7s9b9n9","Type":"Node","State":"Standby","Flag":"Alert","Enabled":"FAKE","SoftwareStatus":"AdminStatus","Role":"Compute","NID":9998999999,"NetType":"Infiniband","Arch":"ARM","Class":"River"},"Force":false}
+  response:
+
+    status_code: 500
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Internal Server Error"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "error decoding JSON json: cannot unmarshal string into Go struct field Component.component.Enabled of type bool"
+            status:
+              type: int
+              required: True
+              enum:
+                - 500
+
+

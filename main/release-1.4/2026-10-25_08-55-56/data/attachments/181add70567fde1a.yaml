@@ -1,0 +1,108 @@
+- name: Ensure the boot script service can dump its state
+  request:
+    url: "{bss_base_url}/boot/v1/dumpstate"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              sequence:
+                - type: map
+                  matching: all
+                  mapping:
+                    Arch:
+                      type: str
+                    Class:
+                      type: str
+
+
+                      required: False
+                    Enabled:
+                      type: bool
+                    EndpointEnabled:
+                      type: bool
+                      required: False
+                    FQDN:
+                      type: str
+                    Flag:
+                      type: str
+                    ID:
+                      type: str
+                    Locked:
+                      type: bool
+                      required: False
+                    MAC:
+                      type: seq
+                      matching: all
+                      sequence:
+                        - type: str
+                    NID:
+                      type: int
+                    NetType:
+                      type: str
+                    Role:
+                      type: str
+                    SoftwareStatus:
+                      type: str
+                      required: False
+                    State:
+                      type: str
+                    SubRole:
+                      type: str
+                      required: False
+                    Type:
+                      type: str
+            Params:
+              type: seq
+              sequence:
+                - type: map
+                  matching: all
+                  mapping:
+                    hosts:
+                      type: seq
+                      required: False
+                      sequence:
+                        - type: str
+                    params:
+                      type: str
+                      required: False
+                    kernel:
+                      type: str
+                      required: False
+                    initrd:
+                      type: str
+                      required: False
+                    cloud-init:
+                      type: map
+                      required: False
+                      matching: all
+                      mapping:
+                        meta-data:
+                          type: str
+                        user-data:
+                          type: str
+                        phone-home:
+                          type: map
+                          matching: all
+                          mapping:
+                            pub_key_dsa:
+                              type: str
+                            pub_key_rsa:
+                              type: str
+                            pub_key_ecdsa:
+                              type: str
+                            instance_id:
+                              type: str
+                            hostname:
+                              type: str
+                            fqdn:
+                              type: str

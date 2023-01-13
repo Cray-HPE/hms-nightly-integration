@@ -1,0 +1,8 @@
+- name: slsAPIHardwarePUTNew - Create a new entry with put
+  request:
+    url: "{sls_base_url}/v1/hardware/x9999c7s9b8"
+    method: PUT
+    verify: !bool "{verify}"
+    json: { "Class": "Mountain" }
+  response:
+    status_code: 201

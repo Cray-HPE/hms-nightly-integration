@@ -1,0 +1,19 @@
+- name: bssAPIServiceVersionGET - Ensure the BSS version endpoint can be retrieved
+  request:
+    url: "{bss_base_url}/boot/v1/service/version"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            bss-version:
+              type: str
+              required: True
+
+

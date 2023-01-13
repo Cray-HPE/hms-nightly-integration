@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - X86
+  - ARM
+  - UNKNOWN
+  - Other
+  Class:
+  - River
+  - Mountain
+  - Hill
+  Flag:
+  - Warning
+  - Alert
+  - Locked
+  - Unknown
+  - OK
+  - Warning
+  NetType:
+  - Infiniband
+  - Ethernet
+  - OEM
+  - None
+  - Sling
+  Role:
+  - Storage
+  - Management
+  - Compute
+  - Service
+  - System
+  - Application
+  State:
+  - Halt
+  - Ready
+  - Unknown
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  SubRole:
+  - UAN
+  - Gateway
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Master
+  - Worker
+  - Storage
+  Type:
+  - Memory
+  - Processor
+  - RouterBMC
+  - Partition
+  - CabinetPDUNic
+  - CabinetBMC
+  - ComputeModule
+  - NodeFpga
+  - MgmtSwitch
+  - MgmtSwitchConnector
+  - AllComp
+  - CMMRectifier
+  - StorageGroup
+  - NodePowerConnector
+  - MgmtHLSwitchEnclosure
+  - INVALID
+  - All
+  - System
+  - CabinetPDUController
+  - CabinetPDU
+  - NodeNic
+  - NodeAccel
+  - RouterFpga
+  - CDUMgmtSwitch
+  - CabinetPDUOutlet
+  - CMMFpga
+  - NodeBMCNic
+  - NodeEnclosurePowerSupply
+  - HSNBoard
+  - RouterModule
+  - RouterTORFpga
+  - CabinetPDUPowerConnector
+  - ChassisBMCNic
+  - Drive
+  - NodeHsnNic
+  - NodeAccelRiser
+  - RouterTOR
+  - HSNAsic
+  - CabinetCDU
+  - CEC
+  - ChassisBMC
+  - NodeBMC
+  - VirtualNode
+  - RouterBMCNic
+  - RouterPowerConnector
+  - HSNConnector
+  - AllSvc
+  - NodeEnclosure
+  - HSNConnectorPort
+  - HSNLink
+  - MgmtHLSwitch
+  - SMSBox
+  - CDU
+  - Cabinet
+  - Chassis
+  - Node
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Thu, 29 Oct 2026 08:24:23 GMT
+redirect_query_params: {}
+status_code: 200

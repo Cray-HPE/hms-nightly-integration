@@ -1,0 +1,8 @@
+- name: Perform POST against /meta-data
+  request:
+    url: "{bss_base_url}/meta-data"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+

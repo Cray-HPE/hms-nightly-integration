@@ -1,0 +1,28 @@
+- name: slsAPIHardwarePOSTEntry - create a new entry with good data (river)
+  request:
+    url: "{sls_base_url}/v1/hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {   "Xname": "x9998c7s9b9001","Class": "River"}
+  response:
+    status_code: 201
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
