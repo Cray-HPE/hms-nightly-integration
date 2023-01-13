@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - X86
+  - ARM
+  - UNKNOWN
+  - Other
+  Class:
+  - Hill
+  - River
+  - Mountain
+  Flag:
+  - Unknown
+  - OK
+  - Warning
+  - Warning
+  - Alert
+  - Locked
+  NetType:
+  - Infiniband
+  - Ethernet
+  - OEM
+  - None
+  - Sling
+  Role:
+  - Management
+  - Compute
+  - Service
+  - System
+  - Application
+  - Storage
+  State:
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  - Unknown
+  - Empty
+  - Populated
+  SubRole:
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Worker
+  - Storage
+  - Master
+  - UAN
+  - Gateway
+  Type:
+  - RouterModule
+  - MgmtSwitch
+  - MgmtHLSwitch
+  - Chassis
+  - Drive
+  - ComputeModule
+  - INVALID
+  - CabinetPDUController
+  - HSNBoard
+  - RouterTORFpga
+  - RouterPowerConnector
+  - HSNConnectorPort
+  - HSNLink
+  - Cabinet
+  - NodeBMCNic
+  - VirtualNode
+  - AllSvc
+  - CDU
+  - CabinetPDUOutlet
+  - HSNConnector
+  - CEC
+  - NodePowerConnector
+  - Node
+  - MgmtHLSwitchEnclosure
+  - All
+  - SMSBox
+  - CabinetBMC
+  - NodeFpga
+  - System
+  - CabinetPDU
+  - RouterBMCNic
+  - NodeHsnNic
+  - RouterFpga
+  - CabinetPDUNic
+  - NodeNic
+  - Memory
+  - RouterTOR
+  - CabinetPDUPowerConnector
+  - ChassisBMC
+  - StorageGroup
+  - NodeEnclosurePowerSupply
+  - CabinetCDU
+  - CMMFpga
+  - NodeEnclosure
+  - Processor
+  - RouterBMC
+  - MgmtSwitchConnector
+  - CDUMgmtSwitch
+  - ChassisBMCNic
+  - CMMRectifier
+  - NodeBMC
+  - NodeAccel
+  - NodeAccelRiser
+  - HSNAsic
+  - AllComp
+  - Partition
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Wed, 07 Oct 2026 08:34:22 GMT
+redirect_query_params: {}
+status_code: 200

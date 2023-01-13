@@ -1,0 +1,8 @@
+- name: Verify /groups POST method exclusive group Blue
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups"
+    json: {"label":"hsmtestgroupBlue","description":"Exclusive test group Blue for HSM API testing in CT framework.","tags":["hsmtestgroupBlue_tag1"],"members":{"ids":["{xname1}"]},"exclusiveGroup":"hsmtestgroupColors"}
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 201

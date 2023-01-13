@@ -1,0 +1,9 @@
+- name: Update a State Change Notification subscription with a replace operation
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN/{subID}"
+    method: PATCH
+    verify: !bool "{verify}"
+    json: {"Op":"replace","Roles":["service"],"States":["Ready","On","Standby"]}
+  response:
+    status_code: 204
+

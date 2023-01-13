@@ -1,0 +1,13 @@
+- name: Save the node name, nid, and mac address for use in later stages
+  request:
+    url: "{bss_base_url}/boot/v1/dumpstate"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      json:
+        nid: Components[0].NID
+        node_name: Components[0].ID
+        mac_address: Components[0].MAC[0]
+

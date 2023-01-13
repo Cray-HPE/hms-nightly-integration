@@ -1,0 +1,532 @@
+body:
+  Components:
+  - Arch: X86
+    Class: River
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x3000c0s5b0n0
+    MAC:
+    - 00:40:a6:1d:60:36
+    - 00:40:a6:48:9b:a1
+    - 00:40:a6:69:21:89
+    - 00:40:a6:01:b0:0b
+    - 00:40:a6:1d:60:36
+    - 00:40:a6:48:9b:a1
+    - 00:40:a6:69:21:89
+    - 00:40:a6:01:b0:0b
+    NID: 49168544
+    NetType: Sling
+    Role: Application
+    State: 'On'
+    SubRole: UAN
+    Type: Node
+  - Arch: X86
+    Class: River
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x3000c0s6b0n0
+    MAC:
+    - 00:40:a6:02:3c:58
+    - 00:40:a6:19:2b:92
+    - 00:40:a6:6a:da:b0
+    - 00:40:a6:0f:03:c5
+    - 00:40:a6:02:3c:58
+    - 00:40:a6:19:2b:92
+    - 00:40:a6:6a:da:b0
+    - 00:40:a6:0f:03:c5
+    NID: 20
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s2b1n0
+    MAC:
+    - 00:40:a6:1b:aa:8a
+    - 00:40:a6:1b:aa:8a
+    NID: 1010
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s2b1n1
+    MAC:
+    - 00:40:a6:23:cd:ae
+    - 00:40:a6:23:cd:ae
+    NID: 1011
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s7b0n0
+    MAC:
+    - 00:40:a6:46:b7:1e
+    - 00:40:a6:46:b7:1e
+    NID: 1028
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s7b0n1
+    MAC:
+    - 00:40:a6:07:4c:21
+    - 00:40:a6:07:4c:21
+    NID: 1029
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s1b0n0
+    MAC:
+    - 00:40:a6:27:33:14
+    - 00:40:a6:27:33:14
+    NID: 1004
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s1b0n1
+    MAC:
+    - 00:40:a6:0e:28:dc
+    - 00:40:a6:0e:28:dc
+    NID: 1005
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s6b0n0
+    MAC:
+    - 00:40:a6:02:55:2d
+    - 00:40:a6:02:55:2d
+    NID: 1024
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s6b0n1
+    MAC:
+    - 00:40:a6:74:53:90
+    - 00:40:a6:74:53:90
+    NID: 1025
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s5b0n1
+    MAC:
+    - 00:40:a6:34:b8:94
+    - 00:40:a6:34:b8:94
+    NID: 1021
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s5b0n0
+    MAC:
+    - 00:40:a6:73:55:bd
+    - 00:40:a6:73:55:bd
+    NID: 1020
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s5b1n0
+    MAC:
+    - 00:40:a6:76:63:cb
+    - 00:40:a6:76:63:cb
+    NID: 1022
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s5b1n1
+    MAC:
+    - 00:40:a6:37:ed:ec
+    - 00:40:a6:37:ed:ec
+    NID: 1023
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s3b0n0
+    MAC:
+    - 00:40:a6:5d:6c:5c
+    - 00:40:a6:5d:6c:5c
+    NID: 1012
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s3b0n1
+    MAC:
+    - 00:40:a6:55:28:0f
+    - 00:40:a6:55:28:0f
+    NID: 1013
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s4b0n0
+    MAC:
+    - 00:40:a6:7f:86:59
+    - 00:40:a6:7f:86:59
+    NID: 1016
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s4b0n1
+    MAC:
+    - 00:40:a6:03:1e:46
+    - 00:40:a6:03:1e:46
+    NID: 1017
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s1b1n0
+    MAC:
+    - 00:40:a6:40:0d:3c
+    - 00:40:a6:40:0d:3c
+    NID: 1006
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s1b1n1
+    MAC:
+    - 00:40:a6:59:9f:df
+    - 00:40:a6:59:9f:df
+    NID: 1007
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b1n0
+    MAC:
+    - 00:40:a6:2b:b9:99
+    - 00:40:a6:2b:b9:99
+    NID: 1002
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b1n1
+    MAC:
+    - 00:40:a6:7b:3b:ca
+    - 00:40:a6:7b:3b:ca
+    NID: 1003
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b0n0
+    MAC:
+    - 00:40:a6:31:eb:bf
+    - 00:40:a6:31:eb:bf
+    NID: 1000
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s0b0n1
+    MAC:
+    - 00:40:a6:5b:15:f8
+    - 00:40:a6:5b:15:f8
+    NID: 1001
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s3b1n0
+    MAC:
+    - 00:40:a6:11:dc:0a
+    - 00:40:a6:11:dc:0a
+    NID: 1014
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s3b1n1
+    MAC:
+    - 00:40:a6:31:ab:6c
+    - 00:40:a6:31:ab:6c
+    NID: 1015
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s2b0n0
+    MAC:
+    - 00:40:a6:69:bd:83
+    - 00:40:a6:69:bd:83
+    NID: 1008
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s2b0n1
+    MAC:
+    - 00:40:a6:44:e1:a9
+    - 00:40:a6:44:e1:a9
+    NID: 1009
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s6b1n0
+    MAC:
+    - 00:40:a6:56:75:4f
+    - 00:40:a6:56:75:4f
+    NID: 1026
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s6b1n1
+    MAC:
+    - 00:40:a6:2f:7e:51
+    - 00:40:a6:2f:7e:51
+    NID: 1027
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s7b1n0
+    MAC:
+    - 00:40:a6:38:d4:6c
+    - 00:40:a6:38:d4:6c
+    NID: 1030
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s7b1n1
+    MAC:
+    - 00:40:a6:11:22:d0
+    - 00:40:a6:11:22:d0
+    NID: 1031
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s4b1n0
+    MAC:
+    - 00:40:a6:68:7b:24
+    - 00:40:a6:68:7b:24
+    NID: 1018
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  - Arch: X86
+    Class: Mountain
+    Enabled: true
+    EndpointEnabled: true
+    FQDN: ''
+    Flag: OK
+    ID: x1000c0s4b1n1
+    MAC:
+    - 00:40:a6:2f:05:dc
+    - 00:40:a6:2f:05:dc
+    NID: 1019
+    NetType: Sling
+    Role: Compute
+    State: 'On'
+    Type: Node
+  Params: null
+headers:
+  Content-Type: application/json; charset=UTF-8
+  Date: Tue, 20 Jan 2026 16:43:44 GMT
+  Transfer-Encoding: chunked
+redirect_query_params: {}
+status_code: 200

@@ -1,0 +1,8 @@
+- name: Prepare to restore the original state of the first target node by setting it to Off
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_1_xname}/StateData"
+    json: {"State":"Off"}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204

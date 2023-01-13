@@ -1,0 +1,7 @@
+- name: capmcAPIReadinessPOST - Ensure that /readiness cannot be posted to
+  request:
+    url: "{capmc_base_url}/capmc/v1/readiness"
+    method: POST
+    verify: !bool "{verify}"
+  response:
+    status_code: 405

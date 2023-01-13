@@ -1,0 +1,9 @@
+- name: Ensure that the new FAS action that was created can also be deleted
+  request:
+    url: "{fas_base_url}/actions/{newActionID}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

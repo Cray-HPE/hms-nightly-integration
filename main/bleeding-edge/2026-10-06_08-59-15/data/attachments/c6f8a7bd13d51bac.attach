@@ -1,0 +1,93 @@
+Format variables:
+  capmc_base_url = 'http://cray-capmc:27777'
+  compute_module_xname = 'x1000c0s2'
+  verify = 'False'
+
+Source test stage (line 389):
+  - name: capmcAPIxnameOffPOSTonComputeNodePrereqActual - Power the target node and its parents off using xname_off
+    request:
+      url: "{capmc_base_url}/capmc/v1/xname_off"
+
+
+      json: {"reason":"CT test case: capmcAPIxnameOffPOSTonComputeNodePrereqActual","xnames":["{compute_module_xname}b0n0"],"force":true,"prereq":true}
+      method: POST
+      verify: !bool "{verify}"
+    response:
+      status_code: 200
+      verify_response_with:
+        function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              "e":
+                type: int
+                required: True
+                enum:
+                  - 0
+              "err_msg":
+                required: True
+                type: str
+                enum:
+                  - ""
+
+
+Formatted stage:
+  name: capmcAPIxnameOffPOSTonComputeNodePrereqActual - Power the target node and its
+    parents off using xname_off
+  request:
+    json:
+      force: true
+      prereq: true
+      reason: 'CT test case: capmcAPIxnameOffPOSTonComputeNodePrereqActual'
+      xnames:
+      - 'x1000c0s2b0n0'
+    method: POST
+    url: 'http://cray-capmc:27777/capmc/v1/xname_off'
+    verify: !bool 'False'
+  response:
+    status_code: 200
+    verify_response_with:
+      extra_kwargs:
+        schema:
+          mapping:
+            e:
+              enum:
+              - 0
+              required: true
+              type: int
+            err_msg:
+              enum:
+              - ''
+              required: true
+              type: str
+          required: true
+          type: map
+      function: tavern.testutils.helpers:validate_pykwalify
+
+Errors:
+E   tavern.util.exceptions.TestFailError: Test 'capmcAPIxnameOffPOSTonComputeNodePrereqActual - Power the target node and its parents off using xname_off' failed:
+    - Error calling validate function '<function validate_pykwalify at 0x7fb5c3277380>':
+        Traceback (most recent call last):
+          File "/opt/venv/lib/python3.12/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+            verifier.validate()
+          File "/opt/venv/lib/python3.12/site-packages/pykwalify/core.py", line 194, in validate
+            raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+        pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+         - Enum '500' does not exist. Path: '/e' Enum: [0].
+         - Enum 'Error: Failed to get transition from PCS.' does not exist. Path: '/err_msg' Enum: [''].: Path: '/'>
+    
+        The above exception was the direct cause of the following exception:
+    
+        Traceback (most recent call last):
+          File "/opt/venv/lib/python3.12/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+            vf(response)
+          File "/opt/venv/lib/python3.12/site-packages/tavern/util/extfunctions.py", line 98, in inner
+            result = func(response, *args, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "/opt/venv/lib/python3.12/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+            verify_generic(to_verify, schema)
+          File "/opt/venv/lib/python3.12/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+            raise BadSchemaError() from e
+        tavern.util.exceptions.BadSchemaError

@@ -1,0 +1,19 @@
+- name: Abort the previously issued force-off transition
+  request:
+    url: "{pcs_base_url}/transitions/{transition_id_actual}"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 202
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            abortStatus:
+              required: True
+              type: str
+              enum:
+                - "Accepted - abort initiated"

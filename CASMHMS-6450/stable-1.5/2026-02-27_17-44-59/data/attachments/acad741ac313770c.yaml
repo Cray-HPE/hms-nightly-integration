@@ -1,0 +1,23 @@
+- name: Attempt to delete all State Change Notification subscriptions when none are present
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              pattern: "0 Subscriptions deleted"
+

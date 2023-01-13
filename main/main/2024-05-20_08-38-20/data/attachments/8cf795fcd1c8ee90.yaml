@@ -1,0 +1,7 @@
+- name: Remove test HSM EthernetInterfaces for the CT Test container
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/0efffffffffe"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

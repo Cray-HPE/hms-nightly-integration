@@ -1,0 +1,10 @@
+- name: Verify /groups/label PATCH method
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroup1"
+    json: {"description":"Test group 1 for HSM API testing in CT framework (UPDATED).","tags":["hsmtestgroup1_tag3","hsmtestgroup1_tag4"]}
+    method: PATCH
+    verify: !bool "{verify}"
+  response:
+    status_code: 204
+
+

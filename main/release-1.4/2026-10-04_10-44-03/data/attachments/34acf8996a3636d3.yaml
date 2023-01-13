@@ -1,0 +1,26 @@
+body:
+  automaticExpirationTime: '2026-10-05T10:22:50.379559538Z'
+  createTime: '2026-10-04T10:22:50.379559468Z'
+  operation: 'On'
+  taskCounts:
+    failed: 0
+    in-progress: 2
+    new: 0
+    succeeded: 0
+    total: 2
+    un-supported: 0
+  tasks:
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, on
+    xname: x1000c0s1b0n0
+  - taskStatus: in-progress
+    taskStatusDescription: Confirming successful transition, on
+    xname: x1000c0s1b0n1
+  transitionID: fa3fd4b9-5157-4ddf-b1ad-1fdf9a14fd7a
+  transitionStatus: in-progress
+headers:
+  Content-Length: '543'
+  Content-Type: application/json
+  Date: Sun, 04 Oct 2026 10:22:53 GMT
+redirect_query_params: {}
+status_code: 200

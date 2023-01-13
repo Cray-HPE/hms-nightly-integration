@@ -1,0 +1,12 @@
+- name: Retrieve first test subscription ID to delete (if present)
+  request:
+    url: "{hsm_base_url}/hsm/v2/Subscriptions/SCN"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    save:
+      $ext:
+        function: hsm_test_utils:get_id_of_scn_subscriber_url
+        extra_kwargs:
+          subscriber_url: "test-hmnfd-9z9z999zzz-9zz9z_9http://test-hmnfd/hmi/v1/scn"

@@ -1,0 +1,161 @@
+- name: hsmAPIinventoryHardwareXnameGETnodeUpdate - Retrieve an updated Node Hardware Inventory entry by xname using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/x9999c7s9b9n9"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "x9999c7s9b9n9"
+            Type:
+              type: str
+              required: True
+              enum:
+                - "Node"
+            Ordinal:
+              type: int
+              required: True
+              enum:
+                - 9
+            Status:
+              type: str
+              required: True
+              enum:
+                - "Populated"
+            HWInventoryByLocationType:
+              type: str
+              required: True
+              enum:
+                - "HWInvByLocNode"
+            NodeLocationInfo:
+              type: map
+              required: True
+              mapping:
+                Id:
+                  type: str
+                  required: True
+                  enum:
+                    - "Node9"
+                Name:
+                  type: str
+                  required: True
+                  enum:
+                    - "Node9"
+                Description:
+                  type: str
+                  required: True
+                  enum:
+                    - "WNC-Updated"
+                HostName:
+                  type: str
+                  required: True
+                  enum:
+                    - ""
+                ProcessorSummary:
+                  type: map
+                  required: True
+                  mapping:
+                    Count:
+                      type: int
+                      required: True
+                      enum:
+                        - 2
+                    Model:
+                      type: str
+                      required: True
+                      enum:
+                        - "AMDEPYC776364-CoreProcessor"
+                MemorySummary:
+                  type: map
+                  required: True
+                  mapping:
+                    TotalSystemMemoryGiB:
+                      type: int
+                      required: True
+                      enum:
+                        - 512
+            PopulatedFRU:
+              type: map
+              required: True
+              mapping:
+                FRUID:
+                  type: str
+                  required: True
+                  enum:
+                    - "Node.HPE.101920703D.XJJ7679069386"
+                Type:
+                  type: str
+                  required: True
+                  enum:
+                    - "Node"
+                Subtype:
+                  type: str
+                  required: True
+                  enum:
+                    - ""
+                HWInventoryByFRUType:
+                  type: str
+                  required: True
+                  enum:
+                    - "HWInvByFRUNode"
+                NodeFRUInfo:
+                  type: map
+                  required: True
+                  mapping:
+                    AssetTag:
+                      type: str
+                      required: True
+                      enum:
+                        - ""
+                    BiosVersion:
+                      type: str
+                      required: True
+                      enum:
+                        - "ex425.bios-1.6.3-updated"
+                    Model:
+                      type: str
+                      required: True
+                      enum:
+                        - "HPECRAYEX425(MILAN)"
+                    Manufacturer:
+                      type: str
+                      required: True
+                      enum:
+                        - "HPE"
+                    PartNumber:
+                      type: str
+                      required: True
+                      enum:
+                        - "101920703.D"
+                    SerialNumber:
+                      type: str
+                      required: True
+                      enum:
+                        - "XJJ7679069386"
+                    SKU:
+                      type: str
+                      required: True
+                      enum:
+                        - "Updated-SKU"
+                    SystemType:
+                      type: str
+                      required: True
+                      enum:
+                        - "Physical"
+                    UUID:
+                      type: str
+                      required: True
+                      enum:
+                        - "Updated-UUID"
+
+

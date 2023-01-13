@@ -1,0 +1,10 @@
+- name: hsmAPIserviceReadyPUT - Attempt an unsupported PUT operation on the service readiness endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/ready"
+    method: PUT
+    verify: !bool "{verify}"
+    json: {"fake":"payload"}
+  response:
+    status_code: 404
+
+

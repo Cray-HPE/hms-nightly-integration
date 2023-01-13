@@ -1,0 +1,19 @@
+- name: Create {type} component using PUT with system role information
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{xname}"
+    method: PUT
+    verify: !bool "{verify}"
+    json:
+      Component:
+        ID: "{xname}"
+        State: Populated
+        Role: Management
+        SubRole: Worker
+        NID: 9999999977
+        Class: River
+        Arch: X86
+        NetType: "Sling"
+
+  response:
+    status_code: 204
+

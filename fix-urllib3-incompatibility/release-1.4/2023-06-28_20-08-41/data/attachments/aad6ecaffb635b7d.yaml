@@ -1,0 +1,35 @@
+- name: hsmAPIserviceReadyDELETE - Attempt an unsupported DELETE operation on the service readiness endpoint.
+  request:
+    url: "{hsm_base_url}/hsm/v2/service/ready"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 405
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Method Not Allowed"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "allow GET"
+            status:
+              type: int
+              required: True
+              enum:
+                - 405
+
+

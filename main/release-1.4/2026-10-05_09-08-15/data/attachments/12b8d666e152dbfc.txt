@@ -1,0 +1,208 @@
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed']"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'taskID': '548ff0f9-8f34-495a-b3e5-71a58c23d48f', 'type': 'snapshot', 'taskCreateTime': '2026-10-05T09:01:42.604980614Z', 'automaticExpirationTime': '2026-10-06T09:01:42.604980664Z', 'taskStatus': 'in-progress', 'taskCounts': {'total': 1, 'new': 0, 'in-progress': 1, 'failed': 0, 'succeeded': 0, 'un-supported': 0}, 'components': [{'xname': 'x1000c0s4b1n0'}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7ff0be297940>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed']"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'taskID': '95a9127a-a5c9-4b19-8567-34e8b89f1fae', 'type': 'patch', 'taskCreateTime': '2026-10-05T09:01:44.641221271Z', 'automaticExpirationTime': '2026-10-06T09:01:44.641221311Z', 'taskStatus': 'in-progress', 'taskCounts': {'total': 1, 'new': 0, 'in-progress': 0, 'failed': 0, 'succeeded': 1, 'un-supported': 0}, 'components': [{'xname': 'x1000c0s4b1n0', 'powerCapLimits': [{'name': 'Node Power Limit', 'currentValue': 350, 'maximumValue': 925, 'minimumValue': 350}]}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7ff0be297940>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed']"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'taskID': '8334d50e-f608-4f6e-8639-c441303b2c38', 'type': 'patch', 'taskCreateTime': '2026-10-05T09:01:46.677200149Z', 'automaticExpirationTime': '2026-10-06T09:01:46.677200199Z', 'taskStatus': 'in-progress', 'taskCounts': {'total': 1, 'new': 0, 'in-progress': 1, 'failed': 0, 'succeeded': 0, 'un-supported': 0}, 'components': [{'xname': 'x1000c0s4b1n0', 'powerCapLimits': [{'name': 'Node Power Limit', 'currentValue': 925, 'maximumValue': 925, 'minimumValue': 350}]}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7ff0be297940>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError
+[1m[31mERROR   [0m pykwalify.core:core.py:190 validation.invalid
+[1m[31mERROR   [0m pykwalify.core:core.py:191  --- All found errors ---
+[1m[31mERROR   [0m pykwalify.core:core.py:192 ["Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed']"]
+[1m[31mERROR   [0m tavern.schemas.files:files.py:108 Error validating {'taskID': 'c19ab0e7-ad29-47f1-b36a-ceca11a1f414', 'type': 'patch', 'taskCreateTime': '2026-10-05T09:01:51.784656924Z', 'automaticExpirationTime': '2026-10-06T09:01:51.784656974Z', 'taskStatus': 'in-progress', 'taskCounts': {'total': 1, 'new': 0, 'in-progress': 1, 'failed': 0, 'succeeded': 0, 'un-supported': 0}, 'components': [{'xname': 'x1000c0s4b1n0', 'powerCapLimits': [{'name': 'Node Power Limit', 'currentValue': 0, 'maximumValue': 925, 'minimumValue': 350}]}]}
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+[1m[31mERROR   [0m tavern.response.base:base.py:41 Error calling validate function '<function validate_pykwalify at 0x7ff0be297940>':
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+        verifier.validate()
+      File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+        raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+    pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+     - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+    The above exception was the direct cause of the following exception:
+
+    Traceback (most recent call last):
+      File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+        vf(response)
+      File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+        result = func(response, *args, **kwargs)
+      File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+        verify_generic(to_verify, schema)
+      File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+        raise BadSchemaError() from e
+    tavern.util.exceptions.BadSchemaError
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 106, in verify_generic
+    verifier.validate()
+  File "/usr/lib/python3.9/site-packages/pykwalify/core.py", line 194, in validate
+    raise SchemaError(u"Schema validation failed:\n - {error_msg}.".format(
+pykwalify.errors.SchemaError: <SchemaError: error code 2: Schema validation failed:
+ - Enum 'in-progress' does not exist. Path: '/taskStatus' Enum: ['completed'].: Path: '/'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/tavern/response/base.py", line 152, in _maybe_run_validate_functions
+    vf(response)
+  File "/usr/lib/python3.9/site-packages/tavern/util/extfunctions.py", line 98, in inner
+    result = func(response, *args, **kwargs)
+  File "/usr/lib/python3.9/site-packages/tavern/testutils/helpers.py", line 103, in validate_pykwalify
+    verify_generic(to_verify, schema)
+  File "/usr/lib/python3.9/site-packages/tavern/schemas/files.py", line 109, in verify_generic
+    raise BadSchemaError() from e
+tavern.util.exceptions.BadSchemaError

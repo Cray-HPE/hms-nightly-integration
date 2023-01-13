@@ -1,0 +1,32 @@
+- name: bssAPIServiceStatusAllGET - Ensure the BSS service all statuses endpoint can be retrieved
+  request:
+    url: "{bss_base_url}/boot/v1/service/status/all"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            bss-status:
+              type: str
+              required: True
+              enum:
+              - running
+            bss-status-etcd:
+              type: str
+              required: True
+              enum:
+              - connected
+            bss-status-hsm:
+              type: str
+              required: True
+              enum:
+              - connected
+            bss-version:
+              type: str
+              required: True

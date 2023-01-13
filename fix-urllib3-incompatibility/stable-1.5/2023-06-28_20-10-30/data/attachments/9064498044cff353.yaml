@@ -1,0 +1,34 @@
+- name: hsmAPIinventoryHardwareByFRUdeleteNoData - Attempt to remove all Hardware Inventory entries by FRUID with no data present using DELETE.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/HardwareByFRU"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            type:
+              type: str
+              required: True
+              enum:
+                - "about:blank"
+            title:
+              type: str
+              required: True
+              enum:
+                - "Not Found"
+            detail:
+              type: str
+              required: True
+              enum:
+                - "no entries to delete"
+            status:
+              type: int
+              required: True
+              enum:
+                - 404

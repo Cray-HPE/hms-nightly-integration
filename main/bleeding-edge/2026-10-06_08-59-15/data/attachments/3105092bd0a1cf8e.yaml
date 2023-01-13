@@ -1,0 +1,85 @@
+- name: hsmAPIstateComponentsByNIDqueryPOSTmanyParametersExistingComponent - Query for existing Components with specific NID ranges and many additional attributes using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/ByNID/Query"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"NIDRanges":["9999999993"],"Type":["Node"],"State":["Standby"],"Flag":["Locked"],"Enabled":["false"],"SoftwareStatus":["TestStatus3"],"Role":["Management"],"SubRole":["Storage"],"Arch":["Other"],"Class":["Mountain"]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            Components:
+              type: seq
+              matching: all
+              required: True
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "x9999c7s9b9n3"
+                    Type:
+                      type: str
+                      required: True
+                      enum:
+                        - "Node"
+                    State:
+                      type: str
+                      required: True
+                      enum:
+                        - "Standby"
+                    Flag:
+                      type: str
+                      required: True
+                      enum:
+                        - "Locked"
+                    Enabled:
+                      type: bool
+                      required: True
+                      enum:
+                        - false
+                    SoftwareStatus:
+                      type: str
+                      required: True
+                      enum:
+                        - "TestStatus3"
+                    Role:
+                      type: str
+                      required: True
+                      enum:
+                        - "Management"
+                    SubRole:
+                      type: str
+                      required: True
+                      enum:
+                        - "Storage"
+                    NID:
+                      type: int
+                      required: True
+                      enum:
+                        - 9999999993
+                    NetType:
+                      type: str
+                      required: True
+                      enum:
+                        - "Sling"
+                    Arch:
+                      type: str
+                      required: True
+                      enum:
+                        - "Other"
+                    Class:
+                      type: str
+                      required: True
+                      enum:
+                        - "Mountain"
+
+

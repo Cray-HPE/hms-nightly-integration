@@ -1,0 +1,58 @@
+- name: Verify /groups/label GET method with partition parameter
+  request:
+    url: "{hsm_base_url}/hsm/v2/groups/hsmtestgroup1?partition=p98"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              label:
+                type: str
+                required: True
+                enum:
+                  - "hsmtestgroup1"
+              description:
+                type: str
+                required: True
+                enum:
+                  - "Test group 1 for HSM API testing in CT framework (UPDATED)."
+              tags:
+                type: seq
+                required: True
+                matching: all
+                sequence:
+                  - type: str
+                    required: True
+                    enum:
+                      - "hsmtestgroup1_tag3"
+                      - "hsmtestgroup1_tag4"
+              members:
+                type: map
+                required: True
+                mapping:
+                  ids:
+                    type: seq
+                    required: True
+                    matching: all
+                    sequence:
+                      - type: str
+                        required: True
+                        enum:
+                          - "{xname4}"
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+            - jmespath: "length(@.members.ids)"
+              operator: "eq"
+              expected: 1
+            - jmespath: "@.members.ids[0]"
+              operator: "eq"
+              expected: "{xname4}"
+
+

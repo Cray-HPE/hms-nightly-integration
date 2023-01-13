@@ -1,0 +1,70 @@
+- name: hsmAPILocksDisablePOST - Disable reservations on 2 components
+  request:
+    url: "{hsm_base_url}/hsm/v2/locks/disable"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"ComponentIDs":["p9999.9998","p9999.9999"]}
+  response:
+    status_code: 200
+    verify_response_with:
+      - function: tavern.testutils.helpers:validate_pykwalify
+        extra_kwargs:
+          schema:
+            type: map
+            required: True
+            mapping:
+              Counts:
+                type: map
+                required: True
+                mapping:
+                  Total:
+                    type: int
+                    required: True
+                    enum:
+                      - 2
+                  Success:
+                    type: int
+                    required: True
+                    enum:
+                      - 2
+                  Failure:
+                    type: int
+                    required: True
+                    enum:
+                      - 0
+              Success:
+                type: map
+                required: True
+                mapping:
+                  ComponentIDs:
+                    type: seq
+                    required: True
+                    sequence:
+                      - type: str
+                        required: True
+                        enum:
+                          - "p9999.9998"
+                          - "p9999.9999"
+              Failure:
+                type: seq
+                required: True
+                sequence:
+                  - type: map
+                    required: True
+                    mapping:
+                      ID:
+                        type: str
+                        required: False
+                      Reason:
+                        type: str
+                        required: False
+      - function: tavern.testutils.helpers:validate_content
+        extra_kwargs:
+          comparisons:
+            - jmespath: "length(@.Success.ComponentIDs)"
+              operator: "eq"
+              expected: 2
+            - jmespath: "length(@.Failure)"
+              operator: "eq"
+              expected: 0
+

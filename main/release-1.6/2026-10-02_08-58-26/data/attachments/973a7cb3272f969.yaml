@@ -1,0 +1,23 @@
+body:
+  automaticExpirationTime: '2026-10-03T08:34:56.781581662Z'
+  createTime: '2026-10-02T08:34:56.781581562Z'
+  operation: Force-Off
+  taskCounts:
+    failed: 0
+    in-progress: 0
+    new: 1
+    succeeded: 0
+    total: 1
+    un-supported: 0
+  tasks:
+  - taskStatus: new
+    taskStatusDescription: Applying transition, forceoff
+    xname: x1000c0
+  transitionID: d96f3612-e1f9-4e00-9ff5-c66db4b4d20b
+  transitionStatus: in-progress
+headers:
+  Content-Length: '413'
+  Content-Type: application/json
+  Date: Fri, 02 Oct 2026 08:34:56 GMT
+redirect_query_params: {}
+status_code: 200

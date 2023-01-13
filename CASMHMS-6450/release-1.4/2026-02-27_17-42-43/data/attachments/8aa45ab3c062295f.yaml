@@ -1,0 +1,11 @@
+allow_redirects: false
+headers: {}
+json:
+  ComponentIDs:
+  - FAKE
+  - x9999c7s9b8n6
+  Flag: Warning
+method: PATCH
+stream: false
+url: http://cray-smd:27779/hsm/v2/State/Components/BulkFlagOnly
+verify: false

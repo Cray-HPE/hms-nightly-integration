@@ -1,0 +1,27 @@
+- name: hsmAPIinventoryHardwarePOSTprocessor - Create a Processor Hardware Inventory entry using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Hardware":[{"ID":"x9999c7s9b9n9p3","Type":"Processor","Ordinal":3,"Status":"Populated","HWInventoryByLocationType":"HWInvByLocProcessor","ProcessorLocationInfo":{"Id":"CPU3","Name":"Processor","Description":"","Socket":"CPU3"},"PopulatedFRU":{"FRUID":"Processor.AdvancedMicroDevicesInc.EWN8203534712","Type":"Processor","Subtype":"","HWInventoryByFRUType":"HWInvByFRUProcessor","ProcessorFRUInfo":{"InstructionSet":"","Manufacturer":"AdvancedMicroDevices,Inc.","MaxSpeedMHz":3525,"Model":"AMDEPYC776364-CoreProcessor","SerialNumber":"EWN8203534712","PartNumber":"","ProcessorArchitecture":"","ProcessorId":{"EffectiveFamily":"0x19","EffectiveModel":"0x01","IdentificationRegisters":"","MicrocodeInfo":"","Step":"0x1","VendorID":"AuthenticAMD"},"ProcessorType":"CPU","TotalCores":64,"TotalThreads":128,"Oem":null}}}]}
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            code:
+              type: int
+              required: True
+              enum:
+                - 0
+            message:
+              type: str
+              required: True
+              enum:
+                - "Created 1 entries"
+
+

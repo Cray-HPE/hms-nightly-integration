@@ -1,0 +1,10 @@
+- name: hsmAPIstateComponentsPOSThsnBoardandCabinetPDUController - Create HSNBoard and CabinetPDUController Components using POST.
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components"
+    method: POST
+    verify: !bool "{verify}"
+    json: {"Components":[{"ID":"x9999c7r9e9","Type":"HSNBoard","State":"On","Flag":"Warning","Enabled":false,"NetType":"Sling","Arch":"X86","Class":"River"},{"ID":"x9999m3","Type":"CabinetPDUController","State":"Ready","Flag":"OK","Enabled":true,"NetType":"Infiniband","Arch":"X86"}],"Force":false}
+  response:
+    status_code: 204
+
+

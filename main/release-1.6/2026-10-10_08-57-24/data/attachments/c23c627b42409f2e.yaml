@@ -1,0 +1,46 @@
+- name: hsmAPIinventoryHardwareHistoryXnameGETnonExistentNode - Attempt to retrieve Hardware Inventory History entries by xname that don't exist using GET.
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/Hardware/History/{xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: map
+          required: True
+          mapping:
+            ID:
+              type: str
+              required: True
+              enum:
+                - "{xname}"
+            History:
+              type: seq
+              required: True
+              matching: all
+              range:
+                min: 0
+                max: 0
+              sequence:
+                - type: map
+                  required: True
+                  mapping:
+                    ID:
+                      type: str
+                      required: True
+                      enum:
+                        - "{xname}"
+                    FRUID:
+                      type: str
+                      required: True
+                    Timestamp:
+                      type: timestamp
+                      required: True
+                    EventType:
+                      type: str
+                      required: True
+
+

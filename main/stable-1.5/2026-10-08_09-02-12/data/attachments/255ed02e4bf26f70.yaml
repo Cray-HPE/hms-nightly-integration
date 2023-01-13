@@ -1,0 +1,65 @@
+- name: Perform a GET against /hosts to retrieve a list of known hosts
+  request:
+    url: "{bss_base_url}/boot/v1/hosts"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    verify_response_with:
+      function: tavern.testutils.helpers:validate_pykwalify
+      extra_kwargs:
+        schema:
+          type: seq
+          matching: all
+          sequence:
+          - type: map
+            mapping:
+              ID:
+                type: str
+              Type:
+                type: str
+              State:
+                type: str
+                required: false
+              Flag:
+                type: str
+                required: false
+              Enabled:
+                type: bool
+                required: false
+              Role:
+                type: str
+                required: false
+              SubRole:
+                type: str
+                required: false
+              NID:
+                type: int
+                required: false
+              NetType:
+                type: str
+                required: false
+              Arch:
+                type: str
+                required: false
+              Class:
+                type: str
+                required: false
+              ReservationDisabled:
+                type: bool
+                required: false
+              Locked:
+                type: bool
+                required: false
+              FQDN:
+                type: str
+                required: true
+              MAC:
+                type: seq
+                sequence:
+                - type: str
+                required: true
+              EndpointEnabled:
+                type: bool
+                required: true
+

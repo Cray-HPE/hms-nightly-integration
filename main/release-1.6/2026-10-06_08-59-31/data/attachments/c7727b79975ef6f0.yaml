@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - UNKNOWN
+  - Other
+  - X86
+  - ARM
+  Class:
+  - River
+  - Mountain
+  - Hill
+  Flag:
+  - Unknown
+  - OK
+  - Warning
+  - Warning
+  - Alert
+  - Locked
+  NetType:
+  - Sling
+  - Infiniband
+  - Ethernet
+  - OEM
+  - None
+  Role:
+  - Compute
+  - Service
+  - System
+  - Application
+  - Storage
+  - Management
+  State:
+  - Empty
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  - Unknown
+  SubRole:
+  - UAN
+  - Gateway
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Master
+  - Worker
+  - Storage
+  Type:
+  - NodeNic
+  - NodeAccel
+  - HSNConnectorPort
+  - MgmtHLSwitchEnclosure
+  - CDUMgmtSwitch
+  - CabinetPDUOutlet
+  - ChassisBMC
+  - ComputeModule
+  - INVALID
+  - All
+  - CabinetPDU
+  - CabinetPDUNic
+  - VirtualNode
+  - System
+  - SMSBox
+  - CEC
+  - Memory
+  - RouterFpga
+  - HSNLink
+  - MgmtSwitch
+  - NodeBMCNic
+  - ChassisBMCNic
+  - NodeBMC
+  - NodePowerConnector
+  - AllComp
+  - StorageGroup
+  - NodeEnclosurePowerSupply
+  - Node
+  - Processor
+  - RouterBMC
+  - HSNAsic
+  - CabinetPDUController
+  - RouterPowerConnector
+  - Cabinet
+  - NodeEnclosure
+  - RouterTOR
+  - MgmtHLSwitch
+  - Partition
+  - Drive
+  - AllSvc
+  - CabinetCDU
+  - CabinetBMC
+  - Chassis
+  - NodeFpga
+  - CMMRectifier
+  - RouterBMCNic
+  - CabinetPDUPowerConnector
+  - CMMFpga
+  - NodeHsnNic
+  - NodeAccelRiser
+  - RouterTORFpga
+  - HSNConnector
+  - CDU
+  - HSNBoard
+  - RouterModule
+  - MgmtSwitchConnector
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Tue, 06 Oct 2026 08:32:14 GMT
+redirect_query_params: {}
+status_code: 200

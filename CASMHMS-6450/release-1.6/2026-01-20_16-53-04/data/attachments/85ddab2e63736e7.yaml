@@ -1,0 +1,7 @@
+- name: slsAPIHardwareDELETVirtualNodeEntry - Delete a VirtualNode entry v420
+  request:
+    url: "{sls_base_url}/v1/hardware/x9999c7s9b8n0v420"
+    method: DELETE
+    verify: !bool "{verify}"
+  response:
+    status_code: 200

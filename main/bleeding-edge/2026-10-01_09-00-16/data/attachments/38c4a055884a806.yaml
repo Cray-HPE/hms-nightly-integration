@@ -1,0 +1,4 @@
+- name: hsmAPIlocksDELETE - Delete leftover test component p9999.9996
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/p9999.9996"
+    method: DELETE

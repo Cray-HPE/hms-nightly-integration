@@ -1,0 +1,12 @@
+- name: Attempt to retrieve a component ethernet interface that is not present
+  request:
+    url: "{hsm_base_url}/hsm/v2/Inventory/EthernetInterfaces/9a9999999999"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 404
+    json:
+      type: "about:blank"
+      title: "Not Found"
+      detail: "No such component ethernet interface: 9a9999999999"
+      status: 404

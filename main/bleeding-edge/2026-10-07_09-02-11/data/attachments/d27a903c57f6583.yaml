@@ -1,0 +1,111 @@
+body:
+  Arch:
+  - X86
+  - ARM
+  - UNKNOWN
+  - Other
+  Class:
+  - River
+  - Mountain
+  - Hill
+  Flag:
+  - Warning
+  - Warning
+  - Alert
+  - Locked
+  - Unknown
+  - OK
+  NetType:
+  - None
+  - Sling
+  - Infiniband
+  - Ethernet
+  - OEM
+  Role:
+  - Service
+  - System
+  - Application
+  - Storage
+  - Management
+  - Compute
+  State:
+  - Populated
+  - 'Off'
+  - 'On'
+  - Standby
+  - Halt
+  - Ready
+  - Unknown
+  - Empty
+  SubRole:
+  - Storage
+  - UAN
+  - Gateway
+  - LNETRouter
+  - Visualization
+  - UserDefined
+  - Master
+  - Worker
+  Type:
+  - CabinetBMC
+  - ChassisBMCNic
+  - CMMRectifier
+  - StorageGroup
+  - NodeHsnNic
+  - NodeAccel
+  - NodeAccelRiser
+  - RouterBMC
+  - CabinetPDU
+  - CabinetPDUNic
+  - CEC
+  - Cabinet
+  - ComputeModule
+  - NodeEnclosure
+  - RouterBMCNic
+  - RouterPowerConnector
+  - CabinetCDU
+  - Drive
+  - RouterModule
+  - RouterFpga
+  - CabinetPDUPowerConnector
+  - ChassisBMC
+  - NodeFpga
+  - VirtualNode
+  - HSNAsic
+  - HSNLink
+  - MgmtSwitch
+  - MgmtSwitchConnector
+  - AllSvc
+  - AllComp
+  - Partition
+  - Memory
+  - Processor
+  - HSNConnectorPort
+  - INVALID
+  - SMSBox
+  - CDU
+  - CabinetPDUOutlet
+  - Chassis
+  - NodePowerConnector
+  - HSNBoard
+  - Node
+  - All
+  - System
+  - CDUMgmtSwitch
+  - CabinetPDUController
+  - CMMFpga
+  - NodeBMCNic
+  - NodeNic
+  - RouterTORFpga
+  - NodeBMC
+  - NodeEnclosurePowerSupply
+  - RouterTOR
+  - HSNConnector
+  - MgmtHLSwitchEnclosure
+  - MgmtHLSwitch
+headers:
+  Content-Length: '1221'
+  Content-Type: application/json
+  Date: Wed, 07 Oct 2026 08:33:41 GMT
+redirect_query_params: {}
+status_code: 200

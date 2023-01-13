@@ -1,0 +1,52 @@
+- name: Query bootscript by xname
+
+
+
+
+
+
+  max_retries: 15
+  delay_after: 2
+  request:
+    url: "{bss_base_url}/boot/v1/bootscript"
+    method: GET
+    verify: !bool "{verify}"
+    params:
+      name: "{node_xname}"
+  response:
+    status_code: 200
+    headers:
+      content-type: text/plain; charset=UTF-8
+    verify_response_with:
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: "
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/kernel'
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'initrd http[s]?:\/\/.+/boot-images/00000000-0000-0000-0000-000000000000\/initrd'
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+console.tty0'
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+xname={node_xname}'
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+nid={node_nid}'
+
+
+      - function: bss_test_utils:better_validate_regex
+        extra_kwargs:
+          expression: 'kernel --name .+bss_referral_token='
