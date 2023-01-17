@@ -29,7 +29,7 @@ helm-repo-lookup:
   - chart: cray-hms-hmcollector
     path: stable/hms-hmcollector
   - chart: cray-power-control
-    path: stable/cray-power-control
+    path: stable/cray-hms-power-control
 github-repo-image-lookup:
   - github-repo: hms-shcd-parser
     image: hms-shcd-parser
