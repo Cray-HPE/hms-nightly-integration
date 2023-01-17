@@ -5,6 +5,8 @@ import pathlib
 import shutil
 import re
 import subprocess
+import jinja2
+import json
 
 #
 # Parse CLI args
@@ -19,12 +21,6 @@ args = parser.parse_args()
 artifacts_dir = pathlib.Path(args.artifacts)
 reports_dir = pathlib.Path(args.reports)
 
-# artifacts/allure-results-3906637702_release-1.3
-# artifacts/allure-results-3906637702_release-1.3/allure-results.tar
-# artifacts/allure-results-3906637702_main
-# artifacts/allure-results-3906637702_main/allure-results.tar
-# artifacts/allure-results-3906637702_unstable
-# artifacts/allure-results-3906637702_unstable/allure-results.tar
 
 # For each results artifacts downloaded generate 
 #
@@ -35,6 +31,16 @@ reports_dir = pathlib.Path(args.reports)
 # 
 # Generate index.html 
 
+def find_report_directories(root_dir: pathlib.Path):
+    found_dirs = [] 
+    for found_dir in root_dir.glob("*/"):
+        if not found_dir.is_dir() or found_dir.name == "latest":
+            continue
+        found_dirs.append(found_dir)
+
+    found_dirs.sort()
+
+    return found_dirs
 #
 # Detect existing reports
 #
@@ -47,14 +53,9 @@ for report_branch_dir in reports_dir.glob("*/"):
     print(f' Processing {report_branch_dir}')
 
     # Find reports for this branch
-    found_reports = [] 
-    for report_dir in report_branch_dir.glob("*/"):
-        if not report_dir.is_dir():
-            continue
-        found_reports.append(report_dir)
+    found_reports = find_report_directories(report_branch_dir)
 
     # Check to see if we now have more than the allowed number of reports
-    found_reports.sort()
     for report_dir in found_reports:
         print(f'  Found report: {str(report_dir)}')
 
@@ -128,14 +129,9 @@ for report_branch_dir in reports_dir.glob("*/"):
     print(f' Processing {report_branch_dir}')
 
     # Find reports for this branch
-    found_reports = [] 
-    for report_dir in report_branch_dir.glob("*/"):
-        if not reports_dir.is_dir():
-            continue
-        found_reports.append(report_dir)
+    found_reports = find_report_directories(report_branch_dir)
 
     # Check to see if we now have more than the allowed number of reports
-    found_reports.sort()
     for report_dir in found_reports:
         print(f'  Found report: {str(report_dir)}')
 
@@ -151,7 +147,51 @@ for report_branch_dir in reports_dir.glob("*/"):
         print(f'  No reports to prune for branch {report_branch_dir}')
 
 #
-# Generate index.html
+# Generate index.html for each branch
 #
 
-# TODO
+print()
+print("========================================")
+print("Generating index.yaml for each release branch")
+print("========================================")
+template_data = {"releases": []}
+for report_branch_dir in reports_dir.glob("*/"):
+    print(f' Processing {report_branch_dir}')
+
+    # Find reports for this branch
+    found_reports = find_report_directories(report_branch_dir)
+
+    release_branch_data = {}
+    release_branch_data["release"] = report_branch_dir.name.removesuffix("/")
+    release_branch_data["reports"] = []
+    for report_dir in found_reports:
+        print(f'  Found report: {str(report_dir)}')
+
+        # Read in latest report summary
+        report_data = {}
+        report_data["date"] = report_dir.name
+        with open(report_branch_dir.joinpath("latest", "widgets", "summary.json")) as f:
+            summary = json.load(f)
+
+            report_data["total_tests"] = summary["statistic"]["total"]
+            report_data["passed_tests"] = summary["statistic"]["passed"]
+            report_data["failed_tests"] = report_data["total_tests"] -  report_data["passed_tests"]
+
+        release_branch_data["reports"].append(report_data)
+
+    template_data["releases"].append(release_branch_data)
+
+print(json.dumps(template_data, indent=2))
+
+# Generate report HTML
+environment = jinja2.Environment(loader=jinja2.FileSystemLoader("./reporting/"))
+index_html_template = environment.get_template("index.html.j2")
+index_html_content = index_html_template.render(template_data)
+
+# Write out the generated file
+index_html_path = reports_dir.joinpath("index.html")
+print(f'  Writing index page: {str(index_html_path)}')
+with open(index_html_path, 'w') as f:
+    f.write(index_html_content)
+
+# Write out the toplevel index.html page to redirect to the main branch
