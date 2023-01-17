@@ -374,7 +374,10 @@ if __name__ == '__main__':
 
                     # Determine the names of the main application image, and the test image
                     images_repos_of_interest = []
-                    images_repos_of_interest.append(values["image"]["repository"])
+                    if entry == "cray-power-control":
+                        images_repos_of_interest.append(values["cray-service"]["containers"]["cray-power-control"]["image"]["repository"])
+                    else:
+                        images_repos_of_interest.append(values["image"]["repository"])
                     if "testVersion" in values["global"]:
                         images_repos_of_interest.append(values["tests"]["image"]["repository"])
 
