@@ -277,15 +277,4 @@ jobs:
         popd
 
         # Add job summary for reports generated
-        # TODO
-
-    # Deploy into separate directories with timestamp/branch
-    # Prune old directories
-    # Perhaps collect results from the matrix-jobs and then update github pages at the same time
-    # Also do an amend commit to keep the repo small. 
-    # Job summary link to github pages
-    # If no artifact for job run, then report that an issue occured in the job
-    # Root webpage should show the following
-    # - Table of links to the last runers sorted by release branch. Date on the right, and columns for each CSM release
-    #   Each cell should have a count of passed/failed tests. 
-    # - Top of the page should show the status of the last test runs.
+        echo "Reports can be found at https://cray-hpe.github.io/hms-nightly-integration//${BRANCH_NAME}/" >> $GITHUB_STEP_SUMMARY

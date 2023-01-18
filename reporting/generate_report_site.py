@@ -14,7 +14,7 @@ import json
 parser = argparse.ArgumentParser()
 parser.add_argument("artifacts", type=str, help="Directory containing artifacts")
 parser.add_argument("reports", type=str, help="Directory containing reports")
-parser.add_argument("--max-reports-per-branch", type=int, default=14, help="Max reports per branch")
+parser.add_argument("--max-reports-per-branch", type=int, default=10, help="Max reports per branch")
 
 args = parser.parse_args()
 
