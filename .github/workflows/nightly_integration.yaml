@@ -157,13 +157,18 @@ jobs:
         ./run_tests.py \
           --images-by-csm-release-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
-          --fix-allure-dir-perms
+          --fix-allure-dir-perms 2>&1 | tee run_tests.log
+
+    - name: Capture logs
+      shell: bash
+      run: | 
+        docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > hms-simulation-environment.log 2>&1
 
     - name: Create test results tarball
       id: tarball 
       shell: bash
       run: |
-        tar -cvf "allure-results.tar" ./allure  
+        tar -cvf "allure-results.tar" ./allure hms-simulation-environment.log run_tests.log
 
     - name: Determine artifact name
       id: artifact 
