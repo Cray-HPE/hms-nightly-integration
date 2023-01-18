@@ -156,6 +156,8 @@ print("Generating index.yaml for each release branch")
 print("========================================")
 template_data = {"releases": []}
 for report_branch_dir in reports_dir.glob("*/"):
+    if not report_branch_dir.is_dir():
+        continue
     print(f' Processing {report_branch_dir}')
 
     # Find reports for this branch
@@ -195,3 +197,14 @@ with open(index_html_path, 'w') as f:
     f.write(index_html_content)
 
 # Write out the toplevel index.html page to redirect to the main branch
+# top_level_html = '''
+# <!DOCTYPE html>
+# <html>
+#   <head>
+#     <meta http-equiv="refresh" content="0; url='https://cray-hpe.github.io/hms-nightly-integration/main/'" />
+#   </head>
+#   <body>
+#   </body>
+# </html>
+# '''
+# with open
