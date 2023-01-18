@@ -74,6 +74,10 @@ tavern:
   description: common configuration for all tavern invocations
   variables:
     verify: false
+
+    # The *_base_url fields will be added at runtime, based off data from the services block above.
+
+    # CAPMC
     xname_on_poll_num_attempts: 60
     xname_on_poll_interval: 1
     xname_off_poll_num_attempts: 60
@@ -81,7 +85,20 @@ tavern:
     xname_reinit_poll_num_attempts: 60
     xname_reinit_poll_interval: 1
 
-    # The *_base_url fields will be added at runtime, based off data from the services block above.
+    # PCS
+    transition_force-off_num_attempts: 62
+    transition_force-off_poll_interval: 1
+    transition_force-off_task_deadline_minutes: 1
+    transition_on_num_attempts: 62
+    transition_on_poll_interval: 1
+    transition_on_task_deadline_minutes: 1
+    transition_hard-restart_num_attempts: 62
+    transition_hard-restart_poll_interval: 1
+    transition_hard-restart_task_deadline_minutes: 1
+    power-cap_snapshot_num_attempts: 30
+    power-cap_snapshot_poll_interval: 1
+    power-cap_patch_num_attempts: 30
+    power-cap_patch_poll_interval: 1  
 
 test_order:
 - {test_class: smoke,            service: all}
