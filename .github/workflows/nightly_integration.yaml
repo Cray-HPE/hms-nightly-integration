@@ -255,6 +255,18 @@ jobs:
         # Generate test reports 
         ./reporting/generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
         
+        # Write out the top level index.html page to redirect to the main branch
+        cat <<EOF > gh-pages/index.html
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url='https://cray-hpe.github.io/hms-nightly-integration/main/'" />
+          </head>
+          <body>
+          </body>
+        </html>
+        EOF
+
         # Commit changes
         pushd ./gh-pages
           git config user.name github-actions

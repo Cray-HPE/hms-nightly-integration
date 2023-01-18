@@ -162,6 +162,7 @@ for report_branch_dir in reports_dir.glob("*/"):
 
     # Find reports for this branch
     found_reports = find_report_directories(report_branch_dir)
+    found_reports.reverse()
 
     release_branch_data = {}
     release_branch_data["release"] = report_branch_dir.name.removesuffix("/")
@@ -183,6 +184,7 @@ for report_branch_dir in reports_dir.glob("*/"):
 
     template_data["releases"].append(release_branch_data)
 
+template_data["releases"].sort(key=lambda x: x["release"])
 print(json.dumps(template_data, indent=2))
 
 # Generate report HTML
@@ -195,16 +197,3 @@ index_html_path = reports_dir.joinpath("index.html")
 print(f'  Writing index page: {str(index_html_path)}')
 with open(index_html_path, 'w') as f:
     f.write(index_html_content)
-
-# Write out the toplevel index.html page to redirect to the main branch
-# top_level_html = '''
-# <!DOCTYPE html>
-# <html>
-#   <head>
-#     <meta http-equiv="refresh" content="0; url='https://cray-hpe.github.io/hms-nightly-integration/main/'" />
-#   </head>
-#   <body>
-#   </body>
-# </html>
-# '''
-# with open
