@@ -7,6 +7,7 @@ import re
 import subprocess
 import jinja2
 import json
+import datetime
 
 #
 # Parse CLI args
@@ -184,6 +185,7 @@ for report_branch_dir in reports_dir.glob("*/"):
 
     template_data["releases"].append(release_branch_data)
 
+template_data["timestamp"] = str(datetime.datetime.utcnow())
 template_data["releases"].sort(key=lambda x: x["release"])
 print(json.dumps(template_data, indent=2))
 
