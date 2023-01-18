@@ -159,10 +159,11 @@ jobs:
           --csm-release "${CSM_RELEASE}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
-    - name: Capture logs
+    - name: Capture hms-simulation-environment logs
       shell: bash
       run: | 
-        docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > hms-simulation-environment.log 2>&1
+        cd hms-simulation-environment
+        docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > ../hms-simulation-environment.log 2>&1
 
     - name: Create test results tarball
       id: tarball 
