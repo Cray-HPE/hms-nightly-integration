@@ -207,6 +207,7 @@ jobs:
       with:
         ref: gh-pages
         path: gh-pages
+        fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Download Allure
@@ -255,11 +256,13 @@ jobs:
         ./reporting/generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
         
         # Commit changes
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add .
-        git commit --amend -m "Updating reports from branch ${BRANCH_NAME}" 
-        git push --force
+        pushd ./gh-pages
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit --amend -m "Updating reports from branch ${BRANCH_NAME}" 
+          git push --force
+        popd
 
         # Add job summary for reports generated
         # TODO
