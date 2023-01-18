@@ -21,7 +21,7 @@
         </tr>
     {% for report in release["reports"] %}
     <tr class="table-primary">
-            <td class="table-primary"> {{ report["date"] }} </td>
+            <td class="table-primary"> <a href="{{ report["date"] }}/">{{ report["date"] }}</a> </td>
             <td class="table-success"> {{ report["passed_tests"] }} </td>
             <td class="table-danger"> {{ report["failed_tests"] }} </td>
         <tr>
