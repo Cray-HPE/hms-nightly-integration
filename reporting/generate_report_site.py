@@ -117,9 +117,9 @@ for allure_results_dir in artifacts_dir.glob("*/*/"):
         log_file_source = allure_results_dir.joinpath(log_file_name)
         if not (log_file_source.exists() and log_file_source.is_file()):
             continue
-        print(f'  Copying log file: {str(log_file_source)} -> {str(log_file_dest)}')
-        log_file_dest = destination_directory.joinpath(log_file_name)
 
+        log_file_dest = destination_directory.joinpath(log_file_name)
+        print(f'  Copying log file: {str(log_file_source)} -> {str(log_file_dest)}')
         shutil.copyfile(log_file_source, log_file_dest)
 
     # Update latest symlink
