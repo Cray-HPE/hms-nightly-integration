@@ -11,8 +11,32 @@
     <h1>HMS Nightly Integration</h1>
     <p>Last updated: {{ timestamp }} UTC</p> 
 
+    <h2> Latest test reports</h2>
+    <table class="table table-bordered">
+            <tr>
+                <th>CSM Release</th>
+                <th>Date</th>
+                <th>Passed tests</th>
+                <th>Failed tests</th>
+                <th>Logs</th>
+            </tr>
+            {% for release in releases %}
+            <tr class="table-primary">
+                <td class="table-info">{{ release["release"] }}</td>
+                <td class="table-primary"> <a href="{{ release["release"] }}/{{  release["reports"][0]["date"] }}/">{{  release["reports"][0]["date"] }}</a> </td>
+                <td class="table-success"> {{ release["reports"][0]["passed_tests"] }} </td>
+                <td class="table-danger"> {{ release["reports"][0]["failed_tests"] }} </td>
+                <td>
+                    <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
+                    <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/run_tests.log">run_tests.log</a>
+                </td>
+            <tr>
+            {% endfor %}
+    </table>
+
+    <h2> Test report history </h2>
     {% for release in releases %}
-    <h2>CSM Release: {{ release["release"] }}</h1>
+    <h3>CSM Release: {{ release["release"] }}</h1>
     <table class="table table-bordered">
         <tr>
             <th>Date</th>
