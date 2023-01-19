@@ -114,15 +114,15 @@ for allure_results_dir in artifacts_dir.glob("*/*/"):
         print("Failed to generate report. Exit code {}".format(result.returncode))
         continue
 
-    # Copy log files into place
-    for log_file_name in ["hms-simulation-environment.log", "run_tests.log"]:
-        log_file_source = allure_results_dir.joinpath(log_file_name)
-        if not (log_file_source.exists() and log_file_source.is_file()):
+    # Copy log and metadata files into place
+    for file_name in ["hms-simulation-environment.log", "run_tests.log", "test_metadata.json"]:
+        file_source = allure_results_dir.joinpath(file_name)
+        if not (file_source.exists() and file_source.is_file()):
             continue
 
-        log_file_dest = destination_directory.joinpath(log_file_name)
-        print(f'  Copying log file: {str(log_file_source)} -> {str(log_file_dest)}')
-        shutil.copyfile(log_file_source, log_file_dest)
+        file_dest = destination_directory.joinpath(file_name)
+        print(f'  Copying file: {str(file_source)} -> {str(file_dest)}')
+        shutil.copyfile(file_source, file_dest)
 
     # Update latest symlink
     latest_symlink = reports_dir.joinpath(branch_name, "latest")
