@@ -166,12 +166,6 @@ jobs:
         docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > ../hms-simulation-environment.log 2>&1
 
     - name: Create test results tarball
-      id: tarball 
-      shell: bash
-      run: |
-        tar -cvf "allure-results.tar" ./allure hms-simulation-environment.log run_tests.log
-
-    - name: Determine artifact name
       id: artifact 
       shell: bash
       env: 
@@ -182,7 +176,7 @@ jobs:
         REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
         mv allure "${REPORT_NAME}"
 
-        tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
+        tar -cvf "allure-results.tar" ./"${REPORT_NAME}" hms-simulation-environment.log run_tests.log
 
         echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
@@ -283,4 +277,4 @@ jobs:
         popd
 
         # Add job summary for reports generated
-        echo "Reports can be found at https://cray-hpe.github.io/hms-nightly-integration//${BRANCH_NAME}/" >> $GITHUB_STEP_SUMMARY
+        echo "Reports can be found at https://cray-hpe.github.io/hms-nightly-integration/${BRANCH_NAME}/" >> $GITHUB_STEP_SUMMARY

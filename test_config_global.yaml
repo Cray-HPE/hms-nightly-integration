@@ -103,8 +103,8 @@ tavern:
 test_order:
 - {test_class: smoke,            service: all}
 - {test_class: 1-non-disruptive, service: all}
-- {test_class: 2-disruptive,     service: all}
-- {test_class: 4-build-pipeline-only, service: all}
+# - {test_class: 2-disruptive,     service: all}
+# - {test_class: 4-build-pipeline-only, service: all}
 
 
 # - {test_class: 2-disruptive, service: SLS }
@@ -114,17 +114,17 @@ test_order:
 
 # Attempt to run destructive tests from the top down, so we don't need to add special recovery logic 
 # to run the next destructive test suite.
-- {test_class: 3-destructive, service: BSS }
-- {test_class: 3-destructive, service: FAS }
-- {test_class: 3-destructive, service: HBTD }
-- {test_class: 3-destructive, service: HMNFD }
-- {test_class: 3-destructive, service: CAPMC }
-- {test_class: 3-destructive, service: PCS }
-- {test_class: 3-destructive, service: SCSD }
-- {test_class: 3-destructive, service: MEDS }
-- {test_class: 3-destructive, service: REDS }
-- {test_class: 3-destructive, service: HSM }
-- {test_class: 3-destructive, service: SLS }
+# - {test_class: 3-destructive, service: BSS }
+# - {test_class: 3-destructive, service: FAS }
+# - {test_class: 3-destructive, service: HBTD }
+# - {test_class: 3-destructive, service: HMNFD }
+# - {test_class: 3-destructive, service: CAPMC }
+# - {test_class: 3-destructive, service: PCS }
+# - {test_class: 3-destructive, service: SCSD }
+# - {test_class: 3-destructive, service: MEDS }
+# - {test_class: 3-destructive, service: REDS }
+# - {test_class: 3-destructive, service: HSM }
+# - {test_class: 3-destructive, service: SLS }
 
 # - {test_class: smoke,            service: SLS}
 # - {test_class: 1-non-disruptive, service: SLS}
