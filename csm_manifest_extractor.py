@@ -86,7 +86,7 @@ if __name__ == '__main__':
             exit(1)
 
 
-    with open("extractor_configuration.yaml") as stream:
+    with open("csm-manifest-extractor-configuration.yaml") as stream:
         try:
             config = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -120,6 +120,8 @@ if __name__ == '__main__':
     ####################
     logging.info("find docker images")
     images_to_rebuild = {}
+    release_git_sha = {}
+    release_git_tags = {}
 
     docker_image_tuples = []
     for branch in config["configuration"]["targeted-csm-branches"]:
@@ -130,6 +132,9 @@ if __name__ == '__main__':
         except git.exc.GitCommandError as e:
             logging.error(f'Failed to checkout branch "{branch}", skipping')
             continue
+
+        release_git_sha[branch] = csm_repo.head.object.hexsha
+        release_git_tags[branch] = list(filter(lambda e: e != "", csm_repo.git.tag("--points-at", "HEAD").split("\n")))
 
         # load the docker index file
         docker_index = os.path.join(csm_dir, config["configuration"]["docker-image-manifest"])
@@ -461,18 +466,19 @@ if __name__ == '__main__':
 
             for csm_release in image["csm-releases"]:
                 if csm_release not in images_by_csm_release:
-                    images_by_csm_release[csm_release] = {}
+                    images_by_csm_release[csm_release] = {
+                        "images": {}
+                    }
 
                 if image_repo not in images_by_csm_release[csm_release]:
-                    images_by_csm_release[csm_release][image_repo] = []
+                    images_by_csm_release[csm_release]["images"][image_repo] = []
 
-                images_by_csm_release[csm_release][image_repo].append(image_tag)
+                images_by_csm_release[csm_release]["images"][image_repo].append(image_tag)
 
-    with open('extractor-output-all-images.json', 'w') as f:
-        json.dump(all_images, f, indent=2)
-    with open('extractor-output-all-charts.json', 'w') as f:
-        json.dump(all_charts, f, indent=2)
-    with open('extractor-output-images_to_rebuild.json', 'w') as f:
-        json.dump(images_to_rebuild, f, indent=2)
-    with open('extractor-output-images_by_csm_release.json', 'w') as f:
+    # Add in git information
+    for release_name in images_by_csm_release:
+        images_by_csm_release[release_name]["git_sha"] = release_git_sha[release_name]
+        images_by_csm_release[release_name]["git_tags"] = release_git_tags[release_name]
+
+    with open('csm-manifest-extractor-output.json', 'w') as f:
         json.dump(images_by_csm_release, f, indent=2)
