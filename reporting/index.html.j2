@@ -18,12 +18,17 @@
             <th>Date</th>
             <th>Passed tests</th>
             <th>Failed tests</th>
+            <th>Logs</th>
         </tr>
     {% for report in release["reports"] %}
     <tr class="table-primary">
             <td class="table-primary"> <a href="{{ release["release"] }}/{{ report["date"] }}/">{{ report["date"] }}</a> </td>
             <td class="table-success"> {{ report["passed_tests"] }} </td>
             <td class="table-danger"> {{ report["failed_tests"] }} </td>
+            <td>
+                <a href="{{ release["release"] }}/{{ report["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
+                <a href="{{ release["release"] }}/{{ report["date"] }}/run_tests.log">run_tests.log</a>
+            </td>
         <tr>
     {% endfor %}
     <table>
