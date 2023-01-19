@@ -46,20 +46,7 @@ jobs:
       run: |
         cat <<EOF > unstable_images.json
         {
-          "unstable": {
-              "artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test": [
-                "2.7.0-20230112162833.6112bb4"
-              ],
-              "artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test": [
-                "1.22.0-20230112162618.c1b4798"
-              ],
-              "artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test": [
-                "2.0.0-20230112162714.aaeddf6"
-              ],
-              "artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test": [
-                "2.2.0-20230112162745.ca65b47"
-              ]
-          }
+          
         }
         EOF
 
