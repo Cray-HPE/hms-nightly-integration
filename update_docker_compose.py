@@ -9,22 +9,22 @@ import yaml
 
 # Parse CLI arguments
 parser = argparse.ArgumentParser()
-parser.add_argument("--images-by-csm-release", type=str, default="extractor-output-images_by_csm_release.json", help="Read in the json file created by the csm_manifest_extractor.py")
+parser.add_argument("--csm-extractor-output-json", type=str, default="csm-manifest-extractor-output.json", help="Read in the json file created by the csm_manifest_extractor.py")
 parser.add_argument("--csm-release", type=str, default="main", help="CSM release branch to target")
 parser.add_argument("--docker-compose-file", type=str, default="./hms-simulation-environment/docker-compose.yaml", help="Path to the HMS Simulation Environment docker-compose.yaml file to update")
 
 args = parser.parse_args()
 
 # Read in the json file created by the csm_manifest_extractor.py
-images_by_csm_release = None
-with open(args.images_by_csm_release, 'r') as f:
-    images_by_csm_release = json.load(f)
+csm_extractor_output = None
+with open(args.csm_extractor_output_json, 'r') as f:
+    csm_extractor_output = json.load(f)
 
-if args.csm_release not in images_by_csm_release:
-    print(f'Error provided CSM release does not exist in {sys.argv[1]}')
+if args.csm_release not in csm_extractor_output:
+    print(f'Error provided CSM release does not exist in {args.csm_extractor_output_json}')
     exit(1)
 
-image_overrides = images_by_csm_release[args.csm_release]
+image_overrides = csm_extractor_output[args.csm_release]["images"]
 
 # Read in the docker-compose file
 docker_compose = None

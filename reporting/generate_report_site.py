@@ -51,6 +51,8 @@ print("========================================")
 print("Detecting old reports")
 print("========================================")
 for report_branch_dir in reports_dir.glob("*/"):
+    if not report_branch_dir.is_dir():
+        continue
     print(f' Processing {report_branch_dir}')
 
     # Find reports for this branch
@@ -184,12 +186,19 @@ for report_branch_dir in reports_dir.glob("*/"):
         # Read in latest report summary
         report_data = {}
         report_data["date"] = report_dir.name
-        with open(report_branch_dir.joinpath("latest", "widgets", "summary.json")) as f:
+        with open(report_dir.joinpath("widgets", "summary.json")) as f:
             summary = json.load(f)
 
             report_data["total_tests"] = summary["statistic"]["total"]
             report_data["passed_tests"] = summary["statistic"]["passed"]
             report_data["failed_tests"] = report_data["total_tests"] -  report_data["passed_tests"]
+        
+        test_metadata_file = report_dir.joinpath("test_metadata.json")
+        if test_metadata_file.exists():
+            with open(report_dir.joinpath("test_metadata.json")) as f:
+                test_metadata = json.load(f)
+                report_data["git_sha"] = test_metadata["git_sha"]
+                report_data["git_tags"] = test_metadata["git_tags"]
 
         release_branch_data["reports"].append(report_data)
 

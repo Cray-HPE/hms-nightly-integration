@@ -49,6 +49,7 @@ def run_tests(test_global_test_config: dict, tests: list[dict], allure_report_di
         shutil.rmtree(allure_report_dir)
 
     # Generate tavern config
+    # TODO change this to use the tavern config built into the container image
     tavern_config = test_config_global["tavern"].copy()
     for service in test_config_global["services"]:
         url = test_config_global["services"][service]["url"]["container"]
@@ -174,7 +175,7 @@ if __name__ == "__main__":
     # Parse CLI flags
     #
     parser = argparse.ArgumentParser()
-    parser.add_argument("--images-by-csm-release-json", type=str, default="extractor-output-images_by_csm_release.json", help="Read in the json file created by the csm_manifest_extractor.py")
+    parser.add_argument("--csm-extractor-output-json", type=str, default="csm-manifest-extractor-output.json", help="Read in the json file created by the csm_manifest_extractor.py")
     parser.add_argument("--csm-release", type=str, default="main", help="CSM release branch to target")
     parser.add_argument("--test-config-global", type=str, default="test_config_global.yaml",  help="Global test configuration file")
 
@@ -185,6 +186,7 @@ if __name__ == "__main__":
     parser.add_argument("--skip-pull", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping pulling of images. For local dev only")
     parser.add_argument("--skip-tests", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping running of tests. For local dev only")
 
+    parser.add_argument("--github-action-id", type=str, default="", help="Github Action run ID")
 
     args = parser.parse_args()
 
@@ -193,15 +195,15 @@ if __name__ == "__main__":
     #
 
     # Read in the json file created by the csm_manifest_extractor.py
-    images_by_csm_release = None
-    with open(args.images_by_csm_release_json, 'r') as f:
-        images_by_csm_release = json.load(f)
+    csm_extractor_output = None
+    with open(args.csm_extractor_output_json, 'r') as f:
+        csm_extractor_output = json.load(f)
 
-    if args.csm_release not in images_by_csm_release:
-        print(f'Error provided CSM release does not exist in {args.images_by_csm_release_json}')
+    if args.csm_release not in csm_extractor_output:
+        print(f'Error provided CSM release does not exist in {args.csm_extractor_output_json}')
         exit(1)
 
-    images = images_by_csm_release[args.csm_release]
+    images = csm_extractor_output[args.csm_release]["images"]
 
     # Global test config
     test_config_global = None
@@ -302,12 +304,30 @@ if __name__ == "__main__":
     #
     process_allure_reports(allure_dir)
 
-    print()
-    print('View allure report locally')
-    print(f'allure serve --host localhost {str(allure_dir)}')
+
+    #
+    # Write out test metadata
+    #
+    test_metadata = {
+        "git_sha": csm_extractor_output[args.csm_release]["git_sha"],
+        "git_tags": csm_extractor_output[args.csm_release]["git_tags"],
+        "images": csm_extractor_output[args.csm_release]["images"],
+        "github_action_run_url": None
+    }
+    if args.github_action_id != "":
+        test_metadata["github_action_run"] = f'https://github.com/Cray-HPE/hms-nightly-integration/actions/runs/{args.github_action_id}'
+    
+    test_metadata_file = allure_dir.joinpath("test_metadata.json")
+    print(f'Writing out test metadata: {str(test_metadata_file)}')
+    with open(test_metadata_file, "w") as f:
+        json.dump(test_metadata, f, indent=2)
 
     #
     # Display summary
     #
 
     # TODO look at the allure files and output a simple pass/fail count based on image
+
+    print()
+    print('View allure report locally')
+    print(f'allure serve --host localhost {str(allure_dir)}')

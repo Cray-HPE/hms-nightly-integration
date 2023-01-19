@@ -51,16 +51,16 @@ jobs:
         EOF
 
         # Merge images
-        jq -s '.[0] * .[1]' extractor-output-images_by_csm_release.json unstable_images.json > images_temp.json
-        mv images_temp.json extractor-output-images_by_csm_release.json
+        jq -s '.[0] * .[1]' csm-manifest-extractor-output.json unstable_images.json > images_temp.json
+        mv images_temp.json csm-manifest-extractor-output.json
         
 
     - name: Save outputs
       shell: bash
       id: extract-container-images # TODO use a better name
       run: |
-        echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json | jq -c)" >> $GITHUB_OUTPUT
-        echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys' -c)" >> $GITHUB_OUTPUT
+        echo "images-by-csm-release=$(cat csm-manifest-extractor-output.json | jq -c)" >> $GITHUB_OUTPUT
+        echo "csm-releases=$(cat csm-manifest-extractor-output.json| jq '. | keys' -c)" >> $GITHUB_OUTPUT
   
   integration-test:
     name: Integration test
@@ -117,7 +117,7 @@ jobs:
         CSM_RELEASE: "${{ matrix.csm-release }}"
       run: |
         ./update_docker_compose.py \
-          --images-by-csm-release images-by-csm-release.json \
+          --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
           --docker-compose-file ./hms-simulation-environment/docker-compose.yaml
 
@@ -142,7 +142,7 @@ jobs:
         CSM_RELEASE: "${{ matrix.csm-release }}"
       run: |
         ./run_tests.py \
-          --images-by-csm-release-json images-by-csm-release.json \
+          --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
