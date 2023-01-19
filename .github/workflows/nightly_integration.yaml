@@ -175,8 +175,10 @@ jobs:
         set -x
         REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
         mv allure "${REPORT_NAME}"
+        mv hms-simulation-environment.log "${REPORT_NAME}"
+        mv run_tests.log "${REPORT_NAME}"
 
-        tar -cvf "allure-results.tar" ./"${REPORT_NAME}" hms-simulation-environment.log run_tests.log
+        tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
 
         echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
