@@ -19,7 +19,8 @@
                 <th>Passed tests</th>
                 <th>Failed tests</th>
                 <th>Logs</th>
-                <th>CSM Git references</th>
+                <th>CSM Git Commit</th>
+                <th>CSM Git Tags</th>
             </tr>
             {% for release in releases %}
             <tr class="table-primary">
@@ -30,11 +31,14 @@
                 <td class="table-secondary">
                     <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
                     <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/run_tests.log">run_tests.log</a>
+                    <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/test_metadata.json">test_metadata.json</a>
                 </td>
                 <td class="table-secondary">
                     <a href="https://github.com/Cray-HPE/csm/commit/{{ release["reports"][0]["git_sha"] }}">{{ release["reports"][0]["git_sha"] }}</a>
+                </td>
+                <td class="table-secondary">
                     {% for git_tag in release["reports"][0]["git_tags"] %}
-                    <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
+                        <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
                     {% endfor %}
                 </td>
             <tr>
@@ -50,7 +54,8 @@
             <th>Passed tests</th>
             <th>Failed tests</th>
             <th>Logs</th>
-            <th>CSM Git references</th>
+            <th>CSM Git Commit</th>
+            <th>CSM Git Tags</th>
         </tr>
     {% for report in release["reports"] %}
     <tr class="table-primary">
@@ -60,12 +65,15 @@
             <td class="table-secondary">
                 <a href="{{ release["release"] }}/{{ report["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
                 <a href="{{ release["release"] }}/{{ report["date"] }}/run_tests.log">run_tests.log</a>
+                <a href="{{ release["release"] }}/{{ report["date"] }}/test_metadata.json">test_metadata.json</a>
             </td>
             <td class="table-secondary">
-                    <a href="https://github.com/Cray-HPE/csm/commit/{{ report["git_sha"] }}">{{ report["git_sha"] }}</a>
-                    {% for git_tag in report["git_tags"] %}
-                    <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
-                    {% endfor %}
+                <a href="https://github.com/Cray-HPE/csm/commit/{{ report["git_sha"] }}">{{ report["git_sha"] }}</a>
+            </td>
+            <td class="table-secondary">
+                {% for git_tag in report["git_tags"] %}
+                <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
+                {% endfor %}
             </td>
         <tr>
     {% endfor %}
