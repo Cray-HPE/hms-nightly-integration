@@ -4,6 +4,9 @@ on:
   pull_request:
   schedule:
   - cron: '0 8 * * *' # 8am every day UTC. 3 AM Central. This will trigger the action to run after the hms-build-workflow-dispatcher has rebuilt HMS images
+
+permissions: read-all
+
 jobs:
   determine-service-versions:
     name: Determine service versions
@@ -13,12 +16,12 @@ jobs:
       images-by-csm-release: ${{ steps.extract-container-images.outputs.images-by-csm-release }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
     
@@ -26,25 +29,39 @@ jobs:
       shell: bash
       run: pip3 install -r requirements.txt
 
-    - name: Auth token for launching workflows
-      uses: navikt/github-app-token-generator@v1
-      id: get-token
-      with:
-        private-key: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_KEY }}
-        app-id: ${{ secrets.AUTOMATIC_WORKFLOW_DISPATCHER_APP_ID }}
-
     - name: Extract container images from CSM manifests
       shell: bash
-      id: extract-container-images
       env: 
-        GITHUB_TOKEN: ${{ steps.get-token.outputs.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ARTIFACTORY_ALGOL60_READONLY_USERNAME: ${{ secrets.ARTIFACTORY_ALGOL60_READONLY_USERNAME }}
+        ARTIFACTORY_ALGOL60_READONLY_TOKEN: ${{ secrets.ARTIFACTORY_ALGOL60_READONLY_TOKEN }}
       run: |
         set -eux
-        ./extract_chart_images.sh
-        echo "images-by-csm-release=$(cat extractor-output-images_by_csm_release.json)" >> $GITHUB_OUTPUT
-        echo "csm-releases=$(cat extractor-output-images_by_csm_release.json | jq '. | keys')" >> $GITHUB_OUTPUT
-  
+        ./csm_manifest_extractor.py
 
+    - name: Add bleeding-edge release
+      shell: bash
+      # TODO the idea of this would be to gather the latest of all HMS charts regardless if they are in a manifest or not
+      # Also this logic can be used for testing to specify images that are not present in a CSM manifest  
+      run: |
+        cat <<EOF > unstable_images.json
+        {
+          
+        }
+        EOF
+
+        # Merge images
+        jq -s '.[0] * .[1]' csm-manifest-extractor-output.json unstable_images.json > images_temp.json
+        mv images_temp.json csm-manifest-extractor-output.json
+        
+
+    - name: Save outputs
+      shell: bash
+      id: extract-container-images # TODO use a better name
+      run: |
+        echo "images-by-csm-release=$(cat csm-manifest-extractor-output.json | jq -c)" >> $GITHUB_OUTPUT
+        echo "csm-releases=$(cat csm-manifest-extractor-output.json| jq '. | keys' -c)" >> $GITHUB_OUTPUT
+  
   integration-test:
     name: Integration test
     needs: determine-service-versions
@@ -54,9 +71,199 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-latest
     steps:
-    - name: Hello world
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Checkout hms-simulation-environment
+      uses: actions/checkout@v3
+      with:
+        path: hms-simulation-environment
+        repository: Cray-HPE/hms-simulation-environment
+        ref: CASMHMS-5821-part2
+        fetch-depth: 0
+
+    - name: Store test data
+      shell: bash
+      env:
+        IMAGES_BY_CSM_RELEASE: ${{ needs.determine-service-versions.outputs.images-by-csm-release }}
+      run: |
+        echo "CSM Branch: ${{ matrix.csm-release }}"
+        echo "Images by csm release:"
+        printenv IMAGES_BY_CSM_RELEASE > images-by-csm-release.json
+        jq . images-by-csm-release.json
+
+    # Update container images in docker-compose.yaml
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install python dependencies
+      shell: bash
+      run: pip3 install -r requirements.txt
+
+    - name: Login to algol60 Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: artifactory.algol60.net
+        username: ${{ secrets.ARTIFACTORY_ALGOL60_USERNAME }}
+        password: ${{ secrets.ARTIFACTORY_ALGOL60_TOKEN }}
+
+    - name: Update container images in docker-compose.yaml
+      shell: bash
+      env:
+        CSM_RELEASE: "${{ matrix.csm-release }}"
+      run: |
+        ./update_docker_compose.py \
+          --csm-extractor-output-json images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}" \
+          --docker-compose-file ./hms-simulation-environment/docker-compose.yaml
+
+    # Stand up hms-simulation environment
+    - name: Standup simulation environment
       shell: bash
       run: |
-        echo "CSM Branch: ${{ matrix.image }}"
-        echo "Images by csm release:"
-        echo "${{ needs.determine-service-versions.outputs.images-by-csm-release }}" | jq
+        set -ex
+        cd hms-simulation-environment
+        # For debugging output the modified docker-compose compose file
+        echo "Updated docker-compose.yaml"
+        cat docker-compose.yaml
+        # Setup python virtual environment
+        ./setup_venv.sh
+        . ./venv/bin/activate
+        ./run.py ../sls_input_file.json
+
+    # Run tests
+    - name: Run tests
+      shell: bash
+      env:
+        CSM_RELEASE: "${{ matrix.csm-release }}"
+      run: |
+        ./run_tests.py \
+          --csm-extractor-output-json images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}" \
+          --fix-allure-dir-perms 2>&1 | tee run_tests.log
+
+    - name: Capture hms-simulation-environment logs
+      shell: bash
+      run: | 
+        cd hms-simulation-environment
+        docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > ../hms-simulation-environment.log 2>&1
+
+    - name: Create test results tarball
+      id: artifact 
+      shell: bash
+      env: 
+        CSM_RELEASE: ${{ matrix.csm-release }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+      run: |
+        set -x
+        REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
+        mv allure "${REPORT_NAME}"
+        mv hms-simulation-environment.log "${REPORT_NAME}"
+        mv run_tests.log "${REPORT_NAME}"
+
+        tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
+
+        echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ steps.artifact.outputs.name }}
+        path: allure-results.tar
+        retention-days: 1
+
+  generate-reports:
+    name: Generate reports
+    needs: integration-test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout hms-nightly-integration
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Checkout Github pages site
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+        path: gh-pages
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Download Allure
+      shell: bash
+      env:
+        ALLURE_VERSION: 2.20.1
+      run: |
+        set -ex
+        wget "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-${ALLURE_VERSION}.tgz"
+        tar -xvf "allure-commandline-${ALLURE_VERSION}.tgz"
+      
+        # Add it to the path
+        echo "$(realpath allure-${ALLURE_VERSION}/bin)" >> $GITHUB_PATH
+
+    - name: Install python dependencies
+      shell: bash
+      run: pip3 install -r requirements.txt
+
+    - uses: actions/download-artifact@v3
+      with:
+        path: artifacts
+
+    - name: Extract artifacts
+      shell: bash
+      run: | 
+        ls artifacts
+
+        find artifacts -maxdepth 3
+        for artifact_dir in ./artifacts/*; do
+          pushd "$artifact_dir"
+          
+          tar -xvf allure-results.tar
+
+          popd
+        done
+
+    - name: Generate site
+      shell: bash
+      env:
+        BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+      run: | 
+        # Ensure the branch that triggered this run exists. 
+        mkdir -p "${BRANCH_NAME}"
+        
+        # Generate test reports 
+        ./reporting/generate_report_site.py artifacts "./gh-pages/${BRANCH_NAME}"  
+        
+        # Write out the top level index.html page to redirect to the main branch
+        cat <<EOF > gh-pages/index.html
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url='https://cray-hpe.github.io/hms-nightly-integration/main/'" />
+          </head>
+          <body>
+          </body>
+        </html>
+        EOF
+
+        # Commit changes
+        pushd ./gh-pages
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit --amend -m "Updating reports from branch ${BRANCH_NAME}" 
+          git push --force
+        popd
+
+        # Add job summary for reports generated
+        echo "Reports can be found at https://cray-hpe.github.io/hms-nightly-integration/${BRANCH_NAME}/" >> $GITHUB_STEP_SUMMARY

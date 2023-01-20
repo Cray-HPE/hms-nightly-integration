@@ -1,0 +1,161 @@
+services:
+  SLS:
+    url:
+      container: http://cray-sls:8376
+      gateway: http://localhost:8080/apis/sls
+    image_repos: # TODO create test key, and application key
+    - artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test
+  HSM:
+    url: 
+      container: http://cray-smd:27779
+      gateway: http://localhost:8080/apis/smd
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test
+  CAPMC:
+    url: 
+      container: http://cray-capmc:27777
+      gateway: http://localhost:8080/apis/capmc
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test
+  PCS:
+    url: 
+      container: http://cray-power-control:28007
+      gateway: http://localhost:8080/apis/power-control
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-power-control-hmth-test
+  REDS:
+    url:
+      container: http://cray-reds:8269
+      gateway: http://localhost:8080/apis/reds
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-reds-hmth-test
+  BSS:
+    url: 
+      container: http://cray-bss:27778
+      gateway: http://localhost:8080/apis/bss
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test
+  FAS:
+    url:
+      container: http://cray-fas:28800
+      gateway: http://localhost:8080/apis/fas/v1
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-firmware-action-hmth-test
+  HBTD:
+    url: 
+      container: http://cray-hbtd:28500
+      gateway: http://localhost:8080/apis/hbtd
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-hbtd-hmth-test
+  HMNFD:
+    url:
+      container: http://cray-hmnfd:28600
+      gateway: http://localhost:8080/apis/hmnfd
+    image_repos:
+    - artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test
+    - artifactory.algol60.net/csm-docker/unstable/cray-hmnfd-hmth-test
+  # SCSD:
+  #   url:
+  #     container:
+  #     gateway: 
+  #   image_repos:
+  #   - 
+
+tavern:
+  name: tavern_global_configuration
+  description: common configuration for all tavern invocations
+  variables:
+    verify: false
+
+    # The *_base_url fields will be added at runtime, based off data from the services block above.
+
+    # CAPMC
+    xname_on_poll_num_attempts: 60
+    xname_on_poll_interval: 1
+    xname_off_poll_num_attempts: 60
+    xname_off_poll_interval: 1
+    xname_reinit_poll_num_attempts: 60
+    xname_reinit_poll_interval: 1
+
+    # PCS
+    transition_force-off_num_attempts: 62
+    transition_force-off_poll_interval: 1
+    transition_force-off_task_deadline_minutes: 1
+    transition_on_num_attempts: 62
+    transition_on_poll_interval: 1
+    transition_on_task_deadline_minutes: 1
+    transition_hard-restart_num_attempts: 62
+    transition_hard-restart_poll_interval: 1
+    transition_hard-restart_task_deadline_minutes: 1
+    power-cap_snapshot_num_attempts: 30
+    power-cap_snapshot_poll_interval: 1
+    power-cap_patch_num_attempts: 30
+    power-cap_patch_poll_interval: 1  
+
+test_order:
+- {test_class: smoke,            service: all}
+- {test_class: 1-non-disruptive, service: all}
+- {test_class: 2-disruptive,     service: all}
+- {test_class: 4-build-pipeline-only, service: all}
+
+
+# # # - {test_class: 2-disruptive, service: SLS }
+# # # - {test_class: 2-disruptive, service: HSM }
+# # # - {test_class: 2-disruptive, service: BSS }
+# # # - {test_class: 2-disruptive, service: CAPMC }
+
+# Attempt to run destructive tests from the top down, so we don't need to add special recovery logic 
+# to run the next destructive test suite.
+- {test_class: 3-destructive, service: BSS }
+- {test_class: 3-destructive, service: FAS }
+- {test_class: 3-destructive, service: HBTD }
+- {test_class: 3-destructive, service: HMNFD }
+- {test_class: 3-destructive, service: CAPMC }
+- {test_class: 3-destructive, service: PCS }
+- {test_class: 3-destructive, service: SCSD }
+- {test_class: 3-destructive, service: MEDS }
+- {test_class: 3-destructive, service: REDS }
+- {test_class: 3-destructive, service: HSM }
+- {test_class: 3-destructive, service: SLS }
+
+# - {test_class: smoke,            service: all}
+# - {test_class: 1-non-disruptive, service: all}
+# - {test_class: 2-disruptive,     service: HSM}
+# - {test_class: 2-disruptive,     service: BSS}
+# - {test_class: 4-build-pipeline-only, service: HSM}
+# - {test_class: 4-build-pipeline-only, service: BSS}
+# - {test_class: 3-destructive, service: BSS }
+# - {test_class: 3-destructive, service: HSM }
+
+
+# # - {test_class: 2-disruptive, service: SLS }
+# # - {test_class: 2-disruptive, service: HSM }
+# # - {test_class: 2-disruptive, service: BSS }
+# # - {test_class: 2-disruptive, service: CAPMC }
+
+# Attempt to run destructive tests from the top down, so we don't need to add special recovery logic 
+# to run the next destructive test suite.
+# - {test_class: 3-destructive, service: BSS }
+# - {test_class: 3-destructive, service: FAS }
+# - {test_class: 3-destructive, service: HBTD }
+# - {test_class: 3-destructive, service: HMNFD }
+# - {test_class: 3-destructive, service: CAPMC }
+# - {test_class: 3-destructive, service: PCS }
+# - {test_class: 3-destructive, service: SCSD }
+# - {test_class: 3-destructive, service: MEDS }
+# - {test_class: 3-destructive, service: REDS }
+# - {test_class: 3-destructive, service: HSM }
+# - {test_class: 3-destructive, service: SLS }
+
+
+# - {test_class: smoke,            service: SLS}
+# - {test_class: 1-non-disruptive, service: SLS}
+# - {test_class: 2-disruptive,     service: SLS}
