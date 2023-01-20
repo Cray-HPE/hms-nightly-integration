@@ -7,6 +7,8 @@ import json
 import subprocess
 import yaml
 
+# TODO expand to use data from test_global_config.yaml
+
 # Parse CLI arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("--csm-extractor-output-json", type=str, default="csm-manifest-extractor-output.json", help="Read in the json file created by the csm_manifest_extractor.py")

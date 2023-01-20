@@ -81,7 +81,7 @@ jobs:
       with:
         path: hms-simulation-environment
         repository: Cray-HPE/hms-simulation-environment
-        ref: v1
+        ref: CASMHMS-5821-part2
         fetch-depth: 0
 
     - name: Store test data

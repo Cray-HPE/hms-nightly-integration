@@ -107,15 +107,11 @@ def run_tests(test_global_test_config: dict, tests: list[dict], allure_report_di
 
             print("Command:", ' '.join(cmd))
 
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            result = subprocess.run(cmd)
             if result.returncode != 0:
                 # TODO better message
                 print("Tests failed. Exit code {}".format(result.returncode))
-                print("stderr: {}".format(result.stderr))
-                print("stdout: {}".format(result.stdout))
                 continue
-
-            print(result.stdout)
 
 def process_allure_reports(allure_report_dir: pathlib.Path):
     for test_result_path in allure_report_dir.glob("**/*result.json"):
