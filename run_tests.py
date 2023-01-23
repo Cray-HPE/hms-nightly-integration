@@ -332,7 +332,7 @@ if __name__ == "__main__":
         "github_action_run_url": None
     }
     if args.github_action_id != "":
-        test_metadata["github_action_run"] = f'https://github.com/Cray-HPE/hms-nightly-integration/actions/runs/{args.github_action_id}'
+        test_metadata["github_action_run_url"] = f'https://github.com/Cray-HPE/hms-nightly-integration/actions/runs/{args.github_action_id}'
     
     test_metadata_file = allure_dir.joinpath("test_metadata.json")
     print(f'Writing out test metadata: {str(test_metadata_file)}')
