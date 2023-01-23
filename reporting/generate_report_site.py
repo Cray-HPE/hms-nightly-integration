@@ -216,11 +216,11 @@ for report_branch_dir in reports_dir.glob("*/"):
             report_data["failed_tests"] = report_data["total_tests"] -  report_data["passed_tests"]
         
         test_metadata_file = report_dir.joinpath("test_metadata.json")
-        if test_metadata_file.exists():
-            with open(report_dir.joinpath("test_metadata.json")) as f:
-                test_metadata = json.load(f)
-                report_data["git_sha"] = test_metadata["git_sha"]
-                report_data["git_tags"] = test_metadata["git_tags"]
+        with open(report_dir.joinpath("test_metadata.json")) as f:
+            test_metadata = json.load(f)
+            report_data["git_sha"] = test_metadata["git_sha"]
+            report_data["git_tags"] = test_metadata["git_tags"]
+            report_data["github_action_run_url"] = test_metadata["github_action_run_url"]
 
         release_branch_data["reports"].append(report_data)
 

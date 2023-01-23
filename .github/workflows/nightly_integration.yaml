@@ -42,7 +42,7 @@ jobs:
     - name: Add bleeding-edge release
       shell: bash
       # TODO the idea of this would be to gather the latest of all HMS charts regardless if they are in a manifest or not
-      # Also this logic can be used for testing to specify images that are not present in a CSM manifest  
+      # Also this logic can be used for testing to specify images that are not present in a CSM manifest
       run: |
         cat <<EOF > unstable_images.json
         {
@@ -81,7 +81,7 @@ jobs:
       with:
         path: hms-simulation-environment
         repository: Cray-HPE/hms-simulation-environment
-        ref: CASMHMS-5821-part2
+        ref: v1
         fetch-depth: 0
 
     - name: Store test data
@@ -140,10 +140,12 @@ jobs:
       shell: bash
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
+        GITHUB_RUN_ID: "${{ github.run_id }}"
       run: |
         ./run_tests.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
+          --github-action-id "${GITHUB_RUN_ID}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
     - name: Capture hms-simulation-environment logs
