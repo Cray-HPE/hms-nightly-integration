@@ -221,6 +221,7 @@ for report_branch_dir in reports_dir.glob("*/"):
                 test_metadata = json.load(f)
                 report_data["git_sha"] = test_metadata["git_sha"]
                 report_data["git_tags"] = test_metadata["git_tags"]
+                report_data["github_action_run_url"] = test_metadata["github_action_run_url"]
 
         release_branch_data["reports"].append(report_data)
 

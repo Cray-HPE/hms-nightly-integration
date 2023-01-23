@@ -21,6 +21,7 @@
                 <th>CSM Git Commit</th>
                 <th>CSM Git Tags</th>
                 <th>Logs</th>
+                <th>Github Action Run</th>
             </tr>
             {% for release in releases %}
             <tr class="table-primary">
@@ -36,10 +37,15 @@
                         <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
                     {% endfor %}
                 </td>
-                <td class="table-secondary">
+                <td class="table-light">
                     &bull; <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
                     &bull; <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/run_tests.log">run_tests.log</a>
                     &bull; <a href="{{ release["release"] }}/{{ release["reports"][0]["date"] }}/test_metadata.json">test_metadata.json</a>
+                </td>
+                <td class="table-light">
+                    {% if release["reports"][0]["github_action_run_url"] is not none %}
+                    <a href="{{ release["reports"][0]["github_action_run_url"] }}">Workflow Run</a>
+                    {% endif %}
                 </td>
             <tr>
             {% endfor %}
@@ -56,6 +62,7 @@
             <th>CSM Git Commit</th>
             <th>CSM Git Tags</th>
             <th>Logs</th>
+            <th>Github Action Run</th>
         </tr>
     {% for report in release["reports"] %}
     <tr class="table-primary">
@@ -70,10 +77,15 @@
                 <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
                 {% endfor %}
             </td>
-            <td class="table-secondary">
+            <td class="table-light">
                 &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
                 &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/run_tests.log">run_tests.log</a>
                 &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/test_metadata.json">test_metadata.json</a>
+            </td>
+            <td class="table-light">
+                {% if release["reports"][0]["github_action_run_url"] is not none %}
+                <a href="{{ release["reports"][0]["github_action_run_url"] }}">Workflow Run</a>
+                {% endif %}
             </td>
         <tr>
     {% endfor %}

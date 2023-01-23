@@ -140,10 +140,12 @@ jobs:
       shell: bash
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
+        GITHUB_RUN_ID: "${{ github.run_id }}"
       run: |
         ./run_tests.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
+          --github-action-id "${GITHUB_RUN_ID}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
     - name: Capture hms-simulation-environment logs
