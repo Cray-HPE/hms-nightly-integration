@@ -42,7 +42,7 @@ jobs:
     - name: Add bleeding-edge release
       shell: bash
       # TODO the idea of this would be to gather the latest of all HMS charts regardless if they are in a manifest or not
-      # Also this logic can be used for testing to specify images that are not present in a CSM manifest  
+      # Also this logic can be used for testing to specify images that are not present in a CSM manifest
       run: |
         cat <<EOF > unstable_images.json
         {
