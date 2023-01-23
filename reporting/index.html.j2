@@ -83,8 +83,8 @@
                 &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/test_metadata.json">test_metadata.json</a>
             </td>
             <td class="table-light">
-                {% if release["reports"][0]["github_action_run_url"] is not none %}
-                <a href="{{ release["reports"][0]["github_action_run_url"] }}">Workflow Run</a>
+                {% if report["github_action_run_url"] is not none %}
+                <a href="{{ report["github_action_run_url"] }}">Workflow Run</a>
                 {% endif %}
             </td>
         <tr>
