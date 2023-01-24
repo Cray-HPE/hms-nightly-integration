@@ -245,7 +245,7 @@ if __name__ == "__main__":
     # Create a lookup table to map image repos to service names
     image_repo_service_lookup = {}
     for name, service in test_config_global["services"].items():
-        for image_repo in service["image_repos"]:
+        for image_repo in service["image"]["repo"]["test"].values():
             image_repo_service_lookup[image_repo] = name
 
     print(json.dumps(image_repo_service_lookup, indent=2))
