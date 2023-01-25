@@ -93,9 +93,9 @@ def run_tests(test_global_test_config: dict, detected_tavern_configs, tests: lis
     # Build up smoke test lookup map
     # TODO some stream lining could occur if a better structure was used for information regarding a test
     smoke_host_override = {}
-    for service in test_global_test_config["services"]:
-        for image_repo in test_global_test_config["services"][service]["image_repos"]:
-            smoke_host_override[image_repo] = test_global_test_config["services"][service]["url"]["container"]
+    for service in test_global_test_config["services"].values():
+        for image_repo in service["image"]["repo"]["test"].values():
+            smoke_host_override[image_repo] = service["url"]["container"]
 
     print("Smoke test host overrides")
     print(json.dumps(smoke_host_override, indent=2))

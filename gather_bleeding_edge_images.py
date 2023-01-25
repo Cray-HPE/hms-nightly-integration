@@ -2,12 +2,11 @@
 
 import argparse
 import os
-import git
 import github
 import semver
 import json
 import yaml
-
+import docker
 
 
 
@@ -25,6 +24,9 @@ if __name__ == "__main__":
     #
     github_token = os.getenv("GITHUB_TOKEN")
 
+    # Docker client
+    docker_client = docker.from_env()
+
     # Global test config
     test_config_global = None
     with open(args.test_config_global, 'r') as f:
@@ -37,13 +39,9 @@ if __name__ == "__main__":
     for service in test_config_global["services"].values():
         github_repo = service["github"]["repo"]["application"]
         github_repos.append(github_repo)
-        print(github_repo)
 
         repo_application_image_lookup[github_repo] = service["image"]["repo"]["application"]["stable"]
         repo_test_image_lookup[github_repo] = service["image"]["repo"]["test"]["stable"]
-
-        print(repo_application_image_lookup)
-        print(repo_test_image_lookup)
 
 
     g = github.Github(github_token)
@@ -82,13 +80,21 @@ if __name__ == "__main__":
         latest_version = versions[0]
         print(f'  Latest version: {latest_version}')
 
-    
+        # Application image
+        latest_application_image = f'{repo_application_image_lookup[github_repo]}:{latest_version}'
         latest_images[repo_application_image_lookup[github_repo]] = [str(latest_version)]
-        print(latest_images)
-        print(f'  Latest application image: {repo_application_image_lookup[github_repo]}:{latest_version}')
+        print(f'  Latest application image: {latest_application_image}')
 
-        latest_images[repo_test_image_lookup[github_repo]] = [str(latest_version)]
-        print(f'  Latest test image: {repo_test_image_lookup[github_repo]}:{latest_version}')
+        # Test image
+        latest_test_image = f'{repo_test_image_lookup[github_repo]}:{latest_version}'
+        print(f'  Latest test image: {latest_test_image}')
+
+        # Determine if the test image exists in Artifactory
+        try:
+            docker_client.images.get_registry_data(latest_test_image)
+            latest_images[repo_test_image_lookup[github_repo]] = [str(latest_version)]
+        except docker.errors.NotFound as e:
+            print(f' Test image does not exist: {e}')
 
     # Build output that is comparable with the csm-manifest-extractor.py
     output = {
