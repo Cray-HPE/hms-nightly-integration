@@ -30,7 +30,9 @@
                 <td class="table-success"> {{ release["reports"][0]["passed_tests"] }} </td>
                 <td class="table-danger"> {{ release["reports"][0]["failed_tests"] }} </td>
                 <td class="table-secondary">
+                    {% if release["reports"][0]["git_sha"] is not none %}
                     <a href="https://github.com/Cray-HPE/csm/commit/{{ release["reports"][0]["git_sha"] }}">{{ release["reports"][0]["git_sha"] }}</a>
+                    {% endif %}
                 </td>
                 <td class="table-secondary">
                     {% for git_tag in release["reports"][0]["git_tags"] %}
@@ -70,7 +72,9 @@
             <td class="table-success"> {{ report["passed_tests"] }} </td>
             <td class="table-danger"> {{ report["failed_tests"] }} </td>
             <td class="table-secondary">
+                {% if report["git_sha"] is not none %}
                 <a href="https://github.com/Cray-HPE/csm/commit/{{ report["git_sha"] }}">{{ report["git_sha"] }}</a>
+                {% endif %}
             </td>
             <td class="table-secondary">
                 {% for git_tag in report["git_tags"] %}

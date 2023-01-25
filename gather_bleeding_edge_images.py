@@ -94,7 +94,7 @@ if __name__ == "__main__":
             docker_client.images.get_registry_data(latest_test_image)
             latest_images[repo_test_image_lookup[github_repo]] = [str(latest_version)]
         except docker.errors.NotFound as e:
-            print(f' Test image does not exist: {e}')
+            print(f'  Test image does not exist: {e}')
 
     # Build output that is comparable with the csm-manifest-extractor.py
     output = {
