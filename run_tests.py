@@ -284,6 +284,7 @@ if __name__ == "__main__":
     detected_tests, detected_tavern_configs = detect_test_classes(docker_client, hmth_images, tests_output_dir, wanted_tests = {
         "src/app/smoke.json":                 "smoke",
         "src/app/api/1-non-disruptive/":      "1-non-disruptive",
+        "src/app/api/1-hardware-checks/":     "1-hardware-checks",
         "src/app/api/2-disruptive/":          "2-disruptive",
         "src/app/api/3-destructive/":         "3-destructive",
         "src/app/api/4-build-pipeline-only/": "4-build-pipeline-only"
