@@ -189,7 +189,10 @@ print()
 print("========================================")
 print("Generating index.yaml for each release branch")
 print("========================================")
-template_data = {"releases": []}
+template_data = {
+    "csm_releases": [],
+    "bleeding_edge": {} 
+}
 for report_branch_dir in reports_dir.glob("*/"):
     if not report_branch_dir.is_dir():
         continue
@@ -224,19 +227,25 @@ for report_branch_dir in reports_dir.glob("*/"):
 
         release_branch_data["reports"].append(report_data)
 
-    template_data["releases"].append(release_branch_data)
+
+    if release_branch_data["release"] == "bleeding-edge":
+        template_data["bleeding_edge"] = release_branch_data
+    else:
+        template_data["csm_releases"].append(release_branch_data)
 
 template_data["timestamp"] = str(datetime.datetime.utcnow())
-template_data["releases"].sort(key=lambda x: x["release"])
+template_data["csm_releases"].sort(key=lambda x: x["release"])
 print(json.dumps(template_data, indent=2))
 
-# Generate report HTML
+# Generate HTML pages
 environment = jinja2.Environment(loader=jinja2.FileSystemLoader("./reporting/"))
-index_html_template = environment.get_template("index.html.j2")
-index_html_content = index_html_template.render(template_data)
+for page in ["index.html", "test_report_history.html", "bleeding_edge.html"]:
+    # Template report HTML
+    index_html_template = environment.get_template(f"{page}.j2")
+    index_html_content = index_html_template.render(template_data)
 
-# Write out the generated file
-index_html_path = reports_dir.joinpath("index.html")
-print(f'  Writing index page: {str(index_html_path)}')
-with open(index_html_path, 'w') as f:
-    f.write(index_html_content)
+    # Write out the generated file
+    index_html_path = reports_dir.joinpath(page)
+    print(f'  Writing HTML page: {str(index_html_path)}')
+    with open(index_html_path, 'w') as f:
+        f.write(index_html_content)
