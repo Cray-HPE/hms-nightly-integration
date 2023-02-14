@@ -118,6 +118,8 @@ jobs:
 
     # Stand up hms-simulation environment
     - name: Standup simulation environment
+      id: simulation-environment
+      continue-on-error: true
       shell: bash
       run: |
         set -ex
@@ -132,6 +134,9 @@ jobs:
 
     # Run tests
     - name: Run tests
+      id: run-tests
+      if: steps.setup-simulation-environment.outcome != 'failure'
+      continue-on-error: true
       shell: bash
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
@@ -155,12 +160,17 @@ jobs:
       env: 
         CSM_RELEASE: ${{ matrix.csm-release }}
         GITHUB_RUN_ID: ${{ github.run_id }}
+        OUTCOME_SETUP_SIMULATION_ENVIRONMENT: ${{ steps.setup-simulation-environment.outcome  }}
+        OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
       run: |
         set -x
         REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
         mv allure "${REPORT_NAME}"
         mv hms-simulation-environment.log "${REPORT_NAME}"
         mv run_tests.log "${REPORT_NAME}"
+
+        echo "${OUTCOME_SETUP_SIMULATION_ENVIRONMENT}" > "${REPORT_NAME}"/outcome_setup_simulation_environment
+        echo "${OUTCOME_RUN_TESTS}" > "${REPORT_NAME}"/outcome_run_tests
 
         tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
 
