@@ -162,7 +162,7 @@ jobs:
         OUTCOME_SETUP_SIMULATION_ENVIRONMENT: ${{ steps.setup-simulation-environment.outcome  }}
         OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
       run: |
-        ./run_tests.py \
+        ./generate_test_metadata.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}"
 
