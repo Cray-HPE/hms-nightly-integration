@@ -145,7 +145,6 @@ jobs:
         ./run_tests.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
-          --github-action-id "${GITHUB_RUN_ID}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
     - name: Capture hms-simulation-environment logs
@@ -164,7 +163,8 @@ jobs:
       run: |
         ./generate_test_metadata.py \
           --csm-extractor-output-json images-by-csm-release.json \
-          --csm-release "${CSM_RELEASE}"
+          --csm-release "${CSM_RELEASE}" \
+          --github-action-id "${GITHUB_RUN_ID}"
 
     - name: Create test results tarball
       id: artifact 
