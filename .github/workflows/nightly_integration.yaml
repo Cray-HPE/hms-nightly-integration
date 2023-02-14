@@ -164,10 +164,15 @@ jobs:
         OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
       run: |
         set -x
-        REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
-        mv allure "${REPORT_NAME}"
-        mv hms-simulation-environment.log "${REPORT_NAME}"
-        mv run_tests.log "${REPORT_NAME}"
+        REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S")
+
+        mkdir -p $REPORT_NAME
+        
+        for file in allure hms-simulation-environment.log run_tests.log; do
+          if [[ -e "$file" ]; then
+            mv "$file" "${REPORT_NAME}"
+          fi 
+        done
 
         echo "${OUTCOME_SETUP_SIMULATION_ENVIRONMENT}" > "${REPORT_NAME}"/outcome_setup_simulation_environment
         echo "${OUTCOME_RUN_TESTS}" > "${REPORT_NAME}"/outcome_run_tests
