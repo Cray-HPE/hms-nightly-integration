@@ -154,14 +154,25 @@ jobs:
         cd hms-simulation-environment
         docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > ../hms-simulation-environment.log 2>&1
 
+    - name: Create test_metadata
+      shell: bash
+      env:
+        CSM_RELEASE: ${{ matrix.csm-release }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        OUTCOME_SETUP_SIMULATION_ENVIRONMENT: ${{ steps.setup-simulation-environment.outcome  }}
+        OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
+      run: |
+        ./run_tests.py \
+          --csm-extractor-output-json images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}" \
+          --github-action-id "${GITHUB_RUN_ID}"
+
     - name: Create test results tarball
       id: artifact 
       shell: bash
       env: 
         CSM_RELEASE: ${{ matrix.csm-release }}
         GITHUB_RUN_ID: ${{ github.run_id }}
-        OUTCOME_SETUP_SIMULATION_ENVIRONMENT: ${{ steps.setup-simulation-environment.outcome  }}
-        OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
       run: |
         set -x
         REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S")
@@ -174,9 +185,6 @@ jobs:
           fi 
         done
 
-        echo "${OUTCOME_SETUP_SIMULATION_ENVIRONMENT}" > "${REPORT_NAME}"/outcome_setup_simulation_environment
-        echo "${OUTCOME_RUN_TESTS}" > "${REPORT_NAME}"/outcome_run_tests
-
         tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
 
         echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
@@ -187,6 +195,11 @@ jobs:
         name: ${{ steps.artifact.outputs.name }}
         path: allure-results.tar
         retention-days: 1
+
+    - name: Fail the job is there was a problem when standing up the simulation environment or running the tests
+      if: steps.setup-simulation-environment.outcome == 'failure' || steps.run-tests.outcome == 'failure' 
+      shell: bash
+      run: exit 1
 
   generate-reports:
     name: Generate reports

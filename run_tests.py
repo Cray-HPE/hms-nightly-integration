@@ -218,8 +218,6 @@ if __name__ == "__main__":
     parser.add_argument("--skip-pull", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping pulling of images. For local dev only")
     parser.add_argument("--skip-tests", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping running of tests. For local dev only")
 
-    parser.add_argument("--github-action-id", type=str, default="", help="Github Action run ID")
-
     args = parser.parse_args()
 
     #
@@ -341,23 +339,6 @@ if __name__ == "__main__":
     #
     process_allure_reports(allure_dir)
 
-
-    #
-    # Write out test metadata
-    #
-    test_metadata = {
-        "git_sha": csm_extractor_output[args.csm_release]["git_sha"],
-        "git_tags": csm_extractor_output[args.csm_release]["git_tags"],
-        "images": csm_extractor_output[args.csm_release]["images"],
-        "github_action_run_url": None
-    }
-    if args.github_action_id != "":
-        test_metadata["github_action_run_url"] = f'https://github.com/Cray-HPE/hms-nightly-integration/actions/runs/{args.github_action_id}'
-    
-    test_metadata_file = allure_dir.joinpath("test_metadata.json")
-    print(f'Writing out test metadata: {str(test_metadata_file)}')
-    with open(test_metadata_file, "w") as f:
-        json.dump(test_metadata, f, indent=2)
 
     #
     # Display summary
