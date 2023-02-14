@@ -164,7 +164,9 @@ jobs:
         ./generate_test_metadata.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
-          --github-action-id "${GITHUB_RUN_ID}"
+          --github-action-id "${GITHUB_RUN_ID}" \
+          --step-outcome-standup-simulation-environment "${OUTCOME_SETUP_SIMULATION_ENVIRONMENT}" \
+          --step-outcome-run-tests "${OUTCOME_RUN_TESTS}"
 
     - name: Create test results tarball
       id: artifact 
@@ -176,9 +178,10 @@ jobs:
         set -x
         REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S")
 
-        mkdir -p $REPORT_NAME
+        mkdir -p allure
+        mv allure "${REPORT_NAME}"
         
-        for file in allure hms-simulation-environment.log run_tests.log; do
+        for file in hms-simulation-environment.log run_tests.log test_metadata.json; do
           if [[ -e "$file" ]]; then
             mv "$file" "${REPORT_NAME}"
           fi 
@@ -196,7 +199,7 @@ jobs:
         retention-days: 1
 
     - name: Fail the job is there was a problem when standing up the simulation environment or running the tests
-      if: steps.setup-simulation-environment.outcome == 'failure' || steps.run-tests.outcome == 'failure' 
+      if: steps.setup-simulation-environment.outcome != 'success' || steps.run-tests.outcome != 'success' 
       shell: bash
       run: exit 1
 
