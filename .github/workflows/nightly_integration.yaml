@@ -169,7 +169,7 @@ jobs:
         mkdir -p $REPORT_NAME
         
         for file in allure hms-simulation-environment.log run_tests.log; do
-          if [[ -e "$file" ]; then
+          if [[ -e "$file" ]]; then
             mv "$file" "${REPORT_NAME}"
           fi 
         done
