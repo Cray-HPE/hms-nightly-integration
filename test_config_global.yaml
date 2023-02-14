@@ -79,6 +79,38 @@ services:
       repo:
         application: hms-reds
         charts: hms-reds-charts
+  MEDS:
+    url: 
+      container: null
+      gateway: null
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-meds
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-meds
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-meds-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-meds-hmth-test
+    github:
+      repo:
+        application: hms-meds
+        charts: hms-meds-charts
+  HMS-DISCOVERY:
+    url: 
+      container: null
+      gateway: null
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-discovery
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-discovery
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-discovery-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-discovery-hmth-test
+    github:
+      repo:
+        application: hms-discovery
+        charts: hms-discovery-charts
   BSS:
     url: 
       container: http://cray-bss:27778
@@ -174,8 +206,8 @@ services:
           unstable: artifactory.algol60.net/csm-docker/unstable/hms-hmcollector-hmth-test
     github:
       repo:
-        application: hms-scsd
-        charts: hms-scsd-charts
+        application: hms-hmcollector
+        charts: hms-hmcollector-charts
 tavern:
   name: tavern_global_configuration
   description: common configuration for all tavern invocations
