@@ -164,8 +164,7 @@ jobs:
       run: |
         ./run_tests.py \
           --csm-extractor-output-json images-by-csm-release.json \
-          --csm-release "${CSM_RELEASE}" \
-          --github-action-id "${GITHUB_RUN_ID}"
+          --csm-release "${CSM_RELEASE}"
 
     - name: Create test results tarball
       id: artifact 
