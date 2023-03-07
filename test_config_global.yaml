@@ -3,72 +3,211 @@ services:
     url:
       container: http://cray-sls:8376
       gateway: http://localhost:8080/apis/sls
-    image_repos: # TODO create test key, and application key
-    - artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-sls
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-sls
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-sls-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-sls-hmth-test
+    github:
+      repo:
+        application: hms-sls
+        charts: hms-sls-charts
   HSM:
     url: 
       container: http://cray-smd:27779
       gateway: http://localhost:8080/apis/smd
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-smd
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-smd
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-smd-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-smd-hmth-test
+    github:
+      repo:
+        application: hms-smd
+        charts: hms-smd-charts
   CAPMC:
     url: 
       container: http://cray-capmc:27777
       gateway: http://localhost:8080/apis/capmc
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-capmc
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-capmc
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-capmc-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-capmc-hmth-test
+    github:
+      repo:
+        application: hms-capmc
+        charts: hms-capmc-charts
   PCS:
     url: 
       container: http://cray-power-control:28007
       gateway: http://localhost:8080/apis/power-control
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-power-control-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-power-control
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-power-control
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-power-control-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-power-control-hmth-test
+    github:
+      repo:
+        application: hms-power-control
+        charts: hms-power-control-charts
   REDS:
     url:
       container: http://cray-reds:8269
       gateway: http://localhost:8080/apis/reds
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-reds-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-reds
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-reds
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-reds-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-reds-hmth-test
+    github:
+      repo:
+        application: hms-reds
+        charts: hms-reds-charts
+  MEDS:
+    url: 
+      container: null
+      gateway: null
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-meds
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-meds
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-meds-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-meds-hmth-test
+    github:
+      repo:
+        application: hms-meds
+        charts: hms-meds-charts
+  HMS-DISCOVERY:
+    url: 
+      container: null
+      gateway: null
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-discovery
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-discovery
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-discovery-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-discovery-hmth-test
+    github:
+      repo:
+        application: hms-discovery
+        charts: hms-discovery-charts
   BSS:
     url: 
       container: http://cray-bss:27778
       gateway: http://localhost:8080/apis/bss
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-bss
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-bss
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-bss-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-bss-hmth-test
+    github:
+      repo:
+        application: hms-bss
+        chart: hms-bss-charts
   FAS:
     url:
       container: http://cray-fas:28800
       gateway: http://localhost:8080/apis/fas/v1
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-firmware-action-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-firmware-action
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-firmware-action
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-firmware-action-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-firmware-action-hmth-test
+    github:
+      repo:
+        application: hms-firmware-action
+        charts: hms-firmware-action
   HBTD:
     url: 
       container: http://cray-hbtd:28500
       gateway: http://localhost:8080/apis/hbtd
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-hbtd-hmth-test
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-hbtd
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-hbtd
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-hbtd-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-hbtd-hmth-test
+    github:
+      repo:
+        application: hms-hbtd
+        charts: hms-hbtd-charts
   HMNFD:
     url:
       container: http://cray-hmnfd:28600
       gateway: http://localhost:8080/apis/hmnfd
-    image_repos:
-    - artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test
-    - artifactory.algol60.net/csm-docker/unstable/cray-hmnfd-hmth-test
-  # SCSD:
-  #   url:
-  #     container:
-  #     gateway: 
-  #   image_repos:
-  #   - 
-
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-hmnfd
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-hmnfd
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-hmnfd-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-hmnfd-hmth-test
+    github:
+      repo:
+        application: hms-hmnfd
+        charts: hms-hmnfd-charts
+  SCSD:
+    url:
+      container: http://cray-scsd:25309
+      gateway: http://localhost:8443/apis/scsd/v1/
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-scsd
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-scsd
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/cray-scsd-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/cray-scsd-hmth-test
+    github:
+      repo:
+        application: hms-scsd
+        charts: hms-scsd-charts
+  HMCOLLECTOR:
+    url:
+      # TODO the the following is for the ingress pod, and not the poll pod. But the poll pod doesn't have a API.
+      container: http://cray-hms-hmcollector-ingress:80
+      gateway: http://localhost:8443/apis/collector-ingress/
+    image:
+      repo:
+        application:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-hmcollector
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-hmcollector
+        test:
+          stable:   artifactory.algol60.net/csm-docker/stable/hms-hmcollector-hmth-test
+          unstable: artifactory.algol60.net/csm-docker/unstable/hms-hmcollector-hmth-test
+    github:
+      repo:
+        application: hms-hmcollector
+        charts: hms-hmcollector-charts
 tavern:
   name: tavern_global_configuration
   description: common configuration for all tavern invocations
@@ -101,61 +240,31 @@ tavern:
     power-cap_patch_poll_interval: 1  
 
 test_order:
-- {test_class: smoke,            service: all}
-- {test_class: 1-non-disruptive, service: all}
-- {test_class: 2-disruptive,     service: all}
-- {test_class: 4-build-pipeline-only, service: all}
+# Smoke tests
+- {test_class: smoke,                 service: all}
 
+# Non disruptive tests
+- {test_class: non-disruptive,      service: all}
+- {test_class: hardware-checks,     service: all}
 
-# # # - {test_class: 2-disruptive, service: SLS }
-# # # - {test_class: 2-disruptive, service: HSM }
-# # # - {test_class: 2-disruptive, service: BSS }
-# # # - {test_class: 2-disruptive, service: CAPMC }
+# Disruptive tests
+- {test_class: disruptive,          service: all}
 
-# Attempt to run destructive tests from the top down, so we don't need to add special recovery logic 
-# to run the next destructive test suite.
-- {test_class: 3-destructive, service: BSS }
-- {test_class: 3-destructive, service: FAS }
-- {test_class: 3-destructive, service: HBTD }
-- {test_class: 3-destructive, service: HMNFD }
-- {test_class: 3-destructive, service: CAPMC }
-- {test_class: 3-destructive, service: PCS }
-- {test_class: 3-destructive, service: SCSD }
-- {test_class: 3-destructive, service: MEDS }
-- {test_class: 3-destructive, service: REDS }
-- {test_class: 3-destructive, service: HSM }
-- {test_class: 3-destructive, service: SLS }
-
-# - {test_class: smoke,            service: all}
-# - {test_class: 1-non-disruptive, service: all}
-# - {test_class: 2-disruptive,     service: HSM}
-# - {test_class: 2-disruptive,     service: BSS}
-# - {test_class: 4-build-pipeline-only, service: HSM}
-# - {test_class: 4-build-pipeline-only, service: BSS}
-# - {test_class: 3-destructive, service: BSS }
-# - {test_class: 3-destructive, service: HSM }
-
-
-# # - {test_class: 2-disruptive, service: SLS }
-# # - {test_class: 2-disruptive, service: HSM }
-# # - {test_class: 2-disruptive, service: BSS }
-# # - {test_class: 2-disruptive, service: CAPMC }
+# Build pipeline only tests
+- {test_class: build-pipeline-only, service: all}
 
 # Attempt to run destructive tests from the top down, so we don't need to add special recovery logic 
 # to run the next destructive test suite.
-# - {test_class: 3-destructive, service: BSS }
-# - {test_class: 3-destructive, service: FAS }
-# - {test_class: 3-destructive, service: HBTD }
-# - {test_class: 3-destructive, service: HMNFD }
-# - {test_class: 3-destructive, service: CAPMC }
-# - {test_class: 3-destructive, service: PCS }
-# - {test_class: 3-destructive, service: SCSD }
-# - {test_class: 3-destructive, service: MEDS }
-# - {test_class: 3-destructive, service: REDS }
-# - {test_class: 3-destructive, service: HSM }
-# - {test_class: 3-destructive, service: SLS }
-
-
-# - {test_class: smoke,            service: SLS}
-# - {test_class: 1-non-disruptive, service: SLS}
-# - {test_class: 2-disruptive,     service: SLS}
+- {test_class: destructive, service: BSS }
+- {test_class: destructive, service: FAS }
+- {test_class: destructive, service: HBTD }
+- {test_class: destructive, service: HMNFD }
+- {test_class: destructive, service: CAPMC }
+- {test_class: destructive, service: PCS }
+- {test_class: destructive, service: SCSD }
+- {test_class: destructive, service: MEDS }
+- {test_class: destructive, service: REDS }
+- {test_class: destructive, service: HSM }
+- {test_class: destructive-initial, service: HSM }
+- {test_class: destructive-final, service: HSM }
+- {test_class: destructive, service: SLS }

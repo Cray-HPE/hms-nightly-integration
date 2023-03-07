@@ -30,6 +30,7 @@ import os
 import subprocess
 import yaml
 import multiprocessing as mp
+import re
 
 # Inspect each container image to learn what tests it supports
 def list_image_files(docker_client: docker.DockerClient, image: str) -> list[str]:
@@ -47,7 +48,7 @@ def list_image_files(docker_client: docker.DockerClient, image: str) -> list[str
 
     return result.stdout.splitlines()
 
-def detect_test_classes(docker_client: docker.DockerClient, images: list[str], tests_dir: pathlib.Path, wanted_tests: dict, tavern_configs: dict):
+def detect_test_classes(docker_client: docker.DockerClient, images: list[str], tests_dir: pathlib.Path, wanted_tests: list, tavern_configs: dict):
     test_results = {}
     tavern_config_results = {}
 
@@ -56,14 +57,21 @@ def detect_test_classes(docker_client: docker.DockerClient, images: list[str], t
         tavern_config_results[image] = []
         for file in list_image_files(docker_client, image):
             # Look for files that determine what tests are present
-            if file in wanted_tests:
-                print(f"  Found test file: {str(file)}")
+            for file_regex, test_class in wanted_tests:
+                if not file_regex.match(file):
+                    continue
+    
                 # We have a match!
-                test_class = wanted_tests[file]
+                print(f"  Found test at {str(file)}")
+                print(f"    Class:     {test_class}")
                 if test_class not in test_results:
                     test_results[test_class] = []
 
-                test_results[test_class].append(image)
+                test_dir = pathlib.Path(file).stem
+                print(f"    Directory: {test_dir}")
+
+
+                test_results[test_class].append((test_dir, image))
             
             # Look for test configurations
             if file in tavern_configs:
@@ -93,9 +101,9 @@ def run_tests(test_global_test_config: dict, detected_tavern_configs, tests: lis
     # Build up smoke test lookup map
     # TODO some stream lining could occur if a better structure was used for information regarding a test
     smoke_host_override = {}
-    for service in test_global_test_config["services"]:
-        for image_repo in test_global_test_config["services"][service]["image_repos"]:
-            smoke_host_override[image_repo] = test_global_test_config["services"][service]["url"]["container"]
+    for service in test_global_test_config["services"].values():
+        for image_repo in service["image"]["repo"]["test"].values():
+            smoke_host_override[image_repo] = service["url"]["container"]
 
     print("Smoke test host overrides")
     print(json.dumps(smoke_host_override, indent=2))
@@ -107,7 +115,7 @@ def run_tests(test_global_test_config: dict, detected_tavern_configs, tests: lis
         print(f'Running {test["test_name"]} tests')
         print("========================================")
         
-        for image in test["images"]:
+        for image, test_dir in test["images"].items():
             print(f'Running {image}')
             image_repo, image_tag = image.split(":", 2)
             short_name = os.path.basename(image_repo)
@@ -129,7 +137,7 @@ def run_tests(test_global_test_config: dict, detected_tavern_configs, tests: lis
                     tavern_config = "/src/app/tavern_global_config_ct_test.yaml"
 
                 # Test arguments
-                test_args = ['tavern', '--config', tavern_config, '--path', f'/src/app/api/{test_class}']
+                test_args = ['tavern', '--config', tavern_config, '--path', f'/src/app/api/{test_dir}']
 
             if test_args is None:
                 print("Skipping unsupported test")
@@ -218,8 +226,6 @@ if __name__ == "__main__":
     parser.add_argument("--skip-pull", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping pulling of images. For local dev only")
     parser.add_argument("--skip-tests", type=bool, default=False, action=argparse.BooleanOptionalAction, help="Skipping running of tests. For local dev only")
 
-    parser.add_argument("--github-action-id", type=str, default="", help="Github Action run ID")
-
     args = parser.parse_args()
 
     #
@@ -245,7 +251,7 @@ if __name__ == "__main__":
     # Create a lookup table to map image repos to service names
     image_repo_service_lookup = {}
     for name, service in test_config_global["services"].items():
-        for image_repo in service["image_repos"]:
+        for image_repo in service["image"]["repo"]["test"].values():
             image_repo_service_lookup[image_repo] = name
 
     print(json.dumps(image_repo_service_lookup, indent=2))
@@ -281,13 +287,18 @@ if __name__ == "__main__":
     #
     tests = {}
 
-    detected_tests, detected_tavern_configs = detect_test_classes(docker_client, hmth_images, tests_output_dir, wanted_tests = {
-        "src/app/smoke.json":                 "smoke",
-        "src/app/api/1-non-disruptive/":      "1-non-disruptive",
-        "src/app/api/2-disruptive/":          "2-disruptive",
-        "src/app/api/3-destructive/":         "3-destructive",
-        "src/app/api/4-build-pipeline-only/": "4-build-pipeline-only"
-    }, tavern_configs={
+    # TODO need a less fragile method of detecting tests. 
+    # Need to not care about the leading number that we are using for test order.
+    detected_tests, detected_tavern_configs = detect_test_classes(docker_client, hmth_images, tests_output_dir, wanted_tests = [
+        (re.compile("^src/app/smoke.json$"),                    "smoke"),
+        (re.compile("^src/app/api/[\d]-non-disruptive/$"),      "non-disruptive"),
+        (re.compile("^src/app/api/[\d]-hardware-checks/$"),     "hardware-checks"),
+        (re.compile("^src/app/api/[\d]-disruptive/$"),          "disruptive"),
+        (re.compile("^src/app/api/[\d]-destructive/$"),         "destructive"),
+        (re.compile("^src/app/api/[\d]-destructive-initial/$"), "destructive-initial"),
+        (re.compile("^src/app/api/[\d]-destructive-final/$"),   "destructive-final"),
+        (re.compile("^src/app/api/[\d]-build-pipeline-only/$"), "build-pipeline-only")
+    ], tavern_configs={
         "src/app/tavern_global_config_ct_test.yaml": "default",
         "src/app/tavern_global_config_ct_test_production.yaml": "production",
         "src/app/tavern_global_config_ct_test_emulated_hardware.yaml": "emulated_hardware",
@@ -300,13 +311,13 @@ if __name__ == "__main__":
             if test_filter["test_class"] != test_class:
                 continue
 
-            matching_images = []
-            for image in images:
+            matching_images = {}
+            for test_dir, image in images:
                 image_repo, image_tag = image.split(":", 2)
 
                 if test_filter["service"] == "all" or test_filter["service"] == image_repo_service_lookup[image_repo]:
                     # Add test if has a matching class and service
-                    matching_images.append(image)
+                    matching_images[image] = test_dir
 
             if len(matching_images) != 0:
                 tests.append({
@@ -340,23 +351,6 @@ if __name__ == "__main__":
     #
     process_allure_reports(allure_dir)
 
-
-    #
-    # Write out test metadata
-    #
-    test_metadata = {
-        "git_sha": csm_extractor_output[args.csm_release]["git_sha"],
-        "git_tags": csm_extractor_output[args.csm_release]["git_tags"],
-        "images": csm_extractor_output[args.csm_release]["images"],
-        "github_action_run_url": None
-    }
-    if args.github_action_id != "":
-        test_metadata["github_action_run_url"] = f'https://github.com/Cray-HPE/hms-nightly-integration/actions/runs/{args.github_action_id}'
-    
-    test_metadata_file = allure_dir.joinpath("test_metadata.json")
-    print(f'Writing out test metadata: {str(test_metadata_file)}')
-    with open(test_metadata_file, "w") as f:
-        json.dump(test_metadata, f, indent=2)
 
     #
     # Display summary

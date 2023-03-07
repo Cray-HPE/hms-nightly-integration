@@ -29,6 +29,13 @@ jobs:
       shell: bash
       run: pip3 install -r requirements.txt
 
+    - name: Login to algol60 Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: artifactory.algol60.net
+        username: ${{ secrets.ARTIFACTORY_ALGOL60_USERNAME }}
+        password: ${{ secrets.ARTIFACTORY_ALGOL60_TOKEN }}
+
     - name: Extract container images from CSM manifests
       shell: bash
       env: 
@@ -41,19 +48,14 @@ jobs:
 
     - name: Add bleeding-edge release
       shell: bash
-      # TODO the idea of this would be to gather the latest of all HMS charts regardless if they are in a manifest or not
-      # Also this logic can be used for testing to specify images that are not present in a CSM manifest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        cat <<EOF > unstable_images.json
-        {
-          
-        }
-        EOF
+        ./gather_bleeding_edge_images.py
 
         # Merge images
-        jq -s '.[0] * .[1]' csm-manifest-extractor-output.json unstable_images.json > images_temp.json
+        jq -s '.[0] * .[1]' csm-manifest-extractor-output.json bleeding-edge-image-versions.json > images_temp.json
         mv images_temp.json csm-manifest-extractor-output.json
-        
 
     - name: Save outputs
       shell: bash
@@ -123,6 +125,8 @@ jobs:
 
     # Stand up hms-simulation environment
     - name: Standup simulation environment
+      id: setup-simulation-environment
+      continue-on-error: true
       shell: bash
       run: |
         set -ex
@@ -137,6 +141,9 @@ jobs:
 
     # Run tests
     - name: Run tests
+      id: run-tests
+      if: steps.setup-simulation-environment.outcome != 'failure'
+      continue-on-error: true
       shell: bash
       env:
         CSM_RELEASE: "${{ matrix.csm-release }}"
@@ -145,7 +152,6 @@ jobs:
         ./run_tests.py \
           --csm-extractor-output-json images-by-csm-release.json \
           --csm-release "${CSM_RELEASE}" \
-          --github-action-id "${GITHUB_RUN_ID}" \
           --fix-allure-dir-perms 2>&1 | tee run_tests.log
 
     - name: Capture hms-simulation-environment logs
@@ -153,6 +159,21 @@ jobs:
       run: | 
         cd hms-simulation-environment
         docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml --profile do-not-start-automatically logs > ../hms-simulation-environment.log 2>&1
+
+    - name: Create test_metadata
+      shell: bash
+      env:
+        CSM_RELEASE: ${{ matrix.csm-release }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        OUTCOME_SETUP_SIMULATION_ENVIRONMENT: ${{ steps.setup-simulation-environment.outcome  }}
+        OUTCOME_RUN_TESTS: ${{ steps.run-tests.outcome  }}
+      run: |
+        ./generate_test_metadata.py \
+          --csm-extractor-output-json images-by-csm-release.json \
+          --csm-release "${CSM_RELEASE}" \
+          --github-action-id "${GITHUB_RUN_ID}" \
+          --step-outcome-standup-simulation-environment "${OUTCOME_SETUP_SIMULATION_ENVIRONMENT}" \
+          --step-outcome-run-tests "${OUTCOME_RUN_TESTS}"
 
     - name: Create test results tarball
       id: artifact 
@@ -162,10 +183,16 @@ jobs:
         GITHUB_RUN_ID: ${{ github.run_id }}
       run: |
         set -x
-        REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S") 
+        REPORT_NAME=$(date "+%Y-%m-%d_%H-%M-%S")
+
+        mkdir -p allure
         mv allure "${REPORT_NAME}"
-        mv hms-simulation-environment.log "${REPORT_NAME}"
-        mv run_tests.log "${REPORT_NAME}"
+        
+        for file in hms-simulation-environment.log run_tests.log test_metadata.json; do
+          if [[ -e "$file" ]]; then
+            mv "$file" "${REPORT_NAME}"
+          fi 
+        done
 
         tar -cvf "allure-results.tar" ./"${REPORT_NAME}"
 
@@ -177,6 +204,11 @@ jobs:
         name: ${{ steps.artifact.outputs.name }}
         path: allure-results.tar
         retention-days: 1
+
+    - name: Fail the job is there was a problem when standing up the simulation environment or running the tests
+      if: steps.setup-simulation-environment.outcome != 'success' || steps.run-tests.outcome != 'success' 
+      shell: bash
+      run: exit 1
 
   generate-reports:
     name: Generate reports

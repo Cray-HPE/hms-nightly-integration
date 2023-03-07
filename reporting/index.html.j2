@@ -11,7 +11,19 @@
     <h1>HMS Nightly Integration</h1>
     <p>Last updated: {{ timestamp }} UTC</p> 
 
-    <h2> Latest test reports</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Latest CSM release reports</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="test_report_history.html">CSM Release test report history</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="bleeding_edge.html">HMS Bleeding edge test reports</a>
+        </li>
+    </ul>
+
+    <h2> Latest test reports by CSM Release</h2>
     <table class="table table-bordered">
             <tr>
                 <th>CSM Release</th>
@@ -23,14 +35,16 @@
                 <th>Logs</th>
                 <th>Github Action Run</th>
             </tr>
-            {% for release in releases %}
+            {% for release in csm_releases %}
             <tr class="table-primary">
                 <td class="table-info">{{ release["release"] }}</td>
                 <td class="table-primary"> <a href="{{ release["release"] }}/{{  release["reports"][0]["date"] }}/index.html">{{  release["reports"][0]["date"] }}</a> </td>
                 <td class="table-success"> {{ release["reports"][0]["passed_tests"] }} </td>
                 <td class="table-danger"> {{ release["reports"][0]["failed_tests"] }} </td>
                 <td class="table-secondary">
+                    {% if release["reports"][0]["git_sha"] is not none %}
                     <a href="https://github.com/Cray-HPE/csm/commit/{{ release["reports"][0]["git_sha"] }}">{{ release["reports"][0]["git_sha"] }}</a>
+                    {% endif %}
                 </td>
                 <td class="table-secondary">
                     {% for git_tag in release["reports"][0]["git_tags"] %}
@@ -50,48 +64,6 @@
             <tr>
             {% endfor %}
     </table>
-
-    <h2> Test report history </h2>
-    {% for release in releases %}
-    <h3>CSM Release: {{ release["release"] }}</h1>
-    <table class="table table-bordered">
-        <tr>
-            <th>Date</th>
-            <th>Passed tests</th>
-            <th>Failed tests</th>
-            <th>CSM Git Commit</th>
-            <th>CSM Git Tags</th>
-            <th>Logs</th>
-            <th>Github Action Run</th>
-        </tr>
-    {% for report in release["reports"] %}
-    <tr class="table-primary">
-            <td class="table-primary"> <a href="{{ release["release"] }}/{{ report["date"] }}/index.html">{{ report["date"] }}</a> </td>
-            <td class="table-success"> {{ report["passed_tests"] }} </td>
-            <td class="table-danger"> {{ report["failed_tests"] }} </td>
-            <td class="table-secondary">
-                <a href="https://github.com/Cray-HPE/csm/commit/{{ report["git_sha"] }}">{{ report["git_sha"] }}</a>
-            </td>
-            <td class="table-secondary">
-                {% for git_tag in report["git_tags"] %}
-                <a href="https://github.com/Cray-HPE/csm/tree/{{ git_tag }}">{{ git_tag }}</a>
-                {% endfor %}
-            </td>
-            <td class="table-light">
-                &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/hms-simulation-environment.log">hms-simulation-environment.log</a>
-                &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/run_tests.log">run_tests.log</a>
-                &bull; <a href="{{ release["release"] }}/{{ report["date"] }}/test_metadata.json">test_metadata.json</a>
-            </td>
-            <td class="table-light">
-                {% if report["github_action_run_url"] is not none %}
-                <a href="{{ report["github_action_run_url"] }}">Workflow Run</a>
-                {% endif %}
-            </td>
-        <tr>
-    {% endfor %}
-    <table>
-    {% endfor %}
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>

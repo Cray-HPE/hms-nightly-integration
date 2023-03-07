@@ -40,6 +40,7 @@ configuration:
   targeted-csm-branches:
     - main
     - release/1.6
+    - release/1.5
     - release/1.4
   docker-image-manifest: docker/index.yaml
   helm-manifest-directory: manifests
