@@ -289,6 +289,7 @@ if __name__ == "__main__":
         "src/app/api/3-disruptive/":          "3-disruptive",
         "src/app/api/2-non-disruptive/":      "2-non-disruptive",
         "src/app/api/3-destructive/":         "3-destructive",
+        "src/app/api/3-build-pipeline-only/": "3-build-pipeline-only",
         "src/app/api/4-build-pipeline-only/": "4-build-pipeline-only"
     }, tavern_configs={
         "src/app/tavern_global_config_ct_test.yaml": "default",
