@@ -41,8 +41,6 @@ RUN set -ex \
         pytest==7.1.2 \
         tavern==1.23.1 \
         allure-pytest==2.12.0 \
-    && /usr/bin/yes | pip3 uninstall requests \
-    && pip3 install requests==2.28.1 \
     && apk del \
         python3-dev \
         tar \
