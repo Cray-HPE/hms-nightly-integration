@@ -134,7 +134,7 @@ def run_tests(test_global_test_config: dict, detected_tavern_configs, tests: lis
                 if "emulated-hardware" in detected_tavern_configs[image]:
                     tavern_config = "/src/app/tavern_global_config_ct_test_emulated_hardware.yaml"
                 elif "test-environment" in detected_tavern_configs[image]:
-                    tavern_config = "src/app/tavern_global_config_ct_test_environment.yaml"
+                    tavern_config = "/src/app/tavern_global_config_ct_test_environment.yaml"
                 elif "default" in detected_tavern_configs[image]:
                     tavern_config = "/src/app/tavern_global_config_ct_test.yaml"
 
