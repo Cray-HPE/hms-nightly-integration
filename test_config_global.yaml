@@ -239,6 +239,10 @@ tavern:
     power-cap_patch_num_attempts: 30
     power-cap_patch_poll_interval: 1  
 
+    # HMNFD
+    test_agent: cray-test-service-999z9z9999-zz9zz
+    test_agent_host: cray-test-service
+
 test_order:
 # Smoke tests
 - {test_class: smoke,                 service: all}
