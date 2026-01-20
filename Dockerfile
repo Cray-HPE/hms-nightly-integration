@@ -39,7 +39,7 @@ RUN set -ex \
     && pip3 install --upgrade \
         pip \
         pytest==8..4.2\
-        tavern==3.1.01 \
+        tavern==3.0.0 \
         allure-pytest==2.12.0 \
     && apk del \
         python3-dev \
