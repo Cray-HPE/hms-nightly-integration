@@ -38,8 +38,8 @@ RUN set -ex \
         musl-dev \
     && pip3 install --upgrade \
         pip \
-        pytest==7.1.2 \
-        tavern==1.23.1 \
+        pytest==8.4.2 \
+        tavern==3.0.0 \
         allure-pytest==2.12.0 \
     && apk del \
         python3-dev \
