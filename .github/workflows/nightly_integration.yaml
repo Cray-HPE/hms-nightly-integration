@@ -1,3 +1,24 @@
+# MIT License
+
+# (C) Copyright [2023,2026] Hewlett Packard Enterprise Development LP
+
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
 name: Nightly Integration
 on:
   workflow_dispatch:
@@ -16,21 +37,21 @@ jobs:
       images-by-csm-release: ${{ steps.extract-container-images.outputs.images-by-csm-release }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
-        python-version: '3.10'
+        python-version: '3.13'
     
     - name: Install python dependencies
       shell: bash
       run: pip3 install -r requirements.txt
 
     - name: Login to algol60 Container Registry
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
         registry: artifactory.algol60.net
         username: ${{ secrets.ARTIFACTORY_ALGOL60_USERNAME }}
@@ -74,12 +95,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Checkout hms-simulation-environment
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         path: hms-simulation-environment
         repository: Cray-HPE/hms-simulation-environment
@@ -98,16 +119,16 @@ jobs:
 
     # Update container images in docker-compose.yaml
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
-        python-version: '3.10'
+        python-version: '3.13'
     
     - name: Install python dependencies
       shell: bash
       run: pip3 install -r requirements.txt
 
     - name: Login to algol60 Container Registry
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
         registry: artifactory.algol60.net
         username: ${{ secrets.ARTIFACTORY_ALGOL60_USERNAME }}
@@ -199,7 +220,7 @@ jobs:
         echo "name=allure-results-${GITHUB_RUN_ID}_$(echo $CSM_RELEASE | tr / -)" >> $GITHUB_OUTPUT
 
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v6
       with:
         name: ${{ steps.artifact.outputs.name }}
         path: allure-results.tar
@@ -221,12 +242,12 @@ jobs:
 
     steps:
     - name: Checkout hms-nightly-integration
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Checkout Github pages site
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         ref: gh-pages
         path: gh-pages
@@ -249,7 +270,7 @@ jobs:
       shell: bash
       run: pip3 install -r requirements.txt
 
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v7
       with:
         path: artifacts
 
